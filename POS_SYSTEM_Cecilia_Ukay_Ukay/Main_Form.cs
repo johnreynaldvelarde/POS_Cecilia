@@ -18,7 +18,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             button_highligted();
         }
 
-        private Color defaultColor = Color.FromArgb(43, 43, 43);
+        private Color defaultColor = Color.FromArgb(14, 159, 104);
         private Color settingsColor = Color.FromArgb(242, 197, 70);
 
         public void button_highligted()
@@ -36,5 +36,18 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_User.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
         }
+
+        private void btn_User_Click(object sender, EventArgs e)
+        {
+            btn_User.BackColor = settingsColor;
+
+            User_Form frm = new User_Form();
+            frm.ShowDialog();
+            frm.Dispose();
+            btn_User.BackColor = defaultColor;
+        }
+
+
+
     }
 }

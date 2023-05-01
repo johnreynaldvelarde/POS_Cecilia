@@ -42,7 +42,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(43, 43, 43);
+            panel1.BackColor = Color.FromArgb(14, 159, 104);
             panel1.Controls.Add(btn_User);
             panel1.Controls.Add(btn_Warehouse);
             panel1.Controls.Add(btn_Inventory);
@@ -58,7 +58,7 @@
             // btn_User
             // 
             btn_User.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_User.BackColor = Color.FromArgb(43, 43, 43);
+            btn_User.BackColor = Color.FromArgb(14, 159, 104);
             btn_User.Cursor = Cursors.Hand;
             btn_User.FlatAppearance.BorderSize = 0;
             btn_User.FlatStyle = FlatStyle.Flat;
@@ -73,11 +73,12 @@
             btn_User.TextAlign = ContentAlignment.BottomCenter;
             btn_User.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_User.UseVisualStyleBackColor = false;
+            btn_User.Click += btn_User_Click;
             // 
             // btn_Warehouse
             // 
             btn_Warehouse.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Warehouse.BackColor = Color.FromArgb(43, 43, 43);
+            btn_Warehouse.BackColor = Color.FromArgb(14, 159, 104);
             btn_Warehouse.Cursor = Cursors.Hand;
             btn_Warehouse.FlatAppearance.BorderSize = 0;
             btn_Warehouse.FlatStyle = FlatStyle.Flat;
@@ -96,7 +97,7 @@
             // btn_Inventory
             // 
             btn_Inventory.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Inventory.BackColor = Color.FromArgb(43, 43, 43);
+            btn_Inventory.BackColor = Color.FromArgb(14, 159, 104);
             btn_Inventory.Cursor = Cursors.Hand;
             btn_Inventory.FlatAppearance.BorderSize = 0;
             btn_Inventory.FlatStyle = FlatStyle.Flat;
@@ -115,7 +116,7 @@
             // btn_Settings
             // 
             btn_Settings.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Settings.BackColor = Color.FromArgb(43, 43, 43);
+            btn_Settings.BackColor = Color.FromArgb(14, 159, 104);
             btn_Settings.Cursor = Cursors.Hand;
             btn_Settings.FlatAppearance.BorderSize = 0;
             btn_Settings.FlatStyle = FlatStyle.Flat;
@@ -135,7 +136,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(242, 197, 70);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(172, 20);
             label2.Name = "label2";
             label2.Size = new Size(185, 22);
@@ -155,7 +156,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(43, 43, 43);
+            panel2.BackColor = Color.FromArgb(14, 159, 104);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 564);
             panel2.Name = "panel2";
