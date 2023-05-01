@@ -15,6 +15,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Main_Form()
         {
             InitializeComponent();
+            button_highligted();
+        }
+
+        private Color defaultColor = Color.FromArgb(43, 43, 43);
+        private Color settingsColor = Color.FromArgb(242, 197, 70);
+
+        public void button_highligted()
+        {
+            btn_Settings.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Settings.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
+            btn_Inventory.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Inventory.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
+            btn_Warehouse.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Warehouse.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
+            btn_User.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_User.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
         }
     }
 }

@@ -30,9 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             panel1 = new Panel();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btn_User = new Button();
             btn_Warehouse = new Button();
             btn_Inventory = new Button();
             btn_Settings = new Button();
@@ -45,9 +43,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(43, 43, 43);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button3);
+            panel1.Controls.Add(btn_User);
             panel1.Controls.Add(btn_Warehouse);
             panel1.Controls.Add(btn_Inventory);
             panel1.Controls.Add(btn_Settings);
@@ -59,62 +55,24 @@
             panel1.Size = new Size(1200, 63);
             panel1.TabIndex = 3;
             // 
-            // button1
+            // btn_User
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(43, 43, 43);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(632, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(80, 63);
-            button1.TabIndex = 13;
-            button1.Text = "Warehouse";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.TextImageRelation = TextImageRelation.ImageAboveText;
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.FromArgb(43, 43, 43);
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(556, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(70, 63);
-            button2.TabIndex = 12;
-            button2.Text = "Inventory";
-            button2.TextAlign = ContentAlignment.BottomCenter;
-            button2.TextImageRelation = TextImageRelation.ImageAboveText;
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.BackColor = Color.FromArgb(43, 43, 43);
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(488, 0);
-            button3.Name = "button3";
-            button3.Size = new Size(62, 63);
-            button3.TabIndex = 11;
-            button3.Text = "Settings";
-            button3.TextAlign = ContentAlignment.BottomCenter;
-            button3.TextImageRelation = TextImageRelation.ImageAboveText;
-            button3.UseVisualStyleBackColor = false;
+            btn_User.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_User.BackColor = Color.FromArgb(43, 43, 43);
+            btn_User.Cursor = Cursors.Hand;
+            btn_User.FlatAppearance.BorderSize = 0;
+            btn_User.FlatStyle = FlatStyle.Flat;
+            btn_User.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_User.ForeColor = Color.White;
+            btn_User.Image = (Image)resources.GetObject("btn_User.Image");
+            btn_User.Location = new Point(718, 0);
+            btn_User.Name = "btn_User";
+            btn_User.Size = new Size(112, 63);
+            btn_User.TabIndex = 14;
+            btn_User.Text = "User Management";
+            btn_User.TextAlign = ContentAlignment.BottomCenter;
+            btn_User.TextImageRelation = TextImageRelation.ImageAboveText;
+            btn_User.UseVisualStyleBackColor = false;
             // 
             // btn_Warehouse
             // 
@@ -126,10 +84,10 @@
             btn_Warehouse.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Warehouse.ForeColor = Color.White;
             btn_Warehouse.Image = (Image)resources.GetObject("btn_Warehouse.Image");
-            btn_Warehouse.Location = new Point(1551, 0);
+            btn_Warehouse.Location = new Point(632, 0);
             btn_Warehouse.Name = "btn_Warehouse";
             btn_Warehouse.Size = new Size(80, 63);
-            btn_Warehouse.TabIndex = 10;
+            btn_Warehouse.TabIndex = 13;
             btn_Warehouse.Text = "Warehouse";
             btn_Warehouse.TextAlign = ContentAlignment.BottomCenter;
             btn_Warehouse.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -145,10 +103,10 @@
             btn_Inventory.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Inventory.ForeColor = Color.White;
             btn_Inventory.Image = (Image)resources.GetObject("btn_Inventory.Image");
-            btn_Inventory.Location = new Point(1475, 0);
+            btn_Inventory.Location = new Point(556, 0);
             btn_Inventory.Name = "btn_Inventory";
             btn_Inventory.Size = new Size(70, 63);
-            btn_Inventory.TabIndex = 9;
+            btn_Inventory.TabIndex = 12;
             btn_Inventory.Text = "Inventory";
             btn_Inventory.TextAlign = ContentAlignment.BottomCenter;
             btn_Inventory.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -164,10 +122,10 @@
             btn_Settings.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Settings.ForeColor = Color.White;
             btn_Settings.Image = (Image)resources.GetObject("btn_Settings.Image");
-            btn_Settings.Location = new Point(1407, 0);
+            btn_Settings.Location = new Point(488, 0);
             btn_Settings.Name = "btn_Settings";
             btn_Settings.Size = new Size(62, 63);
-            btn_Settings.TabIndex = 8;
+            btn_Settings.TabIndex = 11;
             btn_Settings.Text = "Settings";
             btn_Settings.TextAlign = ContentAlignment.BottomCenter;
             btn_Settings.TextImageRelation = TextImageRelation.ImageAboveText;
@@ -224,14 +182,12 @@
         #endregion
 
         private Panel panel1;
-        private Button btn_Warehouse;
-        private Button btn_Inventory;
-        private Button btn_Settings;
         private Label label2;
         private Label label1;
         private Panel panel2;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btn_Warehouse;
+        private Button btn_Inventory;
+        private Button btn_Settings;
+        private Button btn_User;
     }
 }
