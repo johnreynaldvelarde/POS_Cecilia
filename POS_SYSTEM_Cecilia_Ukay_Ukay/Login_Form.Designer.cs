@@ -120,13 +120,12 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.White;
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(400, 600);
-            panel1.TabIndex = 8;
+            panel1.TabIndex = 16;
             // 
             // pictureBox1
             // 
@@ -145,6 +144,7 @@
             BackColor = Color.White;
             ClientSize = new Size(800, 600);
             ControlBox = false;
+            Controls.Add(panel1);
             Controls.Add(btnClear);
             Controls.Add(btnLogin);
             Controls.Add(label2);
@@ -152,7 +152,6 @@
             Controls.Add(label1);
             Controls.Add(txtUsername);
             Controls.Add(btnClose);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login_Form";
             StartPosition = FormStartPosition.CenterScreen;
