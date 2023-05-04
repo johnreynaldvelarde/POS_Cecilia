@@ -168,8 +168,8 @@
         private Panel panel2;
         private Button btnClose;
         private Panel panel1;
-        private Button btn_Product_List;
         private Button btn_Category_List;
         private Panel panel_center;
+        public Button btn_Product_List;
     }
 }
