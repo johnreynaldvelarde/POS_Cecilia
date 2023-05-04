@@ -79,6 +79,7 @@
             btn_Category_List.TextAlign = ContentAlignment.MiddleRight;
             btn_Category_List.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Category_List.UseVisualStyleBackColor = false;
+            btn_Category_List.Click += btn_Category_List_Click;
             // 
             // btn_Product_List
             // 
@@ -137,7 +138,7 @@
             panel_center.Dock = DockStyle.Fill;
             panel_center.Location = new Point(0, 113);
             panel_center.Name = "panel_center";
-            panel_center.Size = new Size(1100, 587);
+            panel_center.Size = new Size(1100, 637);
             panel_center.TabIndex = 18;
             // 
             // Inventory_Form
@@ -145,7 +146,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1100, 700);
+            ClientSize = new Size(1100, 750);
             ControlBox = false;
             Controls.Add(panel_center);
             Controls.Add(panel3);

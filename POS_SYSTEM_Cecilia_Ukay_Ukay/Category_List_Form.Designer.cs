@@ -1,6 +1,6 @@
 ﻿namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
-    partial class Product_List_Form
+    partial class Category_List_Form
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_List_Form));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Category_List_Form));
             panel1 = new Panel();
+            button1 = new Button();
             btn_Product_List = new Button();
             label1 = new Label();
-            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,37 +44,8 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(5, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1090, 60);
-            panel1.TabIndex = 0;
-            // 
-            // btn_Product_List
-            // 
-            btn_Product_List.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Product_List.Cursor = Cursors.Hand;
-            btn_Product_List.FlatAppearance.BorderSize = 0;
-            btn_Product_List.FlatStyle = FlatStyle.Flat;
-            btn_Product_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Product_List.ForeColor = Color.White;
-            btn_Product_List.Image = (Image)resources.GetObject("btn_Product_List.Image");
-            btn_Product_List.Location = new Point(720, 9);
-            btn_Product_List.Name = "btn_Product_List";
-            btn_Product_List.Size = new Size(199, 38);
-            btn_Product_List.TabIndex = 15;
-            btn_Product_List.Text = "Add new product";
-            btn_Product_List.TextAlign = ContentAlignment.MiddleRight;
-            btn_Product_List.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Product_List.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(3, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(197, 33);
-            label1.TabIndex = 1;
-            label1.Text = "List of Product";
+            panel1.Size = new Size(1088, 60);
+            panel1.TabIndex = 1;
             // 
             // button1
             // 
@@ -94,15 +65,45 @@
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
             // 
-            // Product_List_Form
+            // btn_Product_List
+            // 
+            btn_Product_List.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Product_List.Cursor = Cursors.Hand;
+            btn_Product_List.FlatAppearance.BorderSize = 0;
+            btn_Product_List.FlatStyle = FlatStyle.Flat;
+            btn_Product_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Product_List.ForeColor = Color.White;
+            btn_Product_List.Image = (Image)resources.GetObject("btn_Product_List.Image");
+            btn_Product_List.Location = new Point(720, 9);
+            btn_Product_List.Name = "btn_Product_List";
+            btn_Product_List.Size = new Size(199, 38);
+            btn_Product_List.TabIndex = 15;
+            btn_Product_List.Text = "Add new category";
+            btn_Product_List.TextAlign = ContentAlignment.MiddleRight;
+            btn_Product_List.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Product_List.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(14, 159, 104);
+            label1.Location = new Point(3, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(239, 33);
+            label1.TabIndex = 1;
+            label1.Text = "List of Categories";
+            // 
+            // Category_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1100, 587);
+            ClientSize = new Size(1098, 585);
+            ControlBox = false;
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
-            Name = "Product_List_Form";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "Category_List_Form";
             Padding = new Padding(5);
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
@@ -113,8 +114,8 @@
         #endregion
 
         private Panel panel1;
-        private Label label1;
-        private Button btn_Product_List;
         private Button button1;
+        private Button btn_Product_List;
+        private Label label1;
     }
 }

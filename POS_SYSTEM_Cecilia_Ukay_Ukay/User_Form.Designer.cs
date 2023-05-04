@@ -70,7 +70,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1078, 60);
+            panel1.Size = new Size(1080, 60);
             panel1.TabIndex = 11;
             // 
             // panel2
@@ -79,7 +79,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(10, 70);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1078, 3);
+            panel2.Size = new Size(1080, 3);
             panel2.TabIndex = 12;
             // 
             // panel3
@@ -88,7 +88,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(10, 73);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1078, 50);
+            panel3.Size = new Size(1080, 50);
             panel3.TabIndex = 13;
             // 
             // btn_Create_Account
@@ -115,7 +115,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1098, 698);
+            ClientSize = new Size(1100, 750);
             ControlBox = false;
             Controls.Add(panel3);
             Controls.Add(panel2);
