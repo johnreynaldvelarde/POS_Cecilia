@@ -112,6 +112,7 @@
             btn_Inventory.TextAlign = ContentAlignment.BottomCenter;
             btn_Inventory.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_Inventory.UseVisualStyleBackColor = false;
+            btn_Inventory.Click += btn_Inventory_Click;
             // 
             // btn_Settings
             // 

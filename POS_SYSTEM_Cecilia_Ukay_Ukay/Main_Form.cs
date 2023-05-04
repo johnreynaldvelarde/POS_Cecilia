@@ -47,7 +47,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_User.BackColor = defaultColor;
         }
 
-
-
+        private void btn_Inventory_Click(object sender, EventArgs e)
+        {
+            btn_Inventory.BackColor = settingsColor;
+            Inventory_Form frm = new Inventory_Form();
+            frm.ShowDialog();
+            frm.Dispose();
+            btn_Inventory.BackColor = defaultColor;
+        }
     }
 }
