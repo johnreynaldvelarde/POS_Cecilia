@@ -42,7 +42,7 @@
             panel1.Controls.Add(btn_Product_List);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(5, 5);
+            panel1.Location = new Point(5, 20);
             panel1.Name = "panel1";
             panel1.Size = new Size(1088, 60);
             panel1.TabIndex = 1;
@@ -104,7 +104,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Category_List_Form";
-            Padding = new Padding(5);
+            Padding = new Padding(5, 20, 5, 5);
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

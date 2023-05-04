@@ -59,7 +59,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 63);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1100, 50);
+            panel3.Size = new Size(1100, 60);
             panel3.TabIndex = 17;
             // 
             // btn_Category_List
@@ -71,7 +71,7 @@
             btn_Category_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Category_List.ForeColor = Color.White;
             btn_Category_List.Image = (Image)resources.GetObject("btn_Category_List.Image");
-            btn_Category_List.Location = new Point(215, 6);
+            btn_Category_List.Location = new Point(215, 11);
             btn_Category_List.Name = "btn_Category_List";
             btn_Category_List.Size = new Size(197, 38);
             btn_Category_List.TabIndex = 15;
@@ -90,7 +90,7 @@
             btn_Product_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Product_List.ForeColor = Color.White;
             btn_Product_List.Image = (Image)resources.GetObject("btn_Product_List.Image");
-            btn_Product_List.Location = new Point(12, 6);
+            btn_Product_List.Location = new Point(12, 11);
             btn_Product_List.Name = "btn_Product_List";
             btn_Product_List.Size = new Size(184, 38);
             btn_Product_List.TabIndex = 14;
@@ -136,9 +136,9 @@
             // panel_center
             // 
             panel_center.Dock = DockStyle.Fill;
-            panel_center.Location = new Point(0, 113);
+            panel_center.Location = new Point(0, 123);
             panel_center.Name = "panel_center";
-            panel_center.Size = new Size(1100, 637);
+            panel_center.Size = new Size(1100, 627);
             panel_center.TabIndex = 18;
             // 
             // Inventory_Form

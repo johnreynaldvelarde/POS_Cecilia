@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_List_Form));
             panel1 = new Panel();
+            button1 = new Button();
             btn_Product_List = new Button();
             label1 = new Label();
-            button1 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -42,10 +42,28 @@
             panel1.Controls.Add(btn_Product_List);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(5, 5);
+            panel1.Location = new Point(5, 20);
             panel1.Name = "panel1";
             panel1.Size = new Size(1090, 60);
             panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(14, 159, 104);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(928, 9);
+            button1.Name = "button1";
+            button1.Size = new Size(159, 38);
+            button1.TabIndex = 16;
+            button1.Text = "Excel Export";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
             // 
             // btn_Product_List
             // 
@@ -72,27 +90,9 @@
             label1.ForeColor = Color.FromArgb(14, 159, 104);
             label1.Location = new Point(3, 12);
             label1.Name = "label1";
-            label1.Size = new Size(197, 33);
+            label1.Size = new Size(207, 33);
             label1.TabIndex = 1;
-            label1.Text = "List of Product";
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(14, 159, 104);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(928, 9);
-            button1.Name = "button1";
-            button1.Size = new Size(159, 38);
-            button1.TabIndex = 16;
-            button1.Text = "Excel Export";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
+            label1.Text = "List of Products";
             // 
             // Product_List_Form
             // 
@@ -103,7 +103,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Product_List_Form";
-            Padding = new Padding(5);
+            Padding = new Padding(5, 20, 5, 5);
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
