@@ -37,15 +37,17 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
+
+
         private void button_highlighted(Button button)
         {
-         
+
             button.BackColor = Color.FromArgb(242, 197, 70);
             button.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
         }
 
-       
+
 
         private void btn_User_Click(object sender, EventArgs e)
         {
@@ -64,11 +66,19 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.ShowDialog();
             frm.Dispose();
             btn_Inventory.BackColor = defaultColor;
-           // frm.btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
+            // frm.btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
 
 
         }
 
-       
+        private void btn_Settings_Click(object sender, EventArgs e)
+        {
+            btn_Settings.BackColor = settingsColor;
+
+            Settings_Form frm = new Settings_Form();
+            frm.ShowDialog();
+            frm.Dispose();
+            btn_Settings.BackColor = defaultColor;
+        }
     }
 }

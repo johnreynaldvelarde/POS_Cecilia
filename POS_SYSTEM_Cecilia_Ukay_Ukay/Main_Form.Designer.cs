@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             btn_User = new Button();
             btn_Warehouse = new Button();
             btn_Inventory = new Button();
@@ -37,12 +38,19 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
+            side_Panel = new Panel();
+            top_Panel = new Panel();
+            splitContainer1 = new SplitContainer();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(14, 159, 104);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btn_User);
             panel1.Controls.Add(btn_Warehouse);
             panel1.Controls.Add(btn_Inventory);
@@ -54,6 +62,14 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1200, 63);
             panel1.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(1130, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(57, 55);
+            pictureBox1.TabIndex = 15;
+            pictureBox1.TabStop = false;
             // 
             // btn_User
             // 
@@ -132,6 +148,7 @@
             btn_Settings.TextAlign = ContentAlignment.BottomCenter;
             btn_Settings.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_Settings.UseVisualStyleBackColor = false;
+            btn_Settings.Click += btn_Settings_Click;
             // 
             // label2
             // 
@@ -159,10 +176,41 @@
             // 
             panel2.BackColor = Color.FromArgb(14, 159, 104);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 564);
+            panel2.Location = new Point(0, 570);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1200, 36);
+            panel2.Size = new Size(1200, 30);
             panel2.TabIndex = 4;
+            // 
+            // side_Panel
+            // 
+            side_Panel.BackColor = Color.White;
+            side_Panel.Dock = DockStyle.Left;
+            side_Panel.Location = new Point(0, 63);
+            side_Panel.Name = "side_Panel";
+            side_Panel.Size = new Size(74, 507);
+            side_Panel.TabIndex = 5;
+            // 
+            // top_Panel
+            // 
+            top_Panel.BackColor = Color.White;
+            top_Panel.Dock = DockStyle.Top;
+            top_Panel.Location = new Point(74, 63);
+            top_Panel.Name = "top_Panel";
+            top_Panel.Size = new Size(1126, 37);
+            top_Panel.TabIndex = 6;
+            // 
+            // splitContainer1
+            // 
+            splitContainer1.Dock = DockStyle.Fill;
+            splitContainer1.Location = new Point(74, 100);
+            splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel2
+            // 
+            splitContainer1.Panel2.Padding = new Padding(5);
+            splitContainer1.Size = new Size(1126, 470);
+            splitContainer1.SplitterDistance = 772;
+            splitContainer1.TabIndex = 7;
             // 
             // Main_Form
             // 
@@ -170,6 +218,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1200, 600);
             ControlBox = false;
+            Controls.Add(splitContainer1);
+            Controls.Add(top_Panel);
+            Controls.Add(side_Panel);
             Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
@@ -178,6 +229,9 @@
             WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
+            splitContainer1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -191,5 +245,9 @@
         private Button btn_Inventory;
         private Button btn_Settings;
         private Button btn_User;
+        private PictureBox pictureBox1;
+        private Panel side_Panel;
+        private Panel top_Panel;
+        private SplitContainer splitContainer1;
     }
 }

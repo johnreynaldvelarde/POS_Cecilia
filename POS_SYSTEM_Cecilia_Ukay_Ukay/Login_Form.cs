@@ -15,6 +15,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Login_Form()
         {
             InitializeComponent();
+            
         }
 
         public void Clear()
@@ -23,7 +24,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             txtPassword.Clear();
             txtUsername.Focus();
         }
-
+           
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();

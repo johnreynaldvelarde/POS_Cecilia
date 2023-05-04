@@ -44,6 +44,7 @@
             // 
             // btnClear
             // 
+            btnClear.Cursor = Cursors.Hand;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnClear.Location = new Point(455, 437);
@@ -57,6 +58,7 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.FromArgb(14, 159, 104);
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
