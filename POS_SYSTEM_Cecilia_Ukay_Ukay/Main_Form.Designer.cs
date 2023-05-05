@@ -39,12 +39,28 @@
             label1 = new Label();
             panel2 = new Panel();
             side_Panel = new Panel();
-            top_Panel = new Panel();
             splitContainer1 = new SplitContainer();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            product_Show1 = new Product_Show();
+            product_Show2 = new Product_Show();
+            panel4 = new Panel();
+            textBox1 = new TextBox();
+            panel3 = new Panel();
+            panel6 = new Panel();
+            label3 = new Label();
+            panel5 = new Panel();
+            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
+            splitContainer1.Panel1.SuspendLayout();
+            splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel6.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -176,41 +192,139 @@
             // 
             panel2.BackColor = Color.FromArgb(14, 159, 104);
             panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(0, 570);
+            panel2.Location = new Point(0, 575);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1200, 30);
+            panel2.Size = new Size(1200, 25);
             panel2.TabIndex = 4;
             // 
             // side_Panel
             // 
-            side_Panel.BackColor = Color.White;
+            side_Panel.BackColor = SystemColors.Control;
             side_Panel.Dock = DockStyle.Left;
             side_Panel.Location = new Point(0, 63);
             side_Panel.Name = "side_Panel";
-            side_Panel.Size = new Size(74, 507);
+            side_Panel.Size = new Size(74, 512);
             side_Panel.TabIndex = 5;
-            // 
-            // top_Panel
-            // 
-            top_Panel.BackColor = Color.White;
-            top_Panel.Dock = DockStyle.Top;
-            top_Panel.Location = new Point(74, 63);
-            top_Panel.Name = "top_Panel";
-            top_Panel.Size = new Size(1126, 37);
-            top_Panel.TabIndex = 6;
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(74, 100);
+            splitContainer1.Location = new Point(74, 63);
             splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            splitContainer1.Panel1.Controls.Add(flowLayoutPanel1);
+            splitContainer1.Panel1.Controls.Add(panel4);
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Padding = new Padding(5);
-            splitContainer1.Size = new Size(1126, 470);
-            splitContainer1.SplitterDistance = 772;
+            splitContainer1.Panel2.BackColor = SystemColors.Control;
+            splitContainer1.Panel2.Controls.Add(panel3);
+            splitContainer1.Panel2.Padding = new Padding(10);
+            splitContainer1.Size = new Size(1126, 512);
+            splitContainer1.SplitterDistance = 655;
             splitContainer1.TabIndex = 7;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Controls.Add(product_Show1);
+            flowLayoutPanel1.Controls.Add(product_Show2);
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(0, 53);
+            flowLayoutPanel1.Margin = new Padding(30);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(655, 459);
+            flowLayoutPanel1.TabIndex = 1;
+            // 
+            // product_Show1
+            // 
+            product_Show1.BackColor = Color.White;
+            product_Show1.Location = new Point(10, 10);
+            product_Show1.Margin = new Padding(10);
+            product_Show1.Name = "product_Show1";
+            product_Show1.Padding = new Padding(10);
+            product_Show1.Size = new Size(306, 357);
+            product_Show1.TabIndex = 0;
+            // 
+            // product_Show2
+            // 
+            product_Show2.BackColor = Color.White;
+            product_Show2.Location = new Point(329, 3);
+            product_Show2.Name = "product_Show2";
+            product_Show2.Padding = new Padding(10);
+            product_Show2.Size = new Size(306, 357);
+            product_Show2.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(textBox1);
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(655, 53);
+            panel4.TabIndex = 0;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(15, 10);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(408, 31);
+            textBox1.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(panel5);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(10, 10);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(447, 492);
+            panel3.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(label3);
+            panel6.Dock = DockStyle.Top;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(447, 43);
+            panel6.TabIndex = 2;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(14, 159, 104);
+            label3.Location = new Point(5, 6);
+            label3.Name = "label3";
+            label3.Size = new Size(167, 30);
+            label3.TabIndex = 0;
+            label3.Text = "Order Details";
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(66, 85, 125);
+            panel5.Controls.Add(label4);
+            panel5.Dock = DockStyle.Bottom;
+            panel5.Location = new Point(0, 447);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(447, 45);
+            panel5.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(19, 11);
+            label4.Name = "label4";
+            label4.Size = new Size(58, 24);
+            label4.TabIndex = 2;
+            label4.Text = "Total";
             // 
             // Main_Form
             // 
@@ -219,7 +333,6 @@
             ClientSize = new Size(1200, 600);
             ControlBox = false;
             Controls.Add(splitContainer1);
-            Controls.Add(top_Panel);
             Controls.Add(side_Panel);
             Controls.Add(panel1);
             Controls.Add(panel2);
@@ -230,8 +343,18 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            flowLayoutPanel1.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -247,7 +370,16 @@
         private Button btn_User;
         private PictureBox pictureBox1;
         private Panel side_Panel;
-        private Panel top_Panel;
         private SplitContainer splitContainer1;
+        private Label label3;
+        private Panel panel3;
+        private Panel panel4;
+        private TextBox textBox1;
+        private FlowLayoutPanel flowLayoutPanel1;
+        private Panel panel5;
+        private Label label4;
+        private Panel panel6;
+        private Product_Show product_Show1;
+        private Product_Show product_Show2;
     }
 }

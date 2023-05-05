@@ -111,22 +111,23 @@
             // 
             // btnClose
             // 
+            btnClose.BackColor = Color.White;
             btnClose.Cursor = Cursors.Hand;
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(1033, -9);
+            btnClose.Location = new Point(1048, -1);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(55, 27);
             btnClose.TabIndex = 14;
             btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
+            btnClose.UseVisualStyleBackColor = false;
             btnClose.Click += btnClose_Click;
             // 
             // panel1
             // 
+            panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
@@ -149,6 +150,7 @@
             ClientSize = new Size(1100, 700);
             ControlBox = false;
             Controls.Add(panel_center);
+            Controls.Add(btnClose);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);

@@ -34,7 +34,9 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            btn_Create_Account = new Button();
+            btn_Category_List = new Button();
+            btn_Product_List = new Button();
+            panel_center = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -84,31 +86,57 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(btn_Create_Account);
+            panel3.Controls.Add(btn_Category_List);
+            panel3.Controls.Add(btn_Product_List);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(10, 73);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1080, 50);
+            panel3.Size = new Size(1080, 60);
             panel3.TabIndex = 13;
             // 
-            // btn_Create_Account
+            // btn_Category_List
             // 
-            btn_Create_Account.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Create_Account.Cursor = Cursors.Hand;
-            btn_Create_Account.FlatAppearance.BorderSize = 0;
-            btn_Create_Account.FlatStyle = FlatStyle.Flat;
-            btn_Create_Account.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Create_Account.ForeColor = Color.White;
-            btn_Create_Account.Image = (Image)resources.GetObject("btn_Create_Account.Image");
-            btn_Create_Account.Location = new Point(12, 6);
-            btn_Create_Account.Name = "btn_Create_Account";
-            btn_Create_Account.Size = new Size(218, 38);
-            btn_Create_Account.TabIndex = 14;
-            btn_Create_Account.Text = "Create new account";
-            btn_Create_Account.TextAlign = ContentAlignment.MiddleRight;
-            btn_Create_Account.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Create_Account.UseVisualStyleBackColor = false;
-            btn_Create_Account.Click += btn_Create_Account_Click;
+            btn_Category_List.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Category_List.Cursor = Cursors.Hand;
+            btn_Category_List.FlatAppearance.BorderSize = 0;
+            btn_Category_List.FlatStyle = FlatStyle.Flat;
+            btn_Category_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Category_List.ForeColor = Color.White;
+            btn_Category_List.Image = (Image)resources.GetObject("btn_Category_List.Image");
+            btn_Category_List.Location = new Point(226, 11);
+            btn_Category_List.Name = "btn_Category_List";
+            btn_Category_List.Size = new Size(197, 38);
+            btn_Category_List.TabIndex = 17;
+            btn_Category_List.Text = "List of Customer";
+            btn_Category_List.TextAlign = ContentAlignment.MiddleRight;
+            btn_Category_List.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Category_List.UseVisualStyleBackColor = false;
+            // 
+            // btn_Product_List
+            // 
+            btn_Product_List.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Product_List.Cursor = Cursors.Hand;
+            btn_Product_List.FlatAppearance.BorderSize = 0;
+            btn_Product_List.FlatStyle = FlatStyle.Flat;
+            btn_Product_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Product_List.ForeColor = Color.White;
+            btn_Product_List.Image = (Image)resources.GetObject("btn_Product_List.Image");
+            btn_Product_List.Location = new Point(12, 11);
+            btn_Product_List.Name = "btn_Product_List";
+            btn_Product_List.Size = new Size(197, 38);
+            btn_Product_List.TabIndex = 16;
+            btn_Product_List.Text = "List of Employee";
+            btn_Product_List.TextAlign = ContentAlignment.MiddleRight;
+            btn_Product_List.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Product_List.UseVisualStyleBackColor = false;
+            // 
+            // panel_center
+            // 
+            panel_center.Dock = DockStyle.Fill;
+            panel_center.Location = new Point(10, 133);
+            panel_center.Name = "panel_center";
+            panel_center.Size = new Size(1080, 557);
+            panel_center.TabIndex = 19;
             // 
             // User_Form
             // 
@@ -117,6 +145,7 @@
             BackColor = Color.White;
             ClientSize = new Size(1100, 700);
             ControlBox = false;
+            Controls.Add(panel_center);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(btnClose);
@@ -138,6 +167,8 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private Button btn_Create_Account;
+        private Button btn_Category_List;
+        public Button btn_Product_List;
+        private Panel panel_center;
     }
 }

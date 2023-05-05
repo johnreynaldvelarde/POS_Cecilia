@@ -10,7 +10,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     {
         public string MyConnection()
         {
-            string con = @"Data Source=LENOVO-PC\SQLEXPRESS;Initial Catalog=PosSystem;Integrated Security=True"; // database in velarde
+            string con = @"Data Source=LENOVO-PC\SQLEXPRESS;Initial Catalog=POS_Cecilia;Integrated Security=True"; // database in velarde
             return con;
         }
     }
