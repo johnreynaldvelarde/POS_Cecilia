@@ -50,6 +50,7 @@
             label3 = new Label();
             panel5 = new Panel();
             label4 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
@@ -66,6 +67,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(14, 159, 104);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btn_User);
             panel1.Controls.Add(btn_Warehouse);
@@ -97,11 +99,11 @@
             btn_User.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_User.ForeColor = Color.White;
             btn_User.Image = (Image)resources.GetObject("btn_User.Image");
-            btn_User.Location = new Point(718, 0);
+            btn_User.Location = new Point(723, 0);
             btn_User.Name = "btn_User";
-            btn_User.Size = new Size(112, 63);
+            btn_User.Size = new Size(94, 63);
             btn_User.TabIndex = 14;
-            btn_User.Text = "User Management";
+            btn_User.Text = "Manage User";
             btn_User.TextAlign = ContentAlignment.BottomCenter;
             btn_User.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_User.UseVisualStyleBackColor = false;
@@ -117,7 +119,7 @@
             btn_Warehouse.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Warehouse.ForeColor = Color.White;
             btn_Warehouse.Image = (Image)resources.GetObject("btn_Warehouse.Image");
-            btn_Warehouse.Location = new Point(632, 0);
+            btn_Warehouse.Location = new Point(637, 0);
             btn_Warehouse.Name = "btn_Warehouse";
             btn_Warehouse.Size = new Size(80, 63);
             btn_Warehouse.TabIndex = 13;
@@ -326,6 +328,25 @@
             label4.TabIndex = 2;
             label4.Text = "Total";
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(14, 159, 104);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(828, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(80, 63);
+            button1.TabIndex = 16;
+            button1.Text = "History Log";
+            button1.TextAlign = ContentAlignment.BottomCenter;
+            button1.TextImageRelation = TextImageRelation.ImageAboveText;
+            button1.UseVisualStyleBackColor = false;
+            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -381,5 +402,6 @@
         private Panel panel6;
         private Product_Show product_Show1;
         private Product_Show product_Show2;
+        private Button button1;
     }
 }
