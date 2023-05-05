@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_New_Product_Form));
-            comboBox1 = new ComboBox();
+            cmd_Category = new ComboBox();
             btn_Clear = new Button();
             btn_Save = new Button();
             label6 = new Label();
-            textBox4 = new TextBox();
+            txt_Qyt = new TextBox();
             label5 = new Label();
-            label4 = new Label();
-            textBox2 = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txt_Product_Name = new TextBox();
             label2 = new Label();
-            btn_Create_Account = new Button();
-            pictureBox1 = new PictureBox();
+            btn_Product_Image = new Button();
+            picture_Product = new PictureBox();
             label1 = new Label();
-            txtUsername = new TextBox();
+            txt_ProductID = new TextBox();
             btnClose = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            label4 = new Label();
+            txt_Description = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)picture_Product).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // comboBox1
+            // cmd_Category
             // 
-            comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(419, 477);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(400, 29);
-            comboBox1.TabIndex = 47;
+            cmd_Category.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Category.FormattingEnabled = true;
+            cmd_Category.Location = new Point(419, 477);
+            cmd_Category.Name = "cmd_Category";
+            cmd_Category.Size = new Size(400, 29);
+            cmd_Category.TabIndex = 47;
             // 
             // btn_Clear
             // 
@@ -94,17 +94,17 @@
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(419, 357);
             label6.Name = "label6";
-            label6.Size = new Size(83, 21);
+            label6.Size = new Size(90, 21);
             label6.TabIndex = 44;
-            label6.Text = "Unit Size *";
+            label6.Text = "Quantity *";
             // 
-            // textBox4
+            // txt_Qyt
             // 
-            textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(419, 392);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(400, 29);
-            textBox4.TabIndex = 43;
+            txt_Qyt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Qyt.Location = new Point(419, 392);
+            txt_Qyt.Name = "txt_Qyt";
+            txt_Qyt.Size = new Size(400, 29);
+            txt_Qyt.TabIndex = 43;
             // 
             // label5
             // 
@@ -116,24 +116,6 @@
             label5.TabIndex = 42;
             label5.Text = "Category *";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(419, 270);
-            label4.Name = "label4";
-            label4.Size = new Size(103, 21);
-            label4.TabIndex = 41;
-            label4.Text = "Description*";
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(419, 305);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(400, 29);
-            textBox2.TabIndex = 40;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -144,13 +126,13 @@
             label3.TabIndex = 39;
             label3.Text = "Product Name *";
             // 
-            // textBox1
+            // txt_Product_Name
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(419, 220);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(400, 29);
-            textBox1.TabIndex = 38;
+            txt_Product_Name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Product_Name.Location = new Point(419, 220);
+            txt_Product_Name.Name = "txt_Product_Name";
+            txt_Product_Name.Size = new Size(400, 29);
+            txt_Product_Name.TabIndex = 38;
             // 
             // label2
             // 
@@ -162,33 +144,33 @@
             label2.TabIndex = 37;
             label2.Text = "Product ID *";
             // 
-            // btn_Create_Account
+            // btn_Product_Image
             // 
-            btn_Create_Account.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Create_Account.Cursor = Cursors.Hand;
-            btn_Create_Account.FlatAppearance.BorderSize = 0;
-            btn_Create_Account.FlatStyle = FlatStyle.Flat;
-            btn_Create_Account.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Create_Account.ForeColor = Color.White;
-            btn_Create_Account.Image = (Image)resources.GetObject("btn_Create_Account.Image");
-            btn_Create_Account.Location = new Point(49, 409);
-            btn_Create_Account.Name = "btn_Create_Account";
-            btn_Create_Account.Size = new Size(300, 38);
-            btn_Create_Account.TabIndex = 35;
-            btn_Create_Account.Text = "Add product image";
-            btn_Create_Account.TextAlign = ContentAlignment.MiddleRight;
-            btn_Create_Account.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Create_Account.UseVisualStyleBackColor = false;
+            btn_Product_Image.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Product_Image.Cursor = Cursors.Hand;
+            btn_Product_Image.FlatAppearance.BorderSize = 0;
+            btn_Product_Image.FlatStyle = FlatStyle.Flat;
+            btn_Product_Image.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Product_Image.ForeColor = Color.White;
+            btn_Product_Image.Image = (Image)resources.GetObject("btn_Product_Image.Image");
+            btn_Product_Image.Location = new Point(49, 409);
+            btn_Product_Image.Name = "btn_Product_Image";
+            btn_Product_Image.Size = new Size(300, 38);
+            btn_Product_Image.TabIndex = 35;
+            btn_Product_Image.Text = "Add product image";
+            btn_Product_Image.TextAlign = ContentAlignment.MiddleRight;
+            btn_Product_Image.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Product_Image.UseVisualStyleBackColor = false;
             // 
-            // pictureBox1
+            // picture_Product
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(49, 103);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(300, 300);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 34;
-            pictureBox1.TabStop = false;
+            picture_Product.BorderStyle = BorderStyle.FixedSingle;
+            picture_Product.Location = new Point(49, 103);
+            picture_Product.Name = "picture_Product";
+            picture_Product.Size = new Size(300, 300);
+            picture_Product.SizeMode = PictureBoxSizeMode.StretchImage;
+            picture_Product.TabIndex = 34;
+            picture_Product.TabStop = false;
             // 
             // label1
             // 
@@ -201,13 +183,13 @@
             label1.TabIndex = 0;
             label1.Text = "Add new product";
             // 
-            // txtUsername
+            // txt_ProductID
             // 
-            txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(419, 138);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(400, 29);
-            txtUsername.TabIndex = 36;
+            txt_ProductID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_ProductID.Location = new Point(419, 138);
+            txt_ProductID.Name = "txt_ProductID";
+            txt_ProductID.Size = new Size(400, 29);
+            txt_ProductID.TabIndex = 36;
             // 
             // btnClose
             // 
@@ -241,6 +223,24 @@
             panel1.Size = new Size(880, 45);
             panel1.TabIndex = 32;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(419, 274);
+            label4.Name = "label4";
+            label4.Size = new Size(101, 21);
+            label4.TabIndex = 49;
+            label4.Text = "Description ";
+            // 
+            // txt_Description
+            // 
+            txt_Description.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Description.Location = new Point(419, 309);
+            txt_Description.Name = "txt_Description";
+            txt_Description.Size = new Size(400, 29);
+            txt_Description.TabIndex = 48;
+            // 
             // Add_New_Product_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -248,20 +248,20 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
-            Controls.Add(comboBox1);
+            Controls.Add(label4);
+            Controls.Add(txt_Description);
+            Controls.Add(cmd_Category);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
             Controls.Add(label6);
-            Controls.Add(textBox4);
+            Controls.Add(txt_Qyt);
             Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(textBox2);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txt_Product_Name);
             Controls.Add(label2);
-            Controls.Add(btn_Create_Account);
-            Controls.Add(pictureBox1);
-            Controls.Add(txtUsername);
+            Controls.Add(btn_Product_Image);
+            Controls.Add(picture_Product);
+            Controls.Add(txt_ProductID);
             Controls.Add(btnClose);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -269,7 +269,7 @@
             Name = "Add_New_Product_Form";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picture_Product).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -278,23 +278,23 @@
 
         #endregion
 
-        private ComboBox comboBox1;
+        private ComboBox cmd_Category;
         private Button btn_Clear;
         private Button btn_Save;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox txt_Qyt;
         private Label label5;
-        private Label label4;
-        private TextBox textBox2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txt_Product_Name;
         private Label label2;
-        private Button btn_Create_Account;
-        private PictureBox pictureBox1;
+        private Button btn_Product_Image;
+        private PictureBox picture_Product;
         private Label label1;
-        private TextBox txtUsername;
+        private TextBox txt_ProductID;
         private Button btnClose;
         private Panel panel2;
         private Panel panel1;
+        private Label label4;
+        private TextBox txt_Description;
     }
 }

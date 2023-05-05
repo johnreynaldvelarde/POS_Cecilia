@@ -38,7 +38,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
 
 
-
+        /*
         private void button_highlighted(Button button)
         {
 
@@ -47,7 +47,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             button.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
         }
 
-
+        */
 
         private void btn_User_Click(object sender, EventArgs e)
         {

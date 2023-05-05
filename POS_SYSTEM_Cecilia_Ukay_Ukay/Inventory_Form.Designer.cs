@@ -57,9 +57,9 @@
             panel3.Controls.Add(btn_Category_List);
             panel3.Controls.Add(btn_Product_List);
             panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 63);
+            panel3.Location = new Point(10, 73);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1100, 60);
+            panel3.Size = new Size(1080, 60);
             panel3.TabIndex = 17;
             // 
             // btn_Category_List
@@ -104,9 +104,9 @@
             // 
             panel2.BackColor = Color.FromArgb(14, 159, 104);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 60);
+            panel2.Location = new Point(10, 70);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1100, 3);
+            panel2.Size = new Size(1080, 3);
             panel2.TabIndex = 16;
             // 
             // btnClose
@@ -115,7 +115,7 @@
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(1045, 0);
+            btnClose.Location = new Point(1033, -9);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(55, 27);
             btnClose.TabIndex = 14;
@@ -128,17 +128,17 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(btnClose);
             panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1100, 60);
+            panel1.Size = new Size(1080, 60);
             panel1.TabIndex = 15;
             // 
             // panel_center
             // 
             panel_center.Dock = DockStyle.Fill;
-            panel_center.Location = new Point(0, 123);
+            panel_center.Location = new Point(10, 133);
             panel_center.Name = "panel_center";
-            panel_center.Size = new Size(1100, 577);
+            panel_center.Size = new Size(1080, 557);
             panel_center.TabIndex = 18;
             // 
             // Inventory_Form
@@ -154,6 +154,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Inventory_Form";
+            Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
             panel3.ResumeLayout(false);
             panel1.ResumeLayout(false);
