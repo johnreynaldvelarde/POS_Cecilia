@@ -73,6 +73,7 @@
             btn_Clear.TabIndex = 46;
             btn_Clear.Text = "Clear";
             btn_Clear.UseVisualStyleBackColor = false;
+            btn_Clear.Click += btn_Clear_Click;
             // 
             // btn_Save
             // 
@@ -87,6 +88,7 @@
             btn_Save.TabIndex = 45;
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = false;
+            btn_Save.Click += btn_Save_Click;
             // 
             // label6
             // 
@@ -94,9 +96,9 @@
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(419, 357);
             label6.Name = "label6";
-            label6.Size = new Size(90, 21);
+            label6.Size = new Size(57, 21);
             label6.TabIndex = 44;
-            label6.Text = "Quantity *";
+            label6.Text = "Price *";
             // 
             // txt_Qyt
             // 
@@ -161,6 +163,7 @@
             btn_Product_Image.TextAlign = ContentAlignment.MiddleRight;
             btn_Product_Image.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Product_Image.UseVisualStyleBackColor = false;
+            btn_Product_Image.Click += btn_Product_Image_Click;
             // 
             // picture_Product
             // 
@@ -197,7 +200,7 @@
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(840, 2);
+            btnClose.Location = new Point(843, 2);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(55, 27);
             btnClose.TabIndex = 31;
