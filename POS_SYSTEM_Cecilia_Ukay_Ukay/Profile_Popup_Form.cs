@@ -15,6 +15,35 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Profile_Popup_Form()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(Screen.PrimaryScreen.WorkingArea.Right - this.Width, Screen.PrimaryScreen.WorkingArea.Top);
+
         }
+
+       
+
+        private void btn_Sign_Out_Click(object sender, EventArgs e)
+        {
+            DialogResult res;
+            res = MessageBox.Show("Do you want to logout", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (res == DialogResult.Yes)
+            {
+                Application.Exit();
+
+            }
+            else
+            {
+                this.Show();
+
+            }
+        }
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+
     }
 }

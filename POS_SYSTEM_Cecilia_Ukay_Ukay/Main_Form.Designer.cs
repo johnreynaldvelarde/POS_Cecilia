@@ -30,35 +30,43 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             panel1 = new Panel();
+            textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
+            button1 = new Button();
+            picture_account = new PictureBox();
             btn_User = new Button();
             btn_Warehouse = new Button();
             btn_Inventory = new Button();
             btn_Settings = new Button();
             label2 = new Label();
-            label1 = new Label();
             panel2 = new Panel();
-            side_Panel = new Panel();
+            btn_All_Category = new Button();
             splitContainer1 = new SplitContainer();
+            panel4 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
             product_Show1 = new Product_Show();
             product_Show2 = new Product_Show();
-            panel4 = new Panel();
-            textBox1 = new TextBox();
+            product_Show3 = new Product_Show();
+            product_Show4 = new Product_Show();
+            product_Show5 = new Product_Show();
+            product_Show6 = new Product_Show();
+            upper_panel = new Panel();
             panel3 = new Panel();
             panel6 = new Panel();
             label3 = new Label();
             panel5 = new Panel();
             label4 = new Label();
-            button1 = new Button();
+            button2 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picture_account).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             panel4.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
+            upper_panel.SuspendLayout();
             panel3.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -67,27 +75,72 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(14, 159, 104);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(textBox1);
             panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(picture_account);
             panel1.Controls.Add(btn_User);
             panel1.Controls.Add(btn_Warehouse);
             panel1.Controls.Add(btn_Inventory);
             panel1.Controls.Add(btn_Settings);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1200, 63);
             panel1.TabIndex = 3;
             // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(277, 15);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(326, 31);
+            textBox1.TabIndex = 0;
+            // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(1130, 3);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(5, 7);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(57, 55);
-            pictureBox1.TabIndex = 15;
+            pictureBox1.Size = new Size(59, 50);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 17;
             pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(14, 159, 104);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(980, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(76, 63);
+            button1.TabIndex = 16;
+            button1.Text = "History Log";
+            button1.TextAlign = ContentAlignment.BottomCenter;
+            button1.TextImageRelation = TextImageRelation.ImageAboveText;
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // picture_account
+            // 
+            picture_account.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            picture_account.Cursor = Cursors.Hand;
+            picture_account.Image = (Image)resources.GetObject("picture_account.Image");
+            picture_account.Location = new Point(1130, 3);
+            picture_account.Name = "picture_account";
+            picture_account.Size = new Size(57, 55);
+            picture_account.SizeMode = PictureBoxSizeMode.Zoom;
+            picture_account.TabIndex = 15;
+            picture_account.TabStop = false;
+            picture_account.Click += picture_account_Click;
             // 
             // btn_User
             // 
@@ -99,9 +152,9 @@
             btn_User.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_User.ForeColor = Color.White;
             btn_User.Image = (Image)resources.GetObject("btn_User.Image");
-            btn_User.Location = new Point(723, 0);
+            btn_User.Location = new Point(890, 0);
             btn_User.Name = "btn_User";
-            btn_User.Size = new Size(94, 63);
+            btn_User.Size = new Size(84, 63);
             btn_User.TabIndex = 14;
             btn_User.Text = "Manage User";
             btn_User.TextAlign = ContentAlignment.BottomCenter;
@@ -119,7 +172,7 @@
             btn_Warehouse.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Warehouse.ForeColor = Color.White;
             btn_Warehouse.Image = (Image)resources.GetObject("btn_Warehouse.Image");
-            btn_Warehouse.Location = new Point(637, 0);
+            btn_Warehouse.Location = new Point(804, 0);
             btn_Warehouse.Name = "btn_Warehouse";
             btn_Warehouse.Size = new Size(80, 63);
             btn_Warehouse.TabIndex = 13;
@@ -138,7 +191,7 @@
             btn_Inventory.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Inventory.ForeColor = Color.White;
             btn_Inventory.Image = (Image)resources.GetObject("btn_Inventory.Image");
-            btn_Inventory.Location = new Point(556, 0);
+            btn_Inventory.Location = new Point(728, 0);
             btn_Inventory.Name = "btn_Inventory";
             btn_Inventory.Size = new Size(70, 63);
             btn_Inventory.TabIndex = 12;
@@ -158,7 +211,7 @@
             btn_Settings.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Settings.ForeColor = Color.White;
             btn_Settings.Image = (Image)resources.GetObject("btn_Settings.Image");
-            btn_Settings.Location = new Point(488, 0);
+            btn_Settings.Location = new Point(1062, 0);
             btn_Settings.Name = "btn_Settings";
             btn_Settings.Size = new Size(62, 63);
             btn_Settings.TabIndex = 11;
@@ -173,22 +226,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(172, 20);
+            label2.Location = new Point(68, 21);
             label2.Name = "label2";
             label2.Size = new Size(185, 22);
             label2.TabIndex = 1;
             label2.Text = "Cecilia's Ukay-Ukay";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 13);
-            label1.Name = "label1";
-            label1.Size = new Size(154, 30);
-            label1.TabIndex = 0;
-            label1.Text = "POS SYSTEM";
             // 
             // panel2
             // 
@@ -199,45 +241,65 @@
             panel2.Size = new Size(1200, 25);
             panel2.TabIndex = 4;
             // 
-            // side_Panel
+            // btn_All_Category
             // 
-            side_Panel.BackColor = SystemColors.Control;
-            side_Panel.Dock = DockStyle.Left;
-            side_Panel.Location = new Point(0, 63);
-            side_Panel.Name = "side_Panel";
-            side_Panel.Size = new Size(74, 512);
-            side_Panel.TabIndex = 5;
+            btn_All_Category.BackColor = Color.FromArgb(14, 159, 104);
+            btn_All_Category.Cursor = Cursors.Hand;
+            btn_All_Category.FlatAppearance.BorderSize = 0;
+            btn_All_Category.FlatStyle = FlatStyle.Flat;
+            btn_All_Category.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_All_Category.ForeColor = Color.White;
+            btn_All_Category.Location = new Point(13, 10);
+            btn_All_Category.Name = "btn_All_Category";
+            btn_All_Category.Size = new Size(80, 35);
+            btn_All_Category.TabIndex = 1;
+            btn_All_Category.Text = "All";
+            btn_All_Category.UseVisualStyleBackColor = false;
             // 
             // splitContainer1
             // 
             splitContainer1.Dock = DockStyle.Fill;
-            splitContainer1.Location = new Point(74, 63);
+            splitContainer1.Location = new Point(0, 63);
             splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(flowLayoutPanel1);
             splitContainer1.Panel1.Controls.Add(panel4);
+            splitContainer1.Panel1.Controls.Add(upper_panel);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = SystemColors.Control;
             splitContainer1.Panel2.Controls.Add(panel3);
             splitContainer1.Panel2.Padding = new Padding(10);
-            splitContainer1.Size = new Size(1126, 512);
-            splitContainer1.SplitterDistance = 655;
+            splitContainer1.Size = new Size(1200, 512);
+            splitContainer1.SplitterDistance = 744;
             splitContainer1.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(flowLayoutPanel1);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(0, 53);
+            panel4.Name = "panel4";
+            panel4.Padding = new Padding(10);
+            panel4.Size = new Size(744, 459);
+            panel4.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Controls.Add(product_Show1);
             flowLayoutPanel1.Controls.Add(product_Show2);
+            flowLayoutPanel1.Controls.Add(product_Show3);
+            flowLayoutPanel1.Controls.Add(product_Show4);
+            flowLayoutPanel1.Controls.Add(product_Show5);
+            flowLayoutPanel1.Controls.Add(product_Show6);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(0, 53);
-            flowLayoutPanel1.Margin = new Padding(30);
+            flowLayoutPanel1.Location = new Point(10, 10);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(655, 459);
-            flowLayoutPanel1.TabIndex = 1;
+            flowLayoutPanel1.Size = new Size(724, 439);
+            flowLayoutPanel1.TabIndex = 0;
             // 
             // product_Show1
             // 
@@ -246,35 +308,68 @@
             product_Show1.Margin = new Padding(10);
             product_Show1.Name = "product_Show1";
             product_Show1.Padding = new Padding(10);
-            product_Show1.Size = new Size(306, 357);
+            product_Show1.Size = new Size(238, 309);
             product_Show1.TabIndex = 0;
             // 
             // product_Show2
             // 
             product_Show2.BackColor = Color.White;
-            product_Show2.Location = new Point(329, 3);
+            product_Show2.Location = new Point(268, 10);
+            product_Show2.Margin = new Padding(10);
             product_Show2.Name = "product_Show2";
             product_Show2.Padding = new Padding(10);
-            product_Show2.Size = new Size(306, 357);
+            product_Show2.Size = new Size(238, 309);
             product_Show2.TabIndex = 1;
             // 
-            // panel4
+            // product_Show3
             // 
-            panel4.Controls.Add(textBox1);
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 0);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(655, 53);
-            panel4.TabIndex = 0;
+            product_Show3.BackColor = Color.White;
+            product_Show3.Location = new Point(10, 339);
+            product_Show3.Margin = new Padding(10);
+            product_Show3.Name = "product_Show3";
+            product_Show3.Padding = new Padding(10);
+            product_Show3.Size = new Size(238, 309);
+            product_Show3.TabIndex = 2;
             // 
-            // textBox1
+            // product_Show4
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(15, 10);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(408, 31);
-            textBox1.TabIndex = 0;
+            product_Show4.BackColor = Color.White;
+            product_Show4.Location = new Point(268, 339);
+            product_Show4.Margin = new Padding(10);
+            product_Show4.Name = "product_Show4";
+            product_Show4.Padding = new Padding(10);
+            product_Show4.Size = new Size(238, 309);
+            product_Show4.TabIndex = 3;
+            // 
+            // product_Show5
+            // 
+            product_Show5.BackColor = Color.White;
+            product_Show5.Location = new Point(10, 668);
+            product_Show5.Margin = new Padding(10);
+            product_Show5.Name = "product_Show5";
+            product_Show5.Padding = new Padding(10);
+            product_Show5.Size = new Size(238, 309);
+            product_Show5.TabIndex = 4;
+            // 
+            // product_Show6
+            // 
+            product_Show6.BackColor = Color.White;
+            product_Show6.Location = new Point(268, 668);
+            product_Show6.Margin = new Padding(10);
+            product_Show6.Name = "product_Show6";
+            product_Show6.Padding = new Padding(10);
+            product_Show6.Size = new Size(238, 309);
+            product_Show6.TabIndex = 5;
+            // 
+            // upper_panel
+            // 
+            upper_panel.Controls.Add(btn_All_Category);
+            upper_panel.Dock = DockStyle.Top;
+            upper_panel.Location = new Point(0, 0);
+            upper_panel.Name = "upper_panel";
+            upper_panel.Padding = new Padding(10, 0, 0, 0);
+            upper_panel.Size = new Size(744, 53);
+            upper_panel.TabIndex = 0;
             // 
             // panel3
             // 
@@ -284,7 +379,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(10, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(447, 492);
+            panel3.Size = new Size(432, 492);
             panel3.TabIndex = 0;
             // 
             // panel6
@@ -293,17 +388,17 @@
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(0, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(447, 43);
+            panel6.Size = new Size(432, 43);
             panel6.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(14, 159, 104);
             label3.Location = new Point(5, 6);
             label3.Name = "label3";
-            label3.Size = new Size(167, 30);
+            label3.Size = new Size(139, 30);
             label3.TabIndex = 0;
             label3.Text = "Order Details";
             // 
@@ -314,7 +409,7 @@
             panel5.Dock = DockStyle.Bottom;
             panel5.Location = new Point(0, 447);
             panel5.Name = "panel5";
-            panel5.Size = new Size(447, 45);
+            panel5.Size = new Size(432, 45);
             panel5.TabIndex = 1;
             // 
             // label4
@@ -328,24 +423,24 @@
             label4.TabIndex = 2;
             label4.Text = "Total";
             // 
-            // button1
+            // button2
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.BackColor = Color.FromArgb(14, 159, 104);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(828, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(80, 63);
-            button1.TabIndex = 16;
-            button1.Text = "History Log";
-            button1.TextAlign = ContentAlignment.BottomCenter;
-            button1.TextImageRelation = TextImageRelation.ImageAboveText;
-            button1.UseVisualStyleBackColor = false;
+            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button2.BackColor = Color.FromArgb(14, 159, 104);
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(642, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(80, 63);
+            button2.TabIndex = 18;
+            button2.Text = "Sales Report";
+            button2.TextAlign = ContentAlignment.BottomCenter;
+            button2.TextImageRelation = TextImageRelation.ImageAboveText;
+            button2.UseVisualStyleBackColor = false;
             // 
             // Main_Form
             // 
@@ -354,7 +449,6 @@
             ClientSize = new Size(1200, 600);
             ControlBox = false;
             Controls.Add(splitContainer1);
-            Controls.Add(side_Panel);
             Controls.Add(panel1);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
@@ -364,13 +458,14 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picture_account).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel4.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            upper_panel.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
@@ -383,25 +478,31 @@
 
         private Panel panel1;
         private Label label2;
-        private Label label1;
         private Panel panel2;
         private Button btn_Warehouse;
         private Button btn_Inventory;
         private Button btn_Settings;
         private Button btn_User;
-        private PictureBox pictureBox1;
-        private Panel side_Panel;
+        private PictureBox picture_account;
         private SplitContainer splitContainer1;
         private Label label3;
         private Panel panel3;
-        private Panel panel4;
         private TextBox textBox1;
-        private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel5;
         private Label label4;
         private Panel panel6;
+        private Button button1;
+        private Button btn_All_Category;
+        private PictureBox pictureBox1;
+        private Panel upper_panel;
+        private Panel panel4;
+        private FlowLayoutPanel flowLayoutPanel1;
         private Product_Show product_Show1;
         private Product_Show product_Show2;
-        private Button button1;
+        private Product_Show product_Show3;
+        private Product_Show product_Show4;
+        private Product_Show product_Show5;
+        private Product_Show product_Show6;
+        private Button button2;
     }
 }

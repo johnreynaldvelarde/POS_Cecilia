@@ -41,11 +41,11 @@
             button1.BackColor = Color.FromArgb(14, 159, 104);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(51, 296);
+            button1.Location = new Point(58, 262);
             button1.Name = "button1";
-            button1.Size = new Size(213, 53);
+            button1.Size = new Size(129, 34);
             button1.TabIndex = 0;
             button1.Text = "Add to cart";
             button1.UseVisualStyleBackColor = false;
@@ -57,7 +57,7 @@
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(10, 10);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(286, 189);
+            pictureBox1.Size = new Size(218, 151);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -66,7 +66,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(111, 213);
+            label1.Location = new Point(74, 175);
             label1.Name = "label1";
             label1.Size = new Size(97, 21);
             label1.TabIndex = 2;
@@ -77,7 +77,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(233, 83, 85);
-            label2.Location = new Point(132, 253);
+            label2.Location = new Point(99, 215);
             label2.Name = "label2";
             label2.Size = new Size(47, 19);
             label2.TabIndex = 3;
@@ -94,7 +94,7 @@
             Controls.Add(button1);
             Name = "Product_Show";
             Padding = new Padding(10);
-            Size = new Size(306, 357);
+            Size = new Size(238, 309);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

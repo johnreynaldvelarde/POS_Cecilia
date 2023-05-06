@@ -80,5 +80,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.Dispose();
             btn_Settings.BackColor = defaultColor;
         }
+
+        private void picture_account_Click(object sender, EventArgs e)
+        {
+            Profile_Popup_Form frm = new Profile_Popup_Form();
+            frm.ShowDialog();
+            frm.Dispose();
+        }
+
+
     }
 }
