@@ -116,7 +116,7 @@
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(1048, -1);
+            btnClose.Location = new Point(1043, 2);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(55, 27);
             btnClose.TabIndex = 14;

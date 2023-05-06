@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             panel1 = new Panel();
+            btn_Sales_Report = new Button();
             textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
             button1 = new Button();
@@ -40,6 +42,8 @@
             btn_Settings = new Button();
             label2 = new Label();
             panel2 = new Panel();
+            label_Date = new Label();
+            label_Time = new Label();
             btn_All_Category = new Button();
             splitContainer1 = new SplitContainer();
             panel4 = new Panel();
@@ -56,10 +60,11 @@
             label3 = new Label();
             panel5 = new Panel();
             label4 = new Label();
-            button2 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_account).BeginInit();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -75,7 +80,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(14, 159, 104);
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btn_Sales_Report);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button1);
@@ -90,6 +95,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1200, 63);
             panel1.TabIndex = 3;
+            // 
+            // btn_Sales_Report
+            // 
+            btn_Sales_Report.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Sales_Report.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Sales_Report.Cursor = Cursors.Hand;
+            btn_Sales_Report.FlatAppearance.BorderSize = 0;
+            btn_Sales_Report.FlatStyle = FlatStyle.Flat;
+            btn_Sales_Report.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Sales_Report.ForeColor = Color.White;
+            btn_Sales_Report.Image = (Image)resources.GetObject("btn_Sales_Report.Image");
+            btn_Sales_Report.Location = new Point(642, 0);
+            btn_Sales_Report.Name = "btn_Sales_Report";
+            btn_Sales_Report.Size = new Size(80, 63);
+            btn_Sales_Report.TabIndex = 18;
+            btn_Sales_Report.Text = "Sales Report";
+            btn_Sales_Report.TextAlign = ContentAlignment.BottomCenter;
+            btn_Sales_Report.TextImageRelation = TextImageRelation.ImageAboveText;
+            btn_Sales_Report.UseVisualStyleBackColor = false;
+            btn_Sales_Report.Click += btn_Sales_Report_Click;
             // 
             // textBox1
             // 
@@ -235,11 +260,35 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(14, 159, 104);
+            panel2.Controls.Add(label_Date);
+            panel2.Controls.Add(label_Time);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 575);
             panel2.Name = "panel2";
             panel2.Size = new Size(1200, 25);
             panel2.TabIndex = 4;
+            // 
+            // label_Date
+            // 
+            label_Date.AutoSize = true;
+            label_Date.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label_Date.ForeColor = Color.White;
+            label_Date.Location = new Point(834, 5);
+            label_Date.Name = "label_Date";
+            label_Date.Size = new Size(36, 17);
+            label_Date.TabIndex = 1;
+            label_Date.Text = "Date";
+            // 
+            // label_Time
+            // 
+            label_Time.AutoSize = true;
+            label_Time.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label_Time.ForeColor = Color.White;
+            label_Time.Location = new Point(593, 5);
+            label_Time.Name = "label_Time";
+            label_Time.Size = new Size(37, 17);
+            label_Time.TabIndex = 0;
+            label_Time.Text = "Time";
             // 
             // btn_All_Category
             // 
@@ -249,9 +298,9 @@
             btn_All_Category.FlatStyle = FlatStyle.Flat;
             btn_All_Category.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btn_All_Category.ForeColor = Color.White;
-            btn_All_Category.Location = new Point(13, 10);
+            btn_All_Category.Location = new Point(13, 6);
             btn_All_Category.Name = "btn_All_Category";
-            btn_All_Category.Size = new Size(80, 35);
+            btn_All_Category.Size = new Size(80, 47);
             btn_All_Category.TabIndex = 1;
             btn_All_Category.Text = "All";
             btn_All_Category.UseVisualStyleBackColor = false;
@@ -280,10 +329,10 @@
             // 
             panel4.Controls.Add(flowLayoutPanel1);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 53);
+            panel4.Location = new Point(0, 60);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(10);
-            panel4.Size = new Size(744, 459);
+            panel4.Padding = new Padding(10, 0, 10, 10);
+            panel4.Size = new Size(744, 452);
             panel4.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -296,9 +345,9 @@
             flowLayoutPanel1.Controls.Add(product_Show5);
             flowLayoutPanel1.Controls.Add(product_Show6);
             flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(10, 10);
+            flowLayoutPanel1.Location = new Point(10, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(724, 439);
+            flowLayoutPanel1.Size = new Size(724, 442);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // product_Show1
@@ -368,7 +417,7 @@
             upper_panel.Location = new Point(0, 0);
             upper_panel.Name = "upper_panel";
             upper_panel.Padding = new Padding(10, 0, 0, 0);
-            upper_panel.Size = new Size(744, 53);
+            upper_panel.Size = new Size(744, 60);
             upper_panel.TabIndex = 0;
             // 
             // panel3
@@ -423,24 +472,10 @@
             label4.TabIndex = 2;
             label4.Text = "Total";
             // 
-            // button2
+            // timer1
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.BackColor = Color.FromArgb(14, 159, 104);
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(642, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(80, 63);
-            button2.TabIndex = 18;
-            button2.Text = "Sales Report";
-            button2.TextAlign = ContentAlignment.BottomCenter;
-            button2.TextImageRelation = TextImageRelation.ImageAboveText;
-            button2.UseVisualStyleBackColor = false;
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
             // 
             // Main_Form
             // 
@@ -455,10 +490,13 @@
             Name = "Main_Form";
             StartPosition = FormStartPosition.CenterScreen;
             WindowState = FormWindowState.Maximized;
+            Load += Main_Form_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picture_account).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
@@ -503,6 +541,9 @@
         private Product_Show product_Show4;
         private Product_Show product_Show5;
         private Product_Show product_Show6;
-        private Button button2;
+        private Button btn_Sales_Report;
+        private Label label_Time;
+        private Label label_Date;
+        private System.Windows.Forms.Timer timer1;
     }
 }

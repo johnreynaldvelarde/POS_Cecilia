@@ -21,6 +21,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private Color defaultColor = Color.FromArgb(14, 159, 104);
         private Color settingsColor = Color.FromArgb(242, 197, 70);
 
+        // method for overmouse color
         public void button_highligted()
         {
             btn_Settings.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
@@ -35,20 +36,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_User.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_User.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
+            btn_Sales_Report.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Sales_Report.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
         }
 
 
-        /*
-        private void button_highlighted(Button button)
-        {
-
-            button.BackColor = Color.FromArgb(242, 197, 70);
-            button.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
-            button.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
-        }
-
-        */
-
+        // button for user management
         private void btn_User_Click(object sender, EventArgs e)
         {
             btn_User.BackColor = settingsColor;
@@ -59,6 +53,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_User.BackColor = defaultColor;
         }
 
+        // button for inventory
         private void btn_Inventory_Click(object sender, EventArgs e)
         {
             btn_Inventory.BackColor = settingsColor;
@@ -68,9 +63,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Inventory.BackColor = defaultColor;
             // frm.btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
 
-
         }
 
+        // button for settings
         private void btn_Settings_Click(object sender, EventArgs e)
         {
             btn_Settings.BackColor = settingsColor;
@@ -81,11 +76,39 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Settings.BackColor = defaultColor;
         }
 
+        // button for sales report
+        private void btn_Sales_Report_Click(object sender, EventArgs e)
+        {
+            btn_Sales_Report.BackColor = settingsColor;
+
+            Sales_Report_Form frm = new Sales_Report_Form();
+            frm.ShowDialog();
+            frm.Dispose();
+            btn_Sales_Report.BackColor = defaultColor;
+        }
+
         private void picture_account_Click(object sender, EventArgs e)
         {
             Profile_Popup_Form frm = new Profile_Popup_Form();
             frm.ShowDialog();
             frm.Dispose();
+        }
+
+
+
+
+        // date and time
+        private void Main_Form_Load(object sender, EventArgs e)
+        {
+            label_Date.Text = DateTime.Now.ToLongDateString();
+            label_Time.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        // moving time
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label_Time.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
         }
 
 
