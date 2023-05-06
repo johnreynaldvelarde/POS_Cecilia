@@ -71,7 +71,7 @@
             btn_Category_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Category_List.ForeColor = Color.White;
             btn_Category_List.Image = (Image)resources.GetObject("btn_Category_List.Image");
-            btn_Category_List.Location = new Point(215, 11);
+            btn_Category_List.Location = new Point(224, 11);
             btn_Category_List.Name = "btn_Category_List";
             btn_Category_List.Size = new Size(197, 38);
             btn_Category_List.TabIndex = 15;
