@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnClose = new Button();
+            btn_Close = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
             label1 = new Label();
@@ -38,18 +38,19 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnClose
+            // btn_Close
             // 
-            btnClose.Cursor = Cursors.Hand;
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(743, 2);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(55, 27);
-            btnClose.TabIndex = 32;
-            btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
+            btn_Close.Cursor = Cursors.Hand;
+            btn_Close.FlatAppearance.BorderSize = 0;
+            btn_Close.FlatStyle = FlatStyle.Flat;
+            btn_Close.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Close.Location = new Point(743, 2);
+            btn_Close.Name = "btn_Close";
+            btn_Close.Size = new Size(55, 27);
+            btn_Close.TabIndex = 32;
+            btn_Close.Text = "Close";
+            btn_Close.UseVisualStyleBackColor = true;
+            btn_Close.Click += btn_Close_Click;
             // 
             // panel2
             // 
@@ -127,7 +128,7 @@
             Controls.Add(btn_Save);
             Controls.Add(txt_ProductID);
             Controls.Add(panel2);
-            Controls.Add(btnClose);
+            Controls.Add(btn_Close);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Add_New_Category_Form";
@@ -141,7 +142,7 @@
 
         #endregion
 
-        private Button btnClose;
+        private Button btn_Close;
         private Panel panel2;
         private Panel panel1;
         private Label label1;
