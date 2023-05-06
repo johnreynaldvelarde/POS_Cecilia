@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Category_List_Form));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             button1 = new Button();
-            btn_Product_List = new Button();
+            btn_Add_Category = new Button();
             label1 = new Label();
             data_Grid_Category = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
@@ -49,7 +49,7 @@
             // panel1
             // 
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(btn_Product_List);
+            panel1.Controls.Add(btn_Add_Category);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(5, 20);
@@ -75,23 +75,24 @@
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
             // 
-            // btn_Product_List
+            // btn_Add_Category
             // 
-            btn_Product_List.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Product_List.Cursor = Cursors.Hand;
-            btn_Product_List.FlatAppearance.BorderSize = 0;
-            btn_Product_List.FlatStyle = FlatStyle.Flat;
-            btn_Product_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Product_List.ForeColor = Color.White;
-            btn_Product_List.Image = (Image)resources.GetObject("btn_Product_List.Image");
-            btn_Product_List.Location = new Point(694, 9);
-            btn_Product_List.Name = "btn_Product_List";
-            btn_Product_List.Size = new Size(199, 38);
-            btn_Product_List.TabIndex = 15;
-            btn_Product_List.Text = "Add new category";
-            btn_Product_List.TextAlign = ContentAlignment.MiddleRight;
-            btn_Product_List.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Product_List.UseVisualStyleBackColor = false;
+            btn_Add_Category.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Add_Category.Cursor = Cursors.Hand;
+            btn_Add_Category.FlatAppearance.BorderSize = 0;
+            btn_Add_Category.FlatStyle = FlatStyle.Flat;
+            btn_Add_Category.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Add_Category.ForeColor = Color.White;
+            btn_Add_Category.Image = (Image)resources.GetObject("btn_Add_Category.Image");
+            btn_Add_Category.Location = new Point(694, 9);
+            btn_Add_Category.Name = "btn_Add_Category";
+            btn_Add_Category.Size = new Size(199, 38);
+            btn_Add_Category.TabIndex = 15;
+            btn_Add_Category.Text = "Add new category";
+            btn_Add_Category.TextAlign = ContentAlignment.MiddleRight;
+            btn_Add_Category.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Add_Category.UseVisualStyleBackColor = false;
+            btn_Add_Category.Click += btn_Add_Category_Click;
             // 
             // label1
             // 
@@ -113,25 +114,25 @@
             data_Grid_Category.BorderStyle = BorderStyle.None;
             data_Grid_Category.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Category.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            data_Grid_Category.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            data_Grid_Category.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             data_Grid_Category.ColumnHeadersHeight = 40;
             data_Grid_Category.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Category.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            data_Grid_Category.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            data_Grid_Category.DefaultCellStyle = dataGridViewCellStyle4;
             data_Grid_Category.Dock = DockStyle.Fill;
             data_Grid_Category.EnableHeadersVisualStyles = false;
             data_Grid_Category.Location = new Point(5, 88);
@@ -196,7 +197,7 @@
 
         private Panel panel1;
         private Button button1;
-        private Button btn_Product_List;
+        private Button btn_Add_Category;
         private Label label1;
         private DataGridView data_Grid_Category;
         private DataGridViewTextBoxColumn Column1;

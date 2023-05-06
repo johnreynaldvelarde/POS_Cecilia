@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
-    public partial class Category_List_Form : Form
+    public partial class Add_New_Category_Form : Form
     {
-        public Category_List_Form()
+        public Add_New_Category_Form()
         {
             InitializeComponent();
-        }
-
-        private void btn_Add_Category_Click(object sender, EventArgs e)
-        {
-            Add_New_Category_Form frm = new Add_New_Category_Form();
-            frm.ShowDialog();
-            frm.Dispose();
         }
     }
 }

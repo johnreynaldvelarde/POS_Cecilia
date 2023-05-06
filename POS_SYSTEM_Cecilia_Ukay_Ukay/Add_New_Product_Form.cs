@@ -42,7 +42,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string sql = "INSERT INTO Products (ProductId, ProductName, ProductQuantity) VALUES (@ProductId, @ProductName, @ProductQuantity)";
+                string sql = "INSERT INTO Products_List (ProductId, ProductName, ProductQuantity) VALUES (@ProductId, @ProductName, @ProductQuantity)";
                 SqlCommand command = new SqlCommand(sql, connect);
 
                 command.Parameters.AddWithValue("@ProductId", Convert.ToInt32(txt_ProductID.Text));
