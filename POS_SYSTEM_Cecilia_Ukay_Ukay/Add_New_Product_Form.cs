@@ -20,7 +20,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Add_New_Product_Form()
         {
             InitializeComponent();
-           // show_category();
+            show_category();
             //  connect = new SqlConnection(database.MyConnection());
 
 
@@ -71,22 +71,51 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // button for save the details in database
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            if (String.IsNullOrEmpty(txt_Product_Code.Text))
             {
-                connect.Open();
-                string sql = "INSERT INTO Products_List (ProductId, ProductName, ProductQuantity) VALUES (@ProductId, @ProductName, @ProductQuantity)";
-                SqlCommand command = new SqlCommand(sql, connect);
+                MessageBox.Show("Fill in the blank");
+            }
+            else
+            {
+                int categoryId = 0;
+                if (cmd_Category.SelectedValue != null)
+                {
+                    categoryId = (int)cmd_Category.SelectedValue;
+                }
 
-                command.Parameters.AddWithValue("@ProductId", Convert.ToInt32(txt_ProductID.Text));
-                command.Parameters.AddWithValue("@ProductName", txt_Description.Text);
-                //  command.Parameters.AddWithValue("@ProductQuantity", Convert.ToInt32(txt_Qyt));
-                command.ExecuteNonQuery();
-                connect.Close();
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
 
-                MessageBox.Show("Successfully added!!!");
-                Clear();
+                    MemoryStream mstream = new MemoryStream();
+                    picture_Product.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] selectImage = mstream.GetBuffer();
+
+                    connect.Open();
+                    string sql = "INSERT INTO Product_List (Product_Image, Product_Code, Product_Name, Description, Price, Availability, Date_Added, Expiration_Date, Unit_Measurement, Deleted  ) " +
+                                 "VALUES (@Product_Image, @Product_Code, @Product_Name, @Description, @Price, @Availability, @Date_Added, @Expiration_Date, @Unit_Measurement, @Deleted )";
+                    SqlCommand command = new SqlCommand(sql, connect);
+
+                    command.Parameters.AddWithValue("@Product_Image", selectImage);
+                    command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
+                    command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
+                    command.Parameters.AddWithValue("@Description", txt_Description.Text);
+                    command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
+                    command.Parameters.AddWithValue("@Availability", Convert.ToInt32(txt_Availability.Text));
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
+                    command.Parameters.AddWithValue("@Expiration_Date", DateTime.Parse(date_expiration.Text));
+                    command.Parameters.AddWithValue("@Category_ID", categoryId);
+                    command.Parameters.AddWithValue("@Unit_Measurement", cmd_Measurement.SelectedItem);
+                    command.Parameters.AddWithValue("@Deleted", 0);
+                    command.ExecuteNonQuery();
+                    connect.Close();
+
+                    MessageBox.Show("Successfully added");
+                    Clear();
+
+                }
 
             }
+           
         }
 
         // button for clear

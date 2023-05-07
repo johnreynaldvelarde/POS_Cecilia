@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class Main_Form : Form
     {
+        DB_Connection database = new DB_Connection();
+
         public Main_Form()
         {
             InitializeComponent();
@@ -21,7 +25,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private Color defaultColor = Color.FromArgb(14, 159, 104);
         private Color settingsColor = Color.FromArgb(242, 197, 70);
 
-        // method for overmouse color
+        // method for over the mouse color
         public void button_highligted()
         {
             btn_Settings.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
@@ -39,6 +43,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Sales_Report.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Sales_Report.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
+        }
+
+        public void load_product()
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+
+            }
+                
         }
 
 
