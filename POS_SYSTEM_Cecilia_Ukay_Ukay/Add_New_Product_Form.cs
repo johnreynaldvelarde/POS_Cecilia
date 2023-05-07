@@ -20,7 +20,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Add_New_Product_Form()
         {
             InitializeComponent();
-            show_category();
+           // show_category();
             //  connect = new SqlConnection(database.MyConnection());
 
 
