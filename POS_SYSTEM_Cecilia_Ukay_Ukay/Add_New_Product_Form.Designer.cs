@@ -32,11 +32,9 @@
             cmd_Category = new ComboBox();
             btn_Clear = new Button();
             btn_Save = new Button();
-            label6 = new Label();
-            txt_Qyt = new TextBox();
             label5 = new Label();
             label3 = new Label();
-            txt_Product_Name = new TextBox();
+            txt_Description = new TextBox();
             label2 = new Label();
             btn_Product_Image = new Button();
             picture_Product = new PictureBox();
@@ -45,19 +43,32 @@
             btnClose = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
+            label7 = new Label();
+            txt_Product_Code = new TextBox();
+            label8 = new Label();
+            txt_Product_Name = new TextBox();
             label4 = new Label();
-            txt_Description = new TextBox();
+            txt_Price = new TextBox();
+            label9 = new Label();
+            cmd_Measurement = new ComboBox();
+            label10 = new Label();
+            txt_Date_Added = new TextBox();
+            label6 = new Label();
+            txt_Availability = new TextBox();
+            label11 = new Label();
+            textBox6 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)picture_Product).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // cmd_Category
             // 
-            cmd_Category.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Category.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_Category.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmd_Category.FormattingEnabled = true;
-            cmd_Category.Location = new Point(419, 477);
+            cmd_Category.Location = new Point(336, 479);
             cmd_Category.Name = "cmd_Category";
-            cmd_Category.Size = new Size(400, 29);
+            cmd_Category.Size = new Size(245, 28);
             cmd_Category.TabIndex = 47;
             // 
             // btn_Clear
@@ -67,7 +78,7 @@
             btn_Clear.FlatStyle = FlatStyle.Flat;
             btn_Clear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Clear.ForeColor = Color.White;
-            btn_Clear.Location = new Point(737, 546);
+            btn_Clear.Location = new Point(745, 543);
             btn_Clear.Name = "btn_Clear";
             btn_Clear.Size = new Size(145, 48);
             btn_Clear.TabIndex = 46;
@@ -82,7 +93,7 @@
             btn_Save.FlatStyle = FlatStyle.Flat;
             btn_Save.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Save.ForeColor = Color.White;
-            btn_Save.Location = new Point(585, 546);
+            btn_Save.Location = new Point(593, 543);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(145, 48);
             btn_Save.TabIndex = 45;
@@ -90,59 +101,41 @@
             btn_Save.UseVisualStyleBackColor = false;
             btn_Save.Click += btn_Save_Click;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(419, 357);
-            label6.Name = "label6";
-            label6.Size = new Size(57, 21);
-            label6.TabIndex = 44;
-            label6.Text = "Price *";
-            // 
-            // txt_Qyt
-            // 
-            txt_Qyt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Qyt.Location = new Point(419, 392);
-            txt_Qyt.Name = "txt_Qyt";
-            txt_Qyt.Size = new Size(400, 29);
-            txt_Qyt.TabIndex = 43;
-            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(419, 442);
+            label5.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(336, 447);
             label5.Name = "label5";
-            label5.Size = new Size(95, 21);
+            label5.Size = new Size(89, 20);
             label5.TabIndex = 42;
             label5.Text = "Category *";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(419, 185);
+            label3.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(621, 191);
             label3.Name = "label3";
-            label3.Size = new Size(134, 21);
+            label3.Size = new Size(101, 20);
             label3.TabIndex = 39;
-            label3.Text = "Product Name *";
+            label3.Text = "Description *";
             // 
-            // txt_Product_Name
+            // txt_Description
             // 
-            txt_Product_Name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Product_Name.Location = new Point(419, 220);
-            txt_Product_Name.Name = "txt_Product_Name";
-            txt_Product_Name.Size = new Size(400, 29);
-            txt_Product_Name.TabIndex = 38;
+            txt_Description.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Description.Location = new Point(621, 226);
+            txt_Description.Name = "txt_Description";
+            txt_Description.Size = new Size(245, 27);
+            txt_Description.TabIndex = 38;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(419, 103);
+            label2.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(336, 103);
             label2.Name = "label2";
-            label2.Size = new Size(103, 21);
+            label2.Size = new Size(97, 20);
             label2.TabIndex = 37;
             label2.Text = "Product ID *";
             // 
@@ -152,12 +145,12 @@
             btn_Product_Image.Cursor = Cursors.Hand;
             btn_Product_Image.FlatAppearance.BorderSize = 0;
             btn_Product_Image.FlatStyle = FlatStyle.Flat;
-            btn_Product_Image.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Product_Image.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Product_Image.ForeColor = Color.White;
             btn_Product_Image.Image = (Image)resources.GetObject("btn_Product_Image.Image");
-            btn_Product_Image.Location = new Point(49, 409);
+            btn_Product_Image.Location = new Point(22, 392);
             btn_Product_Image.Name = "btn_Product_Image";
-            btn_Product_Image.Size = new Size(300, 38);
+            btn_Product_Image.Size = new Size(277, 38);
             btn_Product_Image.TabIndex = 35;
             btn_Product_Image.Text = "Add product image";
             btn_Product_Image.TextAlign = ContentAlignment.MiddleRight;
@@ -168,9 +161,9 @@
             // picture_Product
             // 
             picture_Product.BorderStyle = BorderStyle.FixedSingle;
-            picture_Product.Location = new Point(49, 103);
+            picture_Product.Location = new Point(22, 103);
             picture_Product.Name = "picture_Product";
-            picture_Product.Size = new Size(300, 300);
+            picture_Product.Size = new Size(277, 275);
             picture_Product.SizeMode = PictureBoxSizeMode.StretchImage;
             picture_Product.TabIndex = 34;
             picture_Product.TabStop = false;
@@ -188,11 +181,13 @@
             // 
             // txt_ProductID
             // 
-            txt_ProductID.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_ProductID.Location = new Point(419, 138);
+            txt_ProductID.Enabled = false;
+            txt_ProductID.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_ProductID.Location = new Point(336, 138);
             txt_ProductID.Name = "txt_ProductID";
-            txt_ProductID.Size = new Size(400, 29);
+            txt_ProductID.Size = new Size(245, 27);
             txt_ProductID.TabIndex = 36;
+            txt_ProductID.Text = "(Auto)";
             // 
             // btnClose
             // 
@@ -226,23 +221,134 @@
             panel1.Size = new Size(880, 45);
             panel1.TabIndex = 32;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(621, 103);
+            label7.Name = "label7";
+            label7.Size = new Size(123, 20);
+            label7.TabIndex = 51;
+            label7.Text = "Product Code *";
+            // 
+            // txt_Product_Code
+            // 
+            txt_Product_Code.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Product_Code.Location = new Point(621, 138);
+            txt_Product_Code.Name = "txt_Product_Code";
+            txt_Product_Code.Size = new Size(245, 27);
+            txt_Product_Code.TabIndex = 50;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(336, 191);
+            label8.Name = "label8";
+            label8.Size = new Size(125, 20);
+            label8.TabIndex = 53;
+            label8.Text = "Product Name *";
+            // 
+            // txt_Product_Name
+            // 
+            txt_Product_Name.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Product_Name.Location = new Point(336, 226);
+            txt_Product_Name.Name = "txt_Product_Name";
+            txt_Product_Name.Size = new Size(245, 27);
+            txt_Product_Name.TabIndex = 52;
+            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(419, 274);
+            label4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(336, 279);
             label4.Name = "label4";
-            label4.Size = new Size(101, 21);
-            label4.TabIndex = 49;
-            label4.Text = "Description ";
+            label4.Size = new Size(56, 20);
+            label4.TabIndex = 55;
+            label4.Text = "Price *";
             // 
-            // txt_Description
+            // txt_Price
             // 
-            txt_Description.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Description.Location = new Point(419, 309);
-            txt_Description.Name = "txt_Description";
-            txt_Description.Size = new Size(400, 29);
-            txt_Description.TabIndex = 48;
+            txt_Price.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Price.Location = new Point(336, 314);
+            txt_Price.Name = "txt_Price";
+            txt_Price.Size = new Size(245, 27);
+            txt_Price.TabIndex = 54;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Location = new Point(621, 447);
+            label9.Name = "label9";
+            label9.Size = new Size(170, 20);
+            label9.TabIndex = 57;
+            label9.Text = "Unit of measurement *";
+            // 
+            // cmd_Measurement
+            // 
+            cmd_Measurement.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_Measurement.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Measurement.FormattingEnabled = true;
+            cmd_Measurement.Items.AddRange(new object[] { "Small (S)", "Medium (M)", "Large (L)", "Extra Large (XL)", "Double Extra Large (XXL)" });
+            cmd_Measurement.Location = new Point(621, 479);
+            cmd_Measurement.Name = "cmd_Measurement";
+            cmd_Measurement.Size = new Size(245, 28);
+            cmd_Measurement.TabIndex = 58;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label10.Location = new Point(336, 366);
+            label10.Name = "label10";
+            label10.Size = new Size(110, 20);
+            label10.TabIndex = 60;
+            label10.Text = "Date Added *";
+            // 
+            // txt_Date_Added
+            // 
+            txt_Date_Added.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Date_Added.Location = new Point(336, 401);
+            txt_Date_Added.Name = "txt_Date_Added";
+            txt_Date_Added.Size = new Size(245, 27);
+            txt_Date_Added.TabIndex = 59;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(621, 279);
+            label6.Name = "label6";
+            label6.Size = new Size(98, 20);
+            label6.TabIndex = 62;
+            label6.Text = "Availability *";
+            // 
+            // txt_Availability
+            // 
+            txt_Availability.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Availability.Location = new Point(621, 314);
+            txt_Availability.Name = "txt_Availability";
+            txt_Availability.Size = new Size(245, 27);
+            txt_Availability.TabIndex = 61;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label11.Location = new Point(621, 366);
+            label11.Name = "label11";
+            label11.Size = new Size(89, 20);
+            label11.TabIndex = 64;
+            label11.Text = "Expiration *";
+            // 
+            // textBox6
+            // 
+            textBox6.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox6.Location = new Point(621, 401);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(245, 27);
+            textBox6.TabIndex = 63;
             // 
             // Add_New_Product_Form
             // 
@@ -251,16 +357,26 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
+            Controls.Add(label11);
+            Controls.Add(textBox6);
+            Controls.Add(label6);
+            Controls.Add(txt_Availability);
+            Controls.Add(label10);
+            Controls.Add(txt_Date_Added);
+            Controls.Add(cmd_Measurement);
+            Controls.Add(label9);
             Controls.Add(label4);
-            Controls.Add(txt_Description);
+            Controls.Add(txt_Price);
+            Controls.Add(label8);
+            Controls.Add(txt_Product_Name);
+            Controls.Add(label7);
+            Controls.Add(txt_Product_Code);
             Controls.Add(cmd_Category);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
-            Controls.Add(label6);
-            Controls.Add(txt_Qyt);
             Controls.Add(label5);
             Controls.Add(label3);
-            Controls.Add(txt_Product_Name);
+            Controls.Add(txt_Description);
             Controls.Add(label2);
             Controls.Add(btn_Product_Image);
             Controls.Add(picture_Product);
@@ -272,6 +388,7 @@
             Name = "Add_New_Product_Form";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
+            Load += Add_New_Product_Form_Load;
             ((System.ComponentModel.ISupportInitialize)picture_Product).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -284,11 +401,9 @@
         private ComboBox cmd_Category;
         private Button btn_Clear;
         private Button btn_Save;
-        private Label label6;
-        private TextBox txt_Qyt;
         private Label label5;
         private Label label3;
-        private TextBox txt_Product_Name;
+        private TextBox txt_Description;
         private Label label2;
         private Button btn_Product_Image;
         private PictureBox picture_Product;
@@ -297,7 +412,19 @@
         private Button btnClose;
         private Panel panel2;
         private Panel panel1;
+        private Label label7;
+        private TextBox txt_Product_Code;
+        private Label label8;
+        private TextBox txt_Product_Name;
         private Label label4;
-        private TextBox txt_Description;
+        private TextBox txt_Price;
+        private Label label9;
+        private ComboBox cmd_Measurement;
+        private Label label10;
+        private TextBox txt_Date_Added;
+        private Label label6;
+        private TextBox txt_Availability;
+        private Label label11;
+        private TextBox textBox6;
     }
 }
