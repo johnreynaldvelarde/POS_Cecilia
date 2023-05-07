@@ -30,11 +30,11 @@
         {
             btn_Close = new Button();
             panel2 = new Panel();
-            panel1 = new Panel();
             label1 = new Label();
-            txt_ProductID = new TextBox();
+            txt_Category = new TextBox();
             btn_Clear = new Button();
             btn_Save = new Button();
+            panel1 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             btn_Close.FlatAppearance.BorderSize = 0;
             btn_Close.FlatStyle = FlatStyle.Flat;
             btn_Close.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Close.Location = new Point(743, 2);
+            btn_Close.Location = new Point(632, 2);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(55, 27);
             btn_Close.TabIndex = 32;
@@ -58,17 +58,8 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(10, 55);
             panel2.Name = "panel2";
-            panel2.Size = new Size(780, 3);
+            panel2.Size = new Size(669, 3);
             panel2.TabIndex = 35;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(10, 10);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(780, 45);
-            panel1.TabIndex = 34;
             // 
             // label1
             // 
@@ -81,13 +72,13 @@
             label1.TabIndex = 0;
             label1.Text = "Add new category";
             // 
-            // txt_ProductID
+            // txt_Category
             // 
-            txt_ProductID.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_ProductID.Location = new Point(10, 81);
-            txt_ProductID.Name = "txt_ProductID";
-            txt_ProductID.Size = new Size(780, 39);
-            txt_ProductID.TabIndex = 37;
+            txt_Category.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Category.Location = new Point(13, 86);
+            txt_Category.Name = "txt_Category";
+            txt_Category.Size = new Size(666, 33);
+            txt_Category.TabIndex = 37;
             // 
             // btn_Clear
             // 
@@ -96,7 +87,7 @@
             btn_Clear.FlatStyle = FlatStyle.Flat;
             btn_Clear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Clear.ForeColor = Color.White;
-            btn_Clear.Location = new Point(641, 145);
+            btn_Clear.Location = new Point(531, 143);
             btn_Clear.Name = "btn_Clear";
             btn_Clear.Size = new Size(145, 48);
             btn_Clear.TabIndex = 48;
@@ -110,30 +101,41 @@
             btn_Save.FlatStyle = FlatStyle.Flat;
             btn_Save.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Save.ForeColor = Color.White;
-            btn_Save.Location = new Point(489, 145);
+            btn_Save.Location = new Point(379, 143);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(145, 48);
             btn_Save.TabIndex = 47;
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = false;
+            btn_Save.Click += btn_Save_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(10, 10);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(669, 45);
+            panel1.TabIndex = 34;
             // 
             // Add_New_Category_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 206);
+            ClientSize = new Size(689, 203);
             ControlBox = false;
+            Controls.Add(btn_Close);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
-            Controls.Add(txt_ProductID);
+            Controls.Add(txt_Category);
             Controls.Add(panel2);
-            Controls.Add(btn_Close);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Add_New_Category_Form";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
+            Load += Add_New_Category_Form_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -144,10 +146,10 @@
 
         private Button btn_Close;
         private Panel panel2;
-        private Panel panel1;
         private Label label1;
-        private TextBox txt_ProductID;
+        private TextBox txt_Category;
         private Button btn_Clear;
         private Button btn_Save;
+        private Panel panel1;
     }
 }

@@ -94,9 +94,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.Dispose();
         }
 
-
-
-
         // date and time
         private void Main_Form_Load(object sender, EventArgs e)
         {

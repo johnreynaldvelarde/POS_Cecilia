@@ -33,6 +33,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Add_Product.BackColor = settingsColor;
 
             Add_New_Product_Form frm = new Add_New_Product_Form();
+            frm.btn_Update.Enabled = false;
             frm.ShowDialog();
             frm.Dispose();
             btn_Add_Product.BackColor = defaultColor;
