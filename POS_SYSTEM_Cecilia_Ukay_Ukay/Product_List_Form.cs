@@ -12,6 +12,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class Product_List_Form : Form
     {
+        
         public Product_List_Form()
         {
             InitializeComponent();

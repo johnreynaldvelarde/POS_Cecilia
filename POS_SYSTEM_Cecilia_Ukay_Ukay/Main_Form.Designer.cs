@@ -47,13 +47,7 @@
             btn_All_Category = new Button();
             splitContainer1 = new SplitContainer();
             panel4 = new Panel();
-            flowLayoutPanel1 = new FlowLayoutPanel();
-            product_Show1 = new Product_Show();
-            product_Show2 = new Product_Show();
-            product_Show3 = new Product_Show();
-            product_Show4 = new Product_Show();
-            product_Show5 = new Product_Show();
-            product_Show6 = new Product_Show();
+            flow_list_product = new FlowLayoutPanel();
             upper_panel = new Panel();
             panel3 = new Panel();
             panel6 = new Panel();
@@ -70,7 +64,6 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel4.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
             upper_panel.SuspendLayout();
             panel3.SuspendLayout();
             panel6.SuspendLayout();
@@ -322,93 +315,27 @@
             splitContainer1.Panel2.Controls.Add(panel3);
             splitContainer1.Panel2.Padding = new Padding(10);
             splitContainer1.Size = new Size(1200, 512);
-            splitContainer1.SplitterDistance = 744;
+            splitContainer1.SplitterDistance = 782;
             splitContainer1.TabIndex = 7;
             // 
             // panel4
             // 
-            panel4.Controls.Add(flowLayoutPanel1);
+            panel4.Controls.Add(flow_list_product);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(0, 60);
             panel4.Name = "panel4";
             panel4.Padding = new Padding(10, 0, 10, 10);
-            panel4.Size = new Size(744, 452);
+            panel4.Size = new Size(782, 452);
             panel4.TabIndex = 1;
             // 
-            // flowLayoutPanel1
+            // flow_list_product
             // 
-            flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Controls.Add(product_Show1);
-            flowLayoutPanel1.Controls.Add(product_Show2);
-            flowLayoutPanel1.Controls.Add(product_Show3);
-            flowLayoutPanel1.Controls.Add(product_Show4);
-            flowLayoutPanel1.Controls.Add(product_Show5);
-            flowLayoutPanel1.Controls.Add(product_Show6);
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(10, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(724, 442);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
-            // product_Show1
-            // 
-            product_Show1.BackColor = Color.White;
-            product_Show1.Location = new Point(10, 10);
-            product_Show1.Margin = new Padding(10);
-            product_Show1.Name = "product_Show1";
-            product_Show1.Padding = new Padding(10);
-            product_Show1.Size = new Size(238, 309);
-            product_Show1.TabIndex = 0;
-            // 
-            // product_Show2
-            // 
-            product_Show2.BackColor = Color.White;
-            product_Show2.Location = new Point(268, 10);
-            product_Show2.Margin = new Padding(10);
-            product_Show2.Name = "product_Show2";
-            product_Show2.Padding = new Padding(10);
-            product_Show2.Size = new Size(238, 309);
-            product_Show2.TabIndex = 1;
-            // 
-            // product_Show3
-            // 
-            product_Show3.BackColor = Color.White;
-            product_Show3.Location = new Point(10, 339);
-            product_Show3.Margin = new Padding(10);
-            product_Show3.Name = "product_Show3";
-            product_Show3.Padding = new Padding(10);
-            product_Show3.Size = new Size(238, 309);
-            product_Show3.TabIndex = 2;
-            // 
-            // product_Show4
-            // 
-            product_Show4.BackColor = Color.White;
-            product_Show4.Location = new Point(268, 339);
-            product_Show4.Margin = new Padding(10);
-            product_Show4.Name = "product_Show4";
-            product_Show4.Padding = new Padding(10);
-            product_Show4.Size = new Size(238, 309);
-            product_Show4.TabIndex = 3;
-            // 
-            // product_Show5
-            // 
-            product_Show5.BackColor = Color.White;
-            product_Show5.Location = new Point(10, 668);
-            product_Show5.Margin = new Padding(10);
-            product_Show5.Name = "product_Show5";
-            product_Show5.Padding = new Padding(10);
-            product_Show5.Size = new Size(238, 309);
-            product_Show5.TabIndex = 4;
-            // 
-            // product_Show6
-            // 
-            product_Show6.BackColor = Color.White;
-            product_Show6.Location = new Point(268, 668);
-            product_Show6.Margin = new Padding(10);
-            product_Show6.Name = "product_Show6";
-            product_Show6.Padding = new Padding(10);
-            product_Show6.Size = new Size(238, 309);
-            product_Show6.TabIndex = 5;
+            flow_list_product.AutoScroll = true;
+            flow_list_product.Dock = DockStyle.Fill;
+            flow_list_product.Location = new Point(10, 0);
+            flow_list_product.Name = "flow_list_product";
+            flow_list_product.Size = new Size(762, 442);
+            flow_list_product.TabIndex = 0;
             // 
             // upper_panel
             // 
@@ -417,7 +344,7 @@
             upper_panel.Location = new Point(0, 0);
             upper_panel.Name = "upper_panel";
             upper_panel.Padding = new Padding(10, 0, 0, 0);
-            upper_panel.Size = new Size(744, 60);
+            upper_panel.Size = new Size(782, 60);
             upper_panel.TabIndex = 0;
             // 
             // panel3
@@ -428,7 +355,7 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(10, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(432, 492);
+            panel3.Size = new Size(394, 492);
             panel3.TabIndex = 0;
             // 
             // panel6
@@ -437,7 +364,7 @@
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(0, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(432, 43);
+            panel6.Size = new Size(394, 43);
             panel6.TabIndex = 2;
             // 
             // label3
@@ -458,7 +385,7 @@
             panel5.Dock = DockStyle.Bottom;
             panel5.Location = new Point(0, 447);
             panel5.Name = "panel5";
-            panel5.Size = new Size(432, 45);
+            panel5.Size = new Size(394, 45);
             panel5.TabIndex = 1;
             // 
             // label4
@@ -502,7 +429,6 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            flowLayoutPanel1.ResumeLayout(false);
             upper_panel.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -534,13 +460,7 @@
         private PictureBox pictureBox1;
         private Panel upper_panel;
         private Panel panel4;
-        private FlowLayoutPanel flowLayoutPanel1;
-        private Product_Show product_Show1;
-        private Product_Show product_Show2;
-        private Product_Show product_Show3;
-        private Product_Show product_Show4;
-        private Product_Show product_Show5;
-        private Product_Show product_Show6;
+        private FlowLayoutPanel flow_list_product;
         private Button btn_Sales_Report;
         private Label label_Time;
         private Label label_Date;

@@ -13,18 +13,18 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class Add_New_Product_Form : Form
     {
-        // SqlConnection connect = new SqlConnection();
         DB_Connection database = new DB_Connection();
+
+        private Main_Form main_form;
 
 
         public Add_New_Product_Form()
         {
             InitializeComponent();
-           // show_category();
-            //  connect = new SqlConnection(database.MyConnection());
-
-
+          //  main_form = main;
+            // show_category();
         }
+
 
         // method for clear the text in textbox
         public void Clear()
@@ -68,6 +68,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             this.Dispose();
         }
 
+        public void refresh_mainform()
+        {
+            Main_Form frm = new Main_Form();
+            frm.load_product();
+        }
         // button for save the details in database
         private void btn_Save_Click(object sender, EventArgs e)
         {
@@ -111,7 +116,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     MessageBox.Show("Successfully added");
                     Clear();
-
+                   // main_form.load_product();
                 }
 
             }
