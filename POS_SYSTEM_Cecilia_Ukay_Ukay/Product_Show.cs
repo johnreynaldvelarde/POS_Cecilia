@@ -13,7 +13,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class Product_Show : UserControl
     {
-        DB_Connection database = new DB_Connection();
+        //DB_Connection database = new DB_Connection();
 
         public Product_Show()
         {
@@ -34,7 +34,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else
             {
+
                 // Load the image from the database
+                /*
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     string query = "SELECT Product_Image FROM Product_List WHERE Product_Name = @Product_Name";
@@ -60,6 +62,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     }
 
                 }
+                */
 
             }
 
