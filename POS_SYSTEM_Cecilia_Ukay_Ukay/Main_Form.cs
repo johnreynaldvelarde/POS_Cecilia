@@ -21,7 +21,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
-            load_product();
+            //  load_product();
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
@@ -56,7 +56,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 string query = "SELECT Product_Name, Description, Price, Availability, Product_Image FROM Product_List WHERE Deleted = 0";
                 SqlCommand command = new SqlCommand(query, connect);
 
-               
+
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
@@ -84,7 +84,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     flow_list_product.Controls.Add(productControl);
 
                 }
-            }            
+            }
 
         }
 

@@ -55,6 +55,10 @@
             panel5 = new Panel();
             label4 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            product_Show1 = new Product_Show();
+            product_Show2 = new Product_Show();
+            product_Show3 = new Product_Show();
+            product_Show4 = new Product_Show();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_account).BeginInit();
@@ -64,6 +68,7 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel4.SuspendLayout();
+            flow_list_product.SuspendLayout();
             upper_panel.SuspendLayout();
             panel3.SuspendLayout();
             panel6.SuspendLayout();
@@ -331,6 +336,10 @@
             // flow_list_product
             // 
             flow_list_product.AutoScroll = true;
+            flow_list_product.Controls.Add(product_Show1);
+            flow_list_product.Controls.Add(product_Show2);
+            flow_list_product.Controls.Add(product_Show3);
+            flow_list_product.Controls.Add(product_Show4);
             flow_list_product.Dock = DockStyle.Fill;
             flow_list_product.Location = new Point(10, 0);
             flow_list_product.Name = "flow_list_product";
@@ -404,6 +413,42 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // product_Show1
+            // 
+            product_Show1.BackColor = Color.White;
+            product_Show1.Location = new Point(3, 3);
+            product_Show1.Name = "product_Show1";
+            product_Show1.Padding = new Padding(10);
+            product_Show1.Size = new Size(420, 175);
+            product_Show1.TabIndex = 0;
+            // 
+            // product_Show2
+            // 
+            product_Show2.BackColor = Color.White;
+            product_Show2.Location = new Point(3, 184);
+            product_Show2.Name = "product_Show2";
+            product_Show2.Padding = new Padding(10);
+            product_Show2.Size = new Size(420, 175);
+            product_Show2.TabIndex = 1;
+            // 
+            // product_Show3
+            // 
+            product_Show3.BackColor = Color.White;
+            product_Show3.Location = new Point(3, 365);
+            product_Show3.Name = "product_Show3";
+            product_Show3.Padding = new Padding(10);
+            product_Show3.Size = new Size(420, 175);
+            product_Show3.TabIndex = 2;
+            // 
+            // product_Show4
+            // 
+            product_Show4.BackColor = Color.White;
+            product_Show4.Location = new Point(3, 546);
+            product_Show4.Name = "product_Show4";
+            product_Show4.Padding = new Padding(10);
+            product_Show4.Size = new Size(420, 175);
+            product_Show4.TabIndex = 3;
+            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -429,6 +474,7 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             panel4.ResumeLayout(false);
+            flow_list_product.ResumeLayout(false);
             upper_panel.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -465,5 +511,9 @@
         private Label label_Time;
         private Label label_Date;
         private System.Windows.Forms.Timer timer1;
+        private Product_Show product_Show1;
+        private Product_Show product_Show2;
+        private Product_Show product_Show3;
+        private Product_Show product_Show4;
     }
 }

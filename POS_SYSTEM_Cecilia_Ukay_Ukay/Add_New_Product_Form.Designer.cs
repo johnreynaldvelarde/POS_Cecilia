@@ -124,6 +124,7 @@
             // 
             // txt_Description
             // 
+            txt_Description.BorderStyle = BorderStyle.FixedSingle;
             txt_Description.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Description.Location = new Point(627, 226);
             txt_Description.Name = "txt_Description";
@@ -182,6 +183,7 @@
             // 
             // txt_ProductID
             // 
+            txt_ProductID.BorderStyle = BorderStyle.FixedSingle;
             txt_ProductID.Enabled = false;
             txt_ProductID.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_ProductID.Location = new Point(342, 138);
@@ -234,6 +236,7 @@
             // 
             // txt_Product_Code
             // 
+            txt_Product_Code.BorderStyle = BorderStyle.FixedSingle;
             txt_Product_Code.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Product_Code.Location = new Point(627, 138);
             txt_Product_Code.Name = "txt_Product_Code";
@@ -252,6 +255,7 @@
             // 
             // txt_Product_Name
             // 
+            txt_Product_Name.BorderStyle = BorderStyle.FixedSingle;
             txt_Product_Name.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Product_Name.Location = new Point(342, 226);
             txt_Product_Name.Name = "txt_Product_Name";
@@ -270,6 +274,7 @@
             // 
             // txt_Price
             // 
+            txt_Price.BorderStyle = BorderStyle.FixedSingle;
             txt_Price.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Price.Location = new Point(342, 314);
             txt_Price.Name = "txt_Price";
@@ -310,6 +315,7 @@
             // 
             // txt_Date_Added
             // 
+            txt_Date_Added.BorderStyle = BorderStyle.FixedSingle;
             txt_Date_Added.Enabled = false;
             txt_Date_Added.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Date_Added.Location = new Point(342, 401);
@@ -329,6 +335,7 @@
             // 
             // txt_Availability
             // 
+            txt_Availability.BorderStyle = BorderStyle.FixedSingle;
             txt_Availability.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Availability.Location = new Point(627, 314);
             txt_Availability.Name = "txt_Availability";

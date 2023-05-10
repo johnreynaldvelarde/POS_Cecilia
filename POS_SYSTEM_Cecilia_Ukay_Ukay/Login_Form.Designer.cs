@@ -82,6 +82,7 @@
             // 
             // txtPassword
             // 
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.Location = new Point(455, 307);
             txtPassword.Name = "txtPassword";
@@ -100,6 +101,7 @@
             // 
             // txtUsername
             // 
+            txtUsername.BorderStyle = BorderStyle.FixedSingle;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsername.Location = new Point(455, 203);
             txtUsername.Name = "txtUsername";

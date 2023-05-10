@@ -21,7 +21,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Add_New_Product_Form()
         {
             InitializeComponent();
-          //  main_form = main;
+            //  main_form = main;
             // show_category();
         }
 
@@ -116,11 +116,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     MessageBox.Show("Successfully added");
                     Clear();
-                   // main_form.load_product();
+                    // main_form.load_product();
                 }
 
             }
-           
+
         }
 
         // button for clear
@@ -176,7 +176,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
-        
+
         private void txt_Availability_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))
