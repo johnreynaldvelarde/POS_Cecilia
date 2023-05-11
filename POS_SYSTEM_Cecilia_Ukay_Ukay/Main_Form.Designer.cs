@@ -498,7 +498,6 @@
         private PictureBox pictureBox1;
         private Panel upper_panel;
         private Panel panel4;
-        private FlowLayoutPanel flow_list_product;
         private Button btn_Sales_Report;
         private Label label_Time;
         private Label label_Date;
@@ -506,5 +505,6 @@
         private PictureBox pictureBox2;
         private Panel panel7;
         private FlowLayoutPanel category_panel_flow;
+        public FlowLayoutPanel flow_list_product;
     }
 }

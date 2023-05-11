@@ -47,8 +47,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Sales_Report.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
         }
-        // load the category list
 
+        // load the category list
         public void load_category()
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
