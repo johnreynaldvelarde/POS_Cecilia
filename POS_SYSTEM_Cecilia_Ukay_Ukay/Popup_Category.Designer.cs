@@ -28,17 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            category_name = new Label();
             SuspendLayout();
+            // 
+            // category_name
+            // 
+            category_name.AutoSize = true;
+            category_name.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            category_name.ForeColor = Color.White;
+            category_name.Location = new Point(15, 15);
+            category_name.Name = "category_name";
+            category_name.Size = new Size(68, 16);
+            category_name.TabIndex = 0;
+            category_name.Text = "Category";
             // 
             // Popup_Category
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(14, 159, 104);
+            Controls.Add(category_name);
+            Cursor = Cursors.Hand;
             Name = "Popup_Category";
-            Size = new Size(144, 35);
+            Size = new Size(131, 47);
+            Click += Popup_Category_Click;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label category_name;
     }
 }

@@ -31,13 +31,14 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             panel1 = new Panel();
+            pictureBox2 = new PictureBox();
             btn_Sales_Report = new Button();
             textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
             button1 = new Button();
             picture_account = new PictureBox();
             btn_User = new Button();
-            btn_Warehouse = new Button();
+            btn_Supplier = new Button();
             btn_Inventory = new Button();
             btn_Settings = new Button();
             label2 = new Label();
@@ -49,17 +50,16 @@
             panel4 = new Panel();
             flow_list_product = new FlowLayoutPanel();
             upper_panel = new Panel();
+            category_panel_flow = new FlowLayoutPanel();
+            panel7 = new Panel();
             panel3 = new Panel();
             panel6 = new Panel();
             label3 = new Label();
             panel5 = new Panel();
             label4 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            product_Show1 = new Product_Show();
-            product_Show2 = new Product_Show();
-            product_Show3 = new Product_Show();
-            product_Show4 = new Product_Show();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picture_account).BeginInit();
             panel2.SuspendLayout();
@@ -68,8 +68,8 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel4.SuspendLayout();
-            flow_list_product.SuspendLayout();
             upper_panel.SuspendLayout();
+            panel7.SuspendLayout();
             panel3.SuspendLayout();
             panel6.SuspendLayout();
             panel5.SuspendLayout();
@@ -78,13 +78,14 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(14, 159, 104);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btn_Sales_Report);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(picture_account);
             panel1.Controls.Add(btn_User);
-            panel1.Controls.Add(btn_Warehouse);
+            panel1.Controls.Add(btn_Supplier);
             panel1.Controls.Add(btn_Inventory);
             panel1.Controls.Add(btn_Settings);
             panel1.Controls.Add(label2);
@@ -93,6 +94,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1200, 63);
             panel1.TabIndex = 3;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(258, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(31, 41);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 19;
+            pictureBox2.TabStop = false;
             // 
             // btn_Sales_Report
             // 
@@ -118,7 +129,7 @@
             // 
             textBox1.BorderStyle = BorderStyle.FixedSingle;
             textBox1.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(277, 15);
+            textBox1.Location = new Point(296, 17);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(326, 31);
             textBox1.TabIndex = 0;
@@ -185,24 +196,24 @@
             btn_User.UseVisualStyleBackColor = false;
             btn_User.Click += btn_User_Click;
             // 
-            // btn_Warehouse
+            // btn_Supplier
             // 
-            btn_Warehouse.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Warehouse.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Warehouse.Cursor = Cursors.Hand;
-            btn_Warehouse.FlatAppearance.BorderSize = 0;
-            btn_Warehouse.FlatStyle = FlatStyle.Flat;
-            btn_Warehouse.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Warehouse.ForeColor = Color.White;
-            btn_Warehouse.Image = (Image)resources.GetObject("btn_Warehouse.Image");
-            btn_Warehouse.Location = new Point(804, 0);
-            btn_Warehouse.Name = "btn_Warehouse";
-            btn_Warehouse.Size = new Size(80, 63);
-            btn_Warehouse.TabIndex = 13;
-            btn_Warehouse.Text = "Warehouse";
-            btn_Warehouse.TextAlign = ContentAlignment.BottomCenter;
-            btn_Warehouse.TextImageRelation = TextImageRelation.ImageAboveText;
-            btn_Warehouse.UseVisualStyleBackColor = false;
+            btn_Supplier.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Supplier.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Supplier.Cursor = Cursors.Hand;
+            btn_Supplier.FlatAppearance.BorderSize = 0;
+            btn_Supplier.FlatStyle = FlatStyle.Flat;
+            btn_Supplier.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Supplier.ForeColor = Color.White;
+            btn_Supplier.Image = (Image)resources.GetObject("btn_Supplier.Image");
+            btn_Supplier.Location = new Point(804, 0);
+            btn_Supplier.Name = "btn_Supplier";
+            btn_Supplier.Size = new Size(80, 63);
+            btn_Supplier.TabIndex = 13;
+            btn_Supplier.Text = "Supplier";
+            btn_Supplier.TextAlign = ContentAlignment.BottomCenter;
+            btn_Supplier.TextImageRelation = TextImageRelation.ImageAboveText;
+            btn_Supplier.UseVisualStyleBackColor = false;
             // 
             // btn_Inventory
             // 
@@ -296,7 +307,7 @@
             btn_All_Category.FlatStyle = FlatStyle.Flat;
             btn_All_Category.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btn_All_Category.ForeColor = Color.White;
-            btn_All_Category.Location = new Point(13, 6);
+            btn_All_Category.Location = new Point(6, 5);
             btn_All_Category.Name = "btn_All_Category";
             btn_All_Category.Size = new Size(80, 47);
             btn_All_Category.TabIndex = 1;
@@ -336,10 +347,6 @@
             // flow_list_product
             // 
             flow_list_product.AutoScroll = true;
-            flow_list_product.Controls.Add(product_Show1);
-            flow_list_product.Controls.Add(product_Show2);
-            flow_list_product.Controls.Add(product_Show3);
-            flow_list_product.Controls.Add(product_Show4);
             flow_list_product.Dock = DockStyle.Fill;
             flow_list_product.Location = new Point(10, 0);
             flow_list_product.Name = "flow_list_product";
@@ -348,13 +355,33 @@
             // 
             // upper_panel
             // 
-            upper_panel.Controls.Add(btn_All_Category);
+            upper_panel.Controls.Add(category_panel_flow);
+            upper_panel.Controls.Add(panel7);
             upper_panel.Dock = DockStyle.Top;
             upper_panel.Location = new Point(0, 0);
             upper_panel.Name = "upper_panel";
-            upper_panel.Padding = new Padding(10, 0, 0, 0);
+            upper_panel.Padding = new Padding(2);
             upper_panel.Size = new Size(782, 60);
             upper_panel.TabIndex = 0;
+            // 
+            // category_panel_flow
+            // 
+            category_panel_flow.AutoScroll = true;
+            category_panel_flow.Dock = DockStyle.Fill;
+            category_panel_flow.Location = new Point(94, 2);
+            category_panel_flow.Name = "category_panel_flow";
+            category_panel_flow.RightToLeft = RightToLeft.No;
+            category_panel_flow.Size = new Size(686, 56);
+            category_panel_flow.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(btn_All_Category);
+            panel7.Dock = DockStyle.Left;
+            panel7.Location = new Point(2, 2);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(92, 56);
+            panel7.TabIndex = 2;
             // 
             // panel3
             // 
@@ -413,46 +440,10 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
-            // product_Show1
-            // 
-            product_Show1.BackColor = Color.White;
-            product_Show1.Location = new Point(3, 3);
-            product_Show1.Name = "product_Show1";
-            product_Show1.Padding = new Padding(10);
-            product_Show1.Size = new Size(420, 175);
-            product_Show1.TabIndex = 0;
-            // 
-            // product_Show2
-            // 
-            product_Show2.BackColor = Color.White;
-            product_Show2.Location = new Point(3, 184);
-            product_Show2.Name = "product_Show2";
-            product_Show2.Padding = new Padding(10);
-            product_Show2.Size = new Size(420, 175);
-            product_Show2.TabIndex = 1;
-            // 
-            // product_Show3
-            // 
-            product_Show3.BackColor = Color.White;
-            product_Show3.Location = new Point(3, 365);
-            product_Show3.Name = "product_Show3";
-            product_Show3.Padding = new Padding(10);
-            product_Show3.Size = new Size(420, 175);
-            product_Show3.TabIndex = 2;
-            // 
-            // product_Show4
-            // 
-            product_Show4.BackColor = Color.White;
-            product_Show4.Location = new Point(3, 546);
-            product_Show4.Name = "product_Show4";
-            product_Show4.Padding = new Padding(10);
-            product_Show4.Size = new Size(420, 175);
-            product_Show4.TabIndex = 3;
-            // 
             // Main_Form
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1200, 600);
             ControlBox = false;
             Controls.Add(splitContainer1);
@@ -465,6 +456,7 @@
             Load += Main_Form_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)picture_account).EndInit();
             panel2.ResumeLayout(false);
@@ -474,8 +466,8 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            flow_list_product.ResumeLayout(false);
             upper_panel.ResumeLayout(false);
+            panel7.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
@@ -489,7 +481,7 @@
         private Panel panel1;
         private Label label2;
         private Panel panel2;
-        private Button btn_Warehouse;
+        private Button btn_Supplier;
         private Button btn_Inventory;
         private Button btn_Settings;
         private Button btn_User;
@@ -511,9 +503,8 @@
         private Label label_Time;
         private Label label_Date;
         private System.Windows.Forms.Timer timer1;
-        private Product_Show product_Show1;
-        private Product_Show product_Show2;
-        private Product_Show product_Show3;
-        private Product_Show product_Show4;
+        private PictureBox pictureBox2;
+        private Panel panel7;
+        private FlowLayoutPanel category_panel_flow;
     }
 }

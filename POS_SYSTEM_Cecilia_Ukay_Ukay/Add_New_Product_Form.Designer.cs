@@ -329,9 +329,9 @@
             label6.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.Location = new Point(627, 279);
             label6.Name = "label6";
-            label6.Size = new Size(98, 20);
+            label6.Size = new Size(81, 20);
             label6.TabIndex = 62;
-            label6.Text = "Availability *";
+            label6.Text = "Quantity *";
             // 
             // txt_Availability
             // 

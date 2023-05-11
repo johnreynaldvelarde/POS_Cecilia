@@ -16,5 +16,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
         }
+
+        public void LoadCategory(Category category)
+        {
+            category_name.Text = category.Category_Name;
+        }
+
+        private void Popup_Category_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

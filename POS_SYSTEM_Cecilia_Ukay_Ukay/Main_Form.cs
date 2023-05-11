@@ -21,7 +21,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
-            //  load_product();
+            load_product();
+            load_category();
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
@@ -36,8 +37,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Inventory.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Inventory.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
-            btn_Warehouse.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
-            btn_Warehouse.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+            btn_Supplier.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Supplier.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
             btn_User.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_User.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
@@ -45,6 +46,27 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Sales_Report.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Sales_Report.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
+        }
+        // load the category list
+
+        public void load_category()
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string query = "SELECT Category_Name FROM Category_List WHERE Deleted = 0";
+                SqlCommand command = new SqlCommand(query, connect);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Category category = new Category();
+                    category.Category_Name = reader.GetString(0);
+
+                    Popup_Category category_control = new Popup_Category();
+                    category_control.LoadCategory(category);
+                    category_panel_flow.Controls.Add(category_control);
+                }
+            }
         }
 
         // load the product list from the database and use of user control form
@@ -55,7 +77,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 connect.Open();
                 string query = "SELECT Product_Name, Description, Price, Availability, Product_Image FROM Product_List WHERE Deleted = 0";
                 SqlCommand command = new SqlCommand(query, connect);
-
 
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -141,7 +162,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.Dispose();
         }
 
-        // date and time
+
         private void Main_Form_Load(object sender, EventArgs e)
         {
             label_Date.Text = DateTime.Now.ToLongDateString();
