@@ -90,8 +90,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
 
                     connect.Open();
-                    string sql = "INSERT INTO Product_List (Product_Code, Product_Name, Price, Quantity, Date_Added, Unit_Measurement, Deleted  ) " +
-                                 "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Unit_Measurement, @Deleted )";
+                    string sql = "INSERT INTO Products (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Unit_Measurement, Deleted  ) " +
+                                 "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Category_ID, @Unit_Measurement, @Deleted )";
                     SqlCommand command = new SqlCommand(sql, connect);
 
                     command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
