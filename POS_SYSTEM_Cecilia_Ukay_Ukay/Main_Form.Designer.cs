@@ -49,7 +49,7 @@
             splitContainer1 = new SplitContainer();
             panel4 = new Panel();
             flow_list_product = new FlowLayoutPanel();
-            upper_panel = new Panel();
+            side_panel = new Panel();
             category_panel_flow = new FlowLayoutPanel();
             panel7 = new Panel();
             panel3 = new Panel();
@@ -68,7 +68,7 @@
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             panel4.SuspendLayout();
-            upper_panel.SuspendLayout();
+            side_panel.SuspendLayout();
             panel7.SuspendLayout();
             panel3.SuspendLayout();
             panel6.SuspendLayout();
@@ -307,7 +307,7 @@
             btn_All_Category.FlatStyle = FlatStyle.Flat;
             btn_All_Category.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btn_All_Category.ForeColor = Color.White;
-            btn_All_Category.Location = new Point(6, 5);
+            btn_All_Category.Location = new Point(6, 11);
             btn_All_Category.Name = "btn_All_Category";
             btn_All_Category.Size = new Size(80, 47);
             btn_All_Category.TabIndex = 1;
@@ -323,7 +323,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.Controls.Add(panel4);
-            splitContainer1.Panel1.Controls.Add(upper_panel);
+            splitContainer1.Panel1.Controls.Add(side_panel);
             // 
             // splitContainer1.Panel2
             // 
@@ -338,50 +338,50 @@
             // 
             panel4.Controls.Add(flow_list_product);
             panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(0, 60);
+            panel4.Location = new Point(97, 0);
             panel4.Name = "panel4";
-            panel4.Padding = new Padding(10, 0, 10, 10);
-            panel4.Size = new Size(782, 452);
+            panel4.Padding = new Padding(10);
+            panel4.Size = new Size(685, 512);
             panel4.TabIndex = 1;
             // 
             // flow_list_product
             // 
             flow_list_product.AutoScroll = true;
             flow_list_product.Dock = DockStyle.Fill;
-            flow_list_product.Location = new Point(10, 0);
+            flow_list_product.Location = new Point(10, 10);
             flow_list_product.Name = "flow_list_product";
-            flow_list_product.Size = new Size(762, 442);
+            flow_list_product.Size = new Size(665, 492);
             flow_list_product.TabIndex = 0;
             // 
-            // upper_panel
+            // side_panel
             // 
-            upper_panel.Controls.Add(category_panel_flow);
-            upper_panel.Controls.Add(panel7);
-            upper_panel.Dock = DockStyle.Top;
-            upper_panel.Location = new Point(0, 0);
-            upper_panel.Name = "upper_panel";
-            upper_panel.Padding = new Padding(2);
-            upper_panel.Size = new Size(782, 60);
-            upper_panel.TabIndex = 0;
+            side_panel.Controls.Add(category_panel_flow);
+            side_panel.Controls.Add(panel7);
+            side_panel.Dock = DockStyle.Left;
+            side_panel.Location = new Point(0, 0);
+            side_panel.Name = "side_panel";
+            side_panel.Padding = new Padding(2);
+            side_panel.Size = new Size(97, 512);
+            side_panel.TabIndex = 0;
             // 
             // category_panel_flow
             // 
-            category_panel_flow.AutoScroll = true;
             category_panel_flow.Dock = DockStyle.Fill;
-            category_panel_flow.Location = new Point(94, 2);
+            category_panel_flow.FlowDirection = FlowDirection.TopDown;
+            category_panel_flow.Location = new Point(2, 71);
             category_panel_flow.Name = "category_panel_flow";
-            category_panel_flow.RightToLeft = RightToLeft.No;
-            category_panel_flow.Size = new Size(686, 56);
-            category_panel_flow.TabIndex = 3;
+            category_panel_flow.Padding = new Padding(5);
+            category_panel_flow.Size = new Size(93, 439);
+            category_panel_flow.TabIndex = 1;
             // 
             // panel7
             // 
             panel7.Controls.Add(btn_All_Category);
-            panel7.Dock = DockStyle.Left;
+            panel7.Dock = DockStyle.Top;
             panel7.Location = new Point(2, 2);
             panel7.Name = "panel7";
-            panel7.Size = new Size(92, 56);
-            panel7.TabIndex = 2;
+            panel7.Size = new Size(93, 69);
+            panel7.TabIndex = 0;
             // 
             // panel3
             // 
@@ -466,7 +466,7 @@
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            upper_panel.ResumeLayout(false);
+            side_panel.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel6.ResumeLayout(false);
@@ -487,24 +487,24 @@
         private Button btn_User;
         private PictureBox picture_account;
         private SplitContainer splitContainer1;
-        private Label label3;
-        private Panel panel3;
         private TextBox textBox1;
-        private Panel panel5;
-        private Label label4;
-        private Panel panel6;
         private Button button1;
         private Button btn_All_Category;
         private PictureBox pictureBox1;
-        private Panel upper_panel;
-        private Panel panel4;
         private Button btn_Sales_Report;
         private Label label_Time;
         private Label label_Date;
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox2;
-        private Panel panel7;
-        private FlowLayoutPanel category_panel_flow;
+        private Panel side_panel;
+        private Panel panel4;
         public FlowLayoutPanel flow_list_product;
+        private Panel panel3;
+        private Panel panel6;
+        private Label label3;
+        private Panel panel5;
+        private Label label4;
+        private FlowLayoutPanel category_panel_flow;
+        private Panel panel7;
     }
 }

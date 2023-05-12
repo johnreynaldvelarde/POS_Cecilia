@@ -22,7 +22,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             //  main_form = main;
-            // show_category();
+            show_category();
         }
 
 
@@ -31,12 +31,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             txt_Product_Code.Clear();
             txt_Product_Name.Clear();
-            txt_Description.Clear();
             txt_Price.Clear();
             txt_Availability.Clear();
             cmd_Category.SelectedIndex = -1;
             cmd_Measurement.SelectedIndex = -1;
-            picture_Product.Image = null;
             txt_Product_Name.Focus();
 
         }
@@ -91,23 +89,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
 
-                    MemoryStream mstream = new MemoryStream();
-                    picture_Product.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png);
-                    byte[] selectImage = mstream.GetBuffer();
-
                     connect.Open();
                     string sql = "INSERT INTO Product_List (Product_Image, Product_Code, Product_Name, Description, Price, Availability, Date_Added, Expiration_Date, Unit_Measurement, Deleted  ) " +
                                  "VALUES (@Product_Image, @Product_Code, @Product_Name, @Description, @Price, @Availability, @Date_Added, @Expiration_Date, @Unit_Measurement, @Deleted )";
                     SqlCommand command = new SqlCommand(sql, connect);
 
-                    command.Parameters.AddWithValue("@Product_Image", selectImage);
                     command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
                     command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
-                    command.Parameters.AddWithValue("@Description", txt_Description.Text);
                     command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
                     command.Parameters.AddWithValue("@Availability", Convert.ToInt32(txt_Availability.Text));
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
-                    command.Parameters.AddWithValue("@Expiration_Date", DateTime.Parse(date_expiration.Text));
                     command.Parameters.AddWithValue("@Category_ID", categoryId);
                     command.Parameters.AddWithValue("@Unit_Measurement", cmd_Measurement.SelectedItem);
                     command.Parameters.AddWithValue("@Deleted", 0);
@@ -129,7 +120,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Clear();
         }
 
+
         // button for getting product image
+        /*
         private void btn_Product_Image_Click(object sender, EventArgs e)
         {
             try
@@ -153,6 +146,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
 
         }
+        */
 
         private void Add_New_Product_Form_Load(object sender, EventArgs e)
         {
