@@ -24,10 +24,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
 
             product_name.Text = product.Name;
-            product_description.Text = product.Description;
-            product_price.Text = product.Price.ToString();
-            available_number.Text = product.Availability.ToString();
+            product_category.Text = product.category;
+            product_price.Text = product.price.ToString();
+            product_quantity.Text = product.quantity.ToString();
 
+            /*
             if (product.product_image != null)
             {
                 picture_product.Image = product.product_image;
@@ -36,7 +37,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
 
                 // Load the image from the database
-                /*
+               
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     string query = "SELECT Product_Image FROM Product_List WHERE Product_Name = @Product_Name";
@@ -64,8 +65,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 }
                 */
 
-            }
-
         }
+
     }
 }
+

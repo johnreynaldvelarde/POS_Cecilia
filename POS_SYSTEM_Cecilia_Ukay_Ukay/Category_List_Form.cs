@@ -20,6 +20,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btn_Add_Category_Click(object sender, EventArgs e)
         {
             Add_New_Category_Form frm = new Add_New_Category_Form();
+            frm.btn_Update.Enabled = false;
             frm.ShowDialog();
             frm.Dispose();
         }

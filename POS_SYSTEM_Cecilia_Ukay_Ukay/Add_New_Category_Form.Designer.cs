@@ -35,6 +35,7 @@
             btn_Clear = new Button();
             btn_Save = new Button();
             panel1 = new Panel();
+            btn_Update = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -44,7 +45,7 @@
             btn_Close.FlatAppearance.BorderSize = 0;
             btn_Close.FlatStyle = FlatStyle.Flat;
             btn_Close.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Close.Location = new Point(632, 2);
+            btn_Close.Location = new Point(633, 2);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(55, 27);
             btn_Close.TabIndex = 32;
@@ -93,6 +94,7 @@
             btn_Clear.TabIndex = 48;
             btn_Clear.Text = "Clear";
             btn_Clear.UseVisualStyleBackColor = false;
+            btn_Clear.Click += btn_Clear_Click;
             // 
             // btn_Save
             // 
@@ -101,7 +103,7 @@
             btn_Save.FlatStyle = FlatStyle.Flat;
             btn_Save.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Save.ForeColor = Color.White;
-            btn_Save.Location = new Point(379, 143);
+            btn_Save.Location = new Point(229, 143);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(145, 48);
             btn_Save.TabIndex = 47;
@@ -118,6 +120,20 @@
             panel1.Size = new Size(669, 45);
             panel1.TabIndex = 34;
             // 
+            // btn_Update
+            // 
+            btn_Update.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Update.Cursor = Cursors.Hand;
+            btn_Update.FlatStyle = FlatStyle.Flat;
+            btn_Update.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Update.ForeColor = Color.White;
+            btn_Update.Location = new Point(380, 143);
+            btn_Update.Name = "btn_Update";
+            btn_Update.Size = new Size(145, 48);
+            btn_Update.TabIndex = 49;
+            btn_Update.Text = "Update";
+            btn_Update.UseVisualStyleBackColor = false;
+            // 
             // Add_New_Category_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -125,6 +141,7 @@
             BackColor = Color.White;
             ClientSize = new Size(689, 203);
             ControlBox = false;
+            Controls.Add(btn_Update);
             Controls.Add(btn_Close);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
@@ -151,5 +168,6 @@
         private Button btn_Clear;
         private Button btn_Save;
         private Panel panel1;
+        public Button btn_Update;
     }
 }

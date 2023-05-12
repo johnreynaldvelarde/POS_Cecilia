@@ -49,7 +49,7 @@
             label10 = new Label();
             txt_Date_Added = new TextBox();
             label6 = new Label();
-            txt_Availability = new TextBox();
+            txt_Quantity = new TextBox();
             btn_Update = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -277,15 +277,15 @@
             label6.TabIndex = 62;
             label6.Text = "Quantity *";
             // 
-            // txt_Availability
+            // txt_Quantity
             // 
-            txt_Availability.BorderStyle = BorderStyle.FixedSingle;
-            txt_Availability.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Availability.Location = new Point(609, 279);
-            txt_Availability.Name = "txt_Availability";
-            txt_Availability.Size = new Size(240, 29);
-            txt_Availability.TabIndex = 61;
-            txt_Availability.KeyPress += txt_Availability_KeyPress;
+            txt_Quantity.BorderStyle = BorderStyle.FixedSingle;
+            txt_Quantity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Quantity.Location = new Point(609, 279);
+            txt_Quantity.Name = "txt_Quantity";
+            txt_Quantity.Size = new Size(240, 29);
+            txt_Quantity.TabIndex = 61;
+            txt_Quantity.KeyPress += txt_Availability_KeyPress;
             // 
             // btn_Update
             // 
@@ -310,7 +310,7 @@
             ControlBox = false;
             Controls.Add(btn_Update);
             Controls.Add(label6);
-            Controls.Add(txt_Availability);
+            Controls.Add(txt_Quantity);
             Controls.Add(label10);
             Controls.Add(txt_Date_Added);
             Controls.Add(cmd_Measurement);
@@ -364,7 +364,7 @@
         private Label label10;
         private TextBox txt_Date_Added;
         private Label label6;
-        private TextBox txt_Availability;
+        private TextBox txt_Quantity;
         public Button btn_Update;
     }
 }

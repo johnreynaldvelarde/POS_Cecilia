@@ -29,16 +29,14 @@
         private void InitializeComponent()
         {
             btn_Add_Cart = new Button();
-            picture_product = new PictureBox();
-            product_description = new Label();
+            product_category = new Label();
             product_price = new Label();
             product_name = new Label();
             label4 = new Label();
-            available_number = new Label();
+            product_quantity = new Label();
             button1 = new Button();
             button2 = new Button();
             need_quantity = new Label();
-            ((System.ComponentModel.ISupportInitialize)picture_product).BeginInit();
             SuspendLayout();
             // 
             // btn_Add_Cart
@@ -49,40 +47,29 @@
             btn_Add_Cart.FlatStyle = FlatStyle.Flat;
             btn_Add_Cart.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Add_Cart.ForeColor = Color.White;
-            btn_Add_Cart.Location = new Point(339, 65);
+            btn_Add_Cart.Location = new Point(242, 68);
             btn_Add_Cart.Name = "btn_Add_Cart";
             btn_Add_Cart.Size = new Size(68, 58);
             btn_Add_Cart.TabIndex = 0;
             btn_Add_Cart.Text = "Add";
             btn_Add_Cart.UseVisualStyleBackColor = false;
             // 
-            // picture_product
+            // product_category
             // 
-            picture_product.BackColor = SystemColors.Control;
-            picture_product.Dock = DockStyle.Left;
-            picture_product.Location = new Point(10, 10);
-            picture_product.Name = "picture_product";
-            picture_product.Size = new Size(139, 155);
-            picture_product.SizeMode = PictureBoxSizeMode.Zoom;
-            picture_product.TabIndex = 1;
-            picture_product.TabStop = false;
-            // 
-            // product_description
-            // 
-            product_description.AutoSize = true;
-            product_description.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            product_description.Location = new Point(176, 56);
-            product_description.Name = "product_description";
-            product_description.Size = new Size(80, 17);
-            product_description.TabIndex = 2;
-            product_description.Text = "Description";
+            product_category.AutoSize = true;
+            product_category.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            product_category.Location = new Point(31, 57);
+            product_category.Name = "product_category";
+            product_category.Size = new Size(69, 17);
+            product_category.TabIndex = 2;
+            product_category.Text = "Category";
             // 
             // product_price
             // 
             product_price.AutoSize = true;
             product_price.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             product_price.ForeColor = Color.FromArgb(233, 83, 85);
-            product_price.Location = new Point(368, 24);
+            product_price.Location = new Point(271, 25);
             product_price.Name = "product_price";
             product_price.Size = new Size(39, 16);
             product_price.TabIndex = 3;
@@ -92,7 +79,7 @@
             // 
             product_name.AutoSize = true;
             product_name.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            product_name.Location = new Point(176, 24);
+            product_name.Location = new Point(31, 25);
             product_name.Name = "product_name";
             product_name.Size = new Size(99, 16);
             product_name.TabIndex = 4;
@@ -102,25 +89,25 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(176, 86);
+            label4.Location = new Point(31, 89);
             label4.Name = "label4";
-            label4.Size = new Size(82, 17);
+            label4.Size = new Size(73, 17);
             label4.TabIndex = 5;
-            label4.Text = "Availability:";
+            label4.Text = "Available:";
             // 
-            // available_number
+            // product_quantity
             // 
-            available_number.AutoSize = true;
-            available_number.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            available_number.Location = new Point(264, 86);
-            available_number.Name = "available_number";
-            available_number.Size = new Size(15, 17);
-            available_number.TabIndex = 6;
-            available_number.Text = "0";
+            product_quantity.AutoSize = true;
+            product_quantity.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            product_quantity.Location = new Point(111, 89);
+            product_quantity.Name = "product_quantity";
+            product_quantity.Size = new Size(15, 17);
+            product_quantity.TabIndex = 6;
+            product_quantity.Text = "0";
             // 
             // button1
             // 
-            button1.Location = new Point(176, 127);
+            button1.Location = new Point(31, 128);
             button1.Name = "button1";
             button1.Size = new Size(40, 23);
             button1.TabIndex = 7;
@@ -129,7 +116,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(251, 127);
+            button2.Location = new Point(106, 128);
             button2.Name = "button2";
             button2.Size = new Size(40, 23);
             button2.TabIndex = 8;
@@ -140,7 +127,7 @@
             // 
             need_quantity.AutoSize = true;
             need_quantity.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            need_quantity.Location = new Point(227, 130);
+            need_quantity.Location = new Point(82, 131);
             need_quantity.Name = "need_quantity";
             need_quantity.Size = new Size(15, 17);
             need_quantity.TabIndex = 9;
@@ -154,17 +141,15 @@
             Controls.Add(need_quantity);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(available_number);
+            Controls.Add(product_quantity);
             Controls.Add(label4);
             Controls.Add(product_name);
             Controls.Add(product_price);
-            Controls.Add(product_description);
-            Controls.Add(picture_product);
+            Controls.Add(product_category);
             Controls.Add(btn_Add_Cart);
             Name = "Product_Show";
             Padding = new Padding(10);
-            Size = new Size(420, 175);
-            ((System.ComponentModel.ISupportInitialize)picture_product).EndInit();
+            Size = new Size(336, 175);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -172,12 +157,11 @@
         #endregion
 
         private Button btn_Add_Cart;
-        private PictureBox picture_product;
-        private Label product_description;
+        private Label product_category;
         private Label product_price;
         private Label product_name;
         private Label label4;
-        private Label available_number;
+        private Label product_quantity;
         private Button button1;
         private Button button2;
         private Label need_quantity;

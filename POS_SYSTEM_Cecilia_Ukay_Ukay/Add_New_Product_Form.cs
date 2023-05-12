@@ -32,7 +32,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             txt_Product_Code.Clear();
             txt_Product_Name.Clear();
             txt_Price.Clear();
-            txt_Availability.Clear();
+            txt_Quantity.Clear();
             cmd_Category.SelectedIndex = -1;
             cmd_Measurement.SelectedIndex = -1;
             txt_Product_Name.Focus();
@@ -45,7 +45,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string sql = "SELECT Category_Name FROM Category_List WHERE Deleted = 0";
+                string sql = "SELECT Category_Name FROM Categories WHERE Deleted = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -90,14 +90,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
 
                     connect.Open();
-                    string sql = "INSERT INTO Product_List (Product_Image, Product_Code, Product_Name, Description, Price, Availability, Date_Added, Expiration_Date, Unit_Measurement, Deleted  ) " +
-                                 "VALUES (@Product_Image, @Product_Code, @Product_Name, @Description, @Price, @Availability, @Date_Added, @Expiration_Date, @Unit_Measurement, @Deleted )";
+                    string sql = "INSERT INTO Product_List (Product_Code, Product_Name, Price, Quantity, Date_Added, Unit_Measurement, Deleted  ) " +
+                                 "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Unit_Measurement, @Deleted )";
                     SqlCommand command = new SqlCommand(sql, connect);
 
                     command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
                     command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
                     command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
-                    command.Parameters.AddWithValue("@Availability", Convert.ToInt32(txt_Availability.Text));
+                    command.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txt_Quantity.Text));
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
                     command.Parameters.AddWithValue("@Category_ID", categoryId);
                     command.Parameters.AddWithValue("@Unit_Measurement", cmd_Measurement.SelectedItem);
@@ -185,7 +185,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             else
             {
                 // Convert the entered text to an integer and check if it's between 1-99
-                int value = Int32.Parse(txt_Availability.Text + e.KeyChar);
+                int value = Int32.Parse(txt_Quantity.Text + e.KeyChar);
                 if (value < 1 || value > 1000)
                 {
                     // Ignore the input by setting the handled flag

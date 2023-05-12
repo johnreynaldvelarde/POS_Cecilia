@@ -9,9 +9,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     public class Product
     {
         public string Name { get; set; }
-        public string Description { get; set; }
-        public decimal Price { get; set; }
-        public int Availability { get; set; }
-        public Image product_image { get; set; }
+        public string category { get; set; }
+        public decimal price { get; set; }
+        public int quantity { get; set; }
     }
 }

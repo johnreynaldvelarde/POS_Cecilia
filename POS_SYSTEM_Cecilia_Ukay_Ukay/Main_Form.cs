@@ -54,7 +54,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string query = "SELECT Category_Name FROM Category_List WHERE Deleted = 0";
+                string query = "SELECT Category_Name FROM Categories WHERE Deleted = 0";
                 SqlCommand command = new SqlCommand(query, connect);
                 SqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
@@ -75,7 +75,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string query = "SELECT Product_Name, Description, Price, Availability, Product_Image FROM Product_List WHERE Deleted = 0";
+                string query = "SELECT Product_Name, Category_ID, Price, Quantity FROM Products WHERE Deleted = 0";
                 SqlCommand command = new SqlCommand(query, connect);
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -83,19 +83,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
                     Product product = new Product();
                     product.Name = reader.GetString(0);
-                    product.Description = reader.GetString(1);
-                    product.Price = reader.GetDecimal(2);
-                    product.Availability = reader.GetInt32(3);
-
-                    // Load the product image from the database or default image file
-                    byte[] imageBytes = reader.IsDBNull(4) ? null : (byte[])reader[4];
-                    if (imageBytes != null)
-                    {
-                        using (MemoryStream ms = new MemoryStream(imageBytes))
-                        {
-                            product.product_image = Image.FromStream(ms);
-                        }
-                    }
+                    product.category = reader.GetString(1);
+                    product.price = reader.GetDecimal(2);
+                    product.quantity = reader.GetInt32(3);
 
                     // Create a new Product_Control user control for the product
                     Product_Show productControl = new Product_Show();

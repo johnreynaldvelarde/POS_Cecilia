@@ -40,10 +40,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else
             {
+
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    string sql = "INSERT INTO Category_List (Category_Name, Deleted) VALUES (@Category_Name, @Deleted)";
+                    string sql = "INSERT INTO Categories (Category_Name, Deleted) VALUES (@Category_Name, @Deleted)";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Category_Name", txt_Category.Text);
                     command.Parameters.AddWithValue("@Deleted", 0);
@@ -62,6 +63,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void Add_New_Category_Form_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }
