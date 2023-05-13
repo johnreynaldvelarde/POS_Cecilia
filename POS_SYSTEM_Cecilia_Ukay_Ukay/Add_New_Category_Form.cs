@@ -16,6 +16,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         DB_Connection database = new DB_Connection();
         Category_List_Form frm;
 
+        public string categoryID;
+
         public Add_New_Category_Form(Category_List_Form category)
         {
             InitializeComponent();
@@ -81,7 +83,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Category_Name", txt_Category.Text);
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
-                    command.Parameters.AddWithValue("@Category_ID", frm.category_id);
+                    command.Parameters.AddWithValue("@Category_ID", Convert.ToInt32(categoryID));
 
                     int rowsAffected = command.ExecuteNonQuery();
                     connect.Close();

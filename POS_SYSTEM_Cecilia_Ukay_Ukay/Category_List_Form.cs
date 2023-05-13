@@ -24,8 +24,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             view_category();
         }
 
-        string category_name;
-        public int category_id;
+        string category_name, category_id;
 
         private void btn_Add_Category_Click(object sender, EventArgs e)
         {
@@ -41,7 +40,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Category_ID, Category_Name, Date_Added FROM Categories WHERE Deleted = 0";
+                string sql = "SELECT Category_ID, Category_Name, Date_Added, Deleted FROM Categories WHERE Deleted = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -49,8 +48,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 while (reader.Read())
                 {
-                    i += 1;
-                    data_Grid_Category.Rows.Add(i, reader["Category_ID"].ToString(), reader["Category_Name"].ToString(), reader["Date_Added"].ToString());
+                    if (reader["Deleted"].ToString() == "0")
+                    {
+                        i += 1;
+                        data_Grid_Category.Rows.Add(i, reader["Category_Name"].ToString(), reader["Date_Added"].ToString(), reader["Category_ID"].ToString());
+                    }
+
                 }
                 reader.Close();
                 connect.Close();
@@ -61,6 +64,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void data_Grid_Category_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string column_category = data_Grid_Category.Columns[e.ColumnIndex].Name;
+           
 
             if (column_category == "Edit")
             {
@@ -69,8 +73,30 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 frm.btn_Save.Enabled = false;
                 frm.btn_Update.Enabled = true;
                 frm.txt_Category.Text = category_name;
+                frm.categoryID = category_id.ToString();
                 frm.ShowDialog();
+            }
+            else if (column_category == "Delete") 
+            {
+                if (e.ColumnIndex == data_Grid_Category.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    //int id = Convert.ToInt32(data_Grid_Category.Rows[e.RowIndex].Cells["Category_ID"].Value);
+                    if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                    {
+                        using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                        {
+                            connect.Open();
+                            string sql = "UPDATE Categories SET Deleted = 1 WHERE Category_ID = @Category_ID";
+                            SqlCommand command = new SqlCommand(sql, connect);
+                            command.Parameters.AddWithValue("@Category_ID", Convert.ToInt32(category_id));
+                            command.ExecuteNonQuery();
+                            connect.Close();
+                            
+                        }
+                        data_Grid_Category.Rows.RemoveAt(e.RowIndex);
 
+                    }
+                }
             }
         }
 
@@ -78,6 +104,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             int i = data_Grid_Category.CurrentRow.Index;
             category_name = data_Grid_Category[1, i].Value.ToString();
+            category_id = data_Grid_Category[3, i].Value.ToString();
         }
 
         // export in excel
