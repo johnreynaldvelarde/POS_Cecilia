@@ -110,22 +110,18 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 category_name = data_Grid_Category[1, i].Value.ToString();
                 category_id = data_Grid_Category[3, i].Value.ToString();
             }
-            //int i = data_Grid_Category.CurrentRow.Index;
             
         }
 
         // export in excel
         private void btn_Export_Click(object sender, EventArgs e)
         {
-            // Create a new Excel workbook
             var excelApp = new Microsoft.Office.Interop.Excel.Application();
             var workbook = excelApp.Workbooks.Add();
 
-            // Create a new worksheet
             var worksheet = workbook.Sheets.Add() as Worksheet;
             worksheet.Name = "Categories";
 
-            // Export the DataGridView contents to the worksheet
             for (int i = 1; i <= data_Grid_Category.Columns.Count; i++)
             {
                 worksheet.Cells[1, i] = data_Grid_Category.Columns[i - 1].HeaderText;
@@ -138,7 +134,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 }
             }
 
-            // Save the workbook
             var saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Excel Workbook|*.xlsx";
             saveFileDialog.Title = "Save as Excel Workbook";
@@ -147,7 +142,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 workbook.SaveAs(saveFileDialog.FileName);
             }
 
-            // Clean up
             workbook.Close();
             excelApp.Quit();
             System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
