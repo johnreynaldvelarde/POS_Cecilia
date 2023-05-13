@@ -14,12 +14,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     public partial class Add_New_Category_Form : Form
     {
         DB_Connection database = new DB_Connection();
+        Category_List_Form frm;
 
-        public Add_New_Category_Form()
+        public Add_New_Category_Form(Category_List_Form category)
         {
             InitializeComponent();
+            frm = category;
 
         }
+
+
 
         private void btn_Close_Click(object sender, EventArgs e)
         {
@@ -44,20 +48,49 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    string sql = "INSERT INTO Categories (Category_Name, Deleted) VALUES (@Category_Name, @Deleted)";
+                    string sql = "INSERT INTO Categories (Category_Name, Date_Added, Deleted) VALUES (@Category_Name, @Date_Added, @Deleted)";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Category_Name", txt_Category.Text);
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
                     command.Parameters.AddWithValue("@Deleted", 0);
                     command.ExecuteNonQuery();
                     connect.Close();
 
                     MessageBox.Show("Successfully added!!!");
+                    frm.view_category();
                     Clear();
+                    connect.Close();
                 }
 
             }
 
+        }
 
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_Category.Text))
+            {
+                MessageBox.Show("Fill in the Blank");
+            }
+            else
+            {
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "UPDATE Categories SET Category_Name = @Category_Name, Date_Added = @Date_Added WHERE Category_ID = @Category_ID ";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Category_Name", txt_Category.Text);
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
+                    command.Parameters.AddWithValue("@Category_ID", frm.category_id);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connect.Close();
+                }
+
+                this.Dispose();
+                MessageBox.Show("Edit successfully");
+                frm.view_category();
+            }
         }
 
         private void Add_New_Category_Form_Load(object sender, EventArgs e)
@@ -69,5 +102,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             Clear();
         }
+
+      
     }
 }

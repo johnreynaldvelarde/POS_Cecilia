@@ -30,7 +30,7 @@
         {
             btn_Close = new Button();
             panel2 = new Panel();
-            label1 = new Label();
+            title_category = new Label();
             txt_Category = new TextBox();
             btn_Clear = new Button();
             btn_Save = new Button();
@@ -62,16 +62,16 @@
             panel2.Size = new Size(669, 3);
             panel2.TabIndex = 35;
             // 
-            // label1
+            // title_category
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(12, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(204, 24);
-            label1.TabIndex = 0;
-            label1.Text = "Add new category";
+            title_category.AutoSize = true;
+            title_category.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            title_category.ForeColor = Color.FromArgb(14, 159, 104);
+            title_category.Location = new Point(12, 10);
+            title_category.Name = "title_category";
+            title_category.Size = new Size(204, 24);
+            title_category.TabIndex = 0;
+            title_category.Text = "Add new category";
             // 
             // txt_Category
             // 
@@ -113,7 +113,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(title_category);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
@@ -133,6 +133,7 @@
             btn_Update.TabIndex = 49;
             btn_Update.Text = "Update";
             btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
             // 
             // Add_New_Category_Form
             // 
@@ -163,11 +164,11 @@
 
         private Button btn_Close;
         private Panel panel2;
-        private Label label1;
-        private TextBox txt_Category;
         private Button btn_Clear;
-        private Button btn_Save;
         private Panel panel1;
         public Button btn_Update;
+        public Label title_category;
+        public Button btn_Save;
+        public TextBox txt_Category;
     }
 }

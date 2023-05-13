@@ -17,7 +17,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private Main_Form main_form;
 
-
         public Add_New_Product_Form()
         {
             InitializeComponent();

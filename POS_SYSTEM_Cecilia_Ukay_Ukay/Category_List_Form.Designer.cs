@@ -32,21 +32,23 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            button1 = new Button();
+            btn_Export = new Button();
             btn_Add_Category = new Button();
             label1 = new Label();
             data_Grid_Category = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewButtonColumn();
-            Column4 = new DataGridViewButtonColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewImageColumn();
+            Delete = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Category).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btn_Export);
             panel1.Controls.Add(btn_Add_Category);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -55,23 +57,24 @@
             panel1.Size = new Size(1088, 68);
             panel1.TabIndex = 1;
             // 
-            // button1
+            // btn_Export
             // 
-            button1.BackColor = Color.FromArgb(14, 159, 104);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(908, 9);
-            button1.Name = "button1";
-            button1.Size = new Size(159, 38);
-            button1.TabIndex = 16;
-            button1.Text = "Excel Export";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
+            btn_Export.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Export.Cursor = Cursors.Hand;
+            btn_Export.FlatAppearance.BorderSize = 0;
+            btn_Export.FlatStyle = FlatStyle.Flat;
+            btn_Export.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Export.ForeColor = Color.White;
+            btn_Export.Image = (Image)resources.GetObject("btn_Export.Image");
+            btn_Export.Location = new Point(908, 9);
+            btn_Export.Name = "btn_Export";
+            btn_Export.Size = new Size(159, 38);
+            btn_Export.TabIndex = 16;
+            btn_Export.Text = "Excel Export";
+            btn_Export.TextAlign = ContentAlignment.MiddleRight;
+            btn_Export.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Export.UseVisualStyleBackColor = false;
+            btn_Export.Click += btn_Export_Click;
             // 
             // btn_Add_Category
             // 
@@ -107,6 +110,8 @@
             // 
             data_Grid_Category.AllowUserToAddRows = false;
             data_Grid_Category.AllowUserToOrderColumns = true;
+            data_Grid_Category.AllowUserToResizeColumns = false;
+            data_Grid_Category.AllowUserToResizeRows = false;
             data_Grid_Category.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data_Grid_Category.BackgroundColor = Color.White;
             data_Grid_Category.BorderStyle = BorderStyle.None;
@@ -120,12 +125,12 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             data_Grid_Category.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            data_Grid_Category.ColumnHeadersHeight = 40;
+            data_Grid_Category.ColumnHeadersHeight = 50;
             data_Grid_Category.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Category.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
+            data_Grid_Category.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column5, Column3, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
@@ -135,32 +140,66 @@
             data_Grid_Category.EnableHeadersVisualStyles = false;
             data_Grid_Category.Location = new Point(5, 88);
             data_Grid_Category.Name = "data_Grid_Category";
+            data_Grid_Category.ReadOnly = true;
             data_Grid_Category.RowHeadersVisible = false;
             data_Grid_Category.RowHeadersWidth = 50;
+            data_Grid_Category.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             data_Grid_Category.RowTemplate.Height = 25;
             data_Grid_Category.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Category.Size = new Size(1088, 492);
             data_Grid_Category.TabIndex = 2;
+            data_Grid_Category.CellContentClick += data_Grid_Category_CellContentClick;
+            data_Grid_Category.SelectionChanged += data_Grid_Category_SelectionChanged;
             // 
             // Column1
             // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 60F;
             Column1.HeaderText = "#";
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column2
             // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             Column2.HeaderText = "Category Name";
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.HeaderText = "Date Added";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             // 
             // Column3
             // 
-            Column3.HeaderText = "";
+            Column3.DataPropertyName = "Category_ID";
+            Column3.HeaderText = "Category_ID";
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Visible = false;
             // 
-            // Column4
+            // Edit
             // 
-            Column4.HeaderText = "";
-            Column4.Name = "Column4";
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 50;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 50;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Width = 50;
             // 
             // Category_List_Form
             // 
@@ -184,13 +223,15 @@
         #endregion
 
         private Panel panel1;
-        private Button button1;
+        private Button btn_Export;
         private Button btn_Add_Category;
         private Label label1;
         private DataGridView data_Grid_Category;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
-        private DataGridViewButtonColumn Column3;
-        private DataGridViewButtonColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Delete;
     }
 }
