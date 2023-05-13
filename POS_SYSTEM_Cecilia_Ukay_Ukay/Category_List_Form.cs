@@ -17,7 +17,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     public partial class Category_List_Form : Form
     {
         DB_Connection database = new DB_Connection();
-
+        
         public Category_List_Form()
         {
             InitializeComponent();
@@ -93,7 +93,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                             connect.Close();
                             
                         }
+
                         data_Grid_Category.Rows.RemoveAt(e.RowIndex);
+                        view_category();
 
                     }
                 }
@@ -102,9 +104,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void data_Grid_Category_SelectionChanged(object sender, EventArgs e)
         {
-            int i = data_Grid_Category.CurrentRow.Index;
-            category_name = data_Grid_Category[1, i].Value.ToString();
-            category_id = data_Grid_Category[3, i].Value.ToString();
+            if (data_Grid_Category.CurrentRow != null)
+            {
+                int i = data_Grid_Category.CurrentRow.Index;
+                category_name = data_Grid_Category[1, i].Value.ToString();
+                category_id = data_Grid_Category[3, i].Value.ToString();
+            }
+            //int i = data_Grid_Category.CurrentRow.Index;
+            
         }
 
         // export in excel
