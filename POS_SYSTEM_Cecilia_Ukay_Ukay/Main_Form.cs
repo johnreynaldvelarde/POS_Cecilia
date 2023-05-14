@@ -92,7 +92,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     productControl.LoadProduct(product);
 
                     // Add the product control to the FlowLayoutPanel
-                    flow_list_product.Controls.Add(productControl);
+                    // flow_list_product.Controls.Add(productControl);
 
                 }
             }

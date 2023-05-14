@@ -47,17 +47,18 @@
             label_Time = new Label();
             btn_All_Category = new Button();
             splitContainer1 = new SplitContainer();
-            panel4 = new Panel();
-            flow_list_product = new FlowLayoutPanel();
             side_panel = new Panel();
             category_panel_flow = new FlowLayoutPanel();
             panel7 = new Panel();
             panel3 = new Panel();
             panel6 = new Panel();
             label3 = new Label();
-            panel5 = new Panel();
-            label4 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            center_panel = new Panel();
+            panel4 = new Panel();
+            split_2_center_panel = new Panel();
+            button2 = new Button();
+            btn_Clear_All = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -67,12 +68,11 @@
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            panel4.SuspendLayout();
             side_panel.SuspendLayout();
             panel7.SuspendLayout();
             panel3.SuspendLayout();
             panel6.SuspendLayout();
-            panel5.SuspendLayout();
+            center_panel.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -322,36 +322,17 @@
             // 
             // splitContainer1.Panel1
             // 
-            splitContainer1.Panel1.Controls.Add(panel4);
+            splitContainer1.Panel1.Controls.Add(center_panel);
             splitContainer1.Panel1.Controls.Add(side_panel);
             // 
             // splitContainer1.Panel2
             // 
             splitContainer1.Panel2.BackColor = SystemColors.Control;
             splitContainer1.Panel2.Controls.Add(panel3);
-            splitContainer1.Panel2.Padding = new Padding(10);
+            splitContainer1.Panel2.Padding = new Padding(10, 10, 10, 5);
             splitContainer1.Size = new Size(1200, 512);
             splitContainer1.SplitterDistance = 782;
             splitContainer1.TabIndex = 7;
-            // 
-            // panel4
-            // 
-            panel4.Controls.Add(flow_list_product);
-            panel4.Dock = DockStyle.Fill;
-            panel4.Location = new Point(97, 0);
-            panel4.Name = "panel4";
-            panel4.Padding = new Padding(10);
-            panel4.Size = new Size(685, 512);
-            panel4.TabIndex = 1;
-            // 
-            // flow_list_product
-            // 
-            flow_list_product.AutoScroll = true;
-            flow_list_product.Dock = DockStyle.Fill;
-            flow_list_product.Location = new Point(10, 10);
-            flow_list_product.Name = "flow_list_product";
-            flow_list_product.Size = new Size(665, 492);
-            flow_list_product.TabIndex = 0;
             // 
             // side_panel
             // 
@@ -386,59 +367,95 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(button2);
+            panel3.Controls.Add(split_2_center_panel);
             panel3.Controls.Add(panel6);
-            panel3.Controls.Add(panel5);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(10, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(394, 492);
+            panel3.Size = new Size(394, 497);
             panel3.TabIndex = 0;
             // 
             // panel6
             // 
+            panel6.BackColor = Color.FromArgb(14, 159, 104);
+            panel6.Controls.Add(btn_Clear_All);
             panel6.Controls.Add(label3);
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(0, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(394, 43);
+            panel6.Size = new Size(394, 37);
             panel6.TabIndex = 2;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(14, 159, 104);
-            label3.Location = new Point(5, 6);
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(5, 9);
             label3.Name = "label3";
-            label3.Size = new Size(139, 30);
+            label3.Size = new Size(107, 19);
             label3.TabIndex = 0;
             label3.Text = "Order Details";
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(66, 85, 125);
-            panel5.Controls.Add(label4);
-            panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(0, 447);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(394, 45);
-            panel5.TabIndex = 1;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(19, 11);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 24);
-            label4.TabIndex = 2;
-            label4.Text = "Total";
             // 
             // timer1
             // 
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
+            // 
+            // center_panel
+            // 
+            center_panel.Controls.Add(panel4);
+            center_panel.Dock = DockStyle.Fill;
+            center_panel.Location = new Point(97, 0);
+            center_panel.Name = "center_panel";
+            center_panel.Padding = new Padding(0, 10, 0, 0);
+            center_panel.Size = new Size(685, 512);
+            center_panel.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.Dock = DockStyle.Top;
+            panel4.Location = new Point(0, 10);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(685, 43);
+            panel4.TabIndex = 0;
+            // 
+            // split_2_center_panel
+            // 
+            split_2_center_panel.Dock = DockStyle.Top;
+            split_2_center_panel.Location = new Point(0, 37);
+            split_2_center_panel.Name = "split_2_center_panel";
+            split_2_center_panel.Size = new Size(394, 329);
+            split_2_center_panel.TabIndex = 3;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(14, 159, 104);
+            button2.Cursor = Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(136, 435);
+            button2.Name = "button2";
+            button2.Size = new Size(148, 47);
+            button2.TabIndex = 4;
+            button2.Text = "Sell";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // btn_Clear_All
+            // 
+            btn_Clear_All.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Clear_All.FlatAppearance.BorderSize = 0;
+            btn_Clear_All.FlatStyle = FlatStyle.Flat;
+            btn_Clear_All.ForeColor = Color.White;
+            btn_Clear_All.Location = new Point(334, 7);
+            btn_Clear_All.Name = "btn_Clear_All";
+            btn_Clear_All.Size = new Size(57, 23);
+            btn_Clear_All.TabIndex = 0;
+            btn_Clear_All.Text = "Clear all";
+            btn_Clear_All.UseVisualStyleBackColor = true;
             // 
             // Main_Form
             // 
@@ -465,14 +482,12 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            panel4.ResumeLayout(false);
             side_panel.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
+            center_panel.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -497,14 +512,15 @@
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox2;
         private Panel side_panel;
-        private Panel panel4;
-        public FlowLayoutPanel flow_list_product;
         private Panel panel3;
         private Panel panel6;
         private Label label3;
-        private Panel panel5;
-        private Label label4;
         private FlowLayoutPanel category_panel_flow;
         private Panel panel7;
+        private Panel center_panel;
+        private Panel panel4;
+        private Panel split_2_center_panel;
+        private Button button2;
+        private Button btn_Clear_All;
     }
 }
