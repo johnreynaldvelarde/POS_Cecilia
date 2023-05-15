@@ -29,392 +29,398 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_New_Item_Form));
-            btn_Update = new Button();
-            date_expiration = new DateTimePicker();
-            label11 = new Label();
-            label6 = new Label();
-            txt_Availability = new TextBox();
-            label10 = new Label();
-            txt_Date_Added = new TextBox();
-            cmd_Measurement = new ComboBox();
-            label9 = new Label();
-            label4 = new Label();
-            txt_Price = new TextBox();
-            label8 = new Label();
-            txt_Product_Name = new TextBox();
-            label7 = new Label();
-            txt_Product_Code = new TextBox();
-            txt_ProductID = new TextBox();
-            btnClose = new Button();
-            panel2 = new Panel();
-            label1 = new Label();
-            cmd_Category = new ComboBox();
-            btn_Clear = new Button();
-            btn_Save = new Button();
-            label5 = new Label();
-            label3 = new Label();
-            txt_Description = new TextBox();
-            label2 = new Label();
-            btn_Product_Image = new Button();
-            picture_Product = new PictureBox();
-            panel1 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)picture_Product).BeginInit();
-            panel1.SuspendLayout();
-            SuspendLayout();
+            this.btn_Update = new System.Windows.Forms.Button();
+            this.date_expiration = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_Availability = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txt_Date_Added = new System.Windows.Forms.TextBox();
+            this.cmd_Measurement = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_Price = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txt_Product_Name = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_Product_Code = new System.Windows.Forms.TextBox();
+            this.txt_ProductID = new System.Windows.Forms.TextBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmd_Category = new System.Windows.Forms.ComboBox();
+            this.btn_Clear = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_Description = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_Product_Image = new System.Windows.Forms.Button();
+            this.picture_Product = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.picture_Product)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // btn_Update
             // 
-            btn_Update.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Update.Cursor = Cursors.Hand;
-            btn_Update.FlatStyle = FlatStyle.Flat;
-            btn_Update.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Update.ForeColor = Color.White;
-            btn_Update.Location = new Point(583, 547);
-            btn_Update.Name = "btn_Update";
-            btn_Update.Size = new Size(145, 48);
-            btn_Update.TabIndex = 94;
-            btn_Update.Text = "Update";
-            btn_Update.UseVisualStyleBackColor = false;
+            this.btn_Update.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(104)))));
+            this.btn_Update.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Update.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Update.ForeColor = System.Drawing.Color.White;
+            this.btn_Update.Location = new System.Drawing.Point(583, 547);
+            this.btn_Update.Name = "btn_Update";
+            this.btn_Update.Size = new System.Drawing.Size(145, 48);
+            this.btn_Update.TabIndex = 94;
+            this.btn_Update.Text = "Update";
+            this.btn_Update.UseVisualStyleBackColor = false;
             // 
             // date_expiration
             // 
-            date_expiration.CalendarFont = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            date_expiration.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            date_expiration.Location = new Point(623, 403);
-            date_expiration.Name = "date_expiration";
-            date_expiration.Size = new Size(245, 27);
-            date_expiration.TabIndex = 93;
+            this.date_expiration.CalendarFont = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.date_expiration.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.date_expiration.Location = new System.Drawing.Point(623, 403);
+            this.date_expiration.Name = "date_expiration";
+            this.date_expiration.Size = new System.Drawing.Size(245, 27);
+            this.date_expiration.TabIndex = 93;
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label11.Location = new Point(623, 370);
-            label11.Name = "label11";
-            label11.Size = new Size(129, 20);
-            label11.TabIndex = 92;
-            label11.Text = "Expiration Date *";
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label11.Location = new System.Drawing.Point(623, 370);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 20);
+            this.label11.TabIndex = 92;
+            this.label11.Text = "Expiration Date *";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(623, 283);
-            label6.Name = "label6";
-            label6.Size = new Size(81, 20);
-            label6.TabIndex = 91;
-            label6.Text = "Quantity *";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(623, 283);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 20);
+            this.label6.TabIndex = 91;
+            this.label6.Text = "Quantity *";
             // 
             // txt_Availability
             // 
-            txt_Availability.BorderStyle = BorderStyle.FixedSingle;
-            txt_Availability.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Availability.Location = new Point(623, 318);
-            txt_Availability.Name = "txt_Availability";
-            txt_Availability.Size = new Size(245, 27);
-            txt_Availability.TabIndex = 90;
+            this.txt_Availability.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Availability.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Availability.Location = new System.Drawing.Point(623, 318);
+            this.txt_Availability.Name = "txt_Availability";
+            this.txt_Availability.Size = new System.Drawing.Size(245, 27);
+            this.txt_Availability.TabIndex = 90;
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(338, 370);
-            label10.Name = "label10";
-            label10.Size = new Size(110, 20);
-            label10.TabIndex = 89;
-            label10.Text = "Date Added *";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(338, 370);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(110, 20);
+            this.label10.TabIndex = 89;
+            this.label10.Text = "Date Added *";
             // 
             // txt_Date_Added
             // 
-            txt_Date_Added.BorderStyle = BorderStyle.FixedSingle;
-            txt_Date_Added.Enabled = false;
-            txt_Date_Added.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Date_Added.Location = new Point(338, 405);
-            txt_Date_Added.Name = "txt_Date_Added";
-            txt_Date_Added.Size = new Size(245, 27);
-            txt_Date_Added.TabIndex = 88;
+            this.txt_Date_Added.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Date_Added.Enabled = false;
+            this.txt_Date_Added.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Date_Added.Location = new System.Drawing.Point(338, 405);
+            this.txt_Date_Added.Name = "txt_Date_Added";
+            this.txt_Date_Added.Size = new System.Drawing.Size(245, 27);
+            this.txt_Date_Added.TabIndex = 88;
             // 
             // cmd_Measurement
             // 
-            cmd_Measurement.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmd_Measurement.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmd_Measurement.FormattingEnabled = true;
-            cmd_Measurement.Items.AddRange(new object[] { "Small (S)", "Medium (M)", "Large (L)", "Extra Large (XL)", "Double Extra Large (XXL)" });
-            cmd_Measurement.Location = new Point(623, 483);
-            cmd_Measurement.Name = "cmd_Measurement";
-            cmd_Measurement.Size = new Size(245, 28);
-            cmd_Measurement.TabIndex = 87;
+            this.cmd_Measurement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmd_Measurement.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmd_Measurement.FormattingEnabled = true;
+            this.cmd_Measurement.Items.AddRange(new object[] {
+            "Small (S)",
+            "Medium (M)",
+            "Large (L)",
+            "Extra Large (XL)",
+            "Double Extra Large (XXL)"});
+            this.cmd_Measurement.Location = new System.Drawing.Point(623, 483);
+            this.cmd_Measurement.Name = "cmd_Measurement";
+            this.cmd_Measurement.Size = new System.Drawing.Size(245, 28);
+            this.cmd_Measurement.TabIndex = 87;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(623, 451);
-            label9.Name = "label9";
-            label9.Size = new Size(170, 20);
-            label9.TabIndex = 86;
-            label9.Text = "Unit of measurement *";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(623, 451);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(170, 20);
+            this.label9.TabIndex = 86;
+            this.label9.Text = "Unit of measurement *";
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(338, 283);
-            label4.Name = "label4";
-            label4.Size = new Size(56, 20);
-            label4.TabIndex = 85;
-            label4.Text = "Price *";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Location = new System.Drawing.Point(338, 283);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 20);
+            this.label4.TabIndex = 85;
+            this.label4.Text = "Price *";
             // 
             // txt_Price
             // 
-            txt_Price.BorderStyle = BorderStyle.FixedSingle;
-            txt_Price.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Price.Location = new Point(338, 318);
-            txt_Price.Name = "txt_Price";
-            txt_Price.Size = new Size(245, 27);
-            txt_Price.TabIndex = 84;
+            this.txt_Price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Price.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Price.Location = new System.Drawing.Point(338, 318);
+            this.txt_Price.Name = "txt_Price";
+            this.txt_Price.Size = new System.Drawing.Size(245, 27);
+            this.txt_Price.TabIndex = 84;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(338, 195);
-            label8.Name = "label8";
-            label8.Size = new Size(100, 20);
-            label8.TabIndex = 83;
-            label8.Text = "Item Name *";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(338, 195);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 20);
+            this.label8.TabIndex = 83;
+            this.label8.Text = "Item Name *";
             // 
             // txt_Product_Name
             // 
-            txt_Product_Name.BorderStyle = BorderStyle.FixedSingle;
-            txt_Product_Name.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Product_Name.Location = new Point(338, 230);
-            txt_Product_Name.Name = "txt_Product_Name";
-            txt_Product_Name.Size = new Size(245, 27);
-            txt_Product_Name.TabIndex = 82;
+            this.txt_Product_Name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Product_Name.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Product_Name.Location = new System.Drawing.Point(338, 230);
+            this.txt_Product_Name.Name = "txt_Product_Name";
+            this.txt_Product_Name.Size = new System.Drawing.Size(245, 27);
+            this.txt_Product_Name.TabIndex = 82;
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(623, 107);
-            label7.Name = "label7";
-            label7.Size = new Size(98, 20);
-            label7.TabIndex = 81;
-            label7.Text = "Item Code *";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(623, 107);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 20);
+            this.label7.TabIndex = 81;
+            this.label7.Text = "Item Code *";
             // 
             // txt_Product_Code
             // 
-            txt_Product_Code.BorderStyle = BorderStyle.FixedSingle;
-            txt_Product_Code.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Product_Code.Location = new Point(623, 142);
-            txt_Product_Code.Name = "txt_Product_Code";
-            txt_Product_Code.Size = new Size(245, 27);
-            txt_Product_Code.TabIndex = 80;
+            this.txt_Product_Code.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Product_Code.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Product_Code.Location = new System.Drawing.Point(623, 142);
+            this.txt_Product_Code.Name = "txt_Product_Code";
+            this.txt_Product_Code.Size = new System.Drawing.Size(245, 27);
+            this.txt_Product_Code.TabIndex = 80;
             // 
             // txt_ProductID
             // 
-            txt_ProductID.BorderStyle = BorderStyle.FixedSingle;
-            txt_ProductID.Enabled = false;
-            txt_ProductID.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_ProductID.Location = new Point(338, 142);
-            txt_ProductID.Name = "txt_ProductID";
-            txt_ProductID.Size = new Size(245, 27);
-            txt_ProductID.TabIndex = 72;
-            txt_ProductID.Text = "(Auto)";
+            this.txt_ProductID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_ProductID.Enabled = false;
+            this.txt_ProductID.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_ProductID.Location = new System.Drawing.Point(338, 142);
+            this.txt_ProductID.Name = "txt_ProductID";
+            this.txt_ProductID.Size = new System.Drawing.Size(245, 27);
+            this.txt_ProductID.TabIndex = 72;
+            this.txt_ProductID.Text = "(Auto)";
             // 
             // btnClose
             // 
-            btnClose.Cursor = Cursors.Hand;
-            btnClose.FlatAppearance.BorderSize = 0;
-            btnClose.FlatStyle = FlatStyle.Flat;
-            btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(842, 3);
-            btnClose.Name = "btnClose";
-            btnClose.Size = new Size(55, 27);
-            btnClose.TabIndex = 67;
-            btnClose.Text = "Close";
-            btnClose.UseVisualStyleBackColor = true;
-            btnClose.Click += btnClose_Click;
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnClose.Location = new System.Drawing.Point(842, 3);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(55, 27);
+            this.btnClose.TabIndex = 67;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(14, 159, 104);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(10, 55);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(880, 3);
-            panel2.TabIndex = 69;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(104)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(10, 55);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(880, 3);
+            this.panel2.TabIndex = 69;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(12, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(231, 24);
-            label1.TabIndex = 0;
-            label1.Text = "Add new item variant";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(104)))));
+            this.label1.Location = new System.Drawing.Point(12, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(231, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Add new item variant";
             // 
             // cmd_Category
             // 
-            cmd_Category.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmd_Category.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmd_Category.FormattingEnabled = true;
-            cmd_Category.Location = new Point(338, 483);
-            cmd_Category.Name = "cmd_Category";
-            cmd_Category.Size = new Size(245, 28);
-            cmd_Category.TabIndex = 79;
+            this.cmd_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmd_Category.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cmd_Category.FormattingEnabled = true;
+            this.cmd_Category.Location = new System.Drawing.Point(338, 483);
+            this.cmd_Category.Name = "cmd_Category";
+            this.cmd_Category.Size = new System.Drawing.Size(245, 28);
+            this.cmd_Category.TabIndex = 79;
             // 
             // btn_Clear
             // 
-            btn_Clear.BackColor = Color.FromArgb(71, 81, 86);
-            btn_Clear.Cursor = Cursors.Hand;
-            btn_Clear.FlatStyle = FlatStyle.Flat;
-            btn_Clear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Clear.ForeColor = Color.White;
-            btn_Clear.Location = new Point(741, 547);
-            btn_Clear.Name = "btn_Clear";
-            btn_Clear.Size = new Size(145, 48);
-            btn_Clear.TabIndex = 78;
-            btn_Clear.Text = "Clear";
-            btn_Clear.UseVisualStyleBackColor = false;
+            this.btn_Clear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(81)))), ((int)(((byte)(86)))));
+            this.btn_Clear.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Clear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Clear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Clear.ForeColor = System.Drawing.Color.White;
+            this.btn_Clear.Location = new System.Drawing.Point(741, 547);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(145, 48);
+            this.btn_Clear.TabIndex = 78;
+            this.btn_Clear.Text = "Clear";
+            this.btn_Clear.UseVisualStyleBackColor = false;
             // 
             // btn_Save
             // 
-            btn_Save.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Save.Cursor = Cursors.Hand;
-            btn_Save.FlatStyle = FlatStyle.Flat;
-            btn_Save.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Save.ForeColor = Color.White;
-            btn_Save.Location = new Point(422, 547);
-            btn_Save.Name = "btn_Save";
-            btn_Save.Size = new Size(145, 48);
-            btn_Save.TabIndex = 77;
-            btn_Save.Text = "Save";
-            btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(104)))));
+            this.btn_Save.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Save.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Save.ForeColor = System.Drawing.Color.White;
+            this.btn_Save.Location = new System.Drawing.Point(422, 547);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(145, 48);
+            this.btn_Save.TabIndex = 77;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = false;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(338, 451);
-            label5.Name = "label5";
-            label5.Size = new Size(89, 20);
-            label5.TabIndex = 76;
-            label5.Text = "Category *";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(338, 451);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(89, 20);
+            this.label5.TabIndex = 76;
+            this.label5.Text = "Category *";
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(623, 195);
-            label3.Name = "label3";
-            label3.Size = new Size(101, 20);
-            label3.TabIndex = 75;
-            label3.Text = "Description *";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(623, 195);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(101, 20);
+            this.label3.TabIndex = 75;
+            this.label3.Text = "Description *";
             // 
             // txt_Description
             // 
-            txt_Description.BorderStyle = BorderStyle.FixedSingle;
-            txt_Description.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Description.Location = new Point(623, 230);
-            txt_Description.Name = "txt_Description";
-            txt_Description.Size = new Size(245, 27);
-            txt_Description.TabIndex = 74;
+            this.txt_Description.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt_Description.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txt_Description.Location = new System.Drawing.Point(623, 230);
+            this.txt_Description.Name = "txt_Description";
+            this.txt_Description.Size = new System.Drawing.Size(245, 27);
+            this.txt_Description.TabIndex = 74;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(338, 107);
-            label2.Name = "label2";
-            label2.Size = new Size(72, 20);
-            label2.TabIndex = 73;
-            label2.Text = "Item ID *";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(338, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 20);
+            this.label2.TabIndex = 73;
+            this.label2.Text = "Item ID *";
             // 
             // btn_Product_Image
             // 
-            btn_Product_Image.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Product_Image.Cursor = Cursors.Hand;
-            btn_Product_Image.FlatAppearance.BorderSize = 0;
-            btn_Product_Image.FlatStyle = FlatStyle.Flat;
-            btn_Product_Image.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Product_Image.ForeColor = Color.White;
-            btn_Product_Image.Image = (Image)resources.GetObject("btn_Product_Image.Image");
-            btn_Product_Image.Location = new Point(24, 396);
-            btn_Product_Image.Name = "btn_Product_Image";
-            btn_Product_Image.Size = new Size(277, 38);
-            btn_Product_Image.TabIndex = 71;
-            btn_Product_Image.Text = "Add item image";
-            btn_Product_Image.TextAlign = ContentAlignment.MiddleRight;
-            btn_Product_Image.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Product_Image.UseVisualStyleBackColor = false;
+            this.btn_Product_Image.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(104)))));
+            this.btn_Product_Image.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Product_Image.FlatAppearance.BorderSize = 0;
+            this.btn_Product_Image.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Product_Image.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Product_Image.ForeColor = System.Drawing.Color.White;
+            this.btn_Product_Image.Image = ((System.Drawing.Image)(resources.GetObject("btn_Product_Image.Image")));
+            this.btn_Product_Image.Location = new System.Drawing.Point(24, 396);
+            this.btn_Product_Image.Name = "btn_Product_Image";
+            this.btn_Product_Image.Size = new System.Drawing.Size(277, 38);
+            this.btn_Product_Image.TabIndex = 71;
+            this.btn_Product_Image.Text = "Add item image";
+            this.btn_Product_Image.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Product_Image.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Product_Image.UseVisualStyleBackColor = false;
             // 
             // picture_Product
             // 
-            picture_Product.BorderStyle = BorderStyle.FixedSingle;
-            picture_Product.Location = new Point(24, 107);
-            picture_Product.Name = "picture_Product";
-            picture_Product.Size = new Size(277, 275);
-            picture_Product.SizeMode = PictureBoxSizeMode.StretchImage;
-            picture_Product.TabIndex = 70;
-            picture_Product.TabStop = false;
+            this.picture_Product.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picture_Product.Location = new System.Drawing.Point(24, 107);
+            this.picture_Product.Name = "picture_Product";
+            this.picture_Product.Size = new System.Drawing.Size(277, 275);
+            this.picture_Product.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture_Product.TabIndex = 70;
+            this.picture_Product.TabStop = false;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(10, 10);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(880, 45);
-            panel1.TabIndex = 68;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(10, 10);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(880, 45);
+            this.panel1.TabIndex = 68;
             // 
             // Add_New_Item_Form
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(900, 600);
-            ControlBox = false;
-            Controls.Add(btn_Update);
-            Controls.Add(date_expiration);
-            Controls.Add(label11);
-            Controls.Add(label6);
-            Controls.Add(txt_Availability);
-            Controls.Add(label10);
-            Controls.Add(txt_Date_Added);
-            Controls.Add(cmd_Measurement);
-            Controls.Add(label9);
-            Controls.Add(label4);
-            Controls.Add(txt_Price);
-            Controls.Add(label8);
-            Controls.Add(txt_Product_Name);
-            Controls.Add(label7);
-            Controls.Add(txt_Product_Code);
-            Controls.Add(txt_ProductID);
-            Controls.Add(btnClose);
-            Controls.Add(panel2);
-            Controls.Add(cmd_Category);
-            Controls.Add(btn_Clear);
-            Controls.Add(btn_Save);
-            Controls.Add(label5);
-            Controls.Add(label3);
-            Controls.Add(txt_Description);
-            Controls.Add(label2);
-            Controls.Add(btn_Product_Image);
-            Controls.Add(picture_Product);
-            Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Name = "Add_New_Item_Form";
-            Padding = new Padding(10);
-            StartPosition = FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)picture_Product).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(900, 600);
+            this.ControlBox = false;
+            this.Controls.Add(this.btn_Update);
+            this.Controls.Add(this.date_expiration);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txt_Availability);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txt_Date_Added);
+            this.Controls.Add(this.cmd_Measurement);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_Price);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txt_Product_Name);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txt_Product_Code);
+            this.Controls.Add(this.txt_ProductID);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.cmd_Category);
+            this.Controls.Add(this.btn_Clear);
+            this.Controls.Add(this.btn_Save);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_Description);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btn_Product_Image);
+            this.Controls.Add(this.picture_Product);
+            this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "Add_New_Item_Form";
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            ((System.ComponentModel.ISupportInitialize)(this.picture_Product)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

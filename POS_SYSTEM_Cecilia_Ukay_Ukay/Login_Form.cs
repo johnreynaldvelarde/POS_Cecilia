@@ -39,23 +39,42 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            /*
-            if(txtUsername.Text ==)
+           
+        }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+          //  "Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True"  --dapiton string connections
+            SqlConnection con = new SqlConnection("Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from tbl_admin";
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
             {
 
-            }
-            else
-            {
-                using ()
-                {
-
-                }
+                MessageBox.Show("Hello, World that works");
 
             }
+            else {
+
+
+                MessageBox.Show("No data found, create account pls");
             
-            */
-            Main_Form frm = new Main_Form();
-            frm.Show();
+            }
+
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }
