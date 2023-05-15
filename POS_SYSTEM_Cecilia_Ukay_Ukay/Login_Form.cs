@@ -44,7 +44,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
-          //  "Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True"  --dapiton string connections
+            
+
+            //  "Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True"  --dapiton string connections
             SqlConnection con = new SqlConnection("Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
             con.Open();
@@ -54,6 +56,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             if (dr.Read())
             {
+                Add_New_Item_Form add_form = new Add_New_Item_Form();
+                add_form.Show();
 
                 MessageBox.Show("Hello, World that works");
 

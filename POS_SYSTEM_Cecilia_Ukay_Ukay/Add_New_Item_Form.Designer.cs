@@ -113,6 +113,7 @@
             this.txt_Availability.Name = "txt_Availability";
             this.txt_Availability.Size = new System.Drawing.Size(245, 27);
             this.txt_Availability.TabIndex = 90;
+            this.txt_Availability.TextChanged += new System.EventHandler(this.txt_Availability_TextChanged);
             // 
             // label10
             // 

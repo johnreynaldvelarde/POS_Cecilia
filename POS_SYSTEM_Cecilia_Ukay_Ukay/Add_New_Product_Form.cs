@@ -32,7 +32,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             txt_Product_Name.Clear();
             txt_Price.Clear();
             txt_Quantity.Clear();
-            cmd_Category.SelectedIndex = -1;
+            combo_Category.SelectedIndex = -1;
             cmd_Measurement.SelectedIndex = -1;
             txt_Product_Name.Focus();
 
@@ -51,7 +51,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 while (reader.Read())
                 {
                     string categoryName = reader.GetString(0);
-                    cmd_Category.Items.Add(categoryName);
+                    combo_Category.Items.Add(categoryName);
                 }
 
                 reader.Close();
@@ -80,9 +80,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             else
             {
                 int categoryId = 0;
-                if (cmd_Category.SelectedValue != null)
+                if (combo_Category.SelectedValue != null)
                 {
-                    categoryId = (int)cmd_Category.SelectedValue;
+                    categoryId = (int)combo_Category.SelectedValue;
                 }
 
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
