@@ -21,7 +21,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
-            load_product();
+           // load_product();
             load_category();
         }
 
