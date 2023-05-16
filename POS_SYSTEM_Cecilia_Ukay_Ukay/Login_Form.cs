@@ -39,23 +39,56 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            /*
-            if(txtUsername.Text ==)
-            {
+           
+        }
 
-            }
-            else
-            {
-                using ()
-                {
-
-                }
-
-            }
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
             
-            */
-            Main_Form frm = new Main_Form();
-            frm.Show();
+
+            //  "Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True"  --dapiton string connections
+            SqlConnection con = new SqlConnection("Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True");
+            SqlCommand cmd = new SqlCommand();
+            con.Open();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from tbl_admin";
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                
+
+                MessageBox.Show("Hello, World that works");
+
+            }
+            else {
+
+
+                MessageBox.Show("No data found, create account pls");
+            
+            }
+
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void openForm_Click(object sender, EventArgs e) //----------This is a sample bttn only to open the other form
+        {
+            Inventory_Form showForm = new Inventory_Form();
+            showForm.Show();
+        }
+
+        private void Login_Form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

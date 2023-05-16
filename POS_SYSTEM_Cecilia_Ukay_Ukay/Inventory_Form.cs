@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Data.SqlClient;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
@@ -31,8 +32,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-            panel_center.Controls.Add(childForm);
-            panel_center.Tag = childForm;
+
             childForm.BringToFront();
             childForm.Show();
         }
@@ -80,6 +80,48 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             openChildForm(new Product_List_Form());
             resetButtonColors();
             btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
+        }
+
+        private void btn_Product_List_Click_1(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection("Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True");
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select * from viewProduct", con);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            dataGridView1.DataSource = dt;
+
+
+
+
+
+
+
+
+        }
+
+        private void gridInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
