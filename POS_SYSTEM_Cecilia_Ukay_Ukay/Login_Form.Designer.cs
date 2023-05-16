@@ -38,6 +38,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openForm = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -141,6 +142,21 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // openForm
+            // 
+            this.openForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(104)))));
+            this.openForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.openForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.openForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.openForm.ForeColor = System.Drawing.Color.White;
+            this.openForm.Location = new System.Drawing.Point(422, 34);
+            this.openForm.Name = "openForm";
+            this.openForm.Size = new System.Drawing.Size(181, 34);
+            this.openForm.TabIndex = 17;
+            this.openForm.Text = "Open Another Form Test";
+            this.openForm.UseVisualStyleBackColor = false;
+            this.openForm.Click += new System.EventHandler(this.openForm_Click);
+            // 
             // Login_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -148,6 +164,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.ControlBox = false;
+            this.Controls.Add(this.openForm);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnLogin);
@@ -159,6 +176,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Login_Form_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -177,5 +195,6 @@
         private Button btnClose;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private Button openForm;
     }
 }

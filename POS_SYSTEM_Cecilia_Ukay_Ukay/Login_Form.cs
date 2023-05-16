@@ -56,8 +56,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             if (dr.Read())
             {
-                Add_New_Item_Form add_form = new Add_New_Item_Form();
-                add_form.Show();
+                
 
                 MessageBox.Show("Hello, World that works");
 
@@ -79,6 +78,17 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btnClear_Click_1(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void openForm_Click(object sender, EventArgs e) //----------This is a sample bttn only to open the other form
+        {
+            Inventory_Form showForm = new Inventory_Form();
+            showForm.Show();
+        }
+
+        private void Login_Form_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
