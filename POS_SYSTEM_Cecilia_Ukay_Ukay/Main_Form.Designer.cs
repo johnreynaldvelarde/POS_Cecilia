@@ -48,7 +48,6 @@
             btn_All_Category = new Button();
             splitContainer1 = new SplitContainer();
             center_panel = new Panel();
-            panel4 = new Panel();
             side_panel = new Panel();
             category_panel_flow = new FlowLayoutPanel();
             panel7 = new Panel();
@@ -71,7 +70,6 @@
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
-            center_panel.SuspendLayout();
             side_panel.SuspendLayout();
             panel7.SuspendLayout();
             panel3.SuspendLayout();
@@ -333,28 +331,19 @@
             // 
             splitContainer1.Panel2.BackColor = SystemColors.Control;
             splitContainer1.Panel2.Controls.Add(panel3);
-            splitContainer1.Panel2.Padding = new Padding(10);
+            splitContainer1.Panel2.Padding = new Padding(5, 10, 10, 10);
             splitContainer1.Size = new Size(1200, 512);
-            splitContainer1.SplitterDistance = 782;
+            splitContainer1.SplitterDistance = 773;
             splitContainer1.TabIndex = 7;
             // 
             // center_panel
             // 
-            center_panel.Controls.Add(panel4);
             center_panel.Dock = DockStyle.Fill;
             center_panel.Location = new Point(97, 0);
             center_panel.Name = "center_panel";
-            center_panel.Padding = new Padding(0, 10, 0, 0);
-            center_panel.Size = new Size(685, 512);
+            center_panel.Padding = new Padding(10);
+            center_panel.Size = new Size(676, 512);
             center_panel.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            panel4.Dock = DockStyle.Top;
-            panel4.Location = new Point(0, 10);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(685, 43);
-            panel4.TabIndex = 0;
             // 
             // side_panel
             // 
@@ -394,9 +383,9 @@
             panel3.Controls.Add(split_2_center_panel);
             panel3.Controls.Add(panel6);
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(10, 10);
+            panel3.Location = new Point(5, 10);
             panel3.Name = "panel3";
-            panel3.Size = new Size(394, 492);
+            panel3.Size = new Size(408, 492);
             panel3.TabIndex = 0;
             // 
             // down_panel
@@ -406,7 +395,7 @@
             down_panel.Dock = DockStyle.Bottom;
             down_panel.Location = new Point(0, 374);
             down_panel.Name = "down_panel";
-            down_panel.Size = new Size(394, 71);
+            down_panel.Size = new Size(408, 71);
             down_panel.TabIndex = 5;
             // 
             // label_amount
@@ -443,7 +432,7 @@
             btn_Sell.ForeColor = Color.White;
             btn_Sell.Location = new Point(0, 445);
             btn_Sell.Name = "btn_Sell";
-            btn_Sell.Size = new Size(394, 47);
+            btn_Sell.Size = new Size(408, 47);
             btn_Sell.TabIndex = 4;
             btn_Sell.Text = "Sell";
             btn_Sell.UseVisualStyleBackColor = false;
@@ -453,7 +442,7 @@
             split_2_center_panel.Dock = DockStyle.Top;
             split_2_center_panel.Location = new Point(0, 37);
             split_2_center_panel.Name = "split_2_center_panel";
-            split_2_center_panel.Size = new Size(394, 288);
+            split_2_center_panel.Size = new Size(408, 288);
             split_2_center_panel.TabIndex = 3;
             // 
             // panel6
@@ -464,7 +453,7 @@
             panel6.Dock = DockStyle.Top;
             panel6.Location = new Point(0, 0);
             panel6.Name = "panel6";
-            panel6.Size = new Size(394, 37);
+            panel6.Size = new Size(408, 37);
             panel6.TabIndex = 2;
             // 
             // btn_Clear_All
@@ -474,7 +463,7 @@
             btn_Clear_All.FlatAppearance.BorderSize = 0;
             btn_Clear_All.FlatStyle = FlatStyle.Flat;
             btn_Clear_All.ForeColor = Color.White;
-            btn_Clear_All.Location = new Point(334, 7);
+            btn_Clear_All.Location = new Point(348, 7);
             btn_Clear_All.Name = "btn_Clear_All";
             btn_Clear_All.Size = new Size(57, 23);
             btn_Clear_All.TabIndex = 0;
@@ -488,9 +477,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(5, 9);
             label3.Name = "label3";
-            label3.Size = new Size(107, 19);
+            label3.Size = new Size(151, 19);
             label3.TabIndex = 0;
-            label3.Text = "Order Details";
+            label3.Text = "Transaction Details";
             // 
             // timer1
             // 
@@ -522,7 +511,6 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
-            center_panel.ResumeLayout(false);
             side_panel.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel3.ResumeLayout(false);
@@ -560,7 +548,6 @@
         private FlowLayoutPanel category_panel_flow;
         private Panel panel7;
         private Panel center_panel;
-        private Panel panel4;
         private Panel split_2_center_panel;
         private Button btn_Sell;
         private Button btn_Clear_All;

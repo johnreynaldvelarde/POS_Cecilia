@@ -65,11 +65,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             this.Dispose();
         }
 
-        public void refresh_mainform()
-        {
-            Main_Form frm = new Main_Form();
-            frm.load_product();
-        }
         // button for save the details in database
         private void btn_Save_Click(object sender, EventArgs e)
         {

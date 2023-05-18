@@ -21,12 +21,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
-           // load_product();
-           // load_category();
+            view_available_product();
+            // load_product();
+            // load_category();
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
         private Color settingsColor = Color.FromArgb(242, 197, 70);
+        private Form activeForm = null;
 
         // method for over the mouse color
         public void button_highligted()
@@ -46,6 +48,25 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Sales_Report.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Sales_Report.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
+        }
+
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null)
+
+                activeForm.Close();
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            center_panel.Controls.Add(childForm);
+            center_panel.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        public void view_available_product()
+        {
+            openChildForm(new Available_Product_List_Form());
         }
 
         // load the category list
@@ -70,6 +91,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
 
         // load the product list from the database and use of user control form
+        /*
         public void load_product()
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
@@ -96,8 +118,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 }
             }
-
         }
+        */
 
 
         // button for user management
@@ -152,7 +174,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.Dispose();
         }
 
-
+        // loading of date and time
         private void Main_Form_Load(object sender, EventArgs e)
         {
             label_Date.Text = DateTime.Now.ToLongDateString();
