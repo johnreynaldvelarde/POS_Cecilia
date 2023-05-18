@@ -93,13 +93,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             dataGridView1.DataSource = dt;
 
-
-
-
-
-
-
-
         }
 
         private void gridInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -111,17 +104,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             Application.Exit();
         }
-
-
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
+       
     }
 }
