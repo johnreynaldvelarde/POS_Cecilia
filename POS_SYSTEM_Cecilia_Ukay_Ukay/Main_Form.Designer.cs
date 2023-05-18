@@ -30,6 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             btn_Sales_Report = new Button();
@@ -57,6 +59,13 @@
             label1 = new Label();
             btn_Sell = new Button();
             split_2_center_panel = new Panel();
+            data_Grid_Transaction = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewImageColumn();
             panel6 = new Panel();
             btn_Clear_All = new Button();
             label3 = new Label();
@@ -74,6 +83,8 @@
             panel7.SuspendLayout();
             panel3.SuspendLayout();
             down_panel.SuspendLayout();
+            split_2_center_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)data_Grid_Transaction).BeginInit();
             panel6.SuspendLayout();
             SuspendLayout();
             // 
@@ -439,11 +450,100 @@
             // 
             // split_2_center_panel
             // 
+            split_2_center_panel.Controls.Add(data_Grid_Transaction);
             split_2_center_panel.Dock = DockStyle.Top;
             split_2_center_panel.Location = new Point(0, 37);
             split_2_center_panel.Name = "split_2_center_panel";
+            split_2_center_panel.Padding = new Padding(0, 10, 0, 0);
             split_2_center_panel.Size = new Size(408, 288);
             split_2_center_panel.TabIndex = 3;
+            // 
+            // data_Grid_Transaction
+            // 
+            data_Grid_Transaction.AllowUserToAddRows = false;
+            data_Grid_Transaction.AllowUserToOrderColumns = true;
+            data_Grid_Transaction.AllowUserToResizeColumns = false;
+            data_Grid_Transaction.AllowUserToResizeRows = false;
+            data_Grid_Transaction.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data_Grid_Transaction.BackgroundColor = Color.White;
+            data_Grid_Transaction.BorderStyle = BorderStyle.None;
+            data_Grid_Transaction.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            data_Grid_Transaction.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            data_Grid_Transaction.ColumnHeadersHeight = 30;
+            data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column5, Column4, Column6, Column3 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle2;
+            data_Grid_Transaction.Dock = DockStyle.Fill;
+            data_Grid_Transaction.EnableHeadersVisualStyles = false;
+            data_Grid_Transaction.Location = new Point(0, 10);
+            data_Grid_Transaction.Name = "data_Grid_Transaction";
+            data_Grid_Transaction.ReadOnly = true;
+            data_Grid_Transaction.RowHeadersVisible = false;
+            data_Grid_Transaction.RowHeadersWidth = 20;
+            data_Grid_Transaction.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            data_Grid_Transaction.RowTemplate.Height = 25;
+            data_Grid_Transaction.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            data_Grid_Transaction.Size = new Size(408, 278);
+            data_Grid_Transaction.TabIndex = 7;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 57.982975F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Name";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.HeaderText = "Price";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.HeaderText = "Qyt";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column6.HeaderText = "Amount";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column3.HeaderText = "";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 5;
             // 
             // panel6
             // 
@@ -516,6 +616,8 @@
             panel3.ResumeLayout(false);
             down_panel.ResumeLayout(false);
             down_panel.PerformLayout();
+            split_2_center_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)data_Grid_Transaction).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ResumeLayout(false);
@@ -554,5 +656,12 @@
         private Panel down_panel;
         private Label label1;
         private Label label_amount;
+        private DataGridView data_Grid_Transaction;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewImageColumn Column3;
     }
 }
