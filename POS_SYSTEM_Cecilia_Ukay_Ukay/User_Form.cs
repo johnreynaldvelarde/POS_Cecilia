@@ -57,7 +57,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void resetButtonColors()
         {
             btn_Employee_List.BackColor = defaultColor;
-            
+
         }
 
 

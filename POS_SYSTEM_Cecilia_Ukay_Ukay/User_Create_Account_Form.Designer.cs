@@ -33,22 +33,22 @@
             panel2 = new Panel();
             panel1 = new Panel();
             label1 = new Label();
-            pictureBox1 = new PictureBox();
-            btn_Create_Account = new Button();
+            User_Profile = new PictureBox();
+            btn_Add_Profile = new Button();
             label2 = new Label();
             txtUsername = new TextBox();
             label3 = new Label();
-            textBox1 = new TextBox();
+            txtPassword = new TextBox();
             label4 = new Label();
-            textBox2 = new TextBox();
+            txtRetype = new TextBox();
             label5 = new Label();
             label6 = new Label();
-            textBox4 = new TextBox();
+            txtContact = new TextBox();
             btn_Save = new Button();
             btn_Clear = new Button();
-            comboBox1 = new ComboBox();
+            cmdRole = new ComboBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)User_Profile).BeginInit();
             SuspendLayout();
             // 
             // btnClose
@@ -94,33 +94,34 @@
             label1.TabIndex = 0;
             label1.Text = "Create new account";
             // 
-            // pictureBox1
+            // User_Profile
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(54, 96);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(300, 300);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 16;
-            pictureBox1.TabStop = false;
+            User_Profile.BorderStyle = BorderStyle.FixedSingle;
+            User_Profile.Location = new Point(54, 96);
+            User_Profile.Name = "User_Profile";
+            User_Profile.Size = new Size(300, 300);
+            User_Profile.SizeMode = PictureBoxSizeMode.StretchImage;
+            User_Profile.TabIndex = 16;
+            User_Profile.TabStop = false;
             // 
-            // btn_Create_Account
+            // btn_Add_Profile
             // 
-            btn_Create_Account.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Create_Account.Cursor = Cursors.Hand;
-            btn_Create_Account.FlatAppearance.BorderSize = 0;
-            btn_Create_Account.FlatStyle = FlatStyle.Flat;
-            btn_Create_Account.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Create_Account.ForeColor = Color.White;
-            btn_Create_Account.Image = (Image)resources.GetObject("btn_Create_Account.Image");
-            btn_Create_Account.Location = new Point(54, 402);
-            btn_Create_Account.Name = "btn_Create_Account";
-            btn_Create_Account.Size = new Size(300, 38);
-            btn_Create_Account.TabIndex = 17;
-            btn_Create_Account.Text = "Add profile picture";
-            btn_Create_Account.TextAlign = ContentAlignment.MiddleRight;
-            btn_Create_Account.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Create_Account.UseVisualStyleBackColor = false;
+            btn_Add_Profile.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Add_Profile.Cursor = Cursors.Hand;
+            btn_Add_Profile.FlatAppearance.BorderSize = 0;
+            btn_Add_Profile.FlatStyle = FlatStyle.Flat;
+            btn_Add_Profile.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Add_Profile.ForeColor = Color.White;
+            btn_Add_Profile.Image = (Image)resources.GetObject("btn_Add_Profile.Image");
+            btn_Add_Profile.Location = new Point(54, 402);
+            btn_Add_Profile.Name = "btn_Add_Profile";
+            btn_Add_Profile.Size = new Size(300, 38);
+            btn_Add_Profile.TabIndex = 17;
+            btn_Add_Profile.Text = "Add profile picture";
+            btn_Add_Profile.TextAlign = ContentAlignment.MiddleRight;
+            btn_Add_Profile.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Add_Profile.UseVisualStyleBackColor = false;
+            btn_Add_Profile.Click += btn_Add_Profile_Click;
             // 
             // label2
             // 
@@ -128,9 +129,9 @@
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(424, 96);
             label2.Name = "label2";
-            label2.Size = new Size(98, 21);
+            label2.Size = new Size(108, 21);
             label2.TabIndex = 19;
-            label2.Text = "Username *";
+            label2.Text = "Staff Name *";
             // 
             // txtUsername
             // 
@@ -150,13 +151,13 @@
             label3.TabIndex = 21;
             label3.Text = "Password *";
             // 
-            // textBox1
+            // txtPassword
             // 
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(424, 213);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(400, 29);
-            textBox1.TabIndex = 20;
+            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.Location = new Point(424, 213);
+            txtPassword.Name = "txtPassword";
+            txtPassword.Size = new Size(400, 29);
+            txtPassword.TabIndex = 20;
             // 
             // label4
             // 
@@ -168,13 +169,13 @@
             label4.TabIndex = 23;
             label4.Text = "Retype Password *";
             // 
-            // textBox2
+            // txtRetype
             // 
-            textBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(424, 298);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(400, 29);
-            textBox2.TabIndex = 22;
+            txtRetype.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtRetype.Location = new Point(424, 298);
+            txtRetype.Name = "txtRetype";
+            txtRetype.Size = new Size(400, 29);
+            txtRetype.TabIndex = 22;
             // 
             // label5
             // 
@@ -196,13 +197,14 @@
             label6.TabIndex = 27;
             label6.Text = "Contact Number *";
             // 
-            // textBox4
+            // txtContact
             // 
-            textBox4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(424, 385);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(400, 29);
-            textBox4.TabIndex = 26;
+            txtContact.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContact.Location = new Point(424, 385);
+            txtContact.Name = "txtContact";
+            txtContact.Size = new Size(400, 29);
+            txtContact.TabIndex = 26;
+            txtContact.KeyPress += txtContact_KeyPress;
             // 
             // btn_Save
             // 
@@ -217,6 +219,7 @@
             btn_Save.TabIndex = 28;
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = false;
+            btn_Save.Click += btn_Save_Click;
             // 
             // btn_Clear
             // 
@@ -231,15 +234,18 @@
             btn_Clear.TabIndex = 29;
             btn_Clear.Text = "Clear";
             btn_Clear.UseVisualStyleBackColor = false;
+            btn_Clear.Click += btn_Clear_Click;
             // 
-            // comboBox1
+            // cmdRole
             // 
-            comboBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(424, 470);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(400, 29);
-            comboBox1.TabIndex = 30;
+            cmdRole.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmdRole.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cmdRole.FormattingEnabled = true;
+            cmdRole.Items.AddRange(new object[] { "Manager", "Cashier" });
+            cmdRole.Location = new Point(424, 470);
+            cmdRole.Name = "cmdRole";
+            cmdRole.Size = new Size(400, 29);
+            cmdRole.TabIndex = 30;
             // 
             // User_Create_Account_Form
             // 
@@ -248,20 +254,20 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
-            Controls.Add(comboBox1);
+            Controls.Add(cmdRole);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
             Controls.Add(label6);
-            Controls.Add(textBox4);
+            Controls.Add(txtContact);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(textBox2);
+            Controls.Add(txtRetype);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(txtPassword);
             Controls.Add(label2);
             Controls.Add(txtUsername);
-            Controls.Add(btn_Create_Account);
-            Controls.Add(pictureBox1);
+            Controls.Add(btn_Add_Profile);
+            Controls.Add(User_Profile);
             Controls.Add(btnClose);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -271,7 +277,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)User_Profile).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -282,19 +288,19 @@
         private Panel panel2;
         private Panel panel1;
         private Label label1;
-        private PictureBox pictureBox1;
-        private Button btn_Create_Account;
+        private PictureBox User_Profile;
+        private Button btn_Add_Profile;
         private Label label2;
         private TextBox txtUsername;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtPassword;
         private Label label4;
-        private TextBox textBox2;
+        private TextBox txtRetype;
         private Label label5;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox txtContact;
         private Button btn_Save;
         private Button btn_Clear;
-        private ComboBox comboBox1;
+        private ComboBox cmdRole;
     }
 }
