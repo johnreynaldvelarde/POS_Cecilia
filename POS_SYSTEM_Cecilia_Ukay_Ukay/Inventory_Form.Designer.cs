@@ -36,6 +36,7 @@
             btn_Product_List = new Button();
             btn_Category_List = new Button();
             panel3 = new Panel();
+            btn_Purchase_List = new Button();
             panel_center = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -68,7 +69,7 @@
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(1043, 0);
+            btnClose.Location = new Point(1045, 0);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(55, 27);
             btnClose.TabIndex = 14;
@@ -126,6 +127,7 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(btn_Purchase_List);
             panel3.Controls.Add(btn_Category_List);
             panel3.Controls.Add(btn_Product_List);
             panel3.Dock = DockStyle.Top;
@@ -133,6 +135,25 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1080, 60);
             panel3.TabIndex = 17;
+            // 
+            // btn_Purchase_List
+            // 
+            btn_Purchase_List.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Purchase_List.Cursor = Cursors.Hand;
+            btn_Purchase_List.FlatAppearance.BorderSize = 0;
+            btn_Purchase_List.FlatStyle = FlatStyle.Flat;
+            btn_Purchase_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Purchase_List.ForeColor = Color.White;
+            btn_Purchase_List.Image = (Image)resources.GetObject("btn_Purchase_List.Image");
+            btn_Purchase_List.Location = new Point(446, 11);
+            btn_Purchase_List.Name = "btn_Purchase_List";
+            btn_Purchase_List.Size = new Size(197, 38);
+            btn_Purchase_List.TabIndex = 16;
+            btn_Purchase_List.Text = "Purchase List";
+            btn_Purchase_List.TextAlign = ContentAlignment.MiddleRight;
+            btn_Purchase_List.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Purchase_List.UseVisualStyleBackColor = false;
+            btn_Purchase_List.Click += btn_Purchase_List_Click;
             // 
             // panel_center
             // 
@@ -174,5 +195,6 @@
         private Button btn_Category_List;
         private Panel panel3;
         private Panel panel_center;
+        private Button btn_Purchase_List;
     }
 }
