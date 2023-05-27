@@ -21,9 +21,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
-            view_available_product();
-            // load_product();
-            // load_category();
+           // load_category();
+            //view_product();
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
@@ -64,10 +63,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             childForm.Show();
         }
 
-        public void view_available_product()
-        {
-            openChildForm(new Available_Product_List_Form());
-        }
+
 
         // load the category list
         public void load_category()
@@ -90,36 +86,46 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
-        // load the product list from the database and use of user control form
-        /*
-        public void load_product()
+        // view the product list from database combine of table Product and Categories
+        public void view_product()
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
+                int i = 0;
                 connect.Open();
-                string query = "SELECT Product_Name, Category_ID, Price, Quantity FROM Products WHERE Deleted = 0";
-                SqlCommand command = new SqlCommand(query, connect);
-
+                string sql = "SELECT p.Product_Name, p.Price, p.Quantity, c.Category_Name, p.Unit_Measurement  " +
+                               "FROM Product p JOIN Categories c ON p.Category_ID = c.Category_ID WHERE p.Quantity > 0 AND p.Deleted = 0;";
+                SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
+
+                data_Grid_Available.Rows.Clear();
+
                 while (reader.Read())
                 {
-                    Product product = new Product();
-                    product.Name = reader.GetString(0);
-                    product.category = reader.GetString(1);
-                    product.price = reader.GetDecimal(2);
-                    product.quantity = reader.GetInt32(3);
+                    /*
+                    i += 1;
+                    string productName = reader["Product_Name"].ToString();
+                    string price = reader["Price"].ToString();
+                    string quantity = reader["Quantity"].ToString();
+                    string categoryName = reader["Category_Name"].ToString();
+                    string unitMeasurement = reader["Unit_Measurement"].ToString();
 
-                    // Create a new Product_Control user control for the product
-                    Product_Show productControl = new Product_Show();
-                    productControl.LoadProduct(product);
+                    data_Grid_Available.Rows.Add(i, productName, categoryName, price, quantity, unitMeasurement);
+                    /*
+                    */
 
-                    // Add the product control to the FlowLayoutPanel
-                    // flow_list_product.Controls.Add(productControl);
+                    i += 1;
+                    data_Grid_Available.Rows.Add(i, reader["Product_Name"].ToString(), reader["Category_Name"].ToString(), reader["Price"].ToString(),
+                                                    reader["Quantity"].ToString(), reader["Unit_Measurement"].ToString());
+
 
                 }
+                reader.Close();
+                connect.Close();
+
             }
         }
-        */
+
 
 
         // button for user management
@@ -198,6 +204,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             timer1.Start();
         }
 
-       
+        /*
+       public void view_available_product()
+       {
+           openChildForm(new Available_Product_List_Form());
+       }
+       */
+
     }
 }
