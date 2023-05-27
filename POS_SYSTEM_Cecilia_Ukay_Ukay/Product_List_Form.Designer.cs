@@ -38,13 +38,11 @@
             panel2 = new Panel();
             data_Grid_Product = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewImageColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewImageColumn();
+            Delete = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Product).BeginInit();
@@ -122,6 +120,8 @@
             // 
             data_Grid_Product.AllowUserToAddRows = false;
             data_Grid_Product.AllowUserToOrderColumns = true;
+            data_Grid_Product.AllowUserToResizeColumns = false;
+            data_Grid_Product.AllowUserToResizeRows = false;
             data_Grid_Product.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             data_Grid_Product.BackgroundColor = Color.White;
             data_Grid_Product.BorderStyle = BorderStyle.None;
@@ -137,64 +137,77 @@
             data_Grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Product.ColumnHeadersHeight = 50;
             data_Grid_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8 });
+            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column5, Column3, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = Color.White;
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             data_Grid_Product.DefaultCellStyle = dataGridViewCellStyle2;
+            data_Grid_Product.Dock = DockStyle.Fill;
             data_Grid_Product.EnableHeadersVisualStyles = false;
             data_Grid_Product.Location = new Point(0, 0);
             data_Grid_Product.Name = "data_Grid_Product";
+            data_Grid_Product.ReadOnly = true;
             data_Grid_Product.RowHeadersVisible = false;
             data_Grid_Product.RowHeadersWidth = 50;
+            data_Grid_Product.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             data_Grid_Product.RowTemplate.Height = 25;
             data_Grid_Product.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Product.Size = new Size(1090, 494);
-            data_Grid_Product.TabIndex = 0;
+            data_Grid_Product.TabIndex = 3;
             // 
             // Column1
             // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 60F;
             Column1.HeaderText = "#";
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            Column2.HeaderText = "Product Image";
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Category Name";
             Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Product Name";
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Description";
-            Column4.Name = "Column4";
+            Column2.ReadOnly = true;
             // 
             // Column5
             // 
-            Column5.HeaderText = "Price";
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.HeaderText = "Date Added";
             Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             // 
-            // Column6
+            // Column3
             // 
-            Column6.HeaderText = "Availability";
-            Column6.Name = "Column6";
+            Column3.DataPropertyName = "Category_ID";
+            Column3.HeaderText = "Category_ID";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Visible = false;
             // 
-            // Column7
+            // Edit
             // 
-            Column7.HeaderText = "Date Added";
-            Column7.Name = "Column7";
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 50;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Width = 50;
             // 
-            // Column8
+            // Delete
             // 
-            Column8.HeaderText = "Category";
-            Column8.Name = "Column8";
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 50;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Width = 50;
             // 
             // Product_List_Form
             // 
@@ -224,12 +237,10 @@
         private Panel panel2;
         private DataGridView data_Grid_Product;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewImageColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Delete;
     }
 }
