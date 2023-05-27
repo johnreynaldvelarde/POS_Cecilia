@@ -114,34 +114,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Clear();
         }
 
-
-        // button for getting product image
-        /*
-        private void btn_Product_Image_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OpenFileDialog openFileDialog1 = new OpenFileDialog();
-
-                openFileDialog1.Title = "Select an image file";
-                openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.png, *.bmp)|*.jpg;*.jpeg;*.png;*.bmp";
-
-                DialogResult result = openFileDialog1.ShowDialog();
-
-                if (result == DialogResult.OK)
-                {
-                    picture_Product.Image = Image.FromFile(openFileDialog1.FileName);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-        */
-
         private void Add_New_Product_Form_Load(object sender, EventArgs e)
         {
             txt_Date_Added.Text = DateTime.Now.ToLongDateString();

@@ -135,7 +135,7 @@
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             data_Grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            data_Grid_Product.ColumnHeadersHeight = 40;
+            data_Grid_Product.ColumnHeadersHeight = 50;
             data_Grid_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;

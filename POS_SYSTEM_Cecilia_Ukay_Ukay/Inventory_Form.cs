@@ -17,7 +17,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Inventory_Form()
         {
             InitializeComponent();
-            view_Item_List();
+            view_product_list();
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
@@ -32,7 +32,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
-
+            panel_center.Controls.Add(childForm);
+            panel_center.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
         }
@@ -54,24 +55,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Category_List.BackColor = defaultColor;
         }
 
-        public void view_Item_List()
+        // first form view // show the product list in data grid
+        public void view_product_list()
         {
             openChildForm(new Product_List_Form());
             btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        // button for category
-        private void btn_Category_List_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Category_List_Form());
-            resetButtonColors();
-            btn_Category_List.BackColor = Color.FromArgb(242, 197, 70);
-
         }
 
         // button for product list
@@ -82,6 +70,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
         }
 
+        // button for category list
+        private void btn_Category_List_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Category_List_Form());
+            resetButtonColors();
+            btn_Category_List.BackColor = Color.FromArgb(242, 197, 70);
+        }
+
+
+        /*
         private void btn_Product_List_Click_1(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection("Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True");
@@ -92,18 +90,18 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             da.Fill(dt);
 
             dataGridView1.DataSource = dt;
-
         }
+        */
 
         private void gridInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void btnClose_Click_1(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Dispose();
         }
-       
+
     }
 }
