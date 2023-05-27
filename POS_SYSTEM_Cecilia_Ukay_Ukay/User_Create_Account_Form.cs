@@ -53,15 +53,37 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 MessageBox.Show("Fill in the blank");
             }
+            else if (User_Profile != null && User_Profile.Image == null)
+            {
+                MessageBox.Show("No Staff Image Try Again!!!");
+            }
             else
             {
+                MemoryStream mstream = new MemoryStream();
+                User_Profile.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png);
+                byte[] select_image = mstream.ToArray();
+
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
-                    
+                    connect.Open();
+                    string sql = "INSERT INTO Staff_Account (Staff_Name, Staff_Image, Password, Contact_Number, Role, Date_Created) " +
+                        "         VALUES (@Staff_Name, @Staff_Image, @Password, @Contact_Number, @Role, @Date_Created )";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Staff_Name", txtUsername.Text);
+                    command.Parameters.AddWithValue("@Staff_Image", select_image);
+                    command.Parameters.AddWithValue("@Password", txtPassword.Text);
+                    command.Parameters.AddWithValue("@Contact_Number", txtContact.Text);
+                    command.Parameters.AddWithValue("@Role", cmdRole.Text);
+                    command.Parameters.AddWithValue("@Date_Created", DateTime.Now);
+                    command.ExecuteNonQuery();
+
+                    connect.Close();
+                    MessageBox.Show("Successfully saved");
+                    Clear();
                 }
             }
         }
-            
+
 
         // button for adding user image
         private void btn_Add_Profile_Click(object sender, EventArgs e)
@@ -110,6 +132,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
-       
+
     }
 }

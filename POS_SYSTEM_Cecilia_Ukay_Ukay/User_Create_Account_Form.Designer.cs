@@ -47,6 +47,7 @@
             btn_Save = new Button();
             btn_Clear = new Button();
             cmdRole = new ComboBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)User_Profile).BeginInit();
             SuspendLayout();
@@ -247,6 +248,17 @@
             cmdRole.Size = new Size(400, 29);
             cmdRole.TabIndex = 30;
             // 
+            // button1
+            // 
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.Location = new Point(830, 298);
+            button1.Name = "button1";
+            button1.Size = new Size(57, 29);
+            button1.TabIndex = 31;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // User_Create_Account_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -254,6 +266,7 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
+            Controls.Add(button1);
             Controls.Add(cmdRole);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
@@ -302,5 +315,6 @@
         private Button btn_Save;
         private Button btn_Clear;
         private ComboBox cmdRole;
+        private Button button1;
     }
 }
