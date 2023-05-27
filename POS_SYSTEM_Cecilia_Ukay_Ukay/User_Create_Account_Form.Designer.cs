@@ -47,7 +47,8 @@
             btn_Save = new Button();
             btn_Clear = new Button();
             cmdRole = new ComboBox();
-            button1 = new Button();
+            passhide2 = new CheckBox();
+            passhide1 = new CheckBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)User_Profile).BeginInit();
             SuspendLayout();
@@ -156,7 +157,9 @@
             // 
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.Location = new Point(424, 213);
+            txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
             txtPassword.Size = new Size(400, 29);
             txtPassword.TabIndex = 20;
             // 
@@ -174,7 +177,9 @@
             // 
             txtRetype.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtRetype.Location = new Point(424, 298);
+            txtRetype.Multiline = true;
             txtRetype.Name = "txtRetype";
+            txtRetype.PasswordChar = '●';
             txtRetype.Size = new Size(400, 29);
             txtRetype.TabIndex = 22;
             // 
@@ -248,16 +253,35 @@
             cmdRole.Size = new Size(400, 29);
             cmdRole.TabIndex = 30;
             // 
-            // button1
+            // passhide2
             // 
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Location = new Point(830, 298);
-            button1.Name = "button1";
-            button1.Size = new Size(57, 29);
-            button1.TabIndex = 31;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            passhide2.Appearance = Appearance.Button;
+            passhide2.AutoSize = true;
+            passhide2.Cursor = Cursors.Hand;
+            passhide2.FlatAppearance.BorderSize = 0;
+            passhide2.FlatStyle = FlatStyle.Flat;
+            passhide2.Image = (Image)resources.GetObject("passhide2.Image");
+            passhide2.Location = new Point(830, 297);
+            passhide2.Name = "passhide2";
+            passhide2.Size = new Size(30, 30);
+            passhide2.TabIndex = 31;
+            passhide2.UseVisualStyleBackColor = true;
+            passhide2.CheckedChanged += passhide2_CheckedChanged;
+            // 
+            // passhide1
+            // 
+            passhide1.Appearance = Appearance.Button;
+            passhide1.AutoSize = true;
+            passhide1.Cursor = Cursors.Hand;
+            passhide1.FlatAppearance.BorderSize = 0;
+            passhide1.FlatStyle = FlatStyle.Flat;
+            passhide1.Image = (Image)resources.GetObject("passhide1.Image");
+            passhide1.Location = new Point(830, 212);
+            passhide1.Name = "passhide1";
+            passhide1.Size = new Size(30, 30);
+            passhide1.TabIndex = 32;
+            passhide1.UseVisualStyleBackColor = true;
+            passhide1.CheckedChanged += passhide1_CheckedChanged;
             // 
             // User_Create_Account_Form
             // 
@@ -266,7 +290,8 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
-            Controls.Add(button1);
+            Controls.Add(passhide1);
+            Controls.Add(passhide2);
             Controls.Add(cmdRole);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
@@ -315,6 +340,7 @@
         private Button btn_Save;
         private Button btn_Clear;
         private ComboBox cmdRole;
-        private Button button1;
+        private CheckBox passhide2;
+        private CheckBox passhide1;
     }
 }

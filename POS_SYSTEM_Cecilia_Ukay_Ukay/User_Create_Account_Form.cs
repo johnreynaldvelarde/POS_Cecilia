@@ -18,6 +18,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public User_Create_Account_Form()
         {
             InitializeComponent();
+
         }
 
 
@@ -53,9 +54,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 MessageBox.Show("Fill in the blank");
             }
+            else if (txtPassword.Text != txtRetype.Text)
+            {
+                MessageBox.Show("Password did not match");
+            }
             else if (User_Profile != null && User_Profile.Image == null)
             {
-                MessageBox.Show("No Staff Image Try Again!!!");
+                MessageBox.Show("No Staff Image Try Again");
             }
             else
             {
@@ -132,6 +137,30 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
+        // password hide 
+        private void passhide1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (passhide1.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+        }
 
+        // retype password hide
+        private void passhide2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (passhide2.Checked)
+            {
+                txtRetype.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtRetype.UseSystemPasswordChar = false;
+            }
+        }
     }
 }
