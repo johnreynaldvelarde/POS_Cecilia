@@ -21,8 +21,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
-           // load_category();
-            //view_product();
+            load_category();
+            view_product();
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);

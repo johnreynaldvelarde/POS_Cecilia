@@ -32,18 +32,18 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_List_Form));
             data_Grid_Staff = new DataGridView();
+            panel1 = new Panel();
+            btn_Export = new Button();
+            btn_Add_New_Staff = new Button();
+            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewImageColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
-            panel1 = new Panel();
-            btn_Export = new Button();
-            btn_Add_New_Staff = new Button();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Staff).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -86,72 +86,11 @@
             data_Grid_Staff.RowHeadersVisible = false;
             data_Grid_Staff.RowHeadersWidth = 50;
             data_Grid_Staff.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            data_Grid_Staff.RowTemplate.Height = 25;
+            data_Grid_Staff.RowTemplate.Height = 50;
             data_Grid_Staff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Staff.Size = new Size(1088, 492);
             data_Grid_Staff.TabIndex = 4;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 60F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.DataPropertyName = "Category_ID";
-            Column3.HeaderText = "Employee_ID";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Visible = false;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Employee Name";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "Date Added";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Contact Number";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Role";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "";
-            Edit.Image = (Image)resources.GetObject("Edit.Image");
-            Edit.MinimumWidth = 50;
-            Edit.Name = "Edit";
-            Edit.ReadOnly = true;
-            Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.HeaderText = "";
-            Delete.Image = (Image)resources.GetObject("Delete.Image");
-            Delete.MinimumWidth = 50;
-            Delete.Name = "Delete";
-            Delete.ReadOnly = true;
-            Delete.Width = 50;
+            data_Grid_Staff.CellContentClick += data_Grid_Staff_CellContentClick;
             // 
             // panel1
             // 
@@ -212,6 +151,68 @@
             label1.TabIndex = 1;
             label1.Text = "List of Staff";
             // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 60F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.HeaderText = "Profile Picture";
+            Column3.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Staff Name";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.HeaderText = "Date Added";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Contact Number";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Role";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 50;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 50;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Width = 50;
+            // 
             // User_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -239,7 +240,7 @@
         private Button btn_Add_New_Staff;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewImageColumn Column3;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column4;

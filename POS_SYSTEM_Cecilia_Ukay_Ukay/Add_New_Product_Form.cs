@@ -84,7 +84,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
 
                     connect.Open();
-                    string sql = "INSERT INTO Products (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Unit_Measurement, Deleted  ) " +
+                    string sql = "INSERT INTO Product (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Unit_Measurement, Deleted  ) " +
                                  "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Category_ID, @Unit_Measurement, @Deleted )";
                     SqlCommand command = new SqlCommand(sql, connect);
 
@@ -105,8 +105,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 }
 
             }
-
         }
+
+
 
         // button for clear
         private void btn_Clear_Click(object sender, EventArgs e)
@@ -114,10 +115,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Clear();
         }
 
-        private void Add_New_Product_Form_Load(object sender, EventArgs e)
-        {
-            txt_Date_Added.Text = DateTime.Now.ToLongDateString();
-        }
 
         private void txt_Price_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -136,8 +133,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
-
-        private void txt_Availability_KeyPress(object sender, KeyPressEventArgs e)
+        private void txt_Quantity_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))
             {
@@ -158,6 +154,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     e.Handled = true;
                 }
             }
+        }
+
+        private void Add_New_Product_Form_Load(object sender, EventArgs e)
+        {
+            txt_Date_Added.Text = DateTime.Now.ToLongDateString();
         }
     }
 }

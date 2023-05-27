@@ -91,6 +91,7 @@
             btn_Save.TabIndex = 45;
             btn_Save.Text = "Save";
             btn_Save.UseVisualStyleBackColor = false;
+            btn_Save.Click += btn_Save_Click;
             // 
             // label5
             // 
@@ -282,6 +283,7 @@
             txt_Quantity.Name = "txt_Quantity";
             txt_Quantity.Size = new Size(240, 29);
             txt_Quantity.TabIndex = 61;
+            txt_Quantity.KeyPress += txt_Quantity_KeyPress;
             // 
             // btn_Update
             // 
@@ -330,6 +332,7 @@
             Name = "Add_New_Product_Form";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
+            Load += Add_New_Product_Form_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

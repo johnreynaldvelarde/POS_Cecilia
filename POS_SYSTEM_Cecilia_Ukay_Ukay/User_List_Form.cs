@@ -18,7 +18,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public User_List_Form()
         {
             InitializeComponent();
-            //view_user_account();
+            view_user_account();
         }
 
         // button for adding new staff_account
@@ -45,7 +45,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     if (reader["Deleted"].ToString() == "0")
                     {
                         i += 1;
-                        data_Grid_Staff.Rows.Add(i, reader["Staff_Name"].ToString(), reader["Date_Added"].ToString(), reader["Contact_Number"].ToString(), reader["Role"].ToString());
+                        data_Grid_Staff.Rows.Add(i, reader["Staff_Image"], reader["Staff_Name"].ToString(), reader["Date_Added"].ToString(), reader["Contact_Number"].ToString(), reader["Role"].ToString());
                     }
                 }
                 reader.Close();
@@ -53,6 +53,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
-       
+        private void data_Grid_Staff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
