@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             btn_Sales_Report = new Button();
@@ -40,7 +40,7 @@
             button1 = new Button();
             picture_account = new PictureBox();
             btn_User = new Button();
-            btn_Supplier = new Button();
+            btn_Trash = new Button();
             btn_Inventory = new Button();
             btn_Settings = new Button();
             label2 = new Label();
@@ -98,7 +98,7 @@
             panel1.Controls.Add(button1);
             panel1.Controls.Add(picture_account);
             panel1.Controls.Add(btn_User);
-            panel1.Controls.Add(btn_Supplier);
+            panel1.Controls.Add(btn_Trash);
             panel1.Controls.Add(btn_Inventory);
             panel1.Controls.Add(btn_Settings);
             panel1.Controls.Add(label2);
@@ -209,24 +209,25 @@
             btn_User.UseVisualStyleBackColor = false;
             btn_User.Click += btn_User_Click;
             // 
-            // btn_Supplier
+            // btn_Trash
             // 
-            btn_Supplier.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Supplier.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Supplier.Cursor = Cursors.Hand;
-            btn_Supplier.FlatAppearance.BorderSize = 0;
-            btn_Supplier.FlatStyle = FlatStyle.Flat;
-            btn_Supplier.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Supplier.ForeColor = Color.White;
-            btn_Supplier.Image = (Image)resources.GetObject("btn_Supplier.Image");
-            btn_Supplier.Location = new Point(804, 0);
-            btn_Supplier.Name = "btn_Supplier";
-            btn_Supplier.Size = new Size(80, 63);
-            btn_Supplier.TabIndex = 13;
-            btn_Supplier.Text = "Supplier";
-            btn_Supplier.TextAlign = ContentAlignment.BottomCenter;
-            btn_Supplier.TextImageRelation = TextImageRelation.ImageAboveText;
-            btn_Supplier.UseVisualStyleBackColor = false;
+            btn_Trash.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Trash.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Trash.Cursor = Cursors.Hand;
+            btn_Trash.FlatAppearance.BorderSize = 0;
+            btn_Trash.FlatStyle = FlatStyle.Flat;
+            btn_Trash.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Trash.ForeColor = Color.White;
+            btn_Trash.Image = (Image)resources.GetObject("btn_Trash.Image");
+            btn_Trash.Location = new Point(804, 0);
+            btn_Trash.Name = "btn_Trash";
+            btn_Trash.Size = new Size(80, 63);
+            btn_Trash.TabIndex = 13;
+            btn_Trash.Text = "  Trash Bin";
+            btn_Trash.TextAlign = ContentAlignment.BottomCenter;
+            btn_Trash.TextImageRelation = TextImageRelation.ImageAboveText;
+            btn_Trash.UseVisualStyleBackColor = false;
+            btn_Trash.Click += btn_Trash_Click;
             // 
             // btn_Inventory
             // 
@@ -469,25 +470,25 @@
             data_Grid_Transaction.BorderStyle = BorderStyle.None;
             data_Grid_Transaction.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Transaction.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.White;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             data_Grid_Transaction.ColumnHeadersHeight = 30;
             data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column5, Column4, Column6, Column3 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle8;
             data_Grid_Transaction.Dock = DockStyle.Fill;
             data_Grid_Transaction.EnableHeadersVisualStyles = false;
             data_Grid_Transaction.Location = new Point(0, 10);
@@ -628,7 +629,7 @@
         private Panel panel1;
         private Label label2;
         private Panel panel2;
-        private Button btn_Supplier;
+        private Button btn_Trash;
         private Button btn_Inventory;
         private Button btn_Settings;
         private Button btn_User;

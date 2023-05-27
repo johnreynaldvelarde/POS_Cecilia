@@ -39,8 +39,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Inventory.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Inventory.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
-            btn_Supplier.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
-            btn_Supplier.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+            btn_Trash.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Trash.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
             btn_User.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_User.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
@@ -156,6 +156,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Settings.BackColor = defaultColor;
         }
 
+        // button for trash bin
+        private void btn_Trash_Click(object sender, EventArgs e)
+        {
+            btn_Trash.BackColor = settingsColor;
+
+            Trash_Bin_Form frm = new Trash_Bin_Form();
+            frm.ShowDialog();
+            frm.Dispose();
+            btn_Trash.BackColor = defaultColor;
+        }
         // button for sales report
         private void btn_Sales_Report_Click(object sender, EventArgs e)
         {
@@ -188,6 +198,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             timer1.Start();
         }
 
-
+       
     }
 }
