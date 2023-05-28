@@ -105,7 +105,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     i += 1;
                     data_Grid_Available.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Name"].ToString(), reader["Category_Name"].ToString(), reader["Price"].ToString(),
-                                                    reader["Unit_Measurement"].ToString(),"20 %", null, reader["Quantity"].ToString());
+                                                    reader["Unit_Measurement"].ToString(), "20 %", null, reader["Quantity"].ToString());
 
                 }
                 reader.Close();
@@ -113,6 +113,65 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             }
         }
+
+        // method to click conte
+        private void data_Grid_Available_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            /*
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridView dataGridView = (DataGridView)sender;
+                DataGridViewCell cell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+                // Check if the clicked cell is in the Quantity column
+                if (cell.OwningColumn.Name == "Quantity")
+                {
+                    int quantity = Convert.ToInt32(cell.Value);
+
+                    if (e.ColumnIndex == dataGridView.Columns[7].Index)
+                    {
+                        // Increment the quantity by 1 (if not exceeding the range)
+                        if (quantity < int.MaxValue)
+                            cell.Value = quantity + 1;
+                    }
+                    else if (e.ColumnIndex == dataGridView.Columns[9].Index)
+                    {
+                        // Decrement the quantity by 1 (if not exceeding the range)
+                        if (quantity > 1)
+                            cell.Value = quantity - 1;
+                    }
+                }
+            }
+            */
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+             //   DataGridView dataGridView = (DataGridView)sender;
+                string column_available = data_Grid_Available.Columns[e.ColumnIndex].Name;
+
+                if (column_available == "Add")
+                {
+                    int quantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
+                    int availableQuantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
+
+                    // Increment the quantity by 1 (if not exceeding the available quantity)
+                    if (quantity < availableQuantity)
+                    {
+                        data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value = quantity + 1;
+                    }
+                }
+                else if (column_available == "Minus")
+                {
+                    int quantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
+
+                    // Decrement the quantity by 1 (if not reaching below 1)
+                    if (quantity > 1)
+                    {
+                        data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value = quantity - 1;
+                    }
+                }
+            }
+        }
+
 
 
 
@@ -191,23 +250,18 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             label_Time.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
-
-        private void data_Grid_Available_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void aa()
         {
             /*
-                   i += 1;
-                   string productName = reader["Product_Name"].ToString();
-                   string price = reader["Price"].ToString();
-                   string quantity = reader["Quantity"].ToString();
-                   string categoryName = reader["Category_Name"].ToString();
-                   string unitMeasurement = reader["Unit_Measurement"].ToString();
+                 i += 1;
+                 string productName = reader["Product_Name"].ToString();
+                 string price = reader["Price"].ToString();
+                 string quantity = reader["Quantity"].ToString();
+                 string categoryName = reader["Category_Name"].ToString();
+                 string unitMeasurement = reader["Unit_Measurement"].ToString();
 
-                   data_Grid_Available.Rows.Add(i, productName, categoryName, price, quantity, unitMeasurement);
-                   */
+                 data_Grid_Available.Rows.Add(i, productName, categoryName, price, quantity, unitMeasurement);
+                 */
         }
-
-
-
-
     }
 }

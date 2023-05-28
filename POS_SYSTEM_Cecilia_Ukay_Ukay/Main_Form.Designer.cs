@@ -82,9 +82,9 @@
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             Column10 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
-            Decrement = new DataGridViewImageColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Increment = new DataGridViewImageColumn();
+            Minus = new DataGridViewImageColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Add = new DataGridViewImageColumn();
             dataGridViewImageColumn1 = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -399,7 +399,7 @@
             data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Available.ColumnHeadersHeight = 50;
             data_Grid_Available.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column9, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column10, Column7, Decrement, Column8, Increment, dataGridViewImageColumn1 });
+            data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column9, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column10, Column7, Minus, Quantity, Add, dataGridViewImageColumn1 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -412,7 +412,6 @@
             data_Grid_Available.EnableHeadersVisualStyles = false;
             data_Grid_Available.Location = new Point(10, 78);
             data_Grid_Available.Name = "data_Grid_Available";
-            data_Grid_Available.ReadOnly = true;
             data_Grid_Available.RowHeadersVisible = false;
             data_Grid_Available.RowHeadersWidth = 50;
             data_Grid_Available.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -679,13 +678,11 @@
             dataGridViewTextBoxColumn1.FillWeight = 70.62577F;
             dataGridViewTextBoxColumn1.HeaderText = "#";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // Column9
             // 
             Column9.HeaderText = "Product_ID";
             Column9.Name = "Column9";
-            Column9.ReadOnly = true;
             Column9.Visible = false;
             // 
             // dataGridViewTextBoxColumn2
@@ -694,7 +691,6 @@
             dataGridViewTextBoxColumn2.FillWeight = 153.369919F;
             dataGridViewTextBoxColumn2.HeaderText = "Name";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -702,7 +698,6 @@
             dataGridViewTextBoxColumn3.FillWeight = 111.979416F;
             dataGridViewTextBoxColumn3.HeaderText = "Category";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
             dataGridViewTextBoxColumn3.Visible = false;
             // 
             // dataGridViewTextBoxColumn4
@@ -711,7 +706,6 @@
             dataGridViewTextBoxColumn4.FillWeight = 120.537521F;
             dataGridViewTextBoxColumn4.HeaderText = "Price";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // Column10
             // 
@@ -719,39 +713,34 @@
             Column10.FillWeight = 129.478317F;
             Column10.HeaderText = "Size";
             Column10.Name = "Column10";
-            Column10.ReadOnly = true;
             // 
             // Column7
             // 
             Column7.HeaderText = "Discount";
             Column7.Name = "Column7";
-            Column7.ReadOnly = true;
             // 
-            // Decrement
+            // Minus
             // 
-            Decrement.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Decrement.FillWeight = 53.5013351F;
-            Decrement.HeaderText = "";
-            Decrement.Image = (Image)resources.GetObject("Decrement.Image");
-            Decrement.Name = "Decrement";
-            Decrement.ReadOnly = true;
+            Minus.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Minus.FillWeight = 53.5013351F;
+            Minus.HeaderText = "";
+            Minus.Image = (Image)resources.GetObject("Minus.Image");
+            Minus.Name = "Minus";
             // 
-            // Column8
+            // Quantity
             // 
-            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column8.FillWeight = 90.62495F;
-            Column8.HeaderText = "Quantity";
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Quantity.FillWeight = 90.62495F;
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
             // 
-            // Increment
+            // Add
             // 
-            Increment.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Increment.FillWeight = 47.9555626F;
-            Increment.HeaderText = "";
-            Increment.Image = (Image)resources.GetObject("Increment.Image");
-            Increment.Name = "Increment";
-            Increment.ReadOnly = true;
+            Add.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Add.FillWeight = 47.9555626F;
+            Add.HeaderText = "";
+            Add.Image = (Image)resources.GetObject("Add.Image");
+            Add.Name = "Add";
             // 
             // dataGridViewImageColumn1
             // 
@@ -760,7 +749,6 @@
             dataGridViewImageColumn1.Image = (Image)resources.GetObject("dataGridViewImageColumn1.Image");
             dataGridViewImageColumn1.MinimumWidth = 50;
             dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            dataGridViewImageColumn1.ReadOnly = true;
             dataGridViewImageColumn1.Width = 50;
             // 
             // Main_Form
@@ -854,9 +842,9 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column7;
-        private DataGridViewImageColumn Decrement;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewImageColumn Increment;
+        private DataGridViewImageColumn Minus;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewImageColumn Add;
         private DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
