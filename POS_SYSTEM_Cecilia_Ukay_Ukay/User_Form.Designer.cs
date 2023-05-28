@@ -34,8 +34,8 @@
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
-            btn_Category_List = new Button();
-            btn_Employee_List = new Button();
+            btn_Supplier_List = new Button();
+            btn_Staff_List = new Button();
             panel_center = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -86,50 +86,51 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(btn_Category_List);
-            panel3.Controls.Add(btn_Employee_List);
+            panel3.Controls.Add(btn_Supplier_List);
+            panel3.Controls.Add(btn_Staff_List);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(10, 73);
             panel3.Name = "panel3";
             panel3.Size = new Size(1080, 60);
             panel3.TabIndex = 13;
             // 
-            // btn_Category_List
+            // btn_Supplier_List
             // 
-            btn_Category_List.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Category_List.Cursor = Cursors.Hand;
-            btn_Category_List.FlatAppearance.BorderSize = 0;
-            btn_Category_List.FlatStyle = FlatStyle.Flat;
-            btn_Category_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Category_List.ForeColor = Color.White;
-            btn_Category_List.Image = (Image)resources.GetObject("btn_Category_List.Image");
-            btn_Category_List.Location = new Point(226, 11);
-            btn_Category_List.Name = "btn_Category_List";
-            btn_Category_List.Size = new Size(197, 38);
-            btn_Category_List.TabIndex = 17;
-            btn_Category_List.Text = "List of Supplier";
-            btn_Category_List.TextAlign = ContentAlignment.MiddleRight;
-            btn_Category_List.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Category_List.UseVisualStyleBackColor = false;
+            btn_Supplier_List.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Supplier_List.Cursor = Cursors.Hand;
+            btn_Supplier_List.FlatAppearance.BorderSize = 0;
+            btn_Supplier_List.FlatStyle = FlatStyle.Flat;
+            btn_Supplier_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Supplier_List.ForeColor = Color.White;
+            btn_Supplier_List.Image = (Image)resources.GetObject("btn_Supplier_List.Image");
+            btn_Supplier_List.Location = new Point(226, 11);
+            btn_Supplier_List.Name = "btn_Supplier_List";
+            btn_Supplier_List.Size = new Size(197, 38);
+            btn_Supplier_List.TabIndex = 17;
+            btn_Supplier_List.Text = "List of Supplier";
+            btn_Supplier_List.TextAlign = ContentAlignment.MiddleRight;
+            btn_Supplier_List.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Supplier_List.UseVisualStyleBackColor = false;
+            btn_Supplier_List.Click += btn_Supplier_List_Click;
             // 
-            // btn_Employee_List
+            // btn_Staff_List
             // 
-            btn_Employee_List.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Employee_List.Cursor = Cursors.Hand;
-            btn_Employee_List.FlatAppearance.BorderSize = 0;
-            btn_Employee_List.FlatStyle = FlatStyle.Flat;
-            btn_Employee_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Employee_List.ForeColor = Color.White;
-            btn_Employee_List.Image = (Image)resources.GetObject("btn_Employee_List.Image");
-            btn_Employee_List.Location = new Point(12, 11);
-            btn_Employee_List.Name = "btn_Employee_List";
-            btn_Employee_List.Size = new Size(197, 38);
-            btn_Employee_List.TabIndex = 16;
-            btn_Employee_List.Text = "List of Staff";
-            btn_Employee_List.TextAlign = ContentAlignment.MiddleRight;
-            btn_Employee_List.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Employee_List.UseVisualStyleBackColor = false;
-            btn_Employee_List.Click += btn_Employee_List_Click;
+            btn_Staff_List.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Staff_List.Cursor = Cursors.Hand;
+            btn_Staff_List.FlatAppearance.BorderSize = 0;
+            btn_Staff_List.FlatStyle = FlatStyle.Flat;
+            btn_Staff_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Staff_List.ForeColor = Color.White;
+            btn_Staff_List.Image = (Image)resources.GetObject("btn_Staff_List.Image");
+            btn_Staff_List.Location = new Point(12, 11);
+            btn_Staff_List.Name = "btn_Staff_List";
+            btn_Staff_List.Size = new Size(197, 38);
+            btn_Staff_List.TabIndex = 16;
+            btn_Staff_List.Text = "List of Staff";
+            btn_Staff_List.TextAlign = ContentAlignment.MiddleRight;
+            btn_Staff_List.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Staff_List.UseVisualStyleBackColor = false;
+            btn_Staff_List.Click += btn_Employee_List_Click;
             // 
             // panel_center
             // 
@@ -168,8 +169,8 @@
         private Panel panel1;
         private Panel panel2;
         private Panel panel3;
-        private Button btn_Category_List;
-        public Button btn_Employee_List;
+        private Button btn_Supplier_List;
+        public Button btn_Staff_List;
         private Panel panel_center;
     }
 }

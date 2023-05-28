@@ -44,22 +44,28 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public void view_employee_list()
         {
             openChildForm(new User_List_Form());
-            btn_Employee_List.BackColor = Color.FromArgb(242, 197, 70);
+            btn_Staff_List.BackColor = Color.FromArgb(242, 197, 70);
         }
 
         private void btn_Employee_List_Click(object sender, EventArgs e)
         {
             openChildForm(new User_List_Form());
             resetButtonColors();
-            btn_Employee_List.BackColor = Color.FromArgb(242, 197, 70);
+            btn_Staff_List.BackColor = Color.FromArgb(242, 197, 70);
         }
 
         private void resetButtonColors()
         {
-            btn_Employee_List.BackColor = defaultColor;
+            btn_Staff_List.BackColor = defaultColor;
+            btn_Supplier_List.BackColor = defaultColor;
 
         }
 
-
+        private void btn_Supplier_List_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Supplier_List_Form());
+            resetButtonColors();
+            btn_Supplier_List.BackColor = Color.FromArgb(242, 197, 70);
+        }
     }
 }
