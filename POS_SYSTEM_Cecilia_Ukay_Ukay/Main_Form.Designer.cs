@@ -70,22 +70,22 @@
             category_panel_flow = new FlowLayoutPanel();
             panel7 = new Panel();
             panel3 = new Panel();
+            data_Grid_Transaction = new DataGridView();
             down_panel = new Panel();
             label_amount = new Label();
             label1 = new Label();
             btn_Sell = new Button();
-            data_Grid_Transaction = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewImageColumn();
             panel6 = new Panel();
             btn_Clear_All = new Button();
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            Column1 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            productName = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -101,8 +101,8 @@
             side_panel.SuspendLayout();
             panel7.SuspendLayout();
             panel3.SuspendLayout();
-            down_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Transaction).BeginInit();
+            down_panel.SuspendLayout();
             panel6.SuspendLayout();
             SuspendLayout();
             // 
@@ -563,6 +563,50 @@
             panel3.Size = new Size(368, 492);
             panel3.TabIndex = 0;
             // 
+            // data_Grid_Transaction
+            // 
+            data_Grid_Transaction.AllowUserToAddRows = false;
+            data_Grid_Transaction.AllowUserToOrderColumns = true;
+            data_Grid_Transaction.AllowUserToResizeColumns = false;
+            data_Grid_Transaction.AllowUserToResizeRows = false;
+            data_Grid_Transaction.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data_Grid_Transaction.BackgroundColor = Color.White;
+            data_Grid_Transaction.BorderStyle = BorderStyle.None;
+            data_Grid_Transaction.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            data_Grid_Transaction.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            data_Grid_Transaction.ColumnHeadersHeight = 30;
+            data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column8, productName, Column5, Column4, Column6, Column3 });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle4;
+            data_Grid_Transaction.Dock = DockStyle.Fill;
+            data_Grid_Transaction.EnableHeadersVisualStyles = false;
+            data_Grid_Transaction.Location = new Point(0, 37);
+            data_Grid_Transaction.Name = "data_Grid_Transaction";
+            data_Grid_Transaction.ReadOnly = true;
+            data_Grid_Transaction.RowHeadersVisible = false;
+            data_Grid_Transaction.RowHeadersWidth = 30;
+            data_Grid_Transaction.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            data_Grid_Transaction.RowTemplate.Height = 30;
+            data_Grid_Transaction.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            data_Grid_Transaction.Size = new Size(368, 337);
+            data_Grid_Transaction.TabIndex = 7;
+            data_Grid_Transaction.CellFormatting += data_Grid_Transaction_CellFormatting;
+            // 
             // down_panel
             // 
             down_panel.Controls.Add(label_amount);
@@ -612,105 +656,6 @@
             btn_Sell.Text = "Sell";
             btn_Sell.UseVisualStyleBackColor = false;
             // 
-            // data_Grid_Transaction
-            // 
-            data_Grid_Transaction.AllowUserToAddRows = false;
-            data_Grid_Transaction.AllowUserToOrderColumns = true;
-            data_Grid_Transaction.AllowUserToResizeColumns = false;
-            data_Grid_Transaction.AllowUserToResizeRows = false;
-            data_Grid_Transaction.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            data_Grid_Transaction.BackgroundColor = Color.White;
-            data_Grid_Transaction.BorderStyle = BorderStyle.None;
-            data_Grid_Transaction.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            data_Grid_Transaction.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            data_Grid_Transaction.ColumnHeadersHeight = 30;
-            data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column8, Column2, Column5, Column4, Column6, Column3 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle4;
-            data_Grid_Transaction.Dock = DockStyle.Fill;
-            data_Grid_Transaction.EnableHeadersVisualStyles = false;
-            data_Grid_Transaction.Location = new Point(0, 37);
-            data_Grid_Transaction.Name = "data_Grid_Transaction";
-            data_Grid_Transaction.ReadOnly = true;
-            data_Grid_Transaction.RowHeadersVisible = false;
-            data_Grid_Transaction.RowHeadersWidth = 30;
-            data_Grid_Transaction.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            data_Grid_Transaction.RowTemplate.Height = 30;
-            data_Grid_Transaction.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            data_Grid_Transaction.Size = new Size(368, 337);
-            data_Grid_Transaction.TabIndex = 7;
-            data_Grid_Transaction.CellFormatting += data_Grid_Transaction_CellFormatting;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 41.4680824F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Product_ID";
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            Column8.Visible = false;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.FillWeight = 128.9151F;
-            Column2.HeaderText = "Name";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 111.27269F;
-            Column5.HeaderText = "Price";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 65.05439F;
-            Column4.HeaderText = "Qyt";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column6.FillWeight = 111.27269F;
-            Column6.HeaderText = "Amount";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Column3.HeaderText = "";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 5;
-            // 
             // panel6
             // 
             panel6.BackColor = Color.FromArgb(14, 159, 104);
@@ -752,6 +697,61 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 41.4680824F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Product_ID";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            Column8.Visible = false;
+            // 
+            // productName
+            // 
+            productName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            productName.FillWeight = 128.9151F;
+            productName.HeaderText = "Name";
+            productName.Name = "productName";
+            productName.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 111.27269F;
+            Column5.HeaderText = "Price";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 65.05439F;
+            Column4.HeaderText = "Qyt";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column6.FillWeight = 111.27269F;
+            Column6.HeaderText = "Amount";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Column3.HeaderText = "";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Width = 5;
+            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -784,9 +784,9 @@
             side_panel.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)data_Grid_Transaction).EndInit();
             down_panel.ResumeLayout(false);
             down_panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)data_Grid_Transaction).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ResumeLayout(false);
@@ -841,7 +841,7 @@
         private DataGridViewImageColumn Sell;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn productName;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column6;

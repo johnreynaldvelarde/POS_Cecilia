@@ -124,11 +124,31 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 int quantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
 
                 // Calculate the amount
-                decimal amount = price * quantity;
+                // decimal amount = price * quantity;
 
                 // Add the details to data_grid_transaction
 
-                data_Grid_Transaction.Rows.Add(0, id, productName, price, quantity, amount);
+                //data_Grid_Transaction.Rows.Add(0, id, productName, price, quantity, amount);
+
+                bool productExists = false;
+                foreach (DataGridViewRow row in data_Grid_Transaction.Rows)
+                {
+                    if (row.Cells["productName"].Value.ToString() == productName)
+                    {
+                        productExists = true;
+                        break;
+                    }
+                }
+
+                // pag ang product ay hnd exist, add it to data_grid_transaction
+                if (!productExists)
+                {
+                    // Calculate the amount
+                    decimal amount = price * quantity;
+
+                    // Add the details to data_grid_transaction
+                    data_Grid_Transaction.Rows.Add(0, id, productName, price, quantity, amount);
+                }
             }
 
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
@@ -141,7 +161,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     int quantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
                     int availableQuantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
 
-                    // Increment the quantity by 1 (if not exceeding the available quantity)
                     if (quantity < availableQuantity)
                     {
                         data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value = quantity + 1;
@@ -151,7 +170,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
                     int quantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
 
-                    // Decrement the quantity by 1 (if not reaching below 1)
                     if (quantity > 1)
                     {
                         data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value = quantity - 1;
