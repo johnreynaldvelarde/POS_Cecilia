@@ -80,9 +80,11 @@
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            Column10 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
-            Decrement = new DataGridViewButtonColumn();
+            Decrement = new DataGridViewImageColumn();
             Column8 = new DataGridViewTextBoxColumn();
+            Increment = new DataGridViewImageColumn();
             dataGridViewImageColumn1 = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -397,7 +399,7 @@
             data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Available.ColumnHeadersHeight = 50;
             data_Grid_Available.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column9, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column7, Decrement, Column8, dataGridViewImageColumn1 });
+            data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column9, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column10, Column7, Decrement, Column8, Increment, dataGridViewImageColumn1 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -414,7 +416,7 @@
             data_Grid_Available.RowHeadersVisible = false;
             data_Grid_Available.RowHeadersWidth = 50;
             data_Grid_Available.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            data_Grid_Available.RowTemplate.Height = 30;
+            data_Grid_Available.RowTemplate.Height = 40;
             data_Grid_Available.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Available.Size = new Size(696, 424);
             data_Grid_Available.TabIndex = 8;
@@ -674,7 +676,7 @@
             // dataGridViewTextBoxColumn1
             // 
             dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn1.FillWeight = 54.5463867F;
+            dataGridViewTextBoxColumn1.FillWeight = 70.62577F;
             dataGridViewTextBoxColumn1.HeaderText = "#";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -689,7 +691,7 @@
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.FillWeight = 118.452148F;
+            dataGridViewTextBoxColumn2.FillWeight = 153.369919F;
             dataGridViewTextBoxColumn2.HeaderText = "Name";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -701,34 +703,55 @@
             dataGridViewTextBoxColumn3.HeaderText = "Category";
             dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Visible = false;
             // 
             // dataGridViewTextBoxColumn4
             // 
             dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.FillWeight = 93.0947342F;
+            dataGridViewTextBoxColumn4.FillWeight = 120.537521F;
             dataGridViewTextBoxColumn4.HeaderText = "Price";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // Column10
+            // 
+            Column10.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column10.FillWeight = 129.478317F;
+            Column10.HeaderText = "Size";
+            Column10.Name = "Column10";
+            Column10.ReadOnly = true;
+            // 
             // Column7
             // 
-            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column7.FillWeight = 137.786636F;
             Column7.HeaderText = "Discount";
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
             // Decrement
             // 
-            Decrement.HeaderText = "-";
+            Decrement.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Decrement.FillWeight = 53.5013351F;
+            Decrement.HeaderText = "";
+            Decrement.Image = (Image)resources.GetObject("Decrement.Image");
             Decrement.Name = "Decrement";
             Decrement.ReadOnly = true;
             // 
             // Column8
             // 
-            Column8.HeaderText = "Qyt";
+            Column8.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column8.FillWeight = 90.62495F;
+            Column8.HeaderText = "Quantity";
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
+            // 
+            // Increment
+            // 
+            Increment.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Increment.FillWeight = 47.9555626F;
+            Increment.HeaderText = "";
+            Increment.Image = (Image)resources.GetObject("Increment.Image");
+            Increment.Name = "Increment";
+            Increment.ReadOnly = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -829,9 +852,11 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column7;
-        private DataGridViewButtonColumn Decrement;
+        private DataGridViewImageColumn Decrement;
         private DataGridViewTextBoxColumn Column8;
+        private DataGridViewImageColumn Increment;
         private DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

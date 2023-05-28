@@ -102,20 +102,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 while (reader.Read())
                 {
-                   
-                    i += 1;
-                    // data_Grid_Available.Rows.Add(i, reader[0].ToString(), reader[1].ToString(), reader[4].ToString(), reader[2].ToString(),
-                    //              reader[5].ToString(), reader[7, 3].ToString());
-                    DataGridViewRow row = (DataGridViewRow)data_Grid_Available.Rows[0].Clone();
-                    row.Cells[0].Value = i;
-                    row.Cells[1].Value = reader.GetValue(0).ToString();
-                    row.Cells[2].Value = reader.GetValue(1).ToString();
-                    row.Cells[3].Value = reader.GetValue(4).ToString();
-                    row.Cells[4].Value = reader.GetValue(2).ToString();
-                    row.Cells[5].Value = reader.GetValue(5).ToString();
-                    row.Cells[7].Value = reader.GetValue(3).ToString();
 
-                    data_Grid_Available.Rows.Add(row);
+                    i += 1;
+                    data_Grid_Available.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Name"].ToString(), reader["Category_Name"].ToString(), reader["Price"].ToString(),
+                                                    reader["Unit_Measurement"].ToString(),"20 %", null, reader["Quantity"].ToString());
 
                 }
                 reader.Close();

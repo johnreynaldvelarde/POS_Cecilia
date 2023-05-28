@@ -144,7 +144,7 @@
             data_Grid_Category.RowHeadersVisible = false;
             data_Grid_Category.RowHeadersWidth = 50;
             data_Grid_Category.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            data_Grid_Category.RowTemplate.Height = 25;
+            data_Grid_Category.RowTemplate.Height = 40;
             data_Grid_Category.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Category.Size = new Size(1088, 492);
             data_Grid_Category.TabIndex = 2;

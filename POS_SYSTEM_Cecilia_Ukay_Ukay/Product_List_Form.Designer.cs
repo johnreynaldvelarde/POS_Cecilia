@@ -158,7 +158,7 @@
             data_Grid_Product.RowHeadersVisible = false;
             data_Grid_Product.RowHeadersWidth = 50;
             data_Grid_Product.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            data_Grid_Product.RowTemplate.Height = 25;
+            data_Grid_Product.RowTemplate.Height = 40;
             data_Grid_Product.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Product.Size = new Size(1090, 494);
             data_Grid_Product.TabIndex = 3;
@@ -195,7 +195,7 @@
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.HeaderText = "         Price";
+            Column4.HeaderText = "Price";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
@@ -209,7 +209,7 @@
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column7.HeaderText = "     Size";
+            Column7.HeaderText = "Size";
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 

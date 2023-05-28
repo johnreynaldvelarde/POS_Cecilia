@@ -17,7 +17,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     public partial class Category_List_Form : Form
     {
         DB_Connection database = new DB_Connection();
-        
+
         public Category_List_Form()
         {
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void data_Grid_Category_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string column_category = data_Grid_Category.Columns[e.ColumnIndex].Name;
-           
+
 
             if (column_category == "Edit")
             {
@@ -76,12 +76,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 frm.categoryID = category_id.ToString();
                 frm.ShowDialog();
             }
-            else if (column_category == "Delete") 
+            else if (column_category == "Delete")
             {
                 if (e.ColumnIndex == data_Grid_Category.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
                     //int id = Convert.ToInt32(data_Grid_Category.Rows[e.RowIndex].Cells["Category_ID"].Value);
-                    if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                    if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                         {
@@ -91,7 +91,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                             command.Parameters.AddWithValue("@Category_ID", Convert.ToInt32(category_id));
                             command.ExecuteNonQuery();
                             connect.Close();
-                            
+
                         }
 
                         data_Grid_Category.Rows.RemoveAt(e.RowIndex);
@@ -110,7 +110,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 category_name = data_Grid_Category[1, i].Value.ToString();
                 category_id = data_Grid_Category[3, i].Value.ToString();
             }
-            
+
         }
 
         // export in excel
