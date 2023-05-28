@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            combo_Category = new ComboBox();
+            cmd_Category = new ComboBox();
             btn_Clear = new Button();
             btn_Save = new Button();
             label5 = new Label();
@@ -54,15 +54,15 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // combo_Category
+            // cmd_Category
             // 
-            combo_Category.DropDownStyle = ComboBoxStyle.DropDownList;
-            combo_Category.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            combo_Category.FormattingEnabled = true;
-            combo_Category.Location = new Point(44, 390);
-            combo_Category.Name = "combo_Category";
-            combo_Category.Size = new Size(240, 28);
-            combo_Category.TabIndex = 47;
+            cmd_Category.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_Category.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Category.FormattingEnabled = true;
+            cmd_Category.Location = new Point(44, 390);
+            cmd_Category.Name = "cmd_Category";
+            cmd_Category.Size = new Size(240, 28);
+            cmd_Category.TabIndex = 47;
             // 
             // btn_Clear
             // 
@@ -319,7 +319,7 @@
             Controls.Add(txt_Product_Name);
             Controls.Add(label7);
             Controls.Add(txt_Product_Code);
-            Controls.Add(combo_Category);
+            Controls.Add(cmd_Category);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
             Controls.Add(label5);
@@ -341,7 +341,7 @@
 
         #endregion
 
-        private ComboBox combo_Category;
+        private ComboBox cmd_Category;
         private Button btn_Clear;
         private Button btn_Save;
         private Label label5;

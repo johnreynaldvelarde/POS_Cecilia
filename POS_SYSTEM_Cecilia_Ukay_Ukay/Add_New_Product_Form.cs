@@ -32,7 +32,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             txt_Product_Name.Clear();
             txt_Price.Clear();
             txt_Quantity.Clear();
-            combo_Category.SelectedIndex = -1;
+            cmd_Category.SelectedIndex = -1;
             cmd_Measurement.SelectedIndex = -1;
             txt_Product_Name.Focus();
 
@@ -43,6 +43,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
+
                 connect.Open();
                 string sql = "SELECT Category_Name FROM Categories WHERE Deleted = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
@@ -51,7 +52,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 while (reader.Read())
                 {
                     string categoryName = reader.GetString(0);
-                    combo_Category.Items.Add(categoryName);
+                    cmd_Category.Items.Add(categoryName);
                 }
 
                 reader.Close();
@@ -75,9 +76,30 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             else
             {
                 int categoryId = 0;
+               
+                /*
                 if (combo_Category.SelectedValue != null)
                 {
                     categoryId = (int)combo_Category.SelectedValue;
+                }
+                */
+
+                string selectedCategory = cmd_Category.SelectedItem.ToString();
+
+                // looking for  Category_ID value in the Categories table
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "SELECT Category_ID FROM Categories WHERE Category_Name = @Category_Name AND Deleted = 0";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Category_Name", selectedCategory);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        categoryId = Convert.ToInt32(result);
+                    }
+                    connect.Close();
                 }
 
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
@@ -87,7 +109,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     string sql = "INSERT INTO Product (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Unit_Measurement, Deleted  ) " +
                                  "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Category_ID, @Unit_Measurement, @Deleted )";
                     SqlCommand command = new SqlCommand(sql, connect);
-
                     command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
                     command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
                     command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
@@ -101,12 +122,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     MessageBox.Show("Successfully added");
                     Clear();
-                    // main_form.load_product();
                 }
 
             }
         }
-
 
 
         // button for clear

@@ -61,7 +61,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     MessageBox.Show("Successfully added!!!");
                     frm.view_category();
                     Clear();
-                    connect.Close();
                 }
 
             }

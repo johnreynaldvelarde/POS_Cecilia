@@ -94,7 +94,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 int i = 0;
                 connect.Open();
                 string sql = "SELECT p.Product_Name, p.Price, p.Quantity, c.Category_Name, p.Unit_Measurement  " +
-                               "FROM Product p JOIN Categories c ON p.Category_ID = c.Category_ID WHERE p.Quantity > 0 AND p.Deleted = 0;";
+                             "FROM Product p JOIN Categories c ON p.Category_ID = c.Category_ID WHERE p.Quantity > 0 AND p.Deleted = 0;";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
