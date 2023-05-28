@@ -19,6 +19,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
+            view_product_list();
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
@@ -42,11 +43,31 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Add_Product.BackColor = defaultColor;
         }
 
-        public void view_product()
+        public void view_product_list()
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
+                int i = 0;
+                connect.Open();
+                string sql = "SELECT Product_ID, Product_Code, Product_Name, Price, Quantity, Date_Added,Unit_Measurement, Deleted FROM Product WHERE Deleted = 0";
+                SqlCommand command = new SqlCommand(sql, connect);
+                SqlDataReader reader = command.ExecuteReader();
 
+                data_Grid_Product.Rows.Clear();
+
+                while (reader.Read())
+                {
+                    if (reader["Deleted"].ToString() == "0")
+                    {
+                        i += 1;
+                        data_Grid_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
+                                                      reader["Price"].ToString(), reader["Quantity"].ToString(), reader["Unit_Measurement"].ToString(),
+                                                      reader["Date_Added"].ToString());
+                    }
+
+                }
+                reader.Close();
+                connect.Close();
             }
         }
     }
