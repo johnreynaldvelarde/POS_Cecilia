@@ -93,7 +93,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT p.Product_Name, p.Price, p.Quantity, c.Category_Name, p.Unit_Measurement  " +
+                string sql = "SELECT p.Product_ID, p.Product_Name, p.Price, p.Quantity, c.Category_Name, p.Unit_Measurement  " +
                              "FROM Product p JOIN Categories c ON p.Category_ID = c.Category_ID WHERE p.Quantity > 0 AND p.Deleted = 0;";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
@@ -111,12 +111,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     string unitMeasurement = reader["Unit_Measurement"].ToString();
 
                     data_Grid_Available.Rows.Add(i, productName, categoryName, price, quantity, unitMeasurement);
-                    /*
                     */
+                    
 
                     i += 1;
-                    data_Grid_Available.Rows.Add(i, reader["Product_Name"].ToString(), reader["Category_Name"].ToString(), reader["Price"].ToString(),
-                                                    reader["Quantity"].ToString(), reader["Unit_Measurement"].ToString());
+                    data_Grid_Available.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Name"].ToString(), reader["Category_Name"].ToString(), reader["Price"].ToString(),
+                                                    reader["Unit_Measurement"].ToString(), reader["Quantity"].ToString());
 
 
                 }
@@ -204,12 +204,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             timer1.Start();
         }
 
-        /*
-       public void view_available_product()
-       {
-           openChildForm(new Available_Product_List_Form());
-       }
-       */
+        private void data_Grid_Available_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
+
 
     }
 }
