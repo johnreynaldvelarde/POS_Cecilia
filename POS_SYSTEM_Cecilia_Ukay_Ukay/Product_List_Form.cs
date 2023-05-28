@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class Product_List_Form : Form
     {
+        DB_Connection database = new DB_Connection();
 
         public Product_List_Form()
         {
@@ -38,6 +40,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.ShowDialog();
             frm.Dispose();
             btn_Add_Product.BackColor = defaultColor;
+        }
+
+        public void view_product()
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+
+            }
         }
     }
 }
