@@ -113,39 +113,27 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             }
         }
-
-        // method to click conte
-        private void data_Grid_Available_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void data_Grid_Available_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            if (e.ColumnIndex == data_Grid_Available.Columns["sell"].Index && e.RowIndex >= 0)
             {
-                DataGridView dataGridView = (DataGridView)sender;
-                DataGridViewCell cell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                // selected product's details
+                int id = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Product_ID"].Value);
+                string productName = data_Grid_Available.Rows[e.RowIndex].Cells["Product_Name"].Value.ToString();
+                decimal price = Convert.ToDecimal(data_Grid_Available.Rows[e.RowIndex].Cells["Price"].Value);
+                int quantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
 
-                // Check if the clicked cell is in the Quantity column
-                if (cell.OwningColumn.Name == "Quantity")
-                {
-                    int quantity = Convert.ToInt32(cell.Value);
+                // Calculate the amount
+                decimal amount = price * quantity;
 
-                    if (e.ColumnIndex == dataGridView.Columns[7].Index)
-                    {
-                        // Increment the quantity by 1 (if not exceeding the range)
-                        if (quantity < int.MaxValue)
-                            cell.Value = quantity + 1;
-                    }
-                    else if (e.ColumnIndex == dataGridView.Columns[9].Index)
-                    {
-                        // Decrement the quantity by 1 (if not exceeding the range)
-                        if (quantity > 1)
-                            cell.Value = quantity - 1;
-                    }
-                }
+                // Add the details to data_grid_transaction
+
+                data_Grid_Transaction.Rows.Add(0, id, productName, price, quantity, amount);
             }
-            */
+
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-             //   DataGridView dataGridView = (DataGridView)sender;
+                //   DataGridView dataGridView = (DataGridView)sender;
                 string column_available = data_Grid_Available.Columns[e.ColumnIndex].Name;
 
                 if (column_available == "Add")
@@ -172,8 +160,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
+        private void data_Grid_Transaction_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
 
-
+            int count = 0;
+            foreach (DataGridViewRow row in data_Grid_Transaction.Rows)
+            {
+                count++;
+                row.Cells[0].Value = count;
+            }
+        }
 
         // button for user management
         private void btn_User_Click(object sender, EventArgs e)
@@ -262,6 +258,35 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                  data_Grid_Available.Rows.Add(i, productName, categoryName, price, quantity, unitMeasurement);
                  */
+
+            /*
+           if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+           {
+               DataGridView dataGridView = (DataGridView)sender;
+               DataGridViewCell cell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
+
+               // Check if the clicked cell is in the Quantity column
+               if (cell.OwningColumn.Name == "Quantity")
+               {
+                   int quantity = Convert.ToInt32(cell.Value);
+
+                   if (e.ColumnIndex == dataGridView.Columns[7].Index)
+                   {
+                       // Increment the quantity by 1 (if not exceeding the range)
+                       if (quantity < int.MaxValue)
+                           cell.Value = quantity + 1;
+                   }
+                   else if (e.ColumnIndex == dataGridView.Columns[9].Index)
+                   {
+                       // Decrement the quantity by 1 (if not exceeding the range)
+                       if (quantity > 1)
+                           cell.Value = quantity - 1;
+                   }
+               }
+           }
+           */
         }
+
+
     }
 }
