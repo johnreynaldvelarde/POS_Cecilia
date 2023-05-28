@@ -81,6 +81,7 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
+            Decrement = new DataGridViewButtonColumn();
             Column8 = new DataGridViewTextBoxColumn();
             dataGridViewImageColumn1 = new DataGridViewImageColumn();
             panel1.SuspendLayout();
@@ -396,7 +397,7 @@
             data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Available.ColumnHeadersHeight = 50;
             data_Grid_Available.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column9, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column7, Column8, dataGridViewImageColumn1 });
+            data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column9, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column7, Decrement, Column8, dataGridViewImageColumn1 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -717,6 +718,12 @@
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
+            // Decrement
+            // 
+            Decrement.HeaderText = "-";
+            Decrement.Name = "Decrement";
+            Decrement.ReadOnly = true;
+            // 
             // Column8
             // 
             Column8.HeaderText = "Qyt";
@@ -823,6 +830,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn Column7;
+        private DataGridViewButtonColumn Decrement;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewImageColumn dataGridViewImageColumn1;
     }
