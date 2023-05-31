@@ -29,6 +29,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private Color settingsColor = Color.FromArgb(242, 197, 70);
         private Form activeForm = null;
 
+        // loading of date and time
+        private void Main_Form_Load(object sender, EventArgs e)
+        {
+            label_Date.Text = DateTime.Now.ToLongDateString();
+            label_Time.Text = DateTime.Now.ToLongTimeString();
+            label_amount.Text = "0.00";
+        }
+
         // method for over the mouse color
         public void button_highligted()
         {
@@ -66,6 +74,36 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             childForm.Show();
         }
 
+        // to clear the data in data grid
+        public void Clear_Transaction()
+        {
+            data_Grid_Transaction.Rows.Clear();
+            data_Grid_Transaction.Refresh();
+            label_amount.Text = "0.00";
+        }
+
+        // button for clear transaction in grid
+        private void btn_Clear_All_Click(object sender, EventArgs e)
+        {
+            Clear_Transaction();
+            view_product();
+        }
+
+        public void get_total()
+        {
+
+            double total = 0;
+            label_amount.Text = "";
+            foreach (DataGridViewRow item in data_Grid_Transaction.Rows)
+            {
+
+                total += double.Parse(item.Cells[5].Value.ToString());
+
+            }
+
+            label_amount.Text = total.ToString("N2");
+
+        }
 
 
         // load the category list
@@ -154,6 +192,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     // Add the details to data_grid_transaction
                     data_Grid_Transaction.Rows.Add(0, id, productName, price, quantity, amount);
+                    get_total();
                 }
             }
 
@@ -266,12 +305,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.Dispose();
         }
 
-        // loading of date and time
-        private void Main_Form_Load(object sender, EventArgs e)
-        {
-            label_Date.Text = DateTime.Now.ToLongDateString();
-            label_Time.Text = DateTime.Now.ToLongTimeString();
-        }
+        
 
         // moving time
         private void timer1_Tick(object sender, EventArgs e)
@@ -320,6 +354,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
            */
         }
 
-       
+        
     }
 }
