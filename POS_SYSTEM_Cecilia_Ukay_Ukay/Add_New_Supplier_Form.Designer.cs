@@ -28,15 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_New_Supplier_Form));
-            passhide1 = new CheckBox();
-            passhide2 = new CheckBox();
-            cmdRole = new ComboBox();
             btn_Clear = new Button();
             btn_Save = new Button();
             label6 = new Label();
             txtContact = new TextBox();
-            label5 = new Label();
             label4 = new Label();
             txtRetype = new TextBox();
             label3 = new Label();
@@ -49,45 +44,6 @@
             panel1 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // passhide1
-            // 
-            passhide1.Appearance = Appearance.Button;
-            passhide1.AutoSize = true;
-            passhide1.Cursor = Cursors.Hand;
-            passhide1.FlatAppearance.BorderSize = 0;
-            passhide1.FlatStyle = FlatStyle.Flat;
-            passhide1.Image = (Image)resources.GetObject("passhide1.Image");
-            passhide1.Location = new Point(646, 208);
-            passhide1.Name = "passhide1";
-            passhide1.Size = new Size(30, 30);
-            passhide1.TabIndex = 51;
-            passhide1.UseVisualStyleBackColor = true;
-            // 
-            // passhide2
-            // 
-            passhide2.Appearance = Appearance.Button;
-            passhide2.AutoSize = true;
-            passhide2.Cursor = Cursors.Hand;
-            passhide2.FlatAppearance.BorderSize = 0;
-            passhide2.FlatStyle = FlatStyle.Flat;
-            passhide2.Image = (Image)resources.GetObject("passhide2.Image");
-            passhide2.Location = new Point(646, 293);
-            passhide2.Name = "passhide2";
-            passhide2.Size = new Size(30, 30);
-            passhide2.TabIndex = 50;
-            passhide2.UseVisualStyleBackColor = true;
-            // 
-            // cmdRole
-            // 
-            cmdRole.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmdRole.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            cmdRole.FormattingEnabled = true;
-            cmdRole.Items.AddRange(new object[] { "Manager", "Cashier" });
-            cmdRole.Location = new Point(240, 466);
-            cmdRole.Name = "cmdRole";
-            cmdRole.Size = new Size(400, 29);
-            cmdRole.TabIndex = 49;
             // 
             // btn_Clear
             // 
@@ -123,44 +79,34 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(240, 346);
+            label6.Location = new Point(258, 379);
             label6.Name = "label6";
-            label6.Size = new Size(155, 21);
+            label6.Size = new Size(127, 21);
             label6.TabIndex = 46;
-            label6.Text = "Contact Number *";
+            label6.Text = "Email Address *";
             // 
             // txtContact
             // 
             txtContact.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtContact.Location = new Point(240, 381);
+            txtContact.Location = new Point(258, 414);
             txtContact.Name = "txtContact";
             txtContact.Size = new Size(400, 29);
             txtContact.TabIndex = 45;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(240, 431);
-            label5.Name = "label5";
-            label5.Size = new Size(53, 21);
-            label5.TabIndex = 44;
-            label5.Text = "Role *";
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(240, 259);
+            label4.Location = new Point(258, 292);
             label4.Name = "label4";
-            label4.Size = new Size(152, 21);
+            label4.Size = new Size(151, 21);
             label4.TabIndex = 43;
-            label4.Text = "Retype Password *";
+            label4.Text = "Contact Number*";
             // 
             // txtRetype
             // 
             txtRetype.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRetype.Location = new Point(240, 294);
+            txtRetype.Location = new Point(258, 327);
             txtRetype.Multiline = true;
             txtRetype.Name = "txtRetype";
             txtRetype.PasswordChar = '●';
@@ -171,16 +117,16 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(240, 174);
+            label3.Location = new Point(258, 207);
             label3.Name = "label3";
-            label3.Size = new Size(92, 21);
+            label3.Size = new Size(154, 21);
             label3.TabIndex = 41;
-            label3.Text = "Password *";
+            label3.Text = "Location Address *";
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(240, 209);
+            txtPassword.Location = new Point(258, 242);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '●';
@@ -191,7 +137,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(240, 92);
+            label2.Location = new Point(258, 125);
             label2.Name = "label2";
             label2.Size = new Size(133, 21);
             label2.TabIndex = 39;
@@ -211,7 +157,7 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(240, 127);
+            txtUsername.Location = new Point(258, 160);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(400, 29);
             txtUsername.TabIndex = 38;
@@ -255,14 +201,10 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
-            Controls.Add(passhide1);
-            Controls.Add(passhide2);
-            Controls.Add(cmdRole);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
             Controls.Add(label6);
             Controls.Add(txtContact);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(txtRetype);
             Controls.Add(label3);
@@ -283,15 +225,10 @@
         }
 
         #endregion
-
-        private CheckBox passhide1;
-        private CheckBox passhide2;
-        private ComboBox cmdRole;
         private Button btn_Clear;
         private Button btn_Save;
         private Label label6;
         private TextBox txtContact;
-        private Label label5;
         private Label label4;
         private TextBox txtRetype;
         private Label label3;

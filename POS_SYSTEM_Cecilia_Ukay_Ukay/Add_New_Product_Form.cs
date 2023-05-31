@@ -17,6 +17,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private Main_Form main_form;
 
+        public string productID;
+
         public Add_New_Product_Form()
         {
             InitializeComponent();
@@ -76,7 +78,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             else
             {
                 int categoryId = 0;
-               
+
                 /*
                 if (combo_Category.SelectedValue != null)
                 {
@@ -106,8 +108,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
 
                     connect.Open();
-                    string sql = "INSERT INTO Product (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Unit_Measurement, Deleted  ) " +
-                                 "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Category_ID, @Unit_Measurement, @Deleted )";
+                    string sql = "INSERT INTO Product (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Size, Deleted  ) " +
+                                 "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Category_ID, @Size, @Deleted )";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
                     command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
@@ -115,7 +117,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     command.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txt_Quantity.Text));
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
                     command.Parameters.AddWithValue("@Category_ID", categoryId);
-                    command.Parameters.AddWithValue("@Unit_Measurement", cmd_Measurement.SelectedItem);
+                    command.Parameters.AddWithValue("@Size", cmd_Measurement.SelectedItem);
                     command.Parameters.AddWithValue("@Deleted", 0);
                     command.ExecuteNonQuery();
                     connect.Close();

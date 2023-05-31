@@ -33,7 +33,7 @@
             btn_Save = new Button();
             label5 = new Label();
             label2 = new Label();
-            label1 = new Label();
+            title_product = new Label();
             txt_ProductID = new TextBox();
             btnClose = new Button();
             panel2 = new Panel();
@@ -113,16 +113,16 @@
             label2.TabIndex = 37;
             label2.Text = "Product ID *";
             // 
-            // label1
+            // title_product
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(12, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(192, 24);
-            label1.TabIndex = 0;
-            label1.Text = "Add new product";
+            title_product.AutoSize = true;
+            title_product.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            title_product.ForeColor = Color.FromArgb(14, 159, 104);
+            title_product.Location = new Point(12, 10);
+            title_product.Name = "title_product";
+            title_product.Size = new Size(192, 24);
+            title_product.TabIndex = 0;
+            title_product.Text = "Add new product";
             // 
             // txt_ProductID
             // 
@@ -160,7 +160,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(title_product);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
@@ -343,26 +343,26 @@
 
         private ComboBox cmd_Category;
         private Button btn_Clear;
-        private Button btn_Save;
         private Label label5;
         private Label label2;
-        private Label label1;
         private TextBox txt_ProductID;
         private Button btnClose;
         private Panel panel2;
         private Panel panel1;
         private Label label7;
-        private TextBox txt_Product_Code;
         private Label label8;
-        private TextBox txt_Product_Name;
         private Label label4;
-        private TextBox txt_Price;
         private Label label9;
         private ComboBox cmd_Measurement;
         private Label label10;
         private TextBox txt_Date_Added;
         private Label label6;
-        private TextBox txt_Quantity;
         public Button btn_Update;
+        public TextBox txt_Product_Name;
+        public TextBox txt_Price;
+        public Label title_product;
+        public Button btn_Save;
+        public TextBox txt_Product_Code;
+        public TextBox txt_Quantity;
     }
 }

@@ -162,6 +162,8 @@
             data_Grid_Product.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Product.Size = new Size(1090, 494);
             data_Grid_Product.TabIndex = 3;
+            data_Grid_Product.CellContentClick += data_Grid_Product_CellContentClick;
+            data_Grid_Product.SelectionChanged += data_Grid_Product_SelectionChanged;
             // 
             // Column1
             // 

@@ -136,7 +136,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT p.Product_ID, p.Product_Name, p.Price, p.Quantity, c.Category_Name, p.Unit_Measurement  " +
+                string sql = "SELECT p.Product_ID, p.Product_Name, p.Price, p.Quantity, c.Category_Name, p.Size  " +
                              "FROM Product p JOIN Categories c ON p.Category_ID = c.Category_ID WHERE p.Quantity > 0 AND p.Deleted = 0;";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
@@ -148,7 +148,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     i += 1;
                     data_Grid_Available.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Name"].ToString(), reader["Category_Name"].ToString(), reader["Price"].ToString(),
-                                                    reader["Unit_Measurement"].ToString(), "20 %", null, reader["Quantity"].ToString());
+                                                    reader["Size"].ToString(), "20 %", null, reader["Quantity"].ToString());
 
                 }
                 reader.Close();
