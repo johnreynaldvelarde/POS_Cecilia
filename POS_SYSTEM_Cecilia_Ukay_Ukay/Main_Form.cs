@@ -21,7 +21,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
-            load_category();
+            // load_category();
             view_product();
         }
 
@@ -47,6 +47,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Sales_Report.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Sales_Report.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
+            btn_History.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_History.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
         }
 
         private void openChildForm(Form childForm)
@@ -68,6 +71,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // load the category list
         public void load_category()
         {
+            /*
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
@@ -84,6 +88,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     category_panel_flow.Controls.Add(category_control);
                 }
             }
+            */
         }
 
         // view the product list from database combine of table Product and Categories
@@ -113,6 +118,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             }
         }
+
         private void data_Grid_Available_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == data_Grid_Available.Columns["sell"].Index && e.RowIndex >= 0)
@@ -244,6 +250,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Sales_Report.BackColor = defaultColor;
         }
 
+        private void btn_History_Click(object sender, EventArgs e)
+        {
+            btn_History.BackColor = settingsColor;
+            History_Log_Form frm = new History_Log_Form();
+            frm.ShowDialog();
+            frm.Dispose();
+            btn_History.BackColor = defaultColor;
+        }
+
         private void picture_account_Click(object sender, EventArgs e)
         {
             Profile_Popup_Form frm = new Profile_Popup_Form();
@@ -305,6 +320,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
            */
         }
 
-
+       
     }
 }

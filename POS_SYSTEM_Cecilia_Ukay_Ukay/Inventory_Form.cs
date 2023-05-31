@@ -48,16 +48,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             //  btn_Category_List.BackColor = Color.FromArgb(242, 197, 70);
             btn_Category_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Category_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
-            
-            btn_Purchase_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
-            btn_Purchase_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
+           // btn_Purchase_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+           // btn_Purchase_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
         }
 
         private void resetButtonColors()
         {
             btn_Product_List.BackColor = defaultColor;
             btn_Category_List.BackColor = defaultColor;
-            btn_Purchase_List.BackColor = defaultColor;
+           // btn_Purchase_List.BackColor = defaultColor;
         }
 
         // first form view // show the product list in data grid
@@ -87,9 +87,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // button for purchase list by the manager its related to inventory
         private void btn_Purchase_List_Click(object sender, EventArgs e)
         {
-            openChildForm(new Purchase_List_Form());
-            resetButtonColors();
-            btn_Purchase_List.BackColor = Color.FromArgb(242, 197, 70);
+           // openChildForm(new Purchase_List_Form());
+          //  resetButtonColors();
+          //  btn_Purchase_List.BackColor = Color.FromArgb(242, 197, 70);
         }
 
         /*
@@ -116,6 +116,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             this.Dispose();
         }
 
-      
+
     }
 }
