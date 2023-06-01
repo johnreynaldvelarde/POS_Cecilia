@@ -40,7 +40,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Category_ID, Category_Name, Date_Added, Deleted FROM Categories WHERE Archive = 0";
+                string sql = "SELECT Category_ID, Category_Name, Date_Added, Archive FROM Categories WHERE Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
