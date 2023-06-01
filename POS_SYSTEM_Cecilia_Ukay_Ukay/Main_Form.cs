@@ -237,6 +237,23 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
+        // button to send the transaction to database
+        private void btn_Sell_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "";
+                SqlCommand command = new SqlCommand(sql, connect);
+               
+
+              
+
+
+                connect.Close();
+            }
+        }
+
         // button for user management
         private void btn_User_Click(object sender, EventArgs e)
         {
@@ -357,6 +374,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
            */
         }
 
-
+       
     }
 }

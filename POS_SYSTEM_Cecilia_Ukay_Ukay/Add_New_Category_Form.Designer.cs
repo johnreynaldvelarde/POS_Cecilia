@@ -75,6 +75,7 @@
             // 
             // txt_Category
             // 
+            txt_Category.BorderStyle = BorderStyle.FixedSingle;
             txt_Category.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Category.Location = new Point(13, 86);
             txt_Category.Name = "txt_Category";
