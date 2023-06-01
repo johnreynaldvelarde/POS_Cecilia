@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_List_Form));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_List_Form));
             panel1 = new Panel();
             button1 = new Button();
             btn_Add_Product = new Button();
@@ -47,6 +47,7 @@
             Column8 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            btn_Discount = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Product).BeginInit();
@@ -54,6 +55,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(btn_Discount);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btn_Add_Product);
             panel1.Controls.Add(label1);
@@ -241,6 +243,24 @@
             Delete.ReadOnly = true;
             Delete.Width = 50;
             // 
+            // btn_Discount
+            // 
+            btn_Discount.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Discount.Cursor = Cursors.Hand;
+            btn_Discount.FlatAppearance.BorderSize = 0;
+            btn_Discount.FlatStyle = FlatStyle.Flat;
+            btn_Discount.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Discount.ForeColor = Color.White;
+            btn_Discount.Image = (Image)resources.GetObject("btn_Discount.Image");
+            btn_Discount.Location = new Point(461, 9);
+            btn_Discount.Name = "btn_Discount";
+            btn_Discount.Size = new Size(210, 38);
+            btn_Discount.TabIndex = 17;
+            btn_Discount.Text = "Create new discount";
+            btn_Discount.TextAlign = ContentAlignment.MiddleRight;
+            btn_Discount.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Discount.UseVisualStyleBackColor = false;
+            // 
             // Product_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -278,5 +298,6 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private Button btn_Discount;
     }
 }

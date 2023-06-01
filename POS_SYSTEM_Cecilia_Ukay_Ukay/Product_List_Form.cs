@@ -26,7 +26,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private Color settingsColor = Color.FromArgb(242, 197, 70);
 
         private string product_id, product_code, product_name, price, quantity;
-        
+
 
         public void button_highligted()
         {

@@ -32,12 +32,12 @@
             panel_center = new Panel();
             label1 = new Label();
             panel3 = new Panel();
+            button1 = new Button();
             btn_Supplier_List = new Button();
             btn_Staff_List = new Button();
             panel2 = new Panel();
             btnClose = new Button();
             panel1 = new Panel();
-            button1 = new Button();
             panel3.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -71,6 +71,24 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1080, 60);
             panel3.TabIndex = 23;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(14, 159, 104);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(523, 11);
+            button1.Name = "button1";
+            button1.Size = new Size(184, 38);
+            button1.TabIndex = 18;
+            button1.Text = "Activity Log";
+            button1.TextAlign = ContentAlignment.MiddleRight;
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
             // 
             // btn_Supplier_List
             // 
@@ -123,12 +141,13 @@
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(1044, 1);
+            btnClose.Location = new Point(1045, 0);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(55, 27);
             btnClose.TabIndex = 20;
             btnClose.Text = "Close";
             btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // panel1
             // 
@@ -138,24 +157,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1080, 60);
             panel1.TabIndex = 21;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(14, 159, 104);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(523, 11);
-            button1.Name = "button1";
-            button1.Size = new Size(184, 38);
-            button1.TabIndex = 18;
-            button1.Text = "Activity Log";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
             // 
             // History_Log_Form
             // 

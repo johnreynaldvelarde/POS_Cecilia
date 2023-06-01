@@ -23,5 +23,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.btn_Update.Enabled = false;
             frm.ShowDialog();
         }
+
+        private void btn_Purchase_Click(object sender, EventArgs e)
+        {
+            Purchase_Order_Form frm = new Purchase_Order_Form();
+            frm.btn_Update.Enabled = false;
+            frm.ShowDialog();
+        }
     }
 }

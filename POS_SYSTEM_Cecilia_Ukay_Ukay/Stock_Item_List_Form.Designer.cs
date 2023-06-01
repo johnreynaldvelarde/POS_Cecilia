@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Stock_Item_List_Form));
             panel2 = new Panel();
             data_Grid_Product = new DataGridView();
@@ -46,7 +46,7 @@
             panel1 = new Panel();
             btn_Create_Item = new Button();
             button1 = new Button();
-            btn_Add_Product = new Button();
+            btn_Purchase = new Button();
             label1 = new Label();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Product).BeginInit();
@@ -73,25 +73,25 @@
             data_Grid_Product.BorderStyle = BorderStyle.None;
             data_Grid_Product.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Product.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            data_Grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            data_Grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             data_Grid_Product.ColumnHeadersHeight = 50;
             data_Grid_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column3, Column2, Column4, Column5, Column7, Column8, Edit, Delete });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            data_Grid_Product.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            data_Grid_Product.DefaultCellStyle = dataGridViewCellStyle4;
             data_Grid_Product.Dock = DockStyle.Fill;
             data_Grid_Product.EnableHeadersVisualStyles = false;
             data_Grid_Product.Location = new Point(0, 0);
@@ -185,7 +185,7 @@
             // 
             panel1.Controls.Add(btn_Create_Item);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(btn_Add_Product);
+            panel1.Controls.Add(btn_Purchase);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(5, 20);
@@ -230,23 +230,24 @@
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
             // 
-            // btn_Add_Product
+            // btn_Purchase
             // 
-            btn_Add_Product.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Add_Product.Cursor = Cursors.Hand;
-            btn_Add_Product.FlatAppearance.BorderSize = 0;
-            btn_Add_Product.FlatStyle = FlatStyle.Flat;
-            btn_Add_Product.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Add_Product.ForeColor = Color.White;
-            btn_Add_Product.Image = (Image)resources.GetObject("btn_Add_Product.Image");
-            btn_Add_Product.Location = new Point(694, 9);
-            btn_Add_Product.Name = "btn_Add_Product";
-            btn_Add_Product.Size = new Size(199, 38);
-            btn_Add_Product.TabIndex = 15;
-            btn_Add_Product.Text = "New purchase order";
-            btn_Add_Product.TextAlign = ContentAlignment.MiddleRight;
-            btn_Add_Product.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Add_Product.UseVisualStyleBackColor = false;
+            btn_Purchase.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Purchase.Cursor = Cursors.Hand;
+            btn_Purchase.FlatAppearance.BorderSize = 0;
+            btn_Purchase.FlatStyle = FlatStyle.Flat;
+            btn_Purchase.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Purchase.ForeColor = Color.White;
+            btn_Purchase.Image = (Image)resources.GetObject("btn_Purchase.Image");
+            btn_Purchase.Location = new Point(694, 9);
+            btn_Purchase.Name = "btn_Purchase";
+            btn_Purchase.Size = new Size(199, 38);
+            btn_Purchase.TabIndex = 15;
+            btn_Purchase.Text = "New purchase order";
+            btn_Purchase.TextAlign = ContentAlignment.MiddleRight;
+            btn_Purchase.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Purchase.UseVisualStyleBackColor = false;
+            btn_Purchase.Click += btn_Purchase_Click;
             // 
             // label1
             // 
@@ -295,7 +296,7 @@
         private DataGridViewImageColumn Delete;
         private Panel panel1;
         private Button button1;
-        private Button btn_Add_Product;
+        private Button btn_Purchase;
         private Label label1;
         private Button btn_Create_Item;
     }
