@@ -32,7 +32,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Supplier_ID, Supplier_Name, Address, Contact_Number, Email, Deleted FROM Supplier WHERE Deleted = 0";
+                string sql = "SELECT Supplier_ID, Supplier_Name, Address, Contact_Number, Email, Deleted FROM Supplier WHERE Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 

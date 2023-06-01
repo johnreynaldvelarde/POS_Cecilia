@@ -35,14 +35,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT * FROM Staff_Account WHERE Deleted = 0";
+                string sql = "SELECT * FROM Staff_Account WHERE Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
                 data_Grid_Staff.Rows.Clear();
                 while (reader.Read())
                 {
-                    if (reader["Deleted"].ToString() == "0")
+                    if (reader["Archive"].ToString() == "0")
                     {
                         i += 1;
                         data_Grid_Staff.Rows.Add(i, reader["Staff_Image"], reader["Staff_Name"].ToString(), reader["Date_Added"].ToString(), reader["Contact_Number"].ToString(), reader["Role"].ToString());

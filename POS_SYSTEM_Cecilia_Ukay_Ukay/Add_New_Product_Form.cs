@@ -47,7 +47,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
 
                 connect.Open();
-                string sql = "SELECT Category_Name FROM Categories WHERE Deleted = 0";
+                string sql = "SELECT Category_Name FROM Categories WHERE Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -92,7 +92,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    string sql = "SELECT Category_ID FROM Categories WHERE Category_Name = @Category_Name AND Deleted = 0";
+                    string sql = "SELECT Category_ID FROM Categories WHERE Category_Name = @Category_Name AND Archive = 0";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Category_Name", selectedCategory);
                     object result = command.ExecuteScalar();
@@ -108,8 +108,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
 
                     connect.Open();
-                    string sql = "INSERT INTO Product (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Size, Deleted  ) " +
-                                 "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Category_ID, @Size, @Deleted )";
+                    string sql = "INSERT INTO Product (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Size, Archive  ) " +
+                                 "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Category_ID, @Size, @Archive )";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
                     command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
@@ -118,7 +118,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
                     command.Parameters.AddWithValue("@Category_ID", categoryId);
                     command.Parameters.AddWithValue("@Size", cmd_Measurement.SelectedItem);
-                    command.Parameters.AddWithValue("@Deleted", 0);
+                    command.Parameters.AddWithValue("@Archive", 0);
                     command.ExecuteNonQuery();
                     connect.Close();
 

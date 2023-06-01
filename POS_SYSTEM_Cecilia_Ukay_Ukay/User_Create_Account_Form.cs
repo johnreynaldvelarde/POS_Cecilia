@@ -71,8 +71,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    string sql = "INSERT INTO Staff_Account (Staff_Name, Staff_Image, Password, Contact_Number, Role, Date_Added, Deleted) " +
-                                 "VALUES (@Staff_Name, @Staff_Image, @Password, @Contact_Number, @Role, @Date_Added, @Deleted)";
+                    string sql = "INSERT INTO Staff_Account (Staff_Name, Staff_Image, Password, Contact_Number, Role, Date_Added, Archive) " +
+                                 "VALUES (@Staff_Name, @Staff_Image, @Password, @Contact_Number, @Role, @Date_Added, @Archive)";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Staff_Name", txtUsername.Text);
                     command.Parameters.AddWithValue("@Staff_Image", select_image);
@@ -80,7 +80,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     command.Parameters.AddWithValue("@Contact_Number", txtContact.Text);
                     command.Parameters.AddWithValue("@Role", cmdRole.Text);
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
-                    command.Parameters.AddWithValue("@Deleted", 0);
+                    command.Parameters.AddWithValue("@Archive", 0);
                     command.ExecuteNonQuery();
 
                     connect.Close();

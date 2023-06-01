@@ -52,7 +52,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Product_ID, Product_Code, Product_Name, Price, Quantity, Date_Added, Size, Deleted FROM Product WHERE Deleted = 0";
+                string sql = "SELECT Product_ID, Product_Code, Product_Name, Price, Quantity, Date_Added, Size, Deleted FROM Product WHERE Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -60,7 +60,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 while (reader.Read())
                 {
-                    if (reader["Deleted"].ToString() == "0")
+                    if (reader["Archive"].ToString() == "0")
                     {
                         i += 1;
                         data_Grid_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
@@ -103,7 +103,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                         {
                             connect.Open();
-                            string sql = "UPDATE Product SET Deleted = 1 WHERE Product_ID = @Product_ID";
+                            string sql = "UPDATE Product SET Archive = 1 WHERE Product_ID = @Product_ID";
                             SqlCommand command = new SqlCommand(sql, connect);
                             command.Parameters.AddWithValue("@Product_ID", Convert.ToInt32(product_id));
                             command.ExecuteNonQuery();

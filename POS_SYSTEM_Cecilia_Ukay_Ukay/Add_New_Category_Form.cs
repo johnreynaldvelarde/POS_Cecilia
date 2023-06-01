@@ -50,11 +50,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    string sql = "INSERT INTO Categories (Category_Name, Date_Added, Deleted) VALUES (@Category_Name, @Date_Added, @Deleted)";
+                    string sql = "INSERT INTO Categories (Category_Name, Date_Added, Archive) VALUES (@Category_Name, @Date_Added, @Archive)";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Category_Name", txt_Category.Text);
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
-                    command.Parameters.AddWithValue("@Deleted", 0);
+                    command.Parameters.AddWithValue("@Archive", 0);
                     command.ExecuteNonQuery();
                     connect.Close();
 

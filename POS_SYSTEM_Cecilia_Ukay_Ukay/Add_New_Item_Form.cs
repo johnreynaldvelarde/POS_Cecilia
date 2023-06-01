@@ -45,12 +45,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    string sql = "INSERT INTO Item (Item_Name, Price, Date_Added, Deleted) VALUES (@Item_Name, @Price, @Date_Added, @Deleted)";
+                    string sql = "INSERT INTO Item (Item_Name, Price, Date_Added, Archive) VALUES (@Item_Name, @Price, @Date_Added, @Archive)";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Item_Name", txt_Item_Name.Text);
                     command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
-                    command.Parameters.AddWithValue("@Deleted", 0);
+                    command.Parameters.AddWithValue("@Archive", 0);
                     command.ExecuteNonQuery();
                     connect.Close();
 
