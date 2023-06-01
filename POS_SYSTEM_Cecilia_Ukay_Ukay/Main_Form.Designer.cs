@@ -30,10 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             panel1 = new Panel();
             pictureBox2 = new PictureBox();
             btn_Sales_Report = new Button();
@@ -85,6 +85,8 @@
             btn_Clear_All = new Button();
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            label7 = new Label();
+            txt_Product_Code = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -370,25 +372,25 @@
             data_Grid_Available.BorderStyle = BorderStyle.None;
             data_Grid_Available.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Available.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             data_Grid_Available.ColumnHeadersHeight = 50;
             data_Grid_Available.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Product_ID, Product_Name, Category, Price, Size, Discount, Minus, Quantity, Add, Sell });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            data_Grid_Available.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = SystemColors.Window;
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            data_Grid_Available.DefaultCellStyle = dataGridViewCellStyle8;
             data_Grid_Available.Dock = DockStyle.Fill;
             data_Grid_Available.EnableHeadersVisualStyles = false;
             data_Grid_Available.Location = new Point(10, 78);
@@ -550,25 +552,25 @@
             data_Grid_Transaction.BorderStyle = BorderStyle.None;
             data_Grid_Transaction.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Transaction.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             data_Grid_Transaction.ColumnHeadersHeight = 30;
             data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column8, productName, Column5, Column4, Column6, Column3 });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle6;
             data_Grid_Transaction.Dock = DockStyle.Fill;
             data_Grid_Transaction.EnableHeadersVisualStyles = false;
             data_Grid_Transaction.Location = new Point(0, 37);
@@ -579,7 +581,7 @@
             data_Grid_Transaction.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             data_Grid_Transaction.RowTemplate.Height = 30;
             data_Grid_Transaction.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            data_Grid_Transaction.Size = new Size(368, 270);
+            data_Grid_Transaction.Size = new Size(368, 196);
             data_Grid_Transaction.TabIndex = 7;
             data_Grid_Transaction.CellFormatting += data_Grid_Transaction_CellFormatting;
             // 
@@ -640,13 +642,15 @@
             // 
             // down_panel
             // 
+            down_panel.Controls.Add(txt_Product_Code);
+            down_panel.Controls.Add(label7);
             down_panel.Controls.Add(label5);
             down_panel.Controls.Add(label_amount);
             down_panel.Controls.Add(label1);
             down_panel.Dock = DockStyle.Bottom;
-            down_panel.Location = new Point(0, 307);
+            down_panel.Location = new Point(0, 233);
             down_panel.Name = "down_panel";
-            down_panel.Size = new Size(368, 138);
+            down_panel.Size = new Size(368, 212);
             down_panel.TabIndex = 5;
             // 
             // label5
@@ -654,7 +658,7 @@
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(13, 57);
+            label5.Location = new Point(13, 140);
             label5.Name = "label5";
             label5.Size = new Size(177, 21);
             label5.TabIndex = 2;
@@ -666,7 +670,7 @@
             label_amount.AutoSize = true;
             label_amount.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label_amount.ForeColor = Color.FromArgb(211, 82, 48);
-            label_amount.Location = new Point(149, 98);
+            label_amount.Location = new Point(149, 171);
             label_amount.Name = "label_amount";
             label_amount.Size = new Size(75, 25);
             label_amount.TabIndex = 1;
@@ -677,7 +681,7 @@
             label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(13, 98);
+            label1.Location = new Point(13, 171);
             label1.Name = "label1";
             label1.Size = new Size(133, 25);
             label1.TabIndex = 0;
@@ -741,6 +745,26 @@
             // 
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(13, 12);
+            label7.Name = "label7";
+            label7.Size = new Size(177, 21);
+            label7.TabIndex = 3;
+            label7.Text = "Select Payment Method:";
+            // 
+            // txt_Product_Code
+            // 
+            txt_Product_Code.BorderStyle = BorderStyle.FixedSingle;
+            txt_Product_Code.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Product_Code.Location = new Point(13, 47);
+            txt_Product_Code.Name = "txt_Product_Code";
+            txt_Product_Code.Size = new Size(240, 29);
+            txt_Product_Code.TabIndex = 51;
             // 
             // Main_Form
             // 
@@ -833,5 +857,7 @@
         private Label label5;
         private Label label6;
         private ComboBox cmd_Category;
+        private Label label7;
+        public TextBox txt_Product_Code;
     }
 }

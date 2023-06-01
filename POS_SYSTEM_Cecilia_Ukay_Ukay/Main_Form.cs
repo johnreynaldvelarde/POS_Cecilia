@@ -245,9 +245,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 connect.Open();
                 string sql = "";
                 SqlCommand command = new SqlCommand(sql, connect);
-               
 
-              
+
+
 
 
                 connect.Close();
@@ -374,6 +374,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
            */
         }
 
-       
+
     }
 }

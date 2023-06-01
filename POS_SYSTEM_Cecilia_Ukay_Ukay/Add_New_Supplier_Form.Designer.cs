@@ -110,9 +110,7 @@
             txtRetype.BorderStyle = BorderStyle.FixedSingle;
             txtRetype.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtRetype.Location = new Point(258, 327);
-            txtRetype.Multiline = true;
             txtRetype.Name = "txtRetype";
-            txtRetype.PasswordChar = '●';
             txtRetype.Size = new Size(400, 29);
             txtRetype.TabIndex = 42;
             // 
@@ -131,9 +129,7 @@
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.Location = new Point(258, 242);
-            txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.PasswordChar = '●';
             txtPassword.Size = new Size(400, 29);
             txtPassword.TabIndex = 40;
             // 
