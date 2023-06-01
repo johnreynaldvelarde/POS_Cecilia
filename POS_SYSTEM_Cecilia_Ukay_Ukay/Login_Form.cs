@@ -46,9 +46,23 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             if (dr.Read())
             {
-                
+                 if (userBox.Text.Equals(dr["userName"].ToString()) && passBox.Text.Equals(dr["password01"].ToString()))
+                {
 
-                MessageBox.Show("Hello, World that works");
+                    MessageBox.Show("Login Success");
+
+
+
+
+
+
+                }
+                else { 
+                
+                MessageBox.Show("Login Failed");
+                }
+
+                
 
             }
             else {
