@@ -90,7 +90,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             openChildForm(new Stock_Item_List_Form());
             resetButtonColors();
-            btn_Category_List.BackColor = Color.FromArgb(242, 197, 70);
+            btn_Stock.BackColor = Color.FromArgb(242, 197, 70);
         }
 
         // button for purchase list by the manager its related to inventory
