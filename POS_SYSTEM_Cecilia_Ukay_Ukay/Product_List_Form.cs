@@ -39,7 +39,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             btn_Add_Product.BackColor = settingsColor;
 
-            Add_New_Product_Form frm = new Add_New_Product_Form();
+            Add_New_Product_Form frm = new Add_New_Product_Form(this);
             frm.btn_Update.Enabled = false;
             frm.ShowDialog();
             frm.Dispose();
@@ -80,7 +80,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             if (column_product == "Edit")
             {
-                Add_New_Product_Form frm = new Add_New_Product_Form();
+                Add_New_Product_Form frm = new Add_New_Product_Form(this);
                 frm.title_product.Text = "Update the product";
                 frm.btn_Save.Enabled = false;
                 frm.btn_Update.Enabled = true;

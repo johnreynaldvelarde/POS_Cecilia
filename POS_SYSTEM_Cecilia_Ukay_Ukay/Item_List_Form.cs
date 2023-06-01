@@ -30,12 +30,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Add_Item_Click(object sender, EventArgs e)
         {
-            btn_Add_Item.BackColor = settingsColor;
-
-            Add_New_Product_Form frm = new Add_New_Product_Form();
-            frm.ShowDialog();
-            frm.Dispose();
-            btn_Add_Item.BackColor = defaultColor;
+            
         }
     }
 }

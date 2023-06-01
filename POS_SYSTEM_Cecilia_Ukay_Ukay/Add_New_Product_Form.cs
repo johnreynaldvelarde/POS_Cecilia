@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class Add_New_Product_Form : Form
@@ -19,16 +20,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         public string productID;
 
-        public Add_New_Product_Form()
+        public Add_New_Product_Form(Product_List_Form product)
         {
             InitializeComponent();
+            frm = product;
             show_category();
         }
 
-        public Add_New_Product_Form(Product_List_Form product)
-        {
-            frm = product;
-        }
+        
 
         // method for clear the text in textbox
         public void Clear()
