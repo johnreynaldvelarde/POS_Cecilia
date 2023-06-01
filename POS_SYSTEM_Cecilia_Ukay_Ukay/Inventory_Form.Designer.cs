@@ -36,8 +36,8 @@
             btn_Product_List = new Button();
             btn_Category_List = new Button();
             panel3 = new Panel();
+            btn_Stock = new Button();
             panel_center = new Panel();
-            button1 = new Button();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -127,7 +127,7 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(button1);
+            panel3.Controls.Add(btn_Stock);
             panel3.Controls.Add(btn_Category_List);
             panel3.Controls.Add(btn_Product_List);
             panel3.Dock = DockStyle.Top;
@@ -136,6 +136,25 @@
             panel3.Size = new Size(1080, 60);
             panel3.TabIndex = 17;
             // 
+            // btn_Stock
+            // 
+            btn_Stock.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Stock.Cursor = Cursors.Hand;
+            btn_Stock.FlatAppearance.BorderSize = 0;
+            btn_Stock.FlatStyle = FlatStyle.Flat;
+            btn_Stock.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Stock.ForeColor = Color.White;
+            btn_Stock.Image = (Image)resources.GetObject("btn_Stock.Image");
+            btn_Stock.Location = new Point(418, 11);
+            btn_Stock.Name = "btn_Stock";
+            btn_Stock.Size = new Size(193, 38);
+            btn_Stock.TabIndex = 17;
+            btn_Stock.Text = "  Stock Item List";
+            btn_Stock.TextAlign = ContentAlignment.MiddleRight;
+            btn_Stock.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Stock.UseVisualStyleBackColor = false;
+            btn_Stock.Click += btn_Stock_Click;
+            // 
             // panel_center
             // 
             panel_center.Dock = DockStyle.Fill;
@@ -143,24 +162,6 @@
             panel_center.Name = "panel_center";
             panel_center.Size = new Size(1080, 557);
             panel_center.TabIndex = 18;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(14, 159, 104);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(418, 11);
-            button1.Name = "button1";
-            button1.Size = new Size(193, 38);
-            button1.TabIndex = 17;
-            button1.Text = "  Stock Item List";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
             // 
             // Inventory_Form
             // 
@@ -194,6 +195,6 @@
         private Button btn_Category_List;
         private Panel panel3;
         private Panel panel_center;
-        private Button button1;
+        private Button btn_Stock;
     }
 }
