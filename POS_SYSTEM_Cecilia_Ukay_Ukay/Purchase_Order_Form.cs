@@ -7,24 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
-    public partial class Available_Product_List_Form : Form
+    public partial class Purchase_Order_Form : Form
     {
-        DB_Connection database = new DB_Connection();
-
-        public Available_Product_List_Form()
+        public Purchase_Order_Form()
         {
             InitializeComponent();
         }
 
-        public void view_available_product()
+        private void btn_Close_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
-
-
     }
 }

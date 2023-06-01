@@ -16,5 +16,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
         }
+
+        private void btn_Create_Item_Click(object sender, EventArgs e)
+        {
+            Add_New_Item_Form frm = new Add_New_Item_Form();
+            frm.btn_Update.Enabled = false;
+            frm.ShowDialog();
+        }
     }
 }

@@ -21,7 +21,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             button_highligted();
-            // load_category();
+            load_category();
             view_product();
         }
 
@@ -89,6 +89,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             view_product();
         }
 
+        // method to compute total amount 
         public void get_total()
         {
 
@@ -109,24 +110,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // load the category list
         public void load_category()
         {
-            /*
+            cmd_Category.Items.Add("All");
+
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string query = "SELECT Category_Name FROM Categories WHERE Deleted = 0";
-                SqlCommand command = new SqlCommand(query, connect);
+                string sql = "SELECT Category_Name FROM Categories WHERE Deleted = 0";
+                SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
+
                 while (reader.Read())
                 {
-                    Category category = new Category();
-                    category.Category_Name = reader.GetString(0);
-
-                    Popup_Category category_control = new Popup_Category();
-                    category_control.LoadCategory(category);
-                    category_panel_flow.Controls.Add(category_control);
+                    string categoryName = reader.GetString(0);
+                    cmd_Category.Items.Add(categoryName);
                 }
+
+                reader.Close();
+                connect.Close();
             }
-            */
+            cmd_Category.SelectedItem = "All";
+
         }
 
         // view the product list from database combine of table Product and Categories
@@ -305,7 +308,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.Dispose();
         }
 
-        
+
 
         // moving time
         private void timer1_Tick(object sender, EventArgs e)
@@ -354,6 +357,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
            */
         }
 
-        
+
     }
 }

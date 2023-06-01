@@ -51,6 +51,8 @@
             label6 = new Label();
             txt_Quantity = new TextBox();
             btn_Update = new Button();
+            cmd_Stock = new ComboBox();
+            label1 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -299,6 +301,27 @@
             btn_Update.Text = "Update";
             btn_Update.UseVisualStyleBackColor = false;
             // 
+            // cmd_Stock
+            // 
+            cmd_Stock.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_Stock.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Stock.FormattingEnabled = true;
+            cmd_Stock.Items.AddRange(new object[] { "Small (S)", "Medium (M)", "Large (L)", "Extra Large (XL)", "Double Extra Large (XXL)" });
+            cmd_Stock.Location = new Point(609, 390);
+            cmd_Stock.Name = "cmd_Stock";
+            cmd_Stock.Size = new Size(240, 28);
+            cmd_Stock.TabIndex = 68;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(609, 358);
+            label1.Name = "label1";
+            label1.Size = new Size(190, 21);
+            label1.TabIndex = 67;
+            label1.Text = "Select available stock *";
+            // 
             // Add_New_Product_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -306,6 +329,8 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
+            Controls.Add(cmd_Stock);
+            Controls.Add(label1);
             Controls.Add(btn_Update);
             Controls.Add(label6);
             Controls.Add(txt_Quantity);
@@ -364,5 +389,7 @@
         public Button btn_Save;
         public TextBox txt_Product_Code;
         public TextBox txt_Quantity;
+        private ComboBox cmd_Stock;
+        private Label label1;
     }
 }

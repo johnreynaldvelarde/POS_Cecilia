@@ -42,6 +42,7 @@
             btnClose = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
+            btn_Update = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             btn_Clear.FlatStyle = FlatStyle.Flat;
             btn_Clear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Clear.ForeColor = Color.White;
-            btn_Clear.Location = new Point(742, 539);
+            btn_Clear.Location = new Point(745, 543);
             btn_Clear.Name = "btn_Clear";
             btn_Clear.Size = new Size(145, 48);
             btn_Clear.TabIndex = 48;
@@ -67,7 +68,7 @@
             btn_Save.FlatStyle = FlatStyle.Flat;
             btn_Save.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Save.ForeColor = Color.White;
-            btn_Save.Location = new Point(590, 539);
+            btn_Save.Location = new Point(426, 543);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(145, 48);
             btn_Save.TabIndex = 47;
@@ -198,6 +199,20 @@
             panel1.Size = new Size(880, 45);
             panel1.TabIndex = 34;
             // 
+            // btn_Update
+            // 
+            btn_Update.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Update.Cursor = Cursors.Hand;
+            btn_Update.FlatStyle = FlatStyle.Flat;
+            btn_Update.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Update.ForeColor = Color.White;
+            btn_Update.Location = new Point(587, 543);
+            btn_Update.Name = "btn_Update";
+            btn_Update.Size = new Size(145, 48);
+            btn_Update.TabIndex = 95;
+            btn_Update.Text = "Update";
+            btn_Update.UseVisualStyleBackColor = false;
+            // 
             // Add_New_Supplier_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -205,6 +220,7 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
+            Controls.Add(btn_Update);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
             Controls.Add(label6);
@@ -243,5 +259,6 @@
         private Button btnClose;
         private Panel panel2;
         private Panel panel1;
+        public Button btn_Update;
     }
 }

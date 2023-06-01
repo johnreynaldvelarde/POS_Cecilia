@@ -64,6 +64,8 @@
             Add = new DataGridViewImageColumn();
             Sell = new DataGridViewImageColumn();
             upper_panel = new Panel();
+            label6 = new Label();
+            cmd_Category = new ComboBox();
             label4 = new Label();
             panel3 = new Panel();
             data_Grid_Transaction = new DataGridView();
@@ -482,12 +484,36 @@
             // upper_panel
             // 
             upper_panel.BackColor = Color.White;
+            upper_panel.Controls.Add(label6);
+            upper_panel.Controls.Add(cmd_Category);
             upper_panel.Controls.Add(label4);
             upper_panel.Dock = DockStyle.Top;
             upper_panel.Location = new Point(10, 10);
             upper_panel.Name = "upper_panel";
             upper_panel.Size = new Size(793, 68);
             upper_panel.TabIndex = 7;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(494, 23);
+            label6.Name = "label6";
+            label6.Size = new Size(108, 21);
+            label6.TabIndex = 49;
+            label6.Text = "Category by";
+            // 
+            // cmd_Category
+            // 
+            cmd_Category.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            cmd_Category.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_Category.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Category.FormattingEnabled = true;
+            cmd_Category.Location = new Point(608, 21);
+            cmd_Category.Name = "cmd_Category";
+            cmd_Category.Size = new Size(165, 28);
+            cmd_Category.TabIndex = 50;
             // 
             // label4
             // 
@@ -804,5 +830,7 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewImageColumn Column3;
         private Label label5;
+        private Label label6;
+        private ComboBox cmd_Category;
     }
 }
