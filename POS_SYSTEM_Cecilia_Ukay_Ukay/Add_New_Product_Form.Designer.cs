@@ -225,6 +225,7 @@
             txt_Price.Name = "txt_Price";
             txt_Price.Size = new Size(240, 29);
             txt_Price.TabIndex = 54;
+            txt_Price.KeyPress += txt_Price_KeyPress;
             // 
             // label9
             // 

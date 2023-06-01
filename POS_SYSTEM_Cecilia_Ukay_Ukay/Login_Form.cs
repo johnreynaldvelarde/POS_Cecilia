@@ -14,6 +14,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     public partial class Login_Form : Form
     {
         DB_Connection database = new DB_Connection();
+
         public Login_Form()
         {
             InitializeComponent();

@@ -25,8 +25,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
-
-
         private void btn_Close_Click(object sender, EventArgs e)
         {
             this.Dispose();

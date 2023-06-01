@@ -15,17 +15,20 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     {
         DB_Connection database = new DB_Connection();
 
-        private Main_Form main_form;
+        Product_List_Form frm;
 
         public string productID;
 
         public Add_New_Product_Form()
         {
             InitializeComponent();
-            //  main_form = main;
             show_category();
         }
 
+        public Add_New_Product_Form(Product_List_Form product)
+        {
+            frm = product;
+        }
 
         // method for clear the text in textbox
         public void Clear()
@@ -71,9 +74,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // button for save the details in database
         private void btn_Save_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(txt_Product_Code.Text))
+            if (String.IsNullOrEmpty(txt_Product_Code.Text) || String.IsNullOrEmpty(txt_Product_Name.Text) || String.IsNullOrEmpty(txt_Price.Text) || String.IsNullOrEmpty(txt_Quantity.Text))
             {
                 MessageBox.Show("Fill in the blank");
+            }
+            else if (cmd_Category.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a category");
             }
             else
             {
@@ -123,12 +130,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     connect.Close();
 
                     MessageBox.Show("Successfully added");
+                    if (frm != null)
+                    {
+                        frm.view_product_list();
+                    }
                     Clear();
                 }
 
+
             }
         }
-
 
         // button for clear
         private void btn_Clear_Click(object sender, EventArgs e)
@@ -136,22 +147,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Clear();
         }
 
-
-        private void txt_Price_KeyPress(object sender, KeyPressEventArgs e)
+        private void Add_New_Product_Form_Load(object sender, EventArgs e)
         {
-            if (e.KeyChar == 46)
-            {
-
-
-            }
-            else if (e.KeyChar == 8)
-            {
-
-            }
-            else if ((e.KeyChar < 48) || (e.KeyChar > 57)) //ascii code 48-57 between 0-9
-            {
-                e.Handled = true;
-            }
+            txt_Date_Added.Text = DateTime.Now.ToLongDateString();
         }
 
         private void txt_Quantity_KeyPress(object sender, KeyPressEventArgs e)
@@ -177,9 +175,21 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
-        private void Add_New_Product_Form_Load(object sender, EventArgs e)
+        private void txt_Price_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txt_Date_Added.Text = DateTime.Now.ToLongDateString();
+            if (e.KeyChar == 46)
+            {
+
+
+            }
+            else if (e.KeyChar == 8)
+            {
+
+            }
+            else if ((e.KeyChar < 48) || (e.KeyChar > 57)) //ascii code 48-57 between 0-9
+            {
+                e.Handled = true;
+            }
         }
     }
 }
