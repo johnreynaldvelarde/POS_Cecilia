@@ -18,21 +18,22 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Supplier_List_Form()
         {
             InitializeComponent();
+            view_supplier();
         }
 
         private void btn_Add_New_Supplier_Click(object sender, EventArgs e)
         {
-            Add_New_Supplier_Form frm = new Add_New_Supplier_Form();
+            Add_New_Supplier_Form frm = new Add_New_Supplier_Form(this);
             frm.ShowDialog();
         }
 
-        public void view_supplier_()
+        public void view_supplier()
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Supplier_ID, Supplier_Name, Address, Contact_Number, Email, Deleted FROM Supplier WHERE Archive = 0";
+                string sql = "SELECT Supplier_ID, Supplier_Name, Address, Contact_Number, Email, Archive FROM Suppliers WHERE Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 

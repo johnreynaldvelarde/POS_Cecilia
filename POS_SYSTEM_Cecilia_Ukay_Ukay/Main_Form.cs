@@ -327,7 +327,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
         private void picture_account_Click(object sender, EventArgs e)
         {
-           
+
         }
         // moving time
         private void timer1_Tick(object sender, EventArgs e)
@@ -376,6 +376,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
            */
         }
 
-      
+
     }
 }

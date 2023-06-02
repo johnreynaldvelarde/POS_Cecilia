@@ -17,9 +17,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         DB_Connection database = new DB_Connection();
 
-        public Add_New_Supplier_Form()
+        Supplier_List_Form frm;
+
+        public Add_New_Supplier_Form(Supplier_List_Form supplier)
         {
             InitializeComponent();
+            frm= supplier;
         }
 
         public void Clear()
@@ -54,6 +57,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     connect.Close();
                     MessageBox.Show("Successfully saved");
+                    frm.view_supplier();
                     Clear();
                 }
             }

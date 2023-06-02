@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Supplier_List_Form));
             data_Grid_Supplier = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewImageColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Edit = new DataGridViewImageColumn();
-            Delete = new DataGridViewImageColumn();
             panel1 = new Panel();
             btn_Export = new Button();
             btn_Add_New_Supplier = new Button();
             label1 = new Label();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewImageColumn();
+            Delete = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Supplier).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -59,25 +59,25 @@
             data_Grid_Supplier.BorderStyle = BorderStyle.None;
             data_Grid_Supplier.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Supplier.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            data_Grid_Supplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            data_Grid_Supplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Supplier.ColumnHeadersHeight = 50;
             data_Grid_Supplier.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Supplier.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column5, Column4, Column6, Edit, Delete });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            data_Grid_Supplier.DefaultCellStyle = dataGridViewCellStyle4;
+            data_Grid_Supplier.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Edit, Delete });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            data_Grid_Supplier.DefaultCellStyle = dataGridViewCellStyle2;
             data_Grid_Supplier.Dock = DockStyle.Fill;
             data_Grid_Supplier.EnableHeadersVisualStyles = false;
             data_Grid_Supplier.Location = new Point(5, 88);
@@ -90,68 +90,6 @@
             data_Grid_Supplier.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Supplier.Size = new Size(1088, 492);
             data_Grid_Supplier.TabIndex = 6;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 60F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Profile Picture";
-            Column3.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Staff Name";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "Date Added";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Contact Number";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Role";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "";
-            Edit.Image = (Image)resources.GetObject("Edit.Image");
-            Edit.MinimumWidth = 50;
-            Edit.Name = "Edit";
-            Edit.ReadOnly = true;
-            Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.HeaderText = "";
-            Delete.Image = (Image)resources.GetObject("Delete.Image");
-            Delete.MinimumWidth = 50;
-            Delete.Name = "Delete";
-            Delete.ReadOnly = true;
-            Delete.Width = 50;
             // 
             // panel1
             // 
@@ -212,6 +150,69 @@
             label1.TabIndex = 1;
             label1.Text = "List of supplier";
             // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 30.6491871F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Supplier_ID";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Visible = false;
+            // 
+            // Column3
+            // 
+            Column3.FillWeight = 95.68384F;
+            Column3.HeaderText = "Supplier Name";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.FillWeight = 112.279015F;
+            Column4.HeaderText = "Location";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.FillWeight = 104.329918F;
+            Column5.HeaderText = "Contact Number";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.FillWeight = 117.0581F;
+            Column6.HeaderText = "Email";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 50;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 50;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Width = 50;
+            // 
             // Supplier_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -234,17 +235,17 @@
         #endregion
 
         private DataGridView data_Grid_Supplier;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewImageColumn Column3;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewImageColumn Edit;
-        private DataGridViewImageColumn Delete;
         private Panel panel1;
         private Button btn_Export;
         private Button btn_Add_New_Supplier;
         private Label label1;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Delete;
     }
 }
