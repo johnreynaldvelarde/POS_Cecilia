@@ -139,11 +139,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
 
         // button for clear
+        /*
         private void btn_Clear_Click(object sender, EventArgs e)
         {
             Clear();
         }
-
+        */
         private void Add_New_Product_Form_Load(object sender, EventArgs e)
         {
             txt_Date_Added.Text = DateTime.Now.ToLongDateString();
@@ -187,6 +188,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 e.Handled = true;
             }
+        }
+
+        private void btn_Clear_Click(object sender, EventArgs e)
+        {
+            Clear();
         }
     }
 }

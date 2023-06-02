@@ -34,7 +34,7 @@
             panel3 = new Panel();
             button1 = new Button();
             btn_Supplier_List = new Button();
-            btn_Staff_List = new Button();
+            btn_Retailer = new Button();
             panel2 = new Panel();
             btnClose = new Button();
             panel1 = new Panel();
@@ -65,7 +65,7 @@
             // 
             panel3.Controls.Add(button1);
             panel3.Controls.Add(btn_Supplier_List);
-            panel3.Controls.Add(btn_Staff_List);
+            panel3.Controls.Add(btn_Retailer);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(10, 73);
             panel3.Name = "panel3";
@@ -108,23 +108,24 @@
             btn_Supplier_List.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Supplier_List.UseVisualStyleBackColor = false;
             // 
-            // btn_Staff_List
+            // btn_Retailer
             // 
-            btn_Staff_List.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Staff_List.Cursor = Cursors.Hand;
-            btn_Staff_List.FlatAppearance.BorderSize = 0;
-            btn_Staff_List.FlatStyle = FlatStyle.Flat;
-            btn_Staff_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Staff_List.ForeColor = Color.White;
-            btn_Staff_List.Image = (Image)resources.GetObject("btn_Staff_List.Image");
-            btn_Staff_List.Location = new Point(12, 11);
-            btn_Staff_List.Name = "btn_Staff_List";
-            btn_Staff_List.Size = new Size(249, 38);
-            btn_Staff_List.TabIndex = 16;
-            btn_Staff_List.Text = "Management Transaction";
-            btn_Staff_List.TextAlign = ContentAlignment.MiddleRight;
-            btn_Staff_List.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Staff_List.UseVisualStyleBackColor = false;
+            btn_Retailer.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Retailer.Cursor = Cursors.Hand;
+            btn_Retailer.FlatAppearance.BorderSize = 0;
+            btn_Retailer.FlatStyle = FlatStyle.Flat;
+            btn_Retailer.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Retailer.ForeColor = Color.White;
+            btn_Retailer.Image = (Image)resources.GetObject("btn_Retailer.Image");
+            btn_Retailer.Location = new Point(12, 11);
+            btn_Retailer.Name = "btn_Retailer";
+            btn_Retailer.Size = new Size(249, 38);
+            btn_Retailer.TabIndex = 16;
+            btn_Retailer.Text = "Management Transaction";
+            btn_Retailer.TextAlign = ContentAlignment.MiddleRight;
+            btn_Retailer.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Retailer.UseVisualStyleBackColor = false;
+            btn_Retailer.Click += btn_Retailer_Click;
             // 
             // panel2
             // 
@@ -186,7 +187,7 @@
         private Label label1;
         private Panel panel3;
         private Button btn_Supplier_List;
-        public Button btn_Staff_List;
+        public Button btn_Retailer;
         private Panel panel2;
         private Button btnClose;
         private Panel panel1;

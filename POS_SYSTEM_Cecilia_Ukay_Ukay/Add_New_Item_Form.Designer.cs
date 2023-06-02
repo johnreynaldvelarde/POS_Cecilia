@@ -145,6 +145,7 @@
             // txt_Date_Added
             // 
             txt_Date_Added.BorderStyle = BorderStyle.FixedSingle;
+            txt_Date_Added.Enabled = false;
             txt_Date_Added.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Date_Added.Location = new Point(258, 411);
             txt_Date_Added.Name = "txt_Date_Added";

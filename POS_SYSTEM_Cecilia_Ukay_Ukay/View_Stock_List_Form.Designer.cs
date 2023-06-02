@@ -51,6 +51,7 @@
             Column9 = new DataGridViewImageColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
+            Column10 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewImageColumn();
@@ -85,7 +86,7 @@
             data_Stock_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Stock_Product.ColumnHeadersHeight = 50;
             data_Stock_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Stock_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column2, Column3, Column4 });
+            data_Stock_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column10, Column2, Column3, Column4 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -136,6 +137,7 @@
             btn_Create_Item.TextAlign = ContentAlignment.MiddleRight;
             btn_Create_Item.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Create_Item.UseVisualStyleBackColor = false;
+            btn_Create_Item.Click += btn_Create_Item_Click;
             // 
             // button1
             // 
@@ -327,6 +329,13 @@
             Column6.ReadOnly = true;
             Column6.Visible = false;
             // 
+            // Column10
+            // 
+            Column10.HeaderText = "Product Code";
+            Column10.Name = "Column10";
+            Column10.ReadOnly = true;
+            Column10.Visible = false;
+            // 
             // Column2
             // 
             Column2.HeaderText = "Name";
@@ -384,15 +393,16 @@
         private DataGridView dataGridView1;
         private Label label3;
         private Label label2;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewImageColumn Column4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewImageColumn Column9;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewImageColumn Column4;
     }
 }

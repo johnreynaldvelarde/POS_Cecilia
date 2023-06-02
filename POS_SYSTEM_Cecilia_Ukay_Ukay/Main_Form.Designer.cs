@@ -579,7 +579,7 @@
             data_Grid_Transaction.RowHeadersVisible = false;
             data_Grid_Transaction.RowHeadersWidth = 30;
             data_Grid_Transaction.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            data_Grid_Transaction.RowTemplate.Height = 30;
+            data_Grid_Transaction.RowTemplate.Height = 40;
             data_Grid_Transaction.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Transaction.Size = new Size(368, 196);
             data_Grid_Transaction.TabIndex = 7;
@@ -714,7 +714,7 @@
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 34.7592926F;
+            Column1.FillWeight = 34.9684563F;
             Column1.HeaderText = "#";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
@@ -729,7 +729,7 @@
             // productName
             // 
             productName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            productName.FillWeight = 182.152328F;
+            productName.FillWeight = 183.248428F;
             productName.HeaderText = "Name";
             productName.Name = "productName";
             productName.ReadOnly = true;
@@ -737,7 +737,7 @@
             // Column5
             // 
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 93.2707748F;
+            Column5.FillWeight = 93.83203F;
             Column5.HeaderText = "Price";
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
@@ -745,7 +745,7 @@
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 54.5297661F;
+            Column4.FillWeight = 54.8579F;
             Column4.HeaderText = "Qyt";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
@@ -753,7 +753,7 @@
             // Column6
             // 
             Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column6.FillWeight = 93.2707748F;
+            Column6.FillWeight = 91.07616F;
             Column6.HeaderText = "Amount";
             Column6.Name = "Column6";
             Column6.ReadOnly = true;
@@ -762,6 +762,7 @@
             // 
             Remove.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Remove.HeaderText = "";
+            Remove.Image = (Image)resources.GetObject("Remove.Image");
             Remove.Name = "Remove";
             Remove.ReadOnly = true;
             Remove.Width = 5;

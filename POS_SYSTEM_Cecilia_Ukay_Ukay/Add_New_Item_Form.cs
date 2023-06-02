@@ -36,7 +36,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btn_Save_Click(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrEmpty(txt_Item_Name.Text) || String.IsNullOrEmpty(txt_Price.Text) )
+            if (String.IsNullOrEmpty(txt_Item_Name.Text) || String.IsNullOrEmpty(txt_Price.Text))
             {
                 MessageBox.Show("Fill in the blank");
             }

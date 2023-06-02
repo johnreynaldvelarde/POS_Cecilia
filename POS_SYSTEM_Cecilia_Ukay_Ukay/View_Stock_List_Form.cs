@@ -7,19 +7,64 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class View_Stock_List_Form : Form
     {
+        DB_Connection database = new DB_Connection();
+
         public View_Stock_List_Form()
         {
             InitializeComponent();
         }
 
+        public void show_product_stock()
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                int i = 0;
+                connect.Open();
+                string sql = "SELECT Product_ID, Product_Code, Product_Name, Quantity FROM Product WHERE Archive = 0;";
+                SqlCommand command = new SqlCommand(sql, connect);
+                SqlDataReader reader = command.ExecuteReader();
+
+                data_Stock_Product.Rows.Clear();
+
+                while (reader.Read())
+                {
+                    if (reader["Archive"].ToString() == "0")
+                    {
+                        i += 1;
+                        data_Stock_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
+                                                       reader["Quantity"].ToString());
+                                                      
+                    }
+
+                }
+                reader.Close();
+                connect.Close();
+            }
+        }
+
+        public void show_item_stock()
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+
+            }
+        }
+
         private void btn_Purchase_Click(object sender, EventArgs e)
         {
             Purchase_Order_Form frm = new Purchase_Order_Form();
+            frm.ShowDialog();
+        }
+
+        private void btn_Create_Item_Click(object sender, EventArgs e)
+        {
+            Add_New_Item_Form frm = new Add_New_Item_Form();
             frm.ShowDialog();
         }
     }
