@@ -98,9 +98,9 @@
             btn_Product_List.Image = (Image)resources.GetObject("btn_Product_List.Image");
             btn_Product_List.Location = new Point(12, 11);
             btn_Product_List.Name = "btn_Product_List";
-            btn_Product_List.Size = new Size(181, 38);
+            btn_Product_List.Size = new Size(203, 38);
             btn_Product_List.TabIndex = 14;
-            btn_Product_List.Text = "  Product List";
+            btn_Product_List.Text = "  Product Catalog";
             btn_Product_List.TextAlign = ContentAlignment.MiddleRight;
             btn_Product_List.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Product_List.UseVisualStyleBackColor = false;
@@ -116,7 +116,7 @@
             btn_Category_List.ForeColor = Color.White;
             btn_Category_List.Image = (Image)resources.GetObject("btn_Category_List.Image");
             btn_Category_List.ImageAlign = ContentAlignment.MiddleRight;
-            btn_Category_List.Location = new Point(213, 11);
+            btn_Category_List.Location = new Point(235, 11);
             btn_Category_List.Name = "btn_Category_List";
             btn_Category_List.Size = new Size(185, 38);
             btn_Category_List.TabIndex = 15;
@@ -145,7 +145,7 @@
             btn_Stock.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Stock.ForeColor = Color.White;
             btn_Stock.Image = (Image)resources.GetObject("btn_Stock.Image");
-            btn_Stock.Location = new Point(418, 11);
+            btn_Stock.Location = new Point(440, 11);
             btn_Stock.Name = "btn_Stock";
             btn_Stock.Size = new Size(193, 38);
             btn_Stock.TabIndex = 17;

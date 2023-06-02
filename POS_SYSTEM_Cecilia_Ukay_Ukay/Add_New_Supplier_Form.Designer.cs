@@ -31,14 +31,14 @@
             btn_Clear = new Button();
             btn_Save = new Button();
             label6 = new Label();
-            txtContact = new TextBox();
+            txt_Email = new TextBox();
             label4 = new Label();
-            txtRetype = new TextBox();
+            txt_Contact_Number = new TextBox();
             label3 = new Label();
-            txtPassword = new TextBox();
+            txt_Address = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            txtUsername = new TextBox();
+            txt_Supplier_Name = new TextBox();
             btnClose = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
@@ -86,14 +86,14 @@
             label6.TabIndex = 46;
             label6.Text = "Email Address *";
             // 
-            // txtContact
+            // txt_Email
             // 
-            txtContact.BorderStyle = BorderStyle.FixedSingle;
-            txtContact.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtContact.Location = new Point(258, 414);
-            txtContact.Name = "txtContact";
-            txtContact.Size = new Size(400, 29);
-            txtContact.TabIndex = 45;
+            txt_Email.BorderStyle = BorderStyle.FixedSingle;
+            txt_Email.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Email.Location = new Point(258, 414);
+            txt_Email.Name = "txt_Email";
+            txt_Email.Size = new Size(400, 29);
+            txt_Email.TabIndex = 45;
             // 
             // label4
             // 
@@ -105,14 +105,14 @@
             label4.TabIndex = 43;
             label4.Text = "Contact Number*";
             // 
-            // txtRetype
+            // txt_Contact_Number
             // 
-            txtRetype.BorderStyle = BorderStyle.FixedSingle;
-            txtRetype.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtRetype.Location = new Point(258, 327);
-            txtRetype.Name = "txtRetype";
-            txtRetype.Size = new Size(400, 29);
-            txtRetype.TabIndex = 42;
+            txt_Contact_Number.BorderStyle = BorderStyle.FixedSingle;
+            txt_Contact_Number.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Contact_Number.Location = new Point(258, 327);
+            txt_Contact_Number.Name = "txt_Contact_Number";
+            txt_Contact_Number.Size = new Size(400, 29);
+            txt_Contact_Number.TabIndex = 42;
             // 
             // label3
             // 
@@ -124,14 +124,14 @@
             label3.TabIndex = 41;
             label3.Text = "Location Address *";
             // 
-            // txtPassword
+            // txt_Address
             // 
-            txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(258, 242);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(400, 29);
-            txtPassword.TabIndex = 40;
+            txt_Address.BorderStyle = BorderStyle.FixedSingle;
+            txt_Address.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Address.Location = new Point(258, 242);
+            txt_Address.Name = "txt_Address";
+            txt_Address.Size = new Size(400, 29);
+            txt_Address.TabIndex = 40;
             // 
             // label2
             // 
@@ -154,14 +154,14 @@
             label1.TabIndex = 0;
             label1.Text = "Add new supplier";
             // 
-            // txtUsername
+            // txt_Supplier_Name
             // 
-            txtUsername.BorderStyle = BorderStyle.FixedSingle;
-            txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(258, 160);
-            txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(400, 29);
-            txtUsername.TabIndex = 38;
+            txt_Supplier_Name.BorderStyle = BorderStyle.FixedSingle;
+            txt_Supplier_Name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Supplier_Name.Location = new Point(258, 160);
+            txt_Supplier_Name.Name = "txt_Supplier_Name";
+            txt_Supplier_Name.Size = new Size(400, 29);
+            txt_Supplier_Name.TabIndex = 38;
             // 
             // btnClose
             // 
@@ -220,13 +220,13 @@
             Controls.Add(btn_Clear);
             Controls.Add(btn_Save);
             Controls.Add(label6);
-            Controls.Add(txtContact);
+            Controls.Add(txt_Email);
             Controls.Add(label4);
-            Controls.Add(txtRetype);
+            Controls.Add(txt_Contact_Number);
             Controls.Add(label3);
-            Controls.Add(txtPassword);
+            Controls.Add(txt_Address);
             Controls.Add(label2);
-            Controls.Add(txtUsername);
+            Controls.Add(txt_Supplier_Name);
             Controls.Add(btnClose);
             Controls.Add(panel2);
             Controls.Add(panel1);
@@ -244,14 +244,14 @@
         private Button btn_Clear;
         private Button btn_Save;
         private Label label6;
-        private TextBox txtContact;
+        private TextBox txt_Email;
         private Label label4;
-        private TextBox txtRetype;
+        private TextBox txt_Contact_Number;
         private Label label3;
-        private TextBox txtPassword;
+        private TextBox txt_Address;
         private Label label2;
         private Label label1;
-        private TextBox txtUsername;
+        private TextBox txt_Supplier_Name;
         private Button btnClose;
         private Panel panel2;
         private Panel panel1;

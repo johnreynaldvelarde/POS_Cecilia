@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Purchase_Order_Form));
             label2 = new Label();
             label1 = new Label();
             txtUsername = new TextBox();
-            cmd_Category = new ComboBox();
-            textBox1 = new TextBox();
+            cmd_Supplier = new ComboBox();
+            txt_Date_Created = new TextBox();
             label3 = new Label();
             btn_Close = new Button();
             panel2 = new Panel();
@@ -43,8 +46,21 @@
             btn_Clear = new Button();
             btn_Save = new Button();
             panel1 = new Panel();
+            data_Grid_Product = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Edit = new DataGridViewImageColumn();
+            Delete = new DataGridViewImageColumn();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)data_Grid_Product).BeginInit();
             SuspendLayout();
             // 
             // label2
@@ -53,9 +69,9 @@
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.Location = new Point(39, 46);
             label2.Name = "label2";
-            label2.Size = new Size(142, 21);
+            label2.Size = new Size(121, 21);
             label2.TabIndex = 40;
-            label2.Text = "Select a Supplier ";
+            label2.Text = "Retailer Name";
             // 
             // label1
             // 
@@ -77,24 +93,25 @@
             txtUsername.Size = new Size(400, 29);
             txtUsername.TabIndex = 42;
             // 
-            // cmd_Category
+            // cmd_Supplier
             // 
-            cmd_Category.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmd_Category.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmd_Category.FormattingEnabled = true;
-            cmd_Category.Location = new Point(187, 101);
-            cmd_Category.Name = "cmd_Category";
-            cmd_Category.Size = new Size(400, 28);
-            cmd_Category.TabIndex = 48;
+            cmd_Supplier.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_Supplier.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Supplier.FormattingEnabled = true;
+            cmd_Supplier.Location = new Point(187, 101);
+            cmd_Supplier.Name = "cmd_Supplier";
+            cmd_Supplier.Size = new Size(400, 28);
+            cmd_Supplier.TabIndex = 48;
             // 
-            // textBox1
+            // txt_Date_Created
             // 
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(187, 156);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(400, 29);
-            textBox1.TabIndex = 50;
+            txt_Date_Created.BorderStyle = BorderStyle.FixedSingle;
+            txt_Date_Created.Enabled = false;
+            txt_Date_Created.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Date_Created.Location = new Point(187, 156);
+            txt_Date_Created.Name = "txt_Date_Created";
+            txt_Date_Created.Size = new Size(400, 29);
+            txt_Date_Created.TabIndex = 50;
             // 
             // label3
             // 
@@ -151,11 +168,11 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(textBox1);
+            panel4.Controls.Add(txt_Date_Created);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label1);
-            panel4.Controls.Add(cmd_Category);
+            panel4.Controls.Add(cmd_Supplier);
             panel4.Controls.Add(txtUsername);
             panel4.Dock = DockStyle.Top;
             panel4.Location = new Point(10, 58);
@@ -207,11 +224,131 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(data_Grid_Product);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 285);
             panel1.Name = "panel1";
             panel1.Size = new Size(880, 234);
             panel1.TabIndex = 98;
+            // 
+            // data_Grid_Product
+            // 
+            data_Grid_Product.AllowUserToAddRows = false;
+            data_Grid_Product.AllowUserToOrderColumns = true;
+            data_Grid_Product.AllowUserToResizeColumns = false;
+            data_Grid_Product.AllowUserToResizeRows = false;
+            data_Grid_Product.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data_Grid_Product.BackgroundColor = Color.White;
+            data_Grid_Product.BorderStyle = BorderStyle.None;
+            data_Grid_Product.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            data_Grid_Product.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            data_Grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            data_Grid_Product.ColumnHeadersHeight = 50;
+            data_Grid_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column3, Column2, Column4, Column5, Column7, Column8, Edit, Delete });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            data_Grid_Product.DefaultCellStyle = dataGridViewCellStyle4;
+            data_Grid_Product.Dock = DockStyle.Fill;
+            data_Grid_Product.EnableHeadersVisualStyles = false;
+            data_Grid_Product.Location = new Point(0, 0);
+            data_Grid_Product.Name = "data_Grid_Product";
+            data_Grid_Product.ReadOnly = true;
+            data_Grid_Product.RowHeadersVisible = false;
+            data_Grid_Product.RowHeadersWidth = 50;
+            data_Grid_Product.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            data_Grid_Product.RowTemplate.Height = 40;
+            data_Grid_Product.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            data_Grid_Product.Size = new Size(880, 234);
+            data_Grid_Product.TabIndex = 4;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 60F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Product_ID";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            Column6.Visible = false;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.HeaderText = "Product Code";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Product Name";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.HeaderText = "Price";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.HeaderText = "Quantity";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column7
+            // 
+            Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column7.HeaderText = "Size";
+            Column7.Name = "Column7";
+            Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Date Added";
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 50;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 50;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Width = 50;
             // 
             // Purchase_Order_Form
             // 
@@ -232,10 +369,13 @@
             Name = "Purchase_Order_Form";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
+            Load += Purchase_Order_Form_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)data_Grid_Product).EndInit();
             ResumeLayout(false);
         }
 
@@ -243,8 +383,8 @@
         private Label label2;
         private Label label1;
         private TextBox txtUsername;
-        private ComboBox cmd_Category;
-        private TextBox textBox1;
+        private ComboBox cmd_Supplier;
+        private TextBox txt_Date_Created;
         private Label label3;
         private Button btn_Close;
         private Panel panel2;
@@ -255,5 +395,16 @@
         private Button btn_Clear;
         private Button btn_Save;
         private Panel panel1;
+        private DataGridView data_Grid_Product;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewImageColumn Edit;
+        private DataGridViewImageColumn Delete;
     }
 }

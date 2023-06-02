@@ -27,8 +27,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             show_category();
         }
 
-        
-
         // method for clear the text in textbox
         public void Clear()
         {
