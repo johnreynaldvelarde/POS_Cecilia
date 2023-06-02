@@ -30,17 +30,17 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            user_profile = new CircularPictureBox();
             pictureBox2 = new PictureBox();
             btn_Sales_Report = new Button();
             textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
             btn_History = new Button();
-            picture_account = new PictureBox();
             btn_User = new Button();
             btn_Archive = new Button();
             btn_Inventory = new Button();
@@ -77,6 +77,8 @@
             Column6 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewImageColumn();
             down_panel = new Panel();
+            txt_Product_Code = new TextBox();
+            label7 = new Label();
             label5 = new Label();
             label_amount = new Label();
             label1 = new Label();
@@ -85,12 +87,10 @@
             btn_Clear_All = new Button();
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            label7 = new Label();
-            txt_Product_Code = new TextBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)user_profile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picture_account).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -108,12 +108,12 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(14, 159, 104);
+            panel1.Controls.Add(user_profile);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(btn_Sales_Report);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(btn_History);
-            panel1.Controls.Add(picture_account);
             panel1.Controls.Add(btn_User);
             panel1.Controls.Add(btn_Archive);
             panel1.Controls.Add(btn_Inventory);
@@ -124,6 +124,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1200, 63);
             panel1.TabIndex = 3;
+            // 
+            // user_profile
+            // 
+            user_profile.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            user_profile.Cursor = Cursors.Hand;
+            user_profile.Image = (Image)resources.GetObject("user_profile.Image");
+            user_profile.Location = new Point(1128, 4);
+            user_profile.Name = "user_profile";
+            user_profile.Size = new Size(60, 53);
+            user_profile.SizeMode = PictureBoxSizeMode.StretchImage;
+            user_profile.TabIndex = 51;
+            user_profile.TabStop = false;
+            user_profile.Click += user_profile_Click;
             // 
             // pictureBox2
             // 
@@ -193,19 +206,6 @@
             btn_History.TextImageRelation = TextImageRelation.ImageAboveText;
             btn_History.UseVisualStyleBackColor = false;
             btn_History.Click += btn_History_Click;
-            // 
-            // picture_account
-            // 
-            picture_account.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            picture_account.Cursor = Cursors.Hand;
-            picture_account.Image = (Image)resources.GetObject("picture_account.Image");
-            picture_account.Location = new Point(1130, 3);
-            picture_account.Name = "picture_account";
-            picture_account.Size = new Size(57, 55);
-            picture_account.SizeMode = PictureBoxSizeMode.Zoom;
-            picture_account.TabIndex = 15;
-            picture_account.TabStop = false;
-            picture_account.Click += picture_account_Click;
             // 
             // btn_User
             // 
@@ -372,25 +372,25 @@
             data_Grid_Available.BorderStyle = BorderStyle.None;
             data_Grid_Available.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Available.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Available.ColumnHeadersHeight = 50;
             data_Grid_Available.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Product_ID, Product_Name, Category, Price, Size, Discount, Minus, Quantity, Add, Sell });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            data_Grid_Available.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            data_Grid_Available.DefaultCellStyle = dataGridViewCellStyle2;
             data_Grid_Available.Dock = DockStyle.Fill;
             data_Grid_Available.EnableHeadersVisualStyles = false;
             data_Grid_Available.Location = new Point(10, 78);
@@ -552,25 +552,25 @@
             data_Grid_Transaction.BorderStyle = BorderStyle.None;
             data_Grid_Transaction.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Transaction.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.White;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             data_Grid_Transaction.ColumnHeadersHeight = 30;
             data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column8, productName, Column5, Column4, Column6, Column3 });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle4;
             data_Grid_Transaction.Dock = DockStyle.Fill;
             data_Grid_Transaction.EnableHeadersVisualStyles = false;
             data_Grid_Transaction.Location = new Point(0, 37);
@@ -652,6 +652,26 @@
             down_panel.Name = "down_panel";
             down_panel.Size = new Size(368, 212);
             down_panel.TabIndex = 5;
+            // 
+            // txt_Product_Code
+            // 
+            txt_Product_Code.BorderStyle = BorderStyle.FixedSingle;
+            txt_Product_Code.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Product_Code.Location = new Point(13, 47);
+            txt_Product_Code.Name = "txt_Product_Code";
+            txt_Product_Code.Size = new Size(240, 29);
+            txt_Product_Code.TabIndex = 51;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(13, 12);
+            label7.Name = "label7";
+            label7.Size = new Size(177, 21);
+            label7.TabIndex = 3;
+            label7.Text = "Select Payment Method:";
             // 
             // label5
             // 
@@ -746,26 +766,6 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(13, 12);
-            label7.Name = "label7";
-            label7.Size = new Size(177, 21);
-            label7.TabIndex = 3;
-            label7.Text = "Select Payment Method:";
-            // 
-            // txt_Product_Code
-            // 
-            txt_Product_Code.BorderStyle = BorderStyle.FixedSingle;
-            txt_Product_Code.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Product_Code.Location = new Point(13, 47);
-            txt_Product_Code.Name = "txt_Product_Code";
-            txt_Product_Code.Size = new Size(240, 29);
-            txt_Product_Code.TabIndex = 51;
-            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -782,9 +782,9 @@
             Load += Main_Form_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)user_profile).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picture_account).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             splitContainer1.Panel1.ResumeLayout(false);
@@ -813,7 +813,6 @@
         private Button btn_Inventory;
         private Button btn_Settings;
         private Button btn_User;
-        private PictureBox picture_account;
         private SplitContainer splitContainer1;
         private TextBox textBox1;
         private Button btn_History;
@@ -859,5 +858,6 @@
         private ComboBox cmd_Category;
         private Label label7;
         public TextBox txt_Product_Code;
+        private CircularPictureBox user_profile;
     }
 }

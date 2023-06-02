@@ -25,6 +25,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             view_product();
         }
 
+
+
         private Color defaultColor = Color.FromArgb(14, 159, 104);
         private Color settingsColor = Color.FromArgb(242, 197, 70);
         private Form activeForm = null;
@@ -317,16 +319,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.Dispose();
             btn_History.BackColor = defaultColor;
         }
-
-        private void picture_account_Click(object sender, EventArgs e)
+        private void user_profile_Click(object sender, EventArgs e)
         {
             Profile_Popup_Form frm = new Profile_Popup_Form();
             frm.ShowDialog();
             frm.Dispose();
         }
-
-
-
+        private void picture_account_Click(object sender, EventArgs e)
+        {
+           
+        }
         // moving time
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -374,6 +376,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
            */
         }
 
-
+      
     }
 }

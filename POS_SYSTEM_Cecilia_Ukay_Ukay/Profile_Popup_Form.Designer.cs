@@ -35,23 +35,23 @@
             label3 = new Label();
             panel3 = new Panel();
             btn_Sign_Out = new Label();
-            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             label1 = new Label();
             btn_Close = new Button();
+            circularPictureBox1 = new CircularPictureBox();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)circularPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(circularPictureBox1);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(btn_View_Account);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(10, 10);
@@ -113,16 +113,6 @@
             btn_Sign_Out.Text = "Sign out";
             btn_Sign_Out.Click += btn_Sign_Out_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(19, 58);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(103, 103);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             panel2.Controls.Add(label1);
@@ -157,6 +147,16 @@
             btn_Close.UseVisualStyleBackColor = true;
             btn_Close.Click += btn_Close_Click;
             // 
+            // circularPictureBox1
+            // 
+            circularPictureBox1.Image = (Image)resources.GetObject("circularPictureBox1.Image");
+            circularPictureBox1.Location = new Point(24, 58);
+            circularPictureBox1.Name = "circularPictureBox1";
+            circularPictureBox1.Size = new Size(103, 103);
+            circularPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            circularPictureBox1.TabIndex = 6;
+            circularPictureBox1.TabStop = false;
+            // 
             // Profile_Popup_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -174,9 +174,9 @@
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)circularPictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -186,11 +186,11 @@
         private Panel panel2;
         private Label label1;
         private Panel panel3;
-        private PictureBox pictureBox1;
         private Label btn_Sign_Out;
         private Label btn_View_Account;
         private Label label3;
         private Label label5;
         private Button btn_Close;
+        private CircularPictureBox circularPictureBox1;
     }
 }
