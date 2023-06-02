@@ -88,7 +88,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Stock_Click(object sender, EventArgs e)
         {
-            openChildForm(new Stock_Item_List_Form());
+            openChildForm(new View_Stock_List_Form());
             resetButtonColors();
             btn_Stock.BackColor = Color.FromArgb(242, 197, 70);
         }
