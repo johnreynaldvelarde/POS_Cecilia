@@ -119,7 +119,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
                     command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
                     command.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txt_Quantity.Text));
-                    command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
                     command.Parameters.AddWithValue("@Category_ID", categoryId);
                     command.Parameters.AddWithValue("@Size", cmd_Measurement.SelectedItem);
                     command.Parameters.AddWithValue("@Archive", 0);
@@ -147,7 +147,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         */
         private void Add_New_Product_Form_Load(object sender, EventArgs e)
         {
-            txt_Date_Added.Text = DateTime.Now.ToLongDateString();
+            txt_Date_Added.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
 
         private void txt_Quantity_KeyPress(object sender, KeyPressEventArgs e)

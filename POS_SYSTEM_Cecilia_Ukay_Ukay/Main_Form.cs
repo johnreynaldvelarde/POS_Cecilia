@@ -295,46 +295,29 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         command1.Parameters.AddWithValue("@Order_Quantity", orderQuantity);
                         command1.Parameters.AddWithValue("@Amount", amount);
                         command1.ExecuteNonQuery();
-                    }
 
+
+                        // for select /update the table product and reduce the quantity of specific product
+                        string selectProduct = "SELECT Quantity FROM Product WHERE Product_ID = @Product_ID";
+                        SqlCommand select_product = new SqlCommand(selectProduct, connect);
+                        select_product.Parameters.AddWithValue("@Product_ID", productID);
+                        int current_quantity = Convert.ToInt32(select_product.ExecuteScalar());
+
+                        int update_quantity = current_quantity - orderQuantity;
+
+                        string updateProduct = "UPDATE Product SET Quantity = @UpdatedQuantity WHERE Product_ID = @Product_ID";
+                        SqlCommand update_product = new SqlCommand(updateProduct, connect);
+                        update_product.Parameters.AddWithValue("@Product_ID", productID);
+                        update_product.Parameters.AddWithValue("@UpdatedQuantity", update_quantity);
+                        update_product.ExecuteNonQuery();
+                    }
+           
                     MessageBox.Show("New transaction added");
                     connect.Close();
                     Clear_Transaction();
+                    view_product();
                 }
-
-
-
-
-                /*
-                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
-                {
-                    connect.Open();
-
-                    foreach (DataGridViewRow row in data_Grid_Transaction.Rows)
-                    {
-                        int productID = Convert.ToInt32(row.Cells["productID"].Value);
-                        int orderQuantity = Convert.ToInt32(row.Cells["orderQuantity"].Value);
-                        decimal totalAmount = Convert.ToDecimal(row.Cells["totalAmount"].Value);
-
-                        string sql = "INSERT INTO Order_Product (Product_ID, Order_Date, Order_Quantity, Total_Amount) VALUES " +
-                                     "(@Product_ID, @Order_Date, @Order_Quantity, @Total_Amount)";
-                        SqlCommand command = new SqlCommand(sql, connect);
-                        command.Parameters.AddWithValue("@Product_ID", productID);
-                        command.Parameters.AddWithValue("Order_date", DateTime.Now);
-                        command.Parameters.AddWithValue("@Order_Quantity", orderQuantity);
-                        command.Parameters.AddWithValue("@Total_Amount", totalAmount);
-
-                        command.ExecuteNonQuery();
-
-                        string order_sql = "SELECT SCOPE_IDENTITY()";
-                        SqlCommand retrieve_command = new SqlCommand(order_sql, connect);
-                        int insert_orderID = Convert.ToInt32(retrieve_command.ExecuteScalar());
-                    }
-                    MessageBox.Show("New transaction added");
-                    connect.Close();
-                    Clear_Transaction();
-                }
-                */
+              
             }
 
         }
