@@ -33,7 +33,7 @@
             label1 = new Label();
             panel3 = new Panel();
             button1 = new Button();
-            btn_Supplier_List = new Button();
+            btn_Transaction = new Button();
             btn_Retailer = new Button();
             panel2 = new Panel();
             btnClose = new Button();
@@ -64,7 +64,7 @@
             // panel3
             // 
             panel3.Controls.Add(button1);
-            panel3.Controls.Add(btn_Supplier_List);
+            panel3.Controls.Add(btn_Transaction);
             panel3.Controls.Add(btn_Retailer);
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(10, 73);
@@ -90,23 +90,24 @@
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
             // 
-            // btn_Supplier_List
+            // btn_Transaction
             // 
-            btn_Supplier_List.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Supplier_List.Cursor = Cursors.Hand;
-            btn_Supplier_List.FlatAppearance.BorderSize = 0;
-            btn_Supplier_List.FlatStyle = FlatStyle.Flat;
-            btn_Supplier_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Supplier_List.ForeColor = Color.White;
-            btn_Supplier_List.Image = (Image)resources.GetObject("btn_Supplier_List.Image");
-            btn_Supplier_List.Location = new Point(279, 11);
-            btn_Supplier_List.Name = "btn_Supplier_List";
-            btn_Supplier_List.Size = new Size(227, 38);
-            btn_Supplier_List.TabIndex = 17;
-            btn_Supplier_List.Text = "Order Transaction";
-            btn_Supplier_List.TextAlign = ContentAlignment.MiddleRight;
-            btn_Supplier_List.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Supplier_List.UseVisualStyleBackColor = false;
+            btn_Transaction.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Transaction.Cursor = Cursors.Hand;
+            btn_Transaction.FlatAppearance.BorderSize = 0;
+            btn_Transaction.FlatStyle = FlatStyle.Flat;
+            btn_Transaction.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Transaction.ForeColor = Color.White;
+            btn_Transaction.Image = (Image)resources.GetObject("btn_Transaction.Image");
+            btn_Transaction.Location = new Point(279, 11);
+            btn_Transaction.Name = "btn_Transaction";
+            btn_Transaction.Size = new Size(227, 38);
+            btn_Transaction.TabIndex = 17;
+            btn_Transaction.Text = "Order Transaction";
+            btn_Transaction.TextAlign = ContentAlignment.MiddleRight;
+            btn_Transaction.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Transaction.UseVisualStyleBackColor = false;
+            btn_Transaction.Click += btn_Transaction_Click;
             // 
             // btn_Retailer
             // 
@@ -186,7 +187,7 @@
         private Panel panel_center;
         private Label label1;
         private Panel panel3;
-        private Button btn_Supplier_List;
+        private Button btn_Transaction;
         public Button btn_Retailer;
         private Panel panel2;
         private Button btnClose;

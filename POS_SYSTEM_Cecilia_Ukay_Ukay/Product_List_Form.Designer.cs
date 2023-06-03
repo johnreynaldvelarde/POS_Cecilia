@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_List_Form));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product_List_Form));
             panel1 = new Panel();
+            btn_Discount = new Button();
             button1 = new Button();
             btn_Add_Product = new Button();
             label1 = new Label();
@@ -47,7 +48,6 @@
             Column8 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
-            btn_Discount = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Product).BeginInit();
@@ -64,6 +64,24 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1090, 68);
             panel1.TabIndex = 0;
+            // 
+            // btn_Discount
+            // 
+            btn_Discount.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Discount.Cursor = Cursors.Hand;
+            btn_Discount.FlatAppearance.BorderSize = 0;
+            btn_Discount.FlatStyle = FlatStyle.Flat;
+            btn_Discount.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Discount.ForeColor = Color.White;
+            btn_Discount.Image = (Image)resources.GetObject("btn_Discount.Image");
+            btn_Discount.Location = new Point(461, 9);
+            btn_Discount.Name = "btn_Discount";
+            btn_Discount.Size = new Size(210, 38);
+            btn_Discount.TabIndex = 17;
+            btn_Discount.Text = "Create new discount";
+            btn_Discount.TextAlign = ContentAlignment.MiddleRight;
+            btn_Discount.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Discount.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -170,7 +188,7 @@
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 60F;
+            Column1.FillWeight = 61.7645569F;
             Column1.HeaderText = "#";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
@@ -185,6 +203,7 @@
             // Column3
             // 
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column3.FillWeight = 102.940956F;
             Column3.HeaderText = "Product Code";
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
@@ -192,6 +211,7 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 149.732269F;
             Column2.HeaderText = "Product Name";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
@@ -199,6 +219,7 @@
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 71.63917F;
             Column4.HeaderText = "Price";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
@@ -206,6 +227,7 @@
             // Column5
             // 
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 68.0412445F;
             Column5.HeaderText = "Quantity";
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
@@ -213,12 +235,14 @@
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column7.FillWeight = 102.940956F;
             Column7.HeaderText = "Size";
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
             // Column8
             // 
+            Column8.FillWeight = 102.940956F;
             Column8.HeaderText = "Date Added";
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
@@ -242,24 +266,6 @@
             Delete.Name = "Delete";
             Delete.ReadOnly = true;
             Delete.Width = 50;
-            // 
-            // btn_Discount
-            // 
-            btn_Discount.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Discount.Cursor = Cursors.Hand;
-            btn_Discount.FlatAppearance.BorderSize = 0;
-            btn_Discount.FlatStyle = FlatStyle.Flat;
-            btn_Discount.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Discount.ForeColor = Color.White;
-            btn_Discount.Image = (Image)resources.GetObject("btn_Discount.Image");
-            btn_Discount.Location = new Point(461, 9);
-            btn_Discount.Name = "btn_Discount";
-            btn_Discount.Size = new Size(210, 38);
-            btn_Discount.TabIndex = 17;
-            btn_Discount.Text = "Create new discount";
-            btn_Discount.TextAlign = ContentAlignment.MiddleRight;
-            btn_Discount.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Discount.UseVisualStyleBackColor = false;
             // 
             // Product_List_Form
             // 
@@ -288,6 +294,7 @@
         private Button button1;
         private Panel panel2;
         private DataGridView data_Grid_Product;
+        private Button btn_Discount;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column3;
@@ -298,6 +305,5 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
-        private Button btn_Discount;
     }
 }

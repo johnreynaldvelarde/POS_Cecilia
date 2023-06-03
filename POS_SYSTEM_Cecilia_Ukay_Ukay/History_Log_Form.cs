@@ -42,6 +42,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Retailer.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Retailer.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
+            btn_Transaction.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Transaction.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
         }
 
         public void view_management()
@@ -53,6 +56,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void resetButtonColors()
         {
             btn_Retailer.BackColor = defaultColor;
+            btn_Transaction.BackColor = defaultColor;
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -64,6 +69,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             openChildForm(new Management_Transaction_List_Form());
             btn_Retailer.BackColor = Color.FromArgb(242, 197, 70);
+        }
+
+        private void btn_Transaction_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Order_Transaction_List_Form());
+            btn_Transaction.BackColor = Color.FromArgb(242, 197, 70);
         }
     }
 }

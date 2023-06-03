@@ -18,6 +18,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public View_Stock_List_Form()
         {
             InitializeComponent();
+            show_product_stock();
         }
 
         public void show_product_stock()
@@ -26,7 +27,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Product_ID, Product_Code, Product_Name, Quantity FROM Product WHERE Archive = 0;";
+                string sql = "SELECT Product_ID, Product_Code, Product_Name, Quantity, Archive FROM Product WHERE Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -39,7 +40,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         i += 1;
                         data_Stock_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
                                                        reader["Quantity"].ToString());
-                                                      
+
                     }
 
                 }
@@ -66,6 +67,20 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             Add_New_Item_Form frm = new Add_New_Item_Form();
             frm.ShowDialog();
+        }
+
+        private void data_Stock_Product_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string stock_product = data_Stock_Product.Columns[e.ColumnIndex].Name;
+            if (stock_product == "ReStock")
+            {
+                MessageBox.Show("Cardo Cana");
+            }
+        }
+
+        private void data_Stock_Product_SelectionChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
