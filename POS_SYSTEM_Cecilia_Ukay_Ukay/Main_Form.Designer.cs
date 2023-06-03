@@ -81,11 +81,11 @@
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             Column1 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
+            productID = new DataGridViewTextBoxColumn();
             productName = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
+            orderQuantity = new DataGridViewTextBoxColumn();
+            totalAmount = new DataGridViewTextBoxColumn();
             Remove = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)user_profile).BeginInit();
@@ -562,7 +562,7 @@
             data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             data_Grid_Transaction.ColumnHeadersHeight = 30;
             data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column8, productName, Column5, Column4, Column6, Remove });
+            data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, productID, productName, Column5, orderQuantity, totalAmount, Remove });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Window;
             dataGridViewCellStyle4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -719,12 +719,12 @@
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
-            // Column8
+            // productID
             // 
-            Column8.HeaderText = "Product_ID";
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            Column8.Visible = false;
+            productID.HeaderText = "Product_ID";
+            productID.Name = "productID";
+            productID.ReadOnly = true;
+            productID.Visible = false;
             // 
             // productName
             // 
@@ -742,21 +742,21 @@
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
-            // Column4
+            // orderQuantity
             // 
-            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 54.8579F;
-            Column4.HeaderText = "Qyt";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
+            orderQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            orderQuantity.FillWeight = 54.8579F;
+            orderQuantity.HeaderText = "Qyt";
+            orderQuantity.Name = "orderQuantity";
+            orderQuantity.ReadOnly = true;
             // 
-            // Column6
+            // totalAmount
             // 
-            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column6.FillWeight = 91.07616F;
-            Column6.HeaderText = "Amount";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
+            totalAmount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            totalAmount.FillWeight = 91.07616F;
+            totalAmount.HeaderText = "Amount";
+            totalAmount.Name = "totalAmount";
+            totalAmount.ReadOnly = true;
             // 
             // Remove
             // 
@@ -854,11 +854,11 @@
         public TextBox txt_Product_Code;
         private CircularPictureBox user_profile;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn productID;
         private DataGridViewTextBoxColumn productName;
         private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn orderQuantity;
+        private DataGridViewTextBoxColumn totalAmount;
         private DataGridViewImageColumn Remove;
     }
 }
