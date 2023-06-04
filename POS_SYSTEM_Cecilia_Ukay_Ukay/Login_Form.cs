@@ -33,6 +33,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             Main_Form frm = new Main_Form();
             frm.Show();
+            this.Hide(); //this hides the login Form after before the the main form opens
 
             // Sa ulit muna ilagay ang code para mabilis buksan
             //  "Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True"  --dapiton string connections
