@@ -41,16 +41,17 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // color highlight for button
         public void button_highligted()
         {
-            // btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
             btn_Product_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Product_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
-            //  btn_Category_List.BackColor = Color.FromArgb(242, 197, 70);
             btn_Category_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Category_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
-            btn_Stock.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
-            btn_Stock.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+            btn_Stock_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Stock_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+
+            btn_Item_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Item_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
             // btn_Purchase_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             // btn_Purchase_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
@@ -60,7 +61,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             btn_Product_List.BackColor = defaultColor;
             btn_Category_List.BackColor = defaultColor;
-            btn_Stock.BackColor = defaultColor;
+            btn_Stock_List.BackColor = defaultColor;
+            btn_Item_List.BackColor = defaultColor;
         }
 
         // first form view // show the product list in data grid
@@ -86,19 +88,20 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Category_List.BackColor = Color.FromArgb(242, 197, 70);
         }
 
-        private void btn_Stock_Click(object sender, EventArgs e)
+
+
+        private void btn_Item_List_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Item_List_Form());
+            resetButtonColors();
+            btn_Item_List.BackColor = Color.FromArgb(242, 197, 70);
+        }
+
+        private void btn_Stock_List_Click(object sender, EventArgs e)
         {
             openChildForm(new View_Stock_List_Form());
             resetButtonColors();
-            btn_Stock.BackColor = Color.FromArgb(242, 197, 70);
-        }
-
-        // button for purchase list by the manager its related to inventory
-        private void btn_Purchase_List_Click(object sender, EventArgs e)
-        {
-            // openChildForm(new Purchase_List_Form());
-            //  resetButtonColors();
-            //  btn_Purchase_List.BackColor = Color.FromArgb(242, 197, 70);
+            btn_Stock_List.BackColor = Color.FromArgb(242, 197, 70);
         }
 
         /*
@@ -125,6 +128,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             this.Dispose();
         }
 
-
+        
     }
 }

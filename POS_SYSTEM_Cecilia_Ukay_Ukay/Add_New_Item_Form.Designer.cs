@@ -38,11 +38,13 @@
             label6 = new Label();
             txt_Date_Added = new TextBox();
             label4 = new Label();
-            txt_Quantity = new TextBox();
             label3 = new Label();
             txt_Price = new TextBox();
             label2 = new Label();
             txt_Item_Name = new TextBox();
+            cmd_Piece = new ComboBox();
+            label5 = new Label();
+            txt_Item_Code = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -107,6 +109,7 @@
             btn_Clear.TabIndex = 78;
             btn_Clear.Text = "Clear";
             btn_Clear.UseVisualStyleBackColor = false;
+            btn_Clear.Click += btn_Clear_Click;
             // 
             // btn_Save
             // 
@@ -136,7 +139,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(258, 376);
+            label6.Location = new Point(266, 426);
             label6.Name = "label6";
             label6.Size = new Size(120, 21);
             label6.TabIndex = 102;
@@ -147,7 +150,7 @@
             txt_Date_Added.BorderStyle = BorderStyle.FixedSingle;
             txt_Date_Added.Enabled = false;
             txt_Date_Added.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Date_Added.Location = new Point(258, 411);
+            txt_Date_Added.Location = new Point(266, 461);
             txt_Date_Added.Name = "txt_Date_Added";
             txt_Date_Added.Size = new Size(400, 29);
             txt_Date_Added.TabIndex = 101;
@@ -156,29 +159,17 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(258, 289);
+            label4.Location = new Point(266, 339);
             label4.Name = "label4";
             label4.Size = new Size(90, 21);
             label4.TabIndex = 100;
-            label4.Text = "Quantity *";
-            // 
-            // txt_Quantity
-            // 
-            txt_Quantity.BorderStyle = BorderStyle.FixedSingle;
-            txt_Quantity.Enabled = false;
-            txt_Quantity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Quantity.Location = new Point(258, 324);
-            txt_Quantity.Multiline = true;
-            txt_Quantity.Name = "txt_Quantity";
-            txt_Quantity.Size = new Size(400, 29);
-            txt_Quantity.TabIndex = 99;
-            txt_Quantity.Text = "(Auto)";
+            label4.Text = "Per Piece *";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(258, 204);
+            label3.Location = new Point(266, 254);
             label3.Name = "label3";
             label3.Size = new Size(57, 21);
             label3.TabIndex = 98;
@@ -188,18 +179,18 @@
             // 
             txt_Price.BorderStyle = BorderStyle.FixedSingle;
             txt_Price.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Price.Location = new Point(258, 239);
+            txt_Price.Location = new Point(266, 289);
             txt_Price.Multiline = true;
             txt_Price.Name = "txt_Price";
-            txt_Price.PasswordChar = '●';
             txt_Price.Size = new Size(400, 29);
             txt_Price.TabIndex = 97;
+            txt_Price.KeyPress += txt_Price_KeyPress;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(258, 122);
+            label2.Location = new Point(266, 172);
             label2.Name = "label2";
             label2.Size = new Size(109, 21);
             label2.TabIndex = 96;
@@ -209,10 +200,40 @@
             // 
             txt_Item_Name.BorderStyle = BorderStyle.FixedSingle;
             txt_Item_Name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Item_Name.Location = new Point(258, 157);
+            txt_Item_Name.Location = new Point(266, 207);
             txt_Item_Name.Name = "txt_Item_Name";
             txt_Item_Name.Size = new Size(400, 29);
             txt_Item_Name.TabIndex = 95;
+            // 
+            // cmd_Piece
+            // 
+            cmd_Piece.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_Piece.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Piece.FormattingEnabled = true;
+            cmd_Piece.Items.AddRange(new object[] { "50", "100", "150", "200", "250", "300", "350", "400", "450", "500" });
+            cmd_Piece.Location = new Point(266, 373);
+            cmd_Piece.Name = "cmd_Piece";
+            cmd_Piece.Size = new Size(400, 29);
+            cmd_Piece.TabIndex = 103;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(266, 92);
+            label5.Name = "label5";
+            label5.Size = new Size(105, 21);
+            label5.TabIndex = 105;
+            label5.Text = "Item Code *";
+            // 
+            // txt_Item_Code
+            // 
+            txt_Item_Code.BorderStyle = BorderStyle.FixedSingle;
+            txt_Item_Code.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Item_Code.Location = new Point(266, 127);
+            txt_Item_Code.Name = "txt_Item_Code";
+            txt_Item_Code.Size = new Size(400, 29);
+            txt_Item_Code.TabIndex = 104;
             // 
             // Add_New_Item_Form
             // 
@@ -221,10 +242,12 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
+            Controls.Add(label5);
+            Controls.Add(txt_Item_Code);
+            Controls.Add(cmd_Piece);
             Controls.Add(label6);
             Controls.Add(txt_Date_Added);
             Controls.Add(label4);
-            Controls.Add(txt_Quantity);
             Controls.Add(label3);
             Controls.Add(txt_Price);
             Controls.Add(label2);
@@ -258,10 +281,12 @@
         private Label label6;
         private TextBox txt_Date_Added;
         private Label label4;
-        private TextBox txt_Quantity;
         private Label label3;
         private TextBox txt_Price;
         private Label label2;
         private TextBox txt_Item_Name;
+        private ComboBox cmd_Piece;
+        private Label label5;
+        private TextBox txt_Item_Code;
     }
 }

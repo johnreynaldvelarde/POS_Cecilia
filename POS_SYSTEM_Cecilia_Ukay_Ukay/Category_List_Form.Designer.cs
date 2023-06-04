@@ -85,9 +85,9 @@
             btn_Add_Category.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Add_Category.ForeColor = Color.White;
             btn_Add_Category.Image = (Image)resources.GetObject("btn_Add_Category.Image");
-            btn_Add_Category.Location = new Point(694, 9);
+            btn_Add_Category.Location = new Point(689, 9);
             btn_Add_Category.Name = "btn_Add_Category";
-            btn_Add_Category.Size = new Size(199, 38);
+            btn_Add_Category.Size = new Size(204, 38);
             btn_Add_Category.TabIndex = 15;
             btn_Add_Category.Text = "Add new category";
             btn_Add_Category.TextAlign = ContentAlignment.MiddleRight;

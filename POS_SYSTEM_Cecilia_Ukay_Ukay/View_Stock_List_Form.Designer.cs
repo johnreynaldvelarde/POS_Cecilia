@@ -29,41 +29,53 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Stock_List_Form));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btn_Create_Item = new Button();
             button1 = new Button();
             btn_Purchase = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            panel4 = new Panel();
+            pictureBox2 = new PictureBox();
             label3 = new Label();
+            textBox1 = new TextBox();
+            panel3 = new Panel();
+            pictureBox1 = new PictureBox();
             label2 = new Label();
+            txt_Item_Name = new TextBox();
             splitContainer1 = new SplitContainer();
             data_Stock_Product = new DataGridView();
-            dataGridView1 = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewImageColumn();
+            data_Stock_Item = new DataGridView();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
             ReStock = new DataGridViewImageColumn();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            dataGridViewImageColumn1 = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Stock_Product).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)data_Stock_Item).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -147,24 +159,76 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(label3);
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(panel3);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(5, 88);
             panel2.Name = "panel2";
             panel2.Size = new Size(1088, 50);
             panel2.TabIndex = 5;
             // 
+            // panel4
+            // 
+            panel4.Controls.Add(pictureBox2);
+            panel4.Controls.Add(label3);
+            panel4.Controls.Add(textBox1);
+            panel4.Dock = DockStyle.Right;
+            panel4.Location = new Point(564, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(524, 50);
+            panel4.TabIndex = 5;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(317, 12);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(28, 31);
+            pictureBox2.TabIndex = 99;
+            pictureBox2.TabStop = false;
+            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(564, 12);
+            label3.Location = new Point(3, 12);
             label3.Name = "label3";
             label3.Size = new Size(131, 25);
             label3.TabIndex = 3;
             label3.Text = "Item Stock List";
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            textBox1.BorderStyle = BorderStyle.FixedSingle;
+            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(351, 12);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(170, 25);
+            textBox1.TabIndex = 98;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(txt_Item_Name);
+            panel3.Dock = DockStyle.Left;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(540, 50);
+            panel3.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(324, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(28, 31);
+            pictureBox1.TabIndex = 97;
+            pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -176,6 +240,16 @@
             label2.Size = new Size(160, 25);
             label2.TabIndex = 2;
             label2.Text = "Product Stock List";
+            // 
+            // txt_Item_Name
+            // 
+            txt_Item_Name.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            txt_Item_Name.BorderStyle = BorderStyle.FixedSingle;
+            txt_Item_Name.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Item_Name.Location = new Point(358, 12);
+            txt_Item_Name.Name = "txt_Item_Name";
+            txt_Item_Name.Size = new Size(170, 25);
+            txt_Item_Name.TabIndex = 96;
             // 
             // splitContainer1
             // 
@@ -190,7 +264,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            splitContainer1.Panel2.Controls.Add(dataGridView1);
+            splitContainer1.Panel2.Controls.Add(data_Stock_Item);
             splitContainer1.Panel2.Padding = new Padding(10, 0, 0, 0);
             splitContainer1.Size = new Size(1088, 442);
             splitContainer1.SplitterDistance = 550;
@@ -207,25 +281,25 @@
             data_Stock_Product.BorderStyle = BorderStyle.None;
             data_Stock_Product.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Stock_Product.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            data_Stock_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            data_Stock_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             data_Stock_Product.ColumnHeadersHeight = 50;
             data_Stock_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Stock_Product.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, Column1, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, ReStock });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            data_Stock_Product.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = SystemColors.Window;
+            dataGridViewCellStyle9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            data_Stock_Product.DefaultCellStyle = dataGridViewCellStyle9;
             data_Stock_Product.Dock = DockStyle.Fill;
             data_Stock_Product.EnableHeadersVisualStyles = false;
             data_Stock_Product.Location = new Point(0, 0);
@@ -241,86 +315,53 @@
             data_Stock_Product.CellContentClick += data_Stock_Product_CellContentClick;
             data_Stock_Product.SelectionChanged += data_Stock_Product_SelectionChanged;
             // 
-            // dataGridView1
+            // data_Stock_Item
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.AllowUserToResizeColumns = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView1.ColumnHeadersHeight = 50;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Column5, Column7, Column8, Column9 });
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.Window;
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(10, 0);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 50;
-            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridView1.RowTemplate.Height = 40;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(524, 442);
-            dataGridView1.TabIndex = 4;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn1.FillWeight = 60F;
-            dataGridViewTextBoxColumn1.HeaderText = "#";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Item_ID";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Visible = false;
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Name";
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Stock Quantity";
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "";
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
+            data_Stock_Item.AllowUserToAddRows = false;
+            data_Stock_Item.AllowUserToOrderColumns = true;
+            data_Stock_Item.AllowUserToResizeColumns = false;
+            data_Stock_Item.AllowUserToResizeRows = false;
+            data_Stock_Item.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data_Stock_Item.BackgroundColor = Color.White;
+            data_Stock_Item.BorderStyle = BorderStyle.None;
+            data_Stock_Item.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            data_Stock_Item.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle10.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            data_Stock_Item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            data_Stock_Item.ColumnHeadersHeight = 50;
+            data_Stock_Item.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            data_Stock_Item.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewImageColumn1 });
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = SystemColors.Window;
+            dataGridViewCellStyle12.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = Color.White;
+            dataGridViewCellStyle12.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            data_Stock_Item.DefaultCellStyle = dataGridViewCellStyle12;
+            data_Stock_Item.Dock = DockStyle.Fill;
+            data_Stock_Item.EnableHeadersVisualStyles = false;
+            data_Stock_Item.Location = new Point(10, 0);
+            data_Stock_Item.Name = "data_Stock_Item";
+            data_Stock_Item.ReadOnly = true;
+            data_Stock_Item.RowHeadersVisible = false;
+            data_Stock_Item.RowHeadersWidth = 50;
+            data_Stock_Item.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            data_Stock_Item.RowTemplate.Height = 40;
+            data_Stock_Item.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            data_Stock_Item.Size = new Size(524, 442);
+            data_Stock_Item.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn2
             // 
             dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.FillWeight = 57.77431F;
+            dataGridViewTextBoxColumn2.FillWeight = 46.70051F;
             dataGridViewTextBoxColumn2.HeaderText = "#";
             dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -334,34 +375,81 @@
             // 
             // Column1
             // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 124.240204F;
             Column1.HeaderText = "Product Code";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
-            Column1.Visible = false;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewTextBoxColumn4.FillWeight = 109.644661F;
+            dataGridViewTextBoxColumn4.FillWeight = 104.868011F;
             dataGridViewTextBoxColumn4.HeaderText = "Name";
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewTextBoxColumn5.FillWeight = 96.29052F;
-            dataGridViewTextBoxColumn5.HeaderText = "Stock Quantity";
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewTextBoxColumn5.FillWeight = 92.09565F;
+            dataGridViewTextBoxColumn5.HeaderText = "Stock Qyt";
             dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // ReStock
             // 
-            ReStock.FillWeight = 96.29052F;
+            ReStock.FillWeight = 92.09565F;
             ReStock.HeaderText = "";
             ReStock.Image = (Image)resources.GetObject("ReStock.Image");
             ReStock.Name = "ReStock";
             ReStock.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn1.FillWeight = 32.7746048F;
+            dataGridViewTextBoxColumn1.HeaderText = "#";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.HeaderText = "StockItem_ID";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.FillWeight = 128.426392F;
+            dataGridViewTextBoxColumn7.HeaderText = "Item Code";
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.FillWeight = 108.4015F;
+            dataGridViewTextBoxColumn8.HeaderText = "Name";
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewTextBoxColumn9.FillWeight = 95.19876F;
+            dataGridViewTextBoxColumn9.HeaderText = "Stock Qyt";
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            dataGridViewImageColumn1.FillWeight = 95.19876F;
+            dataGridViewImageColumn1.HeaderText = "";
+            dataGridViewImageColumn1.Image = (Image)resources.GetObject("dataGridViewImageColumn1.Image");
+            dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            dataGridViewImageColumn1.ReadOnly = true;
             // 
             // View_Stock_List_Form
             // 
@@ -380,13 +468,18 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)data_Stock_Product).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)data_Stock_Item).EndInit();
             ResumeLayout(false);
         }
 
@@ -398,20 +491,27 @@
         private Label label1;
         private Panel panel2;
         private SplitContainer splitContainer1;
-        private DataGridView dataGridView1;
         private Label label3;
         private Label label2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewImageColumn Column9;
         private DataGridView data_Stock_Product;
+        private TextBox txt_Item_Name;
+        private PictureBox pictureBox1;
+        private Panel panel3;
+        private Panel panel4;
+        private PictureBox pictureBox2;
+        private TextBox textBox1;
+        private DataGridView data_Stock_Item;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewImageColumn ReStock;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

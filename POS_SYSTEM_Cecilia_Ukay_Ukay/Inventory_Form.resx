@@ -83,7 +83,17 @@
         KQAaCqsPBqg8H6GAgQEAcjFc3YrZ2a4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_Stock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_Item_List.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAOhJREFUSEvd
+        lcENwjAMRXvhzgSs0AV66CYwAVeuXYMTEmuwAgswTfg/diSi2CVViVTxpC878bet9NJuM4QQdtAJOjLX
+        69+BoXcocdPrZaBxlH6Xs2qOUceVsCiecIUu0COeJKcOqnQm9DBnD6laEE2IEw+xaMAamDTPek1YFE++
+        4AurFgxQ+hyeBqvXhEXxzJgc2COtlQug/UdMuadUJ9ULrNwj8+u4EhbFE2PzFzRfYOUemV/HlbAonhib
+        v6D5Aiv3yPw6roRF8cTY9gV6VQ17pHUjC17Qc6HYQ2YX9BB/IGvU67i/oOve3lcjcTTdmVQAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="btn_Stock_List.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAOhJREFUSEvd
         lcENwjAMRXvhzgSs0AV66CYwAVeuXYMTEmuwAgswTfg/diSi2CVViVTxpC878bet9NJuM4QQdtAJOjLX

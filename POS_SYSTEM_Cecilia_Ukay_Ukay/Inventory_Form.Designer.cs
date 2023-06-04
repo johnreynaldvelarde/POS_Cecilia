@@ -36,7 +36,8 @@
             btn_Product_List = new Button();
             btn_Category_List = new Button();
             panel3 = new Panel();
-            btn_Stock = new Button();
+            btn_Item_List = new Button();
+            btn_Stock_List = new Button();
             panel_center = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -127,7 +128,8 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(btn_Stock);
+            panel3.Controls.Add(btn_Item_List);
+            panel3.Controls.Add(btn_Stock_List);
             panel3.Controls.Add(btn_Category_List);
             panel3.Controls.Add(btn_Product_List);
             panel3.Dock = DockStyle.Top;
@@ -136,24 +138,43 @@
             panel3.Size = new Size(1080, 60);
             panel3.TabIndex = 17;
             // 
-            // btn_Stock
+            // btn_Item_List
             // 
-            btn_Stock.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Stock.Cursor = Cursors.Hand;
-            btn_Stock.FlatAppearance.BorderSize = 0;
-            btn_Stock.FlatStyle = FlatStyle.Flat;
-            btn_Stock.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Stock.ForeColor = Color.White;
-            btn_Stock.Image = (Image)resources.GetObject("btn_Stock.Image");
-            btn_Stock.Location = new Point(440, 11);
-            btn_Stock.Name = "btn_Stock";
-            btn_Stock.Size = new Size(193, 38);
-            btn_Stock.TabIndex = 17;
-            btn_Stock.Text = "  Stock Item List";
-            btn_Stock.TextAlign = ContentAlignment.MiddleRight;
-            btn_Stock.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Stock.UseVisualStyleBackColor = false;
-            btn_Stock.Click += btn_Stock_Click;
+            btn_Item_List.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Item_List.Cursor = Cursors.Hand;
+            btn_Item_List.FlatAppearance.BorderSize = 0;
+            btn_Item_List.FlatStyle = FlatStyle.Flat;
+            btn_Item_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Item_List.ForeColor = Color.White;
+            btn_Item_List.Image = (Image)resources.GetObject("btn_Item_List.Image");
+            btn_Item_List.Location = new Point(443, 11);
+            btn_Item_List.Name = "btn_Item_List";
+            btn_Item_List.Size = new Size(193, 38);
+            btn_Item_List.TabIndex = 18;
+            btn_Item_List.Text = "Item List";
+            btn_Item_List.TextAlign = ContentAlignment.MiddleRight;
+            btn_Item_List.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Item_List.UseVisualStyleBackColor = false;
+            btn_Item_List.Click += btn_Item_List_Click;
+            // 
+            // btn_Stock_List
+            // 
+            btn_Stock_List.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Stock_List.Cursor = Cursors.Hand;
+            btn_Stock_List.FlatAppearance.BorderSize = 0;
+            btn_Stock_List.FlatStyle = FlatStyle.Flat;
+            btn_Stock_List.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Stock_List.ForeColor = Color.White;
+            btn_Stock_List.Image = (Image)resources.GetObject("btn_Stock_List.Image");
+            btn_Stock_List.Location = new Point(656, 11);
+            btn_Stock_List.Name = "btn_Stock_List";
+            btn_Stock_List.Size = new Size(193, 38);
+            btn_Stock_List.TabIndex = 17;
+            btn_Stock_List.Text = "  Stock Availability";
+            btn_Stock_List.TextAlign = ContentAlignment.MiddleRight;
+            btn_Stock_List.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Stock_List.UseVisualStyleBackColor = false;
+            btn_Stock_List.Click += btn_Stock_List_Click;
             // 
             // panel_center
             // 
@@ -195,6 +216,7 @@
         private Button btn_Category_List;
         private Panel panel3;
         private Panel panel_center;
-        private Button btn_Stock;
+        private Button btn_Stock_List;
+        private Button btn_Item_List;
     }
 }
