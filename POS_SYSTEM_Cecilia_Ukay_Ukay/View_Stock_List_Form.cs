@@ -23,7 +23,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
 
         private string stock_productID, stock_productName;
-        
+
 
         public void show_product_stock()
         {
@@ -114,9 +114,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void data_Stock_Item_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string stock_item = data_Stock_Item.Columns[e.ColumnIndex].Name;
-            if (stock_item == "ReStock")
+            if (stock_item == "Purchases")
             {
-                MessageBox.Show("Cardo Cana");
+                Purchase_Order_Form frm = new Purchase_Order_Form();
+                frm.ShowDialog();
             }
         }
 

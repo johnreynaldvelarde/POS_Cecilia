@@ -137,8 +137,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         MessageBox.Show("Successfully restock");
                         frm.show_product_stock();
                         frm.show_item_stock();
-                        show_item();
                         Clear();
+                        this.Close();
                     }
                 }
                 else

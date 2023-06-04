@@ -58,16 +58,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_Create_Item.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAQtJREFUSEvd
-        ldFqwjAARQsy6s8JAx0K7nOGryLsA9yD4IP+jYJTdH8wWBnszXrSXInVxtZKHtyBAyX3JoWmJNH/Jk3T
-        GF9xjlv8luZ5hn2MVb8NJnbwC8vYYVvTyqHcwJGZeSNDbGgZP5Tes3o9RlqmGArPtlebPba0XB6CJlb5
-        5mWYPbnceAZ7WXwFVU23jBdVHQxObeZH1SovmKjqYHBjMz+qVnnBSlUHg4nN8ij2oto5P4odDP7aLI9i
-        L6qdkyh2MLi2mR9VfYueUviJgm9y8N/0CT+z+D4WWHwmEYQ7Ko5QGGTVerxpGT+Uwh7XRyiHuXBOYaK5
-        Ms3f9YFL/JPmeYxdrHdlPghRdAC2hsv5Hjp7WgAAAABJRU5ErkJggg==
-</value>
-  </data>
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAKFJREFUSEvt
@@ -172,10 +162,10 @@
   <metadata name="dataGridViewTextBoxColumn9.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="dataGridViewImageColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Purchases.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="dataGridViewImageColumn1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Purchases.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAwJJREFUSEut
         VT1oFEEUXv8VURBFiKQQsrd7wZ8mjYqKYrQQCxtRC3+qNBaKhaKNR+5mJyFqjIWQxsKARQRB/GmipjBg

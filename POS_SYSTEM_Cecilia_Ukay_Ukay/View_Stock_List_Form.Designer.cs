@@ -36,7 +36,6 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btn_Create_Item = new Button();
             button1 = new Button();
             btn_Purchase = new Button();
             label1 = new Label();
@@ -63,7 +62,7 @@
             dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            dataGridViewImageColumn1 = new DataGridViewImageColumn();
+            Purchases = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -80,7 +79,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btn_Create_Item);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btn_Purchase);
             panel1.Controls.Add(label1);
@@ -89,25 +87,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1088, 68);
             panel1.TabIndex = 4;
-            // 
-            // btn_Create_Item
-            // 
-            btn_Create_Item.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Create_Item.Cursor = Cursors.Hand;
-            btn_Create_Item.FlatAppearance.BorderSize = 0;
-            btn_Create_Item.FlatStyle = FlatStyle.Flat;
-            btn_Create_Item.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Create_Item.ForeColor = Color.White;
-            btn_Create_Item.Image = (Image)resources.GetObject("btn_Create_Item.Image");
-            btn_Create_Item.Location = new Point(473, 9);
-            btn_Create_Item.Name = "btn_Create_Item";
-            btn_Create_Item.Size = new Size(199, 38);
-            btn_Create_Item.TabIndex = 17;
-            btn_Create_Item.Text = "Create new item";
-            btn_Create_Item.TextAlign = ContentAlignment.MiddleRight;
-            btn_Create_Item.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Create_Item.UseVisualStyleBackColor = false;
-            btn_Create_Item.Click += btn_Create_Item_Click;
             // 
             // button1
             // 
@@ -383,7 +362,7 @@
             data_Stock_Item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             data_Stock_Item.ColumnHeadersHeight = 50;
             data_Stock_Item.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Stock_Item.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewImageColumn1 });
+            data_Stock_Item.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, Purchases });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = SystemColors.Window;
             dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -448,13 +427,13 @@
             dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
-            // dataGridViewImageColumn1
+            // Purchases
             // 
-            dataGridViewImageColumn1.FillWeight = 101.690788F;
-            dataGridViewImageColumn1.HeaderText = "";
-            dataGridViewImageColumn1.Image = (Image)resources.GetObject("dataGridViewImageColumn1.Image");
-            dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            dataGridViewImageColumn1.ReadOnly = true;
+            Purchases.FillWeight = 101.690788F;
+            Purchases.HeaderText = "";
+            Purchases.Image = (Image)resources.GetObject("Purchases.Image");
+            Purchases.Name = "Purchases";
+            Purchases.ReadOnly = true;
             // 
             // View_Stock_List_Form
             // 
@@ -490,7 +469,6 @@
 
         #endregion
         private Panel panel1;
-        private Button btn_Create_Item;
         private Button button1;
         private Button btn_Purchase;
         private Label label1;
@@ -506,17 +484,17 @@
         private PictureBox pictureBox2;
         private TextBox textBox1;
         private DataGridView data_Stock_Item;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewImageColumn dataGridViewImageColumn1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewImageColumn ReStock;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridViewImageColumn Purchases;
     }
 }
