@@ -25,6 +25,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             InitializeComponent();
             frm = product;
             show_category();
+            this.Hide();
         }
 
         // method for clear the text in textbox
