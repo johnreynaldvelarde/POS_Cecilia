@@ -62,7 +62,7 @@
             dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
-            Purchases = new DataGridViewImageColumn();
+            Defect = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -362,7 +362,7 @@
             data_Stock_Item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             data_Stock_Item.ColumnHeadersHeight = 50;
             data_Stock_Item.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Stock_Item.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, Purchases });
+            data_Stock_Item.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, Defect });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = SystemColors.Window;
             dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -423,17 +423,17 @@
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle5;
             dataGridViewTextBoxColumn9.FillWeight = 101.690788F;
-            dataGridViewTextBoxColumn9.HeaderText = "  Stock Qyt";
+            dataGridViewTextBoxColumn9.HeaderText = "Stock Qyt";
             dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             dataGridViewTextBoxColumn9.ReadOnly = true;
             // 
-            // Purchases
+            // Defect
             // 
-            Purchases.FillWeight = 101.690788F;
-            Purchases.HeaderText = "";
-            Purchases.Image = (Image)resources.GetObject("Purchases.Image");
-            Purchases.Name = "Purchases";
-            Purchases.ReadOnly = true;
+            Defect.FillWeight = 101.690788F;
+            Defect.HeaderText = "";
+            Defect.Image = (Image)resources.GetObject("Defect.Image");
+            Defect.Name = "Defect";
+            Defect.ReadOnly = true;
             // 
             // View_Stock_List_Form
             // 
@@ -495,6 +495,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private DataGridViewImageColumn Purchases;
+        private DataGridViewImageColumn Defect;
     }
 }
