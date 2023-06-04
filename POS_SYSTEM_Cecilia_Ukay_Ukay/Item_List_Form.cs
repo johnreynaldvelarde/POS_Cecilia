@@ -25,7 +25,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
-                connect.Open();
+                
                 int i = 0;
                 connect.Open();
                 string sql = "SELECT Item_ID, Item_Code, Item_Name, Price, Per_Piece, Date_Added, Archive FROM Item WHERE Archive = 0";

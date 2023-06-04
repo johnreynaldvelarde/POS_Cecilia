@@ -61,8 +61,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     insert_command.Parameters.AddWithValue("@Per_Piece", cmd_Piece.SelectedItem);
                     insert_command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
                     insert_command.Parameters.AddWithValue("@Archive", 0);
-                    insert_command.ExecuteNonQuery();
-
+                   
+               
                     int itemID = Convert.ToInt32(insert_command.ExecuteScalar());
 
                     string insert_stock = "INSERT INTO Stock_Item (Item_ID, Stock_Quantity) VALUES (@Item_ID, @Stock_Quantity)";
@@ -70,7 +70,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     command_stock.Parameters.AddWithValue("@Item_ID", itemID);
                     command_stock.Parameters.AddWithValue("@Stock_Quantity", 0);
                     command_stock.ExecuteNonQuery();
-
+                    
                     connect.Close();
                     MessageBox.Show("Successfully added");
                     frm.show_item_list();

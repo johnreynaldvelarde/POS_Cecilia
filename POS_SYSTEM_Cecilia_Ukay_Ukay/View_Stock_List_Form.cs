@@ -19,6 +19,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             show_product_stock();
+            show_item_stock();
         }
 
         public void show_product_stock()
@@ -54,6 +55,22 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
 
+                int i = 0;
+                connect.Open();
+                string sql = "SELECT s.StockItem_ID, i.Item_Code, i.Item_Name, s.Stock_Quantity FROM Stock_Item s JOIN Item i ON s.Item_ID = i.Item_ID;";
+
+                SqlCommand command = new SqlCommand(sql, connect);
+                SqlDataReader reader = command.ExecuteReader();
+
+                data_Stock_Item.Rows.Clear();
+                while (reader.Read())
+                {
+                    i += 1;
+                    data_Stock_Item.Rows.Add(1, reader["StockItem_ID"].ToString(), reader["Item_Code"].ToString(), reader["Item_Name"].ToString(),
+                                                reader["Stock_Quantity"].ToString());
+                }
+                reader.Close();
+                connect.Close();
             }
         }
 
@@ -65,8 +82,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Create_Item_Click(object sender, EventArgs e)
         {
-            Add_New_Item_Form frm = new Add_New_Item_Form();
-            frm.ShowDialog();
+            // Add_New_Item_Form frm = new Add_New_Item_Form();
+            // frm.ShowDialog();
         }
 
         private void data_Stock_Product_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -74,11 +91,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             string stock_product = data_Stock_Product.Columns[e.ColumnIndex].Name;
             if (stock_product == "ReStock")
             {
-                MessageBox.Show("Cardo Cana");
+                Restock_Product_Form frm = new Restock_Product_Form();
+                frm.ShowDialog();
             }
         }
 
         private void data_Stock_Product_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_Stock_Item_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string stock_item = data_Stock_Item.Columns[e.ColumnIndex].Name;
+            if (stock_item == "ReStock")
+            {
+                MessageBox.Show("Cardo Cana");
+            }
+        }
+
+        private void data_Stock_Item_SelectionChanged(object sender, EventArgs e)
         {
 
         }
