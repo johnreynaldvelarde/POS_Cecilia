@@ -33,13 +33,14 @@
             title_category = new Label();
             btn_Clear = new Button();
             btn_Restock = new Button();
-            txt_Category = new TextBox();
+            txt_stock_name = new TextBox();
             panel1 = new Panel();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox2 = new TextBox();
+            txt_Put_Quantity = new TextBox();
             cmd_Stock = new ComboBox();
+            txt_StockQyt = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             btn_Close.FlatAppearance.BorderSize = 0;
             btn_Close.FlatStyle = FlatStyle.Flat;
             btn_Close.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Close.Location = new Point(634, 0);
+            btn_Close.Location = new Point(700, 0);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(55, 27);
             btn_Close.TabIndex = 50;
@@ -63,7 +64,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(10, 55);
             panel2.Name = "panel2";
-            panel2.Size = new Size(669, 3);
+            panel2.Size = new Size(735, 3);
             panel2.TabIndex = 52;
             // 
             // title_category
@@ -84,7 +85,7 @@
             btn_Clear.FlatStyle = FlatStyle.Flat;
             btn_Clear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Clear.ForeColor = Color.White;
-            btn_Clear.Location = new Point(531, 185);
+            btn_Clear.Location = new Point(597, 185);
             btn_Clear.Name = "btn_Clear";
             btn_Clear.Size = new Size(145, 48);
             btn_Clear.TabIndex = 55;
@@ -99,7 +100,7 @@
             btn_Restock.FlatStyle = FlatStyle.Flat;
             btn_Restock.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Restock.ForeColor = Color.White;
-            btn_Restock.Location = new Point(370, 185);
+            btn_Restock.Location = new Point(436, 185);
             btn_Restock.Name = "btn_Restock";
             btn_Restock.Size = new Size(145, 48);
             btn_Restock.TabIndex = 54;
@@ -107,14 +108,15 @@
             btn_Restock.UseVisualStyleBackColor = false;
             btn_Restock.Click += btn_Restock_Click;
             // 
-            // txt_Category
+            // txt_stock_name
             // 
-            txt_Category.BorderStyle = BorderStyle.FixedSingle;
-            txt_Category.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Category.Location = new Point(22, 122);
-            txt_Category.Name = "txt_Category";
-            txt_Category.Size = new Size(200, 33);
-            txt_Category.TabIndex = 53;
+            txt_stock_name.BorderStyle = BorderStyle.FixedSingle;
+            txt_stock_name.Enabled = false;
+            txt_stock_name.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_stock_name.Location = new Point(22, 122);
+            txt_stock_name.Name = "txt_stock_name";
+            txt_stock_name.Size = new Size(200, 33);
+            txt_stock_name.TabIndex = 53;
             // 
             // panel1
             // 
@@ -122,7 +124,7 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
-            panel1.Size = new Size(669, 45);
+            panel1.Size = new Size(735, 45);
             panel1.TabIndex = 51;
             // 
             // label1
@@ -141,7 +143,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(248, 87);
+            label2.Location = new Point(247, 87);
             label2.Name = "label2";
             label2.Size = new Size(190, 21);
             label2.TabIndex = 56;
@@ -152,48 +154,61 @@
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.Black;
-            label3.Location = new Point(471, 87);
+            label3.Location = new Point(534, 87);
             label3.Name = "label3";
             label3.Size = new Size(90, 21);
             label3.TabIndex = 58;
             label3.Text = "Quantity *";
             // 
-            // textBox2
+            // txt_Put_Quantity
             // 
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(471, 122);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(200, 33);
-            textBox2.TabIndex = 59;
+            txt_Put_Quantity.BorderStyle = BorderStyle.FixedSingle;
+            txt_Put_Quantity.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Put_Quantity.Location = new Point(534, 122);
+            txt_Put_Quantity.Name = "txt_Put_Quantity";
+            txt_Put_Quantity.Size = new Size(200, 33);
+            txt_Put_Quantity.TabIndex = 59;
+            txt_Put_Quantity.KeyPress += txt_Put_Quantity_KeyPress;
             // 
             // cmd_Stock
             // 
             cmd_Stock.DropDownStyle = ComboBoxStyle.DropDownList;
             cmd_Stock.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmd_Stock.FormattingEnabled = true;
-            cmd_Stock.Location = new Point(248, 122);
+            cmd_Stock.Location = new Point(247, 122);
             cmd_Stock.Name = "cmd_Stock";
-            cmd_Stock.Size = new Size(200, 33);
+            cmd_Stock.Size = new Size(174, 33);
             cmd_Stock.TabIndex = 69;
+            cmd_Stock.SelectedIndexChanged += cmd_Stock_SelectedIndexChanged;
+            // 
+            // txt_StockQyt
+            // 
+            txt_StockQyt.BorderStyle = BorderStyle.FixedSingle;
+            txt_StockQyt.Enabled = false;
+            txt_StockQyt.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_StockQyt.Location = new Point(427, 122);
+            txt_StockQyt.Name = "txt_StockQyt";
+            txt_StockQyt.Size = new Size(84, 33);
+            txt_StockQyt.TabIndex = 70;
             // 
             // Restock_Product_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(689, 246);
+            ClientSize = new Size(755, 246);
             ControlBox = false;
+            Controls.Add(txt_StockQyt);
             Controls.Add(cmd_Stock);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(txt_Put_Quantity);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btn_Close);
             Controls.Add(panel2);
             Controls.Add(btn_Clear);
             Controls.Add(btn_Restock);
-            Controls.Add(txt_Category);
+            Controls.Add(txt_stock_name);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Restock_Product_Form";
@@ -212,12 +227,13 @@
         public Label title_category;
         private Button btn_Clear;
         public Button btn_Restock;
-        public TextBox txt_Category;
+        public TextBox txt_stock_name;
         private Panel panel1;
         public Label label1;
         public Label label2;
         public Label label3;
-        public TextBox textBox2;
+        public TextBox txt_Put_Quantity;
         private ComboBox cmd_Stock;
+        public TextBox txt_StockQyt;
     }
 }

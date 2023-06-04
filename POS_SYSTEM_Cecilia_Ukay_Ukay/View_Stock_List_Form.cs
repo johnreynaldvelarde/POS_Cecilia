@@ -22,6 +22,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             show_item_stock();
         }
 
+        private string stock_productID, stock_productName;
+        
+
         public void show_product_stock()
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
@@ -66,7 +69,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 while (reader.Read())
                 {
                     i += 1;
-                    data_Stock_Item.Rows.Add(1, reader["StockItem_ID"].ToString(), reader["Item_Code"].ToString(), reader["Item_Name"].ToString(),
+                    data_Stock_Item.Rows.Add(i, reader["StockItem_ID"].ToString(), reader["Item_Code"].ToString(), reader["Item_Name"].ToString(),
                                                 reader["Stock_Quantity"].ToString());
                 }
                 reader.Close();
@@ -91,14 +94,21 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             string stock_product = data_Stock_Product.Columns[e.ColumnIndex].Name;
             if (stock_product == "ReStock")
             {
-                Restock_Product_Form frm = new Restock_Product_Form();
+                Restock_Product_Form frm = new Restock_Product_Form(this);
+                frm.txt_stock_name.Text = stock_productName;
+                frm.stock_ProductID = stock_productID;
                 frm.ShowDialog();
             }
         }
 
         private void data_Stock_Product_SelectionChanged(object sender, EventArgs e)
         {
-
+            if (data_Stock_Product.CurrentRow != null)
+            {
+                int i = data_Stock_Product.CurrentRow.Index;
+                stock_productID = data_Stock_Product[1, i].Value.ToString();
+                stock_productName = data_Stock_Product[3, i].Value.ToString();
+            }
         }
 
         private void data_Stock_Item_CellContentClick(object sender, DataGridViewCellEventArgs e)
