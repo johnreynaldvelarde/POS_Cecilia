@@ -313,6 +313,7 @@
             cmd_Stock.Name = "cmd_Stock";
             cmd_Stock.Size = new Size(162, 28);
             cmd_Stock.TabIndex = 68;
+            cmd_Stock.SelectedIndexChanged += cmd_Stock_SelectedIndexChanged;
             // 
             // label1
             // 

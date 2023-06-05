@@ -30,10 +30,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         public void Clear()
         {
+            txt_Item_Code.Clear();
             txt_Item_Name.Clear();
             txt_Price.Clear();
             cmd_Piece.SelectedIndex = -1;
-            txt_Item_Name.Focus();
+            txt_Item_Code.Focus();
         }
 
         private void btn_Save_Click(object sender, EventArgs e)
@@ -49,34 +50,44 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else
             {
-                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
-                {
-                    connect.Open();
-                    string insert_item = "INSERT INTO Item (Item_Code, Item_Name, Price, Per_Piece, Date_Added, Archive) VALUES " +
-                                         "(@Item_Code, @Item_Name, @Price, @Per_Piece, @Date_Added, @Archive); SELECT SCOPE_IDENTITY();";
-                    SqlCommand insert_command = new SqlCommand(insert_item, connect);
-                    insert_command.Parameters.AddWithValue("@Item_Code", txt_Item_Code.Text);
-                    insert_command.Parameters.AddWithValue("@Item_Name", txt_Item_Name.Text);
-                    insert_command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
-                    insert_command.Parameters.AddWithValue("@Per_Piece", cmd_Piece.SelectedItem);
-                    insert_command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
-                    insert_command.Parameters.AddWithValue("@Archive", 0);
-                   
-               
-                    int itemID = Convert.ToInt32(insert_command.ExecuteScalar());
+                bool codeExists = item_code_exists(txt_Item_Code.Text);
 
-                    string insert_stock = "INSERT INTO Stock_Item (Item_ID, Stock_Quantity) VALUES (@Item_ID, @Stock_Quantity)";
-                    SqlCommand command_stock = new SqlCommand(insert_stock, connect);
-                    command_stock.Parameters.AddWithValue("@Item_ID", itemID);
-                    command_stock.Parameters.AddWithValue("@Stock_Quantity", 0);
-                    command_stock.ExecuteNonQuery();
-                    
-                    connect.Close();
-                    MessageBox.Show("Successfully added");
-                    frm.show_item_list();
-                    this.Hide();
-                    Clear();
+                if (codeExists)
+                {
+                    MessageBox.Show("Item code already exists. Please enter a different item code.");
                 }
+                else
+                {
+                    using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                    {
+                        connect.Open();
+                        string insert_item = "INSERT INTO Item (Item_Code, Item_Name, Price, Per_Piece, Date_Added, Archive) VALUES " +
+                                             "(@Item_Code, @Item_Name, @Price, @Per_Piece, @Date_Added, @Archive); SELECT SCOPE_IDENTITY();";
+                        SqlCommand insert_command = new SqlCommand(insert_item, connect);
+                        insert_command.Parameters.AddWithValue("@Item_Code", txt_Item_Code.Text);
+                        insert_command.Parameters.AddWithValue("@Item_Name", txt_Item_Name.Text);
+                        insert_command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
+                        insert_command.Parameters.AddWithValue("@Per_Piece", cmd_Piece.SelectedItem);
+                        insert_command.Parameters.AddWithValue("@Date_Added", DateTime.Parse(txt_Date_Added.Text));
+                        insert_command.Parameters.AddWithValue("@Archive", 0);
+
+
+                        int itemID = Convert.ToInt32(insert_command.ExecuteScalar());
+
+                        string insert_stock = "INSERT INTO Stock_Item (Item_ID, Stock_Quantity) VALUES (@Item_ID, @Stock_Quantity)";
+                        SqlCommand command_stock = new SqlCommand(insert_stock, connect);
+                        command_stock.Parameters.AddWithValue("@Item_ID", itemID);
+                        command_stock.Parameters.AddWithValue("@Stock_Quantity", 0);
+                        command_stock.ExecuteNonQuery();
+
+                        connect.Close();
+                        MessageBox.Show("Successfully added");
+                        frm.show_item_list();
+                        this.Hide();
+                        Clear();
+                    }
+                }
+               
             }
             /*
             SqlConnection con = new SqlConnection("Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True");
@@ -93,6 +104,22 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             cmd.ExecuteNonQuery();
             */
 
+        }
+
+        // method for cheking if have same item code in database
+        private bool item_code_exists(string itemCode)
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "SELECT COUNT(*) FROM Item WHERE LOWER(Item_Code) = LOWER(@Item_Code)";
+                SqlCommand command = new SqlCommand(sql, connect);
+                command.Parameters.AddWithValue("@Item_Code", itemCode.ToLower());
+                int count = (int)command.ExecuteScalar();
+                connect.Close();
+
+                return count > 0;
+            }
         }
 
 

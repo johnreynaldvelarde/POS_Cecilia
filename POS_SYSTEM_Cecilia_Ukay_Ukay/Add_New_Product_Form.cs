@@ -19,12 +19,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         Product_List_Form frm;
 
         public string productID;
+        private int stockItemID;
 
         public Add_New_Product_Form(Product_List_Form product)
         {
             InitializeComponent();
             frm = product;
             show_category();
+            show_item();
             this.Hide();
         }
 
@@ -80,64 +82,147 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 MessageBox.Show("Please select a category");
             }
+            else if (cmd_Stock.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select the available stock");
+            }
             else
             {
-                int categoryId = 0;
+                bool codeExists = product_code_exists(txt_Product_Code.Text);
 
-                /*
-                if (combo_Category.SelectedValue != null)
+                if (codeExists)
                 {
-                    categoryId = (int)combo_Category.SelectedValue;
+                    MessageBox.Show("Product code already exists. Please enter a different product code.");
                 }
-                */
 
-                string selectedCategory = cmd_Category.SelectedItem.ToString();
-
-                // looking for  Category_ID value in the Categories table
-                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                else
                 {
-                    connect.Open();
-                    string sql = "SELECT Category_ID FROM Categories WHERE Category_Name = @Category_Name AND Archive = 0";
-                    SqlCommand command = new SqlCommand(sql, connect);
-                    command.Parameters.AddWithValue("@Category_Name", selectedCategory);
-                    object result = command.ExecuteScalar();
+                    int categoryId = 0;
 
-                    if (result != null)
+                    string selectedCategory = cmd_Category.SelectedItem.ToString();
+                    int putQuantity = Convert.ToInt32(txt_Quantity.Text);
+
+                    // looking for  Category_ID value in the Categories table
+                    using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                     {
-                        categoryId = Convert.ToInt32(result);
+                        connect.Open();
+                        string sql = "SELECT Category_ID FROM Categories WHERE Category_Name = @Category_Name AND Archive = 0";
+                        SqlCommand command = new SqlCommand(sql, connect);
+                        command.Parameters.AddWithValue("@Category_Name", selectedCategory);
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            categoryId = Convert.ToInt32(result);
+                        }
+                        connect.Close();
                     }
-                    connect.Close();
-                }
 
-                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
-                {
-
-                    connect.Open();
-                    string sql = "INSERT INTO Product (Product_Code, Product_Name, Price, Quantity, Date_Added, Category_ID, Size, Archive  ) " +
-                                 "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Date_Added, @Category_ID, @Size, @Archive )";
-                    SqlCommand command = new SqlCommand(sql, connect);
-                    command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
-                    command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
-                    command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
-                    command.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txt_Quantity.Text));
-                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
-                    command.Parameters.AddWithValue("@Category_ID", categoryId);
-                    command.Parameters.AddWithValue("@Size", cmd_Measurement.SelectedItem);
-                    command.Parameters.AddWithValue("@Archive", 0);
-                    command.ExecuteNonQuery();
-                    connect.Close();
-
-                    MessageBox.Show("Successfully added");
-                    if (frm != null)
+                    using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                     {
-                        frm.view_product_list();
+
+                        connect.Open();
+                        string sql = "INSERT INTO Product (Product_Code, Product_Name, Price, Quantity, Size, Date_Added, Archive, Category_ID, StockItem_ID) " +
+                                     "VALUES (@Product_Code, @Product_Name, @Price, @Quantity, @Size,  @Date_Added, @Archive, @Category_ID, @StockItem_ID)";
+                        SqlCommand command = new SqlCommand(sql, connect);
+                        command.Parameters.AddWithValue("@Product_Code", txt_Product_Code.Text);
+                        command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
+                        command.Parameters.AddWithValue("@Price", Convert.ToDouble(txt_Price.Text));
+                        command.Parameters.AddWithValue("@Quantity", Convert.ToInt32(txt_Quantity.Text));
+                        command.Parameters.AddWithValue("@Size", cmd_Measurement.SelectedItem);
+                        command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
+                        command.Parameters.AddWithValue("@Archive", 0);
+                        command.Parameters.AddWithValue("@Category_ID", categoryId);
+                        command.Parameters.AddWithValue("@StockItem_ID", stockItemID);
+
+                        command.ExecuteNonQuery();
+
+                        string update_stock = "UPDATE Stock_Item SET Stock_Quantity = Stock_Quantity - @PutQuantity WHERE StockItem_ID = @StockItemID";
+                        SqlCommand update_command = new SqlCommand(update_stock, connect);
+                        update_command.Parameters.AddWithValue("@StockItemID", stockItemID);
+                        update_command.Parameters.AddWithValue("@PutQuantity", putQuantity);
+                        update_command.ExecuteNonQuery();
+
+
+                        connect.Close();
+
+                        MessageBox.Show("Successfully added");
+                        if (frm != null)
+                        {
+                            frm.view_product_list();
+                        }
+                        Clear();
                     }
-                    Clear();
                 }
-
-
             }
         }
+
+        private bool product_code_exists(string productCode)
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "SELECT COUNT(*) FROM Product WHERE LOWER(Product_Code) = LOWER(@Product_Code)";
+                SqlCommand command = new SqlCommand(sql, connect);
+                command.Parameters.AddWithValue("@Product_Code", productCode.ToLower());
+                int count = (int)command.ExecuteScalar();
+                connect.Close();
+
+                return count > 0;
+            }
+        }
+
+        public void show_item()
+        {
+
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "SELECT s.StockItem_ID, i.Item_Code, s.Stock_Quantity FROM Stock_Item s JOIN Item i ON s.Item_ID = i.Item_ID WHERE s.Stock_Quantity > 0 ";
+                SqlCommand command = new SqlCommand(sql, connect);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string stock_itemName = reader.GetString(1);
+                    cmd_Stock.Items.Add(stock_itemName);
+                }
+
+                reader.Close();
+                connect.Close();
+            }
+            cmd_Stock.SelectedIndexChanged += cmd_Stock_SelectedIndexChanged;
+        }
+
+        private void cmd_Stock_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selected_itemCode = cmd_Stock.SelectedItem.ToString();
+
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "SELECT s.StockItem_ID, s.Stock_Quantity FROM Stock_Item s JOIN Item i ON s.Item_ID = i.Item_ID WHERE i.Item_Code = @ItemCode";
+                SqlCommand command = new SqlCommand(sql, connect);
+                command.Parameters.AddWithValue("@ItemCode", selected_itemCode);
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    stockItemID = reader.GetInt32(0);
+                    int stockQuantity = reader.GetInt32(1);
+                    txt_Total_Stock.Text = stockQuantity.ToString();
+                }
+                else
+                {
+                    stockItemID = 0;
+                    txt_Total_Stock.Text = string.Empty;
+                }
+
+                reader.Close();
+                connect.Close();
+            }
+        }
+
 
         // button for clear
         /*
@@ -194,6 +279,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btn_Clear_Click(object sender, EventArgs e)
         {
             Clear();
+            /*
+             if (combo_Category.SelectedValue != null)
+             {
+                 categoryId = (int)combo_Category.SelectedValue;
+             }
+             */
         }
+
+      
     }
 }

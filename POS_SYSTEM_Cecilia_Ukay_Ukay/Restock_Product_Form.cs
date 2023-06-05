@@ -25,7 +25,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
 
         public string stock_ProductID;
-
         private int stockItemID;
 
         private void btn_Close_Click(object sender, EventArgs e)
