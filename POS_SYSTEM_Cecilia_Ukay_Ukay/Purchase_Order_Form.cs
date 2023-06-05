@@ -167,12 +167,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                             data_Grid_Purchase.Rows.Add(0, itemID, selectedItemCode, itemName, price, perPiece, total_quantity, total_amount);
                             get_total();
                         }
-
                     }
 
                     reader.Close();
                 }
-
             }
 
             // Clear the combo box and quantity textbox for the next selection
@@ -214,7 +212,105 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Buy_Click(object sender, EventArgs e)
         {
+            if(cmd_Supplier.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a supplier.");
+            }
+            else if (cmd_item_purchase.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select the item");
+            }
+            else if (data_Grid_Purchase.RowCount == 0)
+            {
+                MessageBox.Show("The table is empty. Please add items.");
+            }
+            else
+            {
+                int supplierId = 0;
 
+                string selectedSupplier = cmd_Supplier.SelectedItem.ToString();
+
+                // looking for  Supplier_ID value in the Suppliers table
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "SELECT Supplier_ID FROM Suppliers WHERE Supplier_Name = @Supplier_Name AND Archive = 0";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Supplier_Name", selectedSupplier);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        supplierId = Convert.ToInt32(result);
+                    }
+                    connect.Close();
+                }
+
+                // for putting input in purhcase log in database
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    int staff_id = 1;
+                    decimal total_amount = 0;
+
+                    connect.Open();
+
+                    string sql1 = "INSERT INTO Purchase_Log (Staff_ID, Supplier_ID, Purchase_Date, Total_Amount) VALUES " +
+                                  "(@Staff_ID, @Supplier_ID, @Purchase_Date, @Total_Amount); SELECT SCOPE_IDENTITY();";
+                    SqlCommand command1 = new SqlCommand(sql1, connect);
+                    command1.Parameters.AddWithValue("@Staff_ID", staff_id);
+                    command1.Parameters.AddWithValue("@Supplier_ID", supplierId);
+                    command1.Parameters.AddWithValue("@Purchase_Date", DateTime.Now);
+
+                    foreach (DataGridViewRow row in data_Grid_Purchase.Rows)
+                    {
+                        decimal amount = Convert.ToDecimal(row.Cells[7].Value);
+                        total_amount += amount;
+                    }
+                    command1.Parameters.AddWithValue("@Total_Amount", total_amount);
+
+                    int purchaseID = Convert.ToInt32(command1.ExecuteScalar());
+
+                    // for purchase item
+                    foreach (DataGridViewRow row in data_Grid_Purchase.Rows)
+                    {
+                        int stockitemID = Convert.ToInt32(row.Cells[1].Value);
+                        int itemQuantity = Convert.ToInt32(row.Cells[5].Value);
+                        decimal itemAmount = Convert.ToDecimal(row.Cells[7].Value);
+
+                        string sql2 = "INSERT INTO Purchase_Item (Purchase_ID, StockItem_ID, Purchase_Quantity, Amount ) VALUES" +
+                                      "(@Purchase_ID, @StockItem_ID, @Purchase_Quantity, @Amount );";
+
+                        SqlCommand command2 = new SqlCommand(sql2, connect);
+
+                        command2.Parameters.AddWithValue("@Purchase_ID", purchaseID);
+                        command2.Parameters.AddWithValue("@StockItem_ID", stockitemID);
+                        command2.Parameters.AddWithValue("@Purchase_Quantity", itemQuantity);
+                        command2.Parameters.AddWithValue("@Amount", itemAmount);
+                        command2.ExecuteNonQuery();
+
+
+                        // for select /update the table product and reduce the quantity of specific product
+                        string selectStockItem = "SELECT Stock_Quantity FROM Stock_Item WHERE StockItem_ID = @StockItem_ID";
+                        SqlCommand select_stock = new SqlCommand(selectStockItem, connect);
+                        select_stock.Parameters.AddWithValue("@StockItem_ID", stockitemID);
+                        
+                        int current_quantity = Convert.ToInt32(select_stock.ExecuteScalar());
+
+                        int update_quantity = current_quantity + itemQuantity;
+
+                        string updateStockItem = "UPDATE Stock_Item SET Stock_Quantity = @UpdatedQuantity WHERE StockItem_ID = @StockItem_ID";
+                        SqlCommand update_stock = new SqlCommand(updateStockItem, connect);
+                        update_stock.Parameters.AddWithValue("@StockItem_ID", stockitemID);
+                        update_stock.Parameters.AddWithValue("@UpdatedQuantity", update_quantity);
+                        update_stock.ExecuteNonQuery();
+
+                    }
+                    MessageBox.Show("New purchase order added");
+                    connect.Close();
+                    Clear_Purchase();
+                    this.Close();
+                }
+            }
         }
     }
 }
