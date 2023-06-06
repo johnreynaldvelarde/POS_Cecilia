@@ -23,6 +23,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
 
         private string stock_productID, stock_productName;
+        private string stock_itemID, stock_itemCode, stock_itemName, stock_quantity;
 
 
         public void show_product_stock()
@@ -114,16 +115,27 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void data_Stock_Item_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string stock_item = data_Stock_Item.Columns[e.ColumnIndex].Name;
-            if (stock_item == "Purchases")
+            if (stock_item == "Remove")
             {
-                Purchase_Order_Form frm = new Purchase_Order_Form();
+                Remove_Stock_Form frm = new Remove_Stock_Form();
+                frm.txt_Item_Code.Text = stock_itemCode;
+                frm.txt_Item_Name.Text = stock_itemName;
+                frm.txt_Quantity.Text = stock_quantity;
+                frm.stock_ItemID = stock_itemID;
                 frm.ShowDialog();
             }
         }
 
         private void data_Stock_Item_SelectionChanged(object sender, EventArgs e)
         {
-
+            if (data_Stock_Item.CurrentRow != null)
+            {
+                int i = data_Stock_Item.CurrentRow.Index;
+                stock_itemID = data_Stock_Item[1, i].Value.ToString();
+                stock_itemCode = data_Stock_Item[2, i].Value.ToString();
+                stock_itemName = data_Stock_Item[3, i].Value.ToString();
+                stock_quantity = data_Stock_Item[4, i].Value.ToString();
+            }
         }
     }
 }
