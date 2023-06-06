@@ -69,17 +69,6 @@
             label4 = new Label();
             panel3 = new Panel();
             data_Grid_Transaction = new DataGridView();
-            down_panel = new Panel();
-            txt_Product_Code = new TextBox();
-            label7 = new Label();
-            label5 = new Label();
-            label_amount = new Label();
-            label1 = new Label();
-            btn_Sell = new Button();
-            panel6 = new Panel();
-            btn_Clear_All = new Button();
-            label3 = new Label();
-            timer1 = new System.Windows.Forms.Timer(components);
             Column1 = new DataGridViewTextBoxColumn();
             productID = new DataGridViewTextBoxColumn();
             productName = new DataGridViewTextBoxColumn();
@@ -87,6 +76,20 @@
             orderQuantity = new DataGridViewTextBoxColumn();
             Amount = new DataGridViewTextBoxColumn();
             Remove = new DataGridViewImageColumn();
+            down_panel = new Panel();
+            panel4 = new Panel();
+            label7 = new Label();
+            txt_Payment_Amount = new TextBox();
+            txt_Refund = new TextBox();
+            label5 = new Label();
+            downward_panel = new Panel();
+            label1 = new Label();
+            label_amount = new Label();
+            btn_Sell = new Button();
+            panel6 = new Panel();
+            btn_Clear_All = new Button();
+            label3 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)user_profile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -102,6 +105,8 @@
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Transaction).BeginInit();
             down_panel.SuspendLayout();
+            panel4.SuspendLayout();
+            downward_panel.SuspendLayout();
             panel6.SuspendLayout();
             SuspendLayout();
             // 
@@ -581,53 +586,153 @@
             data_Grid_Transaction.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             data_Grid_Transaction.RowTemplate.Height = 40;
             data_Grid_Transaction.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            data_Grid_Transaction.Size = new Size(368, 196);
+            data_Grid_Transaction.Size = new Size(368, 168);
             data_Grid_Transaction.TabIndex = 7;
             data_Grid_Transaction.CellFormatting += data_Grid_Transaction_CellFormatting;
             // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 34.9684563F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // productID
+            // 
+            productID.HeaderText = "Product_ID";
+            productID.Name = "productID";
+            productID.ReadOnly = true;
+            productID.Visible = false;
+            // 
+            // productName
+            // 
+            productName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            productName.FillWeight = 183.248428F;
+            productName.HeaderText = "Name";
+            productName.Name = "productName";
+            productName.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 93.83203F;
+            Column5.HeaderText = "Price";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // orderQuantity
+            // 
+            orderQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            orderQuantity.FillWeight = 54.8579F;
+            orderQuantity.HeaderText = "Qyt";
+            orderQuantity.Name = "orderQuantity";
+            orderQuantity.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Amount.FillWeight = 91.07616F;
+            Amount.HeaderText = "Amount";
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            // 
+            // Remove
+            // 
+            Remove.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Remove.HeaderText = "";
+            Remove.Image = (Image)resources.GetObject("Remove.Image");
+            Remove.Name = "Remove";
+            Remove.ReadOnly = true;
+            Remove.Width = 5;
+            // 
             // down_panel
             // 
-            down_panel.Controls.Add(txt_Product_Code);
-            down_panel.Controls.Add(label7);
-            down_panel.Controls.Add(label5);
-            down_panel.Controls.Add(label_amount);
-            down_panel.Controls.Add(label1);
+            down_panel.Controls.Add(panel4);
+            down_panel.Controls.Add(downward_panel);
             down_panel.Dock = DockStyle.Bottom;
-            down_panel.Location = new Point(0, 233);
+            down_panel.Location = new Point(0, 205);
             down_panel.Name = "down_panel";
-            down_panel.Size = new Size(368, 212);
+            down_panel.Size = new Size(368, 240);
             down_panel.TabIndex = 5;
             // 
-            // txt_Product_Code
+            // panel4
             // 
-            txt_Product_Code.BorderStyle = BorderStyle.FixedSingle;
-            txt_Product_Code.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Product_Code.Location = new Point(13, 47);
-            txt_Product_Code.Name = "txt_Product_Code";
-            txt_Product_Code.Size = new Size(240, 29);
-            txt_Product_Code.TabIndex = 51;
+            panel4.Controls.Add(label7);
+            panel4.Controls.Add(txt_Payment_Amount);
+            panel4.Controls.Add(txt_Refund);
+            panel4.Controls.Add(label5);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(0, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(368, 191);
+            panel4.TabIndex = 55;
             // 
             // label7
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(13, 12);
+            label7.Location = new Point(15, 18);
             label7.Name = "label7";
-            label7.Size = new Size(176, 21);
+            label7.Size = new Size(131, 21);
             label7.TabIndex = 3;
-            label7.Text = "Select Payment Method:";
+            label7.Text = "Payment Amount";
+            // 
+            // txt_Payment_Amount
+            // 
+            txt_Payment_Amount.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txt_Payment_Amount.BorderStyle = BorderStyle.FixedSingle;
+            txt_Payment_Amount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Payment_Amount.Location = new Point(15, 53);
+            txt_Payment_Amount.Name = "txt_Payment_Amount";
+            txt_Payment_Amount.Size = new Size(336, 29);
+            txt_Payment_Amount.TabIndex = 51;
+            txt_Payment_Amount.TextChanged += txt_Payment_Amount_TextChanged;
+            txt_Payment_Amount.KeyPress += txt_Payment_Amount_KeyPress;
+            // 
+            // txt_Refund
+            // 
+            txt_Refund.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txt_Refund.BorderStyle = BorderStyle.FixedSingle;
+            txt_Refund.Enabled = false;
+            txt_Refund.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Refund.Location = new Point(15, 145);
+            txt_Refund.Name = "txt_Refund";
+            txt_Refund.Size = new Size(336, 29);
+            txt_Refund.TabIndex = 53;
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(13, 140);
+            label5.Location = new Point(15, 110);
             label5.Name = "label5";
-            label5.Size = new Size(176, 21);
-            label5.TabIndex = 2;
-            label5.Text = "Select Payment Method:";
+            label5.Size = new Size(119, 21);
+            label5.TabIndex = 52;
+            label5.Text = "Change/Refund";
+            // 
+            // downward_panel
+            // 
+            downward_panel.Controls.Add(label1);
+            downward_panel.Controls.Add(label_amount);
+            downward_panel.Dock = DockStyle.Bottom;
+            downward_panel.Location = new Point(0, 191);
+            downward_panel.Name = "downward_panel";
+            downward_panel.Size = new Size(368, 49);
+            downward_panel.TabIndex = 54;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(13, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(133, 25);
+            label1.TabIndex = 0;
+            label1.Text = "Total Amount:";
             // 
             // label_amount
             // 
@@ -635,22 +740,11 @@
             label_amount.AutoSize = true;
             label_amount.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label_amount.ForeColor = Color.FromArgb(211, 82, 48);
-            label_amount.Location = new Point(149, 171);
+            label_amount.Location = new Point(149, 11);
             label_amount.Name = "label_amount";
             label_amount.Size = new Size(75, 25);
             label_amount.TabIndex = 1;
             label_amount.Text = "100000";
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(13, 171);
-            label1.Name = "label1";
-            label1.Size = new Size(133, 25);
-            label1.TabIndex = 0;
-            label1.Text = "Total Amount:";
             // 
             // btn_Sell
             // 
@@ -711,62 +805,6 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 34.9684563F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // productID
-            // 
-            productID.HeaderText = "Product_ID";
-            productID.Name = "productID";
-            productID.ReadOnly = true;
-            productID.Visible = false;
-            // 
-            // productName
-            // 
-            productName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            productName.FillWeight = 183.248428F;
-            productName.HeaderText = "Name";
-            productName.Name = "productName";
-            productName.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 93.83203F;
-            Column5.HeaderText = "Price";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // orderQuantity
-            // 
-            orderQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            orderQuantity.FillWeight = 54.8579F;
-            orderQuantity.HeaderText = "Qyt";
-            orderQuantity.Name = "orderQuantity";
-            orderQuantity.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Amount.FillWeight = 91.07616F;
-            Amount.HeaderText = "Amount";
-            Amount.Name = "Amount";
-            Amount.ReadOnly = true;
-            // 
-            // Remove
-            // 
-            Remove.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Remove.HeaderText = "";
-            Remove.Image = (Image)resources.GetObject("Remove.Image");
-            Remove.Name = "Remove";
-            Remove.ReadOnly = true;
-            Remove.Width = 5;
-            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -799,7 +837,10 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)data_Grid_Transaction).EndInit();
             down_panel.ResumeLayout(false);
-            down_panel.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            downward_panel.ResumeLayout(false);
+            downward_panel.PerformLayout();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ResumeLayout(false);
@@ -847,11 +888,10 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewImageColumn Add;
         private DataGridViewImageColumn Sell;
-        private Label label5;
         private Label label6;
         private ComboBox cmd_Category;
         private Label label7;
-        public TextBox txt_Product_Code;
+        public TextBox txt_Payment_Amount;
         private CircularPictureBox user_profile;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn productID;
@@ -860,5 +900,9 @@
         private DataGridViewTextBoxColumn orderQuantity;
         private DataGridViewTextBoxColumn Amount;
         private DataGridViewImageColumn Remove;
+        public TextBox txt_Refund;
+        private Label label5;
+        private Panel downward_panel;
+        private Panel panel4;
     }
 }

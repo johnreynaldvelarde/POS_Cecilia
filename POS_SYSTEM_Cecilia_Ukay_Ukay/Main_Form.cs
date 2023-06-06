@@ -81,6 +81,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             data_Grid_Transaction.Rows.Clear();
             data_Grid_Transaction.Refresh();
+            txt_Payment_Amount.Clear();
+            txt_Refund.Clear();
             label_amount.Text = "0.00";
         }
 
@@ -311,13 +313,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         update_product.Parameters.AddWithValue("@UpdatedQuantity", update_quantity);
                         update_product.ExecuteNonQuery();
                     }
-           
+
                     MessageBox.Show("New transaction added");
                     connect.Close();
                     Clear_Transaction();
                     view_product();
                 }
-              
+
             }
 
         }
@@ -442,6 +444,21 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
            */
         }
 
+        private void txt_Payment_Amount_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                txt_Refund.Text = (Convert.ToDecimal(txt_Payment_Amount.Text) - Convert.ToDecimal(label_amount.Text)).ToString();
+            }
+            catch
+            {
+                txt_Refund.Text = string.Empty;
+            }
+        }
 
+        private void txt_Payment_Amount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
     }
 }
