@@ -19,6 +19,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Sales_Report_Form()
         {
             InitializeComponent();
+            MonitorSales();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
