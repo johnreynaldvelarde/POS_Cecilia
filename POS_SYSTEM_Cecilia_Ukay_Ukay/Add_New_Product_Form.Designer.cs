@@ -48,12 +48,7 @@
             cmd_Measurement = new ComboBox();
             label10 = new Label();
             txt_Date_Added = new TextBox();
-            label6 = new Label();
-            txt_Quantity = new TextBox();
             btn_Update = new Button();
-            cmd_Stock = new ComboBox();
-            label1 = new Label();
-            txt_Total_Stock = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -233,11 +228,11 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label9.Location = new Point(330, 358);
+            label9.Location = new Point(609, 245);
             label9.Name = "label9";
-            label9.Size = new Size(183, 21);
+            label9.Size = new Size(48, 21);
             label9.TabIndex = 57;
-            label9.Text = "Unit of measurement *";
+            label9.Text = "Size *";
             // 
             // cmd_Measurement
             // 
@@ -245,7 +240,7 @@
             cmd_Measurement.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmd_Measurement.FormattingEnabled = true;
             cmd_Measurement.Items.AddRange(new object[] { "Small (S)", "Medium (M)", "Large (L)", "Extra Large (XL)", "Extra Small (XS)", "Double Extra Large (XXL)" });
-            cmd_Measurement.Location = new Point(330, 390);
+            cmd_Measurement.Location = new Point(609, 277);
             cmd_Measurement.Name = "cmd_Measurement";
             cmd_Measurement.Size = new Size(240, 28);
             cmd_Measurement.TabIndex = 58;
@@ -270,26 +265,6 @@
             txt_Date_Added.Size = new Size(240, 27);
             txt_Date_Added.TabIndex = 59;
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(609, 244);
-            label6.Name = "label6";
-            label6.Size = new Size(90, 21);
-            label6.TabIndex = 62;
-            label6.Text = "Quantity *";
-            // 
-            // txt_Quantity
-            // 
-            txt_Quantity.BorderStyle = BorderStyle.FixedSingle;
-            txt_Quantity.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Quantity.Location = new Point(609, 279);
-            txt_Quantity.Name = "txt_Quantity";
-            txt_Quantity.Size = new Size(240, 29);
-            txt_Quantity.TabIndex = 61;
-            txt_Quantity.KeyPress += txt_Quantity_KeyPress;
-            // 
             // btn_Update
             // 
             btn_Update.BackColor = Color.FromArgb(14, 159, 104);
@@ -303,37 +278,7 @@
             btn_Update.TabIndex = 66;
             btn_Update.Text = "Update";
             btn_Update.UseVisualStyleBackColor = false;
-            // 
-            // cmd_Stock
-            // 
-            cmd_Stock.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmd_Stock.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            cmd_Stock.FormattingEnabled = true;
-            cmd_Stock.Location = new Point(609, 390);
-            cmd_Stock.Name = "cmd_Stock";
-            cmd_Stock.Size = new Size(162, 28);
-            cmd_Stock.TabIndex = 68;
-            cmd_Stock.SelectedIndexChanged += cmd_Stock_SelectedIndexChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(609, 358);
-            label1.Name = "label1";
-            label1.Size = new Size(190, 21);
-            label1.TabIndex = 67;
-            label1.Text = "Select available stock *";
-            // 
-            // txt_Total_Stock
-            // 
-            txt_Total_Stock.BorderStyle = BorderStyle.FixedSingle;
-            txt_Total_Stock.Enabled = false;
-            txt_Total_Stock.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Total_Stock.Location = new Point(777, 389);
-            txt_Total_Stock.Name = "txt_Total_Stock";
-            txt_Total_Stock.Size = new Size(72, 29);
-            txt_Total_Stock.TabIndex = 69;
+            btn_Update.Click += btn_Update_Click;
             // 
             // Add_New_Product_Form
             // 
@@ -342,12 +287,7 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
-            Controls.Add(txt_Total_Stock);
-            Controls.Add(cmd_Stock);
-            Controls.Add(label1);
             Controls.Add(btn_Update);
-            Controls.Add(label6);
-            Controls.Add(txt_Quantity);
             Controls.Add(label10);
             Controls.Add(txt_Date_Added);
             Controls.Add(cmd_Measurement);
@@ -395,16 +335,11 @@
         private ComboBox cmd_Measurement;
         private Label label10;
         private TextBox txt_Date_Added;
-        private Label label6;
         public Button btn_Update;
         public TextBox txt_Product_Name;
         public TextBox txt_Price;
         public Label title_product;
         public Button btn_Save;
         public TextBox txt_Product_Code;
-        public TextBox txt_Quantity;
-        private ComboBox cmd_Stock;
-        private Label label1;
-        public TextBox txt_Total_Stock;
     }
 }

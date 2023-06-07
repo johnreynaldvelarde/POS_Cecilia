@@ -87,22 +87,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         Clear();
                     }
                 }
-               
+
             }
-            /*
-            SqlConnection con = new SqlConnection("Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True");
-
-            SqlCommand cmd = new SqlCommand("insert into product (productPrice, code, productName, quantity)  values (@productPrice, @code, @productName, @quantity)");
-            cmd.Connection = con;
-            cmd.Parameters.AddWithValue("@productPrice", decimal.Parse(txt_Price.Text));
-            //cmd.Parameters.AddWithValue("@categoryProduct", txt);
-            cmd.Parameters.AddWithValue("@code", txt_Product_Code.Text);
-            cmd.Parameters.AddWithValue("@productName", txt_Product_Name.Text);
-            cmd.Parameters.AddWithValue("@quantity", int.Parse(txt_Availability.Text));
-
-            con.Open();
-            cmd.ExecuteNonQuery();
-            */
 
         }
 
@@ -122,7 +108,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
 
+        }
 
         private void btnClose_Click_1(object sender, EventArgs e)
         {
@@ -155,5 +144,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             Clear();
         }
+
+       
     }
 }

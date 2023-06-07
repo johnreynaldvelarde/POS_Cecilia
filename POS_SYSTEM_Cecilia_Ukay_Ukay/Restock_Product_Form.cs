@@ -44,7 +44,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string sql = "SELECT s.StockItem_ID, i.Item_Code, s.Stock_Quantity FROM Stock_Item s JOIN Item i ON s.Item_ID = i.Item_ID WHERE s.Stock_Quantity > 0 ";
+                string sql = "SELECT s.ItemStock_ID, i.Item_Code, s.ItemStock_Qyt FROM Item_Stock s JOIN Item i ON s.Item_ID = i.Item_ID WHERE s.ItemStock_Qyt > 0 ";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -67,7 +67,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string sql = "SELECT s.StockItem_ID, s.Stock_Quantity FROM Stock_Item s JOIN Item i ON s.Item_ID = i.Item_ID WHERE i.Item_Code = @ItemCode";
+                string sql = "SELECT s.ItemStock_ID, s.ItemStock_Qyt FROM Item_Stock s JOIN Item i ON s.Item_ID = i.Item_ID WHERE i.Item_Code = @ItemCode";
                 SqlCommand command = new SqlCommand(sql, connect);
                 command.Parameters.AddWithValue("@ItemCode", selected_itemCode);
                 SqlDataReader reader = command.ExecuteReader();
@@ -118,16 +118,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         connect.Open();
 
                         // update for product
-                        string update_product = "UPDATE Product SET Quantity = Quantity + @Add_Quantity WHERE Product_ID = @Product_ID";
+                        string update_product = "UPDATE Product_Stock SET ProductStock_Qyt = ProductStock_Qyt + @Add_Quantity WHERE ProductStock_ID = @ProductStock_ID";
                         SqlCommand command = new SqlCommand(update_product, connect);
-                        command.Parameters.AddWithValue("@Product_ID", stock_ProductID);
+                        command.Parameters.AddWithValue("@ProductStock_ID", stock_ProductID);
                         command.Parameters.AddWithValue("@Add_Quantity", Convert.ToInt32(txt_Put_Quantity.Text));
                         command.ExecuteNonQuery();
 
                         // udapte for stock
-                        string update_stock = "UPDATE Stock_Item SET Stock_Quantity = Stock_Quantity - @PutQuantity WHERE StockItem_ID = @StockItemID";
+                        string update_stock = "UPDATE Item_Stock SET ItemStock_Qyt = ItemStock_Qyt - @PutQuantity WHERE ItemStock_ID = @ItemStock_ID";
                         SqlCommand update_command = new SqlCommand(update_stock, connect);
-                        update_command.Parameters.AddWithValue("@StockItemID", stockItemID);
+                        update_command.Parameters.AddWithValue("@ItemStock_ID", stockItemID);
                         update_command.Parameters.AddWithValue("@PutQuantity", putQuantity);
                         update_command.ExecuteNonQuery();
 

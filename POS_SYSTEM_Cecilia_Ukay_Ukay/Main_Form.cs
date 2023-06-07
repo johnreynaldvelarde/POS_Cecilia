@@ -22,7 +22,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             InitializeComponent();
             button_highligted();
             load_category();
-            view_product();
+            //view_product();
         }
 
 
@@ -143,8 +143,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT p.Product_ID, p.Product_Name, p.Price, p.Quantity, c.Category_Name, p.Size  " +
-                             "FROM Product p JOIN Categories c ON p.Category_ID = c.Category_ID WHERE p.Quantity > 0 AND p.Archive = 0;";
+                string sql = "SELECT ps.ProductStock_ID, p.Product_ID, p.Product_Code, p.Product_Name, p.Price, c.Category_Name, p.Size, ps.ProductStock_Qyt " +
+                             "FROM Product p " +
+                             "JOIN Categories c ON p.Category_ID = c.Category_ID " +
+                             "JOIN Product_Stock ps ON p.Product_ID = ps.Product_ID " +
+                             "WHERE ps.ProductStock_Qyt > 0 AND p.Archive = 0";
+
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -152,15 +156,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 while (reader.Read())
                 {
-
                     i += 1;
-                    data_Grid_Available.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Name"].ToString(), reader["Category_Name"].ToString(), reader["Price"].ToString(),
-                                                    reader["Size"].ToString(), "20 %", null, reader["Quantity"].ToString());
-
+                    data_Grid_Available.Rows.Add(i, reader["ProductStock_ID"].ToString(), reader["Product_ID"].ToString(), reader["Product_Code"].ToString(),
+                                                reader["Product_Name"].ToString(), reader["Category_Name"].ToString(), reader["Price"].ToString(),
+                                                reader["Size"].ToString(), "20 %", null, reader["ProductStock_Qyt"].ToString());
                 }
+
                 reader.Close();
                 connect.Close();
-
             }
         }
 
@@ -284,7 +287,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     // for table order_transction
                     foreach (DataGridViewRow row in data_Grid_Transaction.Rows)
                     {
-                        int productID = Convert.ToInt32(row.Cells["productID"].Value);
+                        int productStockID = Convert.ToInt32(row.Cells["productID"].Value);
                         int orderQuantity = Convert.ToInt32(row.Cells["orderQuantity"].Value);
                         decimal amount = Convert.ToDecimal(row.Cells["Amount"].Value);
 
@@ -299,7 +302,25 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         command1.ExecuteNonQuery();
 
 
+                        // update
+                        string selectProductStock = "SELECT ProductStock_Qty FROM Product_Stock WHERE ProductStock_ID = @ProductStock_ID";
+                        SqlCommand selectProductStockCmd = new SqlCommand(selectProductStock, connect);
+                        selectProductStockCmd.Parameters.AddWithValue("@Product_ID", productStockID);
+                        int currentQuantity = Convert.ToInt32(selectProductStockCmd.ExecuteScalar());
+
+                        int updatedQuantity = currentQuantity - orderQuantity;
+
+                        string updateProductStock = "UPDATE Product_Stock SET ProductStock_Qty = @UpdatedQuantity WHERE ProductStock_ID = @ProductStock_ID";
+                        SqlCommand updateProductStockCmd = new SqlCommand(updateProductStock, connect);
+                        updateProductStockCmd.Parameters.AddWithValue("@ProductStock_ID", productStockID);
+                        updateProductStockCmd.Parameters.AddWithValue("@UpdatedQuantity", updatedQuantity);
+                        updateProductStockCmd.ExecuteNonQuery();
+
+
+
+
                         // for select /update the table product and reduce the quantity of specific product
+                        /*
                         string selectProduct = "SELECT Quantity FROM Product WHERE Product_ID = @Product_ID";
                         SqlCommand select_product = new SqlCommand(selectProduct, connect);
                         select_product.Parameters.AddWithValue("@Product_ID", productID);
@@ -312,6 +333,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         update_product.Parameters.AddWithValue("@Product_ID", productID);
                         update_product.Parameters.AddWithValue("@UpdatedQuantity", update_quantity);
                         update_product.ExecuteNonQuery();
+                        */
                     }
 
                     MessageBox.Show("New transaction added");

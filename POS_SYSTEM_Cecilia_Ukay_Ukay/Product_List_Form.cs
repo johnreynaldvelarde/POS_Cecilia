@@ -52,7 +52,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Product_ID, Product_Code, Product_Name, Price, Quantity, Date_Added, Size, Archive FROM Product WHERE Archive = 0";
+                string sql = "SELECT Product_ID, Product_Code, Product_Name, Price,  Date_Added, Size, Archive FROM Product WHERE Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -64,8 +64,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     {
                         i += 1;
                         data_Grid_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
-                                                      reader["Price"].ToString(), reader["Quantity"].ToString(), reader["Size"].ToString(),
-                                                      reader["Date_Added"].ToString());
+                                                      reader["Price"].ToString(), 1 , reader["Size"].ToString(), reader["Date_Added"].ToString());
+
                     }
 
                 }
@@ -85,12 +85,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 frm.btn_Save.Enabled = false;
                 frm.btn_Update.Enabled = true;
                 frm.txt_Product_Code.Enabled = false;
-                frm.txt_Quantity.Enabled = false;
                 frm.productID = product_id.ToString();
                 frm.txt_Product_Code.Text = product_code;
                 frm.txt_Product_Name.Text = product_name;
                 frm.txt_Price.Text = price;
-                frm.txt_Quantity.Text = quantity;
 
                 frm.ShowDialog();
             }
@@ -127,7 +125,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 product_code = data_Grid_Product[2, i].Value.ToString();
                 product_name = data_Grid_Product[3, i].Value.ToString();
                 price = data_Grid_Product[4, i].Value.ToString();
-                quantity = data_Grid_Product[5, i].Value.ToString();
             }
         }
     }

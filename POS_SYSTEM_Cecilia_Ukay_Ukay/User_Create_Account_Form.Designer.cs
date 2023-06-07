@@ -137,6 +137,7 @@
             // 
             // txtUsername
             // 
+            txtUsername.BorderStyle = BorderStyle.FixedSingle;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtUsername.Location = new Point(424, 131);
             txtUsername.Name = "txtUsername";
@@ -155,6 +156,7 @@
             // 
             // txtPassword
             // 
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtPassword.Location = new Point(424, 213);
             txtPassword.Multiline = true;
@@ -175,6 +177,7 @@
             // 
             // txtRetype
             // 
+            txtRetype.BorderStyle = BorderStyle.FixedSingle;
             txtRetype.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtRetype.Location = new Point(424, 298);
             txtRetype.Multiline = true;
@@ -205,6 +208,7 @@
             // 
             // txtContact
             // 
+            txtContact.BorderStyle = BorderStyle.FixedSingle;
             txtContact.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtContact.Location = new Point(424, 385);
             txtContact.Name = "txtContact";

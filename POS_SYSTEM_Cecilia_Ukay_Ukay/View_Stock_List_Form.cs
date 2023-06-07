@@ -32,7 +32,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Product_ID, Product_Code, Product_Name, Quantity, Archive FROM Product WHERE Archive = 0";
+                string sql = "SELECT ps.ProductStock_ID, p.Product_Code, p.Product_Name, ps.ProductStock_Qyt, p.Archive " +
+                             "FROM Product_Stock ps " +
+                             "INNER JOIN Product p ON ps.Product_ID = p.Product_ID  " +
+                             "WHERE p.Archive = 0";
+
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -43,8 +47,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     if (reader["Archive"].ToString() == "0")
                     {
                         i += 1;
-                        data_Stock_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
-                                                       reader["Quantity"].ToString());
+                        data_Stock_Product.Rows.Add(i, reader["ProductStock_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
+                                                       reader["ProductStock_Qyt"].ToString());
 
                     }
 
