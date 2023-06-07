@@ -171,7 +171,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 return count > 0;
             }
         }
-
+        
         public void show_item()
         {
 

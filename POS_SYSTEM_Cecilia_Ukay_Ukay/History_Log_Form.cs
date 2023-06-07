@@ -68,12 +68,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btn_Retailer_Click(object sender, EventArgs e)
         {
             openChildForm(new Management_Transaction_List_Form());
+            resetButtonColors();
             btn_Retailer.BackColor = Color.FromArgb(242, 197, 70);
         }
 
         private void btn_Transaction_Click(object sender, EventArgs e)
         {
             openChildForm(new Order_Transaction_List_Form());
+            resetButtonColors();
             btn_Transaction.BackColor = Color.FromArgb(242, 197, 70);
         }
     }
