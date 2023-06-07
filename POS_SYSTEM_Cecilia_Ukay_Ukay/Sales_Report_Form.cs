@@ -44,7 +44,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
                     connect.Open();
 
-                    string sql = "SELECT SUM(Total_Amount) AS today_sales FROM Transaction_Log WHERE CONVERT(date, Transaction_Date) = CONVERT(date, GETDATE())";
+                    string sql = "SELECT SUM(Total_Amount) AS today_sales FROM Order_Transaction WHERE CONVERT(date, Transaction_Date) = CONVERT(date, GETDATE())";
 
                     using (SqlCommand command = new SqlCommand(sql, connect))
                     {
