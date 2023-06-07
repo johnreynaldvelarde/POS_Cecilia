@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             center_panel = new Panel();
+            panel11 = new Panel();
+            label18 = new Label();
+            label19 = new Label();
+            panel10 = new Panel();
+            label16 = new Label();
+            label17 = new Label();
+            panel9 = new Panel();
+            label14 = new Label();
+            label15 = new Label();
+            panel8 = new Panel();
+            label12 = new Label();
+            label13 = new Label();
             panel3 = new Panel();
             label4 = new Label();
             label5 = new Label();
@@ -42,36 +54,24 @@
             label8 = new Label();
             label9 = new Label();
             panel4 = new Panel();
+            label_today = new Label();
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
             btnClose = new Button();
             panel1 = new Panel();
-            panel8 = new Panel();
-            label12 = new Label();
-            label13 = new Label();
-            panel9 = new Panel();
-            label14 = new Label();
-            label15 = new Label();
-            panel10 = new Panel();
-            label16 = new Label();
-            label17 = new Label();
-            panel11 = new Panel();
-            label18 = new Label();
-            label19 = new Label();
-            label_today = new Label();
             center_panel.SuspendLayout();
+            panel11.SuspendLayout();
+            panel10.SuspendLayout();
+            panel9.SuspendLayout();
+            panel8.SuspendLayout();
             panel3.SuspendLayout();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
             panel6.SuspendLayout();
             panel4.SuspendLayout();
             panel1.SuspendLayout();
-            panel8.SuspendLayout();
-            panel9.SuspendLayout();
-            panel10.SuspendLayout();
-            panel11.SuspendLayout();
             SuspendLayout();
             // 
             // center_panel
@@ -91,6 +91,126 @@
             center_panel.Padding = new Padding(5, 20, 0, 0);
             center_panel.Size = new Size(1080, 617);
             center_panel.TabIndex = 24;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.WhiteSmoke;
+            panel11.Controls.Add(label18);
+            panel11.Controls.Add(label19);
+            panel11.Location = new Point(12, 449);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(271, 100);
+            panel11.TabIndex = 7;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Location = new Point(54, 49);
+            label18.Name = "label18";
+            label18.Size = new Size(31, 17);
+            label18.TabIndex = 1;
+            label18.Text = "PHP";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label19.Location = new Point(8, 9);
+            label19.Name = "label19";
+            label19.Size = new Size(97, 20);
+            label19.TabIndex = 0;
+            label19.Text = "Today's Sales";
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.WhiteSmoke;
+            panel10.Controls.Add(label16);
+            panel10.Controls.Add(label17);
+            panel10.Location = new Point(12, 343);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(271, 100);
+            panel10.TabIndex = 6;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Location = new Point(54, 49);
+            label16.Name = "label16";
+            label16.Size = new Size(31, 17);
+            label16.TabIndex = 1;
+            label16.Text = "PHP";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Location = new Point(8, 9);
+            label17.Name = "label17";
+            label17.Size = new Size(97, 20);
+            label17.TabIndex = 0;
+            label17.Text = "Today's Sales";
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.WhiteSmoke;
+            panel9.Controls.Add(label14);
+            panel9.Controls.Add(label15);
+            panel9.Location = new Point(12, 237);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(271, 100);
+            panel9.TabIndex = 5;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label14.Location = new Point(54, 49);
+            label14.Name = "label14";
+            label14.Size = new Size(31, 17);
+            label14.TabIndex = 1;
+            label14.Text = "PHP";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Location = new Point(8, 9);
+            label15.Name = "label15";
+            label15.Size = new Size(97, 20);
+            label15.TabIndex = 0;
+            label15.Text = "Today's Sales";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.WhiteSmoke;
+            panel8.Controls.Add(label12);
+            panel8.Controls.Add(label13);
+            panel8.Location = new Point(12, 129);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(271, 100);
+            panel8.TabIndex = 2;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label12.Location = new Point(54, 49);
+            label12.Name = "label12";
+            label12.Size = new Size(31, 17);
+            label12.TabIndex = 1;
+            label12.Text = "PHP";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Location = new Point(8, 9);
+            label13.Name = "label13";
+            label13.Size = new Size(97, 20);
+            label13.TabIndex = 0;
+            label13.Text = "Today's Sales";
             // 
             // panel3
             // 
@@ -223,14 +343,25 @@
             panel4.Size = new Size(271, 100);
             panel4.TabIndex = 0;
             // 
+            // label_today
+            // 
+            label_today.AutoSize = true;
+            label_today.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label_today.ForeColor = Color.White;
+            label_today.Location = new Point(85, 44);
+            label_today.Name = "label_today";
+            label_today.Size = new Size(82, 23);
+            label_today.TabIndex = 2;
+            label_today.Text = "Amount";
+            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(41, 48);
+            label3.Location = new Point(41, 44);
             label3.Name = "label3";
-            label3.Size = new Size(38, 19);
+            label3.Size = new Size(45, 23);
             label3.TabIndex = 1;
             label3.Text = "PHP";
             // 
@@ -288,137 +419,6 @@
             panel1.Size = new Size(1080, 60);
             panel1.TabIndex = 21;
             // 
-            // panel8
-            // 
-            panel8.BackColor = Color.WhiteSmoke;
-            panel8.Controls.Add(label12);
-            panel8.Controls.Add(label13);
-            panel8.Location = new Point(12, 129);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(271, 100);
-            panel8.TabIndex = 2;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label12.Location = new Point(54, 49);
-            label12.Name = "label12";
-            label12.Size = new Size(31, 17);
-            label12.TabIndex = 1;
-            label12.Text = "PHP";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(8, 9);
-            label13.Name = "label13";
-            label13.Size = new Size(97, 20);
-            label13.TabIndex = 0;
-            label13.Text = "Today's Sales";
-            // 
-            // panel9
-            // 
-            panel9.BackColor = Color.WhiteSmoke;
-            panel9.Controls.Add(label14);
-            panel9.Controls.Add(label15);
-            panel9.Location = new Point(12, 237);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(271, 100);
-            panel9.TabIndex = 5;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label14.Location = new Point(54, 49);
-            label14.Name = "label14";
-            label14.Size = new Size(31, 17);
-            label14.TabIndex = 1;
-            label14.Text = "PHP";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label15.Location = new Point(8, 9);
-            label15.Name = "label15";
-            label15.Size = new Size(97, 20);
-            label15.TabIndex = 0;
-            label15.Text = "Today's Sales";
-            // 
-            // panel10
-            // 
-            panel10.BackColor = Color.WhiteSmoke;
-            panel10.Controls.Add(label16);
-            panel10.Controls.Add(label17);
-            panel10.Location = new Point(12, 343);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(271, 100);
-            panel10.TabIndex = 6;
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(54, 49);
-            label16.Name = "label16";
-            label16.Size = new Size(31, 17);
-            label16.TabIndex = 1;
-            label16.Text = "PHP";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(8, 9);
-            label17.Name = "label17";
-            label17.Size = new Size(97, 20);
-            label17.TabIndex = 0;
-            label17.Text = "Today's Sales";
-            // 
-            // panel11
-            // 
-            panel11.BackColor = Color.WhiteSmoke;
-            panel11.Controls.Add(label18);
-            panel11.Controls.Add(label19);
-            panel11.Location = new Point(12, 449);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(271, 100);
-            panel11.TabIndex = 7;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(54, 49);
-            label18.Name = "label18";
-            label18.Size = new Size(31, 17);
-            label18.TabIndex = 1;
-            label18.Text = "PHP";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label19.Location = new Point(8, 9);
-            label19.Name = "label19";
-            label19.Size = new Size(97, 20);
-            label19.TabIndex = 0;
-            label19.Text = "Today's Sales";
-            // 
-            // label_today
-            // 
-            label_today.AutoSize = true;
-            label_today.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label_today.ForeColor = Color.White;
-            label_today.Location = new Point(85, 48);
-            label_today.Name = "label_today";
-            label_today.Size = new Size(71, 19);
-            label_today.TabIndex = 2;
-            label_today.Text = "Amount";
-            // 
             // Sales_Report_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -435,6 +435,14 @@
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
             center_panel.ResumeLayout(false);
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel7.ResumeLayout(false);
@@ -447,14 +455,6 @@
             panel4.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
-            panel9.ResumeLayout(false);
-            panel9.PerformLayout();
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
-            panel11.ResumeLayout(false);
-            panel11.PerformLayout();
             ResumeLayout(false);
         }
 

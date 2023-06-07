@@ -30,9 +30,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public void MonitorSales()
         {
             label_today.Text = GetTodaySales().ToString("#,##0.00");
-           // lblWeek.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(week, Transaction_Date) = DATEPART(week, GETDATE()) AND DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
-           // lblMonth.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(month, Transaction_Date) = DATEPART(month, GETDATE()) AND DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
-          //  lblAnnual.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
+            // lblWeek.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(week, Transaction_Date) = DATEPART(week, GETDATE()) AND DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
+            // lblMonth.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(month, Transaction_Date) = DATEPART(month, GETDATE()) AND DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
+            //  lblAnnual.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
         }
 
         public double GetTodaySales()
