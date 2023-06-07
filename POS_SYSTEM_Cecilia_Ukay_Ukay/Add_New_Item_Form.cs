@@ -17,6 +17,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         DB_Connection database = new DB_Connection();
         Item_List_Form frm;
 
+        public string itemID;
+
         public Add_New_Item_Form(Item_List_Form item)
         {
             InitializeComponent();
@@ -110,6 +112,34 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txt_Item_Name.Text) || String.IsNullOrEmpty(txt_Price.Text) || String.IsNullOrEmpty(txt_Item_Code.Text))
+            {
+                MessageBox.Show("Fill in the blank");
+            }
+            else if (cmd_Piece.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select per piece");
+            }
+            else
+            {
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "UPDATE Item SET Item_Name = @Item_Name, Price, Per_Piece, Date_Added = @Date_Added WHERE Item_ID = @Item_ID ";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Item_Name", txt_Item_Name.Text);
+                    command.Parameters.AddWithValue("@Price", txt_Price.Text);
+                    command.Parameters.AddWithValue("@Per_Piece", cmd_Piece.SelectedItem);
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
+                    command.Parameters.AddWithValue("@Item_ID", Convert.ToInt32(itemID));
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connect.Close();
+                }
+                this.Dispose();
+                MessageBox.Show("Edit successfully");
+                frm.show_item_list();
+            }
 
         }
 
