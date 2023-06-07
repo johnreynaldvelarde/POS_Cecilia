@@ -74,10 +74,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                         int itemID = Convert.ToInt32(insert_command.ExecuteScalar());
 
-                        string insert_stock = "INSERT INTO Stock_Item (Item_ID, Stock_Quantity) VALUES (@Item_ID, @Stock_Quantity)";
+                        string insert_stock = "INSERT INTO Item_Stock (Item_ID, ItemStock_Qyt) VALUES (@Item_ID, @ItemStock_Qyt)";
                         SqlCommand command_stock = new SqlCommand(insert_stock, connect);
                         command_stock.Parameters.AddWithValue("@Item_ID", itemID);
-                        command_stock.Parameters.AddWithValue("@Stock_Quantity", 0);
+                        command_stock.Parameters.AddWithValue("@ItemStock_Qyt", 0);
                         command_stock.ExecuteNonQuery();
 
                         connect.Close();

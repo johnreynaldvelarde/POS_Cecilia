@@ -68,7 +68,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string sql = "SELECT s.StockItem_ID, i.Item_Code, s.Stock_Quantity FROM Stock_Item s JOIN Item i ON s.Item_ID = i.Item_ID";
+                string sql = "SELECT s.ItemStock_ID, i.Item_Code, s.ItemStock_Qyt FROM Item_Stock s JOIN Item i ON s.Item_ID = i.Item_ID";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -91,7 +91,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string sql = "SELECT s.StockItem_ID, s.Stock_Quantity FROM Stock_Item s JOIN Item i ON s.Item_ID = i.Item_ID WHERE i.Item_Code = @ItemCode";
+                string sql = "SELECT s.ItemStock_ID, s.ItemStock_Qyt FROM Item_Stock s JOIN Item i ON s.Item_ID = i.Item_ID WHERE i.Item_Code = @ItemCode";
                 SqlCommand command = new SqlCommand(sql, connect);
                 command.Parameters.AddWithValue("@ItemCode", select_item);
                 SqlDataReader reader = command.ExecuteReader();
@@ -254,7 +254,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     connect.Open();
 
-                    string sql1 = "INSERT INTO Purchase_Log (Staff_ID, Supplier_ID, Purchase_Date, Total_Amount) VALUES " +
+                    string sql1 = "INSERT INTO Purchase_Transaction (Staff_ID, Supplier_ID, Purchase_Date, Total_Amount) VALUES " +
                                   "(@Staff_ID, @Supplier_ID, @Purchase_Date, @Total_Amount); SELECT SCOPE_IDENTITY();";
                     SqlCommand command1 = new SqlCommand(sql1, connect);
                     command1.Parameters.AddWithValue("@Staff_ID", staff_id);
@@ -277,30 +277,30 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         int itemQuantity = Convert.ToInt32(row.Cells[5].Value);
                         decimal itemAmount = Convert.ToDecimal(row.Cells[7].Value);
 
-                        string sql2 = "INSERT INTO Purchase_Item (Purchase_ID, StockItem_ID, Purchase_Quantity, Amount ) VALUES" +
-                                      "(@Purchase_ID, @StockItem_ID, @Purchase_Quantity, @Amount );";
+                        string sql2 = "INSERT INTO Purchase_Item (Purchase_ID, ItemStock_ID, Purchase_Quantity, Amount ) VALUES" +
+                                      "(@Purchase_ID, @ItemStock_ID, @Purchase_Quantity, @Amount );";
 
                         SqlCommand command2 = new SqlCommand(sql2, connect);
 
                         command2.Parameters.AddWithValue("@Purchase_ID", purchaseID);
-                        command2.Parameters.AddWithValue("@StockItem_ID", stockitemID);
+                        command2.Parameters.AddWithValue("@ItemStock_ID", stockitemID);
                         command2.Parameters.AddWithValue("@Purchase_Quantity", itemQuantity);
                         command2.Parameters.AddWithValue("@Amount", itemAmount);
                         command2.ExecuteNonQuery();
 
 
                         // for select /update the table product and reduce the quantity of specific product
-                        string selectStockItem = "SELECT Stock_Quantity FROM Stock_Item WHERE StockItem_ID = @StockItem_ID";
+                        string selectStockItem = "SELECT ItemStock_Qyt FROM Item_Stock WHERE ItemStock_ID = @ItemStock_ID";
                         SqlCommand select_stock = new SqlCommand(selectStockItem, connect);
-                        select_stock.Parameters.AddWithValue("@StockItem_ID", stockitemID);
+                        select_stock.Parameters.AddWithValue("@ItemStock_ID", stockitemID);
                         
                         int current_quantity = Convert.ToInt32(select_stock.ExecuteScalar());
 
                         int update_quantity = current_quantity + itemQuantity;
 
-                        string updateStockItem = "UPDATE Stock_Item SET Stock_Quantity = @UpdatedQuantity WHERE StockItem_ID = @StockItem_ID";
+                        string updateStockItem = "UPDATE Item_Stock SET ItemStock_Qyt = @UpdatedQuantity WHERE ItemStock_ID = @ItemStock_ID";
                         SqlCommand update_stock = new SqlCommand(updateStockItem, connect);
-                        update_stock.Parameters.AddWithValue("@StockItem_ID", stockitemID);
+                        update_stock.Parameters.AddWithValue("@ItemStock_ID", stockitemID);
                         update_stock.Parameters.AddWithValue("@UpdatedQuantity", update_quantity);
                         update_stock.ExecuteNonQuery();
 

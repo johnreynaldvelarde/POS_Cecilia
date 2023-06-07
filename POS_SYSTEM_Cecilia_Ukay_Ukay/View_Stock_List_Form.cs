@@ -61,7 +61,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT s.StockItem_ID, i.Item_Code, i.Item_Name, s.Stock_Quantity FROM Stock_Item s JOIN Item i ON s.Item_ID = i.Item_ID;";
+                string sql = "SELECT s.ItemStock_ID, i.Item_Code, i.Item_Name, s.ItemStock_Qyt FROM Item_Stock s JOIN Item i ON s.Item_ID = i.Item_ID;";
 
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
@@ -70,8 +70,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 while (reader.Read())
                 {
                     i += 1;
-                    data_Stock_Item.Rows.Add(i, reader["StockItem_ID"].ToString(), reader["Item_Code"].ToString(), reader["Item_Name"].ToString(),
-                                                reader["Stock_Quantity"].ToString());
+                    data_Stock_Item.Rows.Add(i, reader["ItemStock_ID"].ToString(), reader["Item_Code"].ToString(), reader["Item_Name"].ToString(),
+                                                reader["ItemStock_Qyt"].ToString());
                 }
                 reader.Close();
                 connect.Close();

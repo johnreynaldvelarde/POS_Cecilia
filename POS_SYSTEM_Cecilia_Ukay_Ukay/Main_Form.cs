@@ -259,7 +259,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     connect.Open();
 
                     // for table transaction_log
-                    string sql = "INSERT INTO Transaction_Log (Staff_ID, Transaction_Date, Total_Quantity, Total_Amount) VALUES " +
+                    string sql = "INSERT INTO Order_Transaction (Staff_ID, Transaction_Date, Total_Quantity, Total_Amount) VALUES " +
                                  "(@Staff_ID, @Transaction_Date, @Total_Quantity, @Total_Amount); SELECT SCOPE_IDENTITY();";
                     SqlCommand command = new SqlCommand(sql, connect);
 
