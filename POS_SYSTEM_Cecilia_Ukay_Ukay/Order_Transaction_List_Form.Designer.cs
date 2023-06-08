@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order_Transaction_List_Form));
             data_Grid_Order_Transaction = new DataGridView();
+            panel1 = new Panel();
+            btn_Export = new Button();
+            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
+            transactionID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             View = new DataGridViewImageColumn();
-            panel1 = new Panel();
-            btn_Export = new Button();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Order_Transaction).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -56,25 +58,25 @@
             data_Grid_Order_Transaction.BorderStyle = BorderStyle.None;
             data_Grid_Order_Transaction.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Order_Transaction.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            data_Grid_Order_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            data_Grid_Order_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Order_Transaction.ColumnHeadersHeight = 50;
             data_Grid_Order_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Order_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column6, Column3, Column4, View });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            data_Grid_Order_Transaction.DefaultCellStyle = dataGridViewCellStyle4;
+            data_Grid_Order_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, transactionID, Column2, Column6, Column3, Column4, View });
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Window;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            data_Grid_Order_Transaction.DefaultCellStyle = dataGridViewCellStyle3;
             data_Grid_Order_Transaction.Dock = DockStyle.Fill;
             data_Grid_Order_Transaction.EnableHeadersVisualStyles = false;
             data_Grid_Order_Transaction.Location = new Point(5, 88);
@@ -87,49 +89,7 @@
             data_Grid_Order_Transaction.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Order_Transaction.Size = new Size(1088, 492);
             data_Grid_Order_Transaction.TabIndex = 6;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 60F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Retailer Name";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Transaction Date";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Total Quantity";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Total Amount";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // View
-            // 
-            View.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            View.HeaderText = "";
-            View.Image = (Image)resources.GetObject("View.Image");
-            View.MinimumWidth = 50;
-            View.Name = "View";
-            View.ReadOnly = true;
-            View.Width = 50;
+            data_Grid_Order_Transaction.CellContentClick += data_Grid_Order_Transaction_CellContentClick;
             // 
             // panel1
             // 
@@ -170,6 +130,64 @@
             label1.TabIndex = 1;
             label1.Text = "Order Transaction";
             // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 52.237812F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // transactionID
+            // 
+            transactionID.HeaderText = "Order_TransactionID";
+            transactionID.Name = "transactionID";
+            transactionID.ReadOnly = true;
+            transactionID.Visible = false;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 127.892647F;
+            Column2.HeaderText = "Retailer Name";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column6.FillWeight = 85.27919F;
+            Column6.HeaderText = "Transaction Date";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            Column3.FillWeight = 120.464355F;
+            Column3.HeaderText = "              Total Quantity";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column4.FillWeight = 87.063F;
+            Column4.HeaderText = "Total Amount";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // View
+            // 
+            View.FillWeight = 87.063F;
+            View.HeaderText = "";
+            View.Image = (Image)resources.GetObject("View.Image");
+            View.MinimumWidth = 50;
+            View.Name = "View";
+            View.ReadOnly = true;
+            // 
             // Order_Transaction_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -196,6 +214,7 @@
         private Button btn_Export;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn transactionID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column3;

@@ -57,46 +57,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="dataGridViewTextBoxColumn2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="transactionID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dataGridViewTextBoxColumn4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dataGridViewTextBoxColumn5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="View.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="View.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAYRJREFUSEvd
-        VT0vBEEYXhQqP4EI9nYbNVHptBrRKih0Ou0VuzMnUfkDCBEfObnkdBoFnQiNBjmFUNDZmSvH8+69d7nY
-        G3Yuueae5MnO+/nsvpmd8foPBaGq4G2XrHIbO5BUA9/BS0dSTY3b2EFJBal22cwN1Oz3WEAfOAtM7Zjh
-        yUiPputIz4byez7L+jjFfaEPnQWwXgPfeP0KmgxjVWzEkyPYvfsCCBw7C7gAAifOAmGcLGAEFfZfgzSm
-        BqXeJn8TvlBnVMumHZTUEigl04FMNlM/GiK216JUq+RvAr4y1bJpByV1NaJYnTsLTJTqY3jzZVoHQm/Q
-        jmmnHycrFCPArjgLBFIvwb5nf2abBiK5ohgBNp1hvRkRbWfUvaDuhl12OAkYM4D8RYznEU98kVrniB15
-        BegHQ+4dNU4p1YV3aoY4bEdeAa9oBpH7xAIPwdbnCEf+Rm4BALl0D3zQbmPX/0gFhPoCO91Y7XwGNU7R
-        GS7NBz52f99WnVgOIz3HZX0Lz/sB24yz5n+VkXUAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="btn_Export.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAKFJREFUSEvt
-        lUEKgzAQRXO+4n267dJLWorUc8QZ8ygUmWRGF6L4IJDIf/khLpKuS865k/GW0WKQ8UDzI9K46D4+aH4Q
-        M0sTYs3cCry7wAYvXCDTJ9M6RYufDO3F0obg1gKlXkLor4BPEezrIrC3oEddQ2DPFdmbK4SO/8nEfjmZ
-        tjdXihYvcIN3F9iI8y2qixHNj0j6ZE6LXkcPEn8yT0JKM++1HkHuiIR8AAAAAElFTkSuQmCC
-</value>
-  </data>
 </root>
