@@ -52,6 +52,19 @@
             splitContainer1 = new SplitContainer();
             center_panel = new Panel();
             data_Grid_Available = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            ProductStock_ID = new DataGridViewTextBoxColumn();
+            Product_ID = new DataGridViewTextBoxColumn();
+            Product_Code = new DataGridViewTextBoxColumn();
+            Product_Name = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            Size = new DataGridViewTextBoxColumn();
+            Discount = new DataGridViewTextBoxColumn();
+            Minus = new DataGridViewImageColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Add = new DataGridViewImageColumn();
+            Sell = new DataGridViewImageColumn();
             upper_panel = new Panel();
             label6 = new Label();
             cmd_Category = new ComboBox();
@@ -72,20 +85,8 @@
             btn_Clear_All = new Button();
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            ProductStock_ID = new DataGridViewTextBoxColumn();
-            Product_ID = new DataGridViewTextBoxColumn();
-            Product_Code = new DataGridViewTextBoxColumn();
-            Product_Name = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Size = new DataGridViewTextBoxColumn();
-            Discount = new DataGridViewTextBoxColumn();
-            Minus = new DataGridViewImageColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            Add = new DataGridViewImageColumn();
-            Sell = new DataGridViewImageColumn();
             Column1 = new DataGridViewTextBoxColumn();
+            productstockID = new DataGridViewTextBoxColumn();
             productID = new DataGridViewTextBoxColumn();
             productName = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
@@ -411,6 +412,97 @@
             data_Grid_Available.TabIndex = 8;
             data_Grid_Available.CellContentClick += data_Grid_Available_CellContentClick;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn1.FillWeight = 70.62577F;
+            dataGridViewTextBoxColumn1.HeaderText = "#";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // ProductStock_ID
+            // 
+            ProductStock_ID.HeaderText = "ProductStock_ID";
+            ProductStock_ID.Name = "ProductStock_ID";
+            // 
+            // Product_ID
+            // 
+            Product_ID.HeaderText = "Product_ID";
+            Product_ID.Name = "Product_ID";
+            Product_ID.Visible = false;
+            // 
+            // Product_Code
+            // 
+            Product_Code.HeaderText = "Product_Code";
+            Product_Code.Name = "Product_Code";
+            Product_Code.Visible = false;
+            // 
+            // Product_Name
+            // 
+            Product_Name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Product_Name.FillWeight = 153.369919F;
+            Product_Name.HeaderText = "Name";
+            Product_Name.Name = "Product_Name";
+            // 
+            // Category
+            // 
+            Category.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Category.FillWeight = 111.979416F;
+            Category.HeaderText = "Category";
+            Category.Name = "Category";
+            Category.Visible = false;
+            // 
+            // Price
+            // 
+            Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Price.FillWeight = 120.537521F;
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
+            // 
+            // Size
+            // 
+            Size.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Size.FillWeight = 129.478317F;
+            Size.HeaderText = "Size";
+            Size.Name = "Size";
+            // 
+            // Discount
+            // 
+            Discount.HeaderText = "Discount";
+            Discount.Name = "Discount";
+            Discount.Visible = false;
+            // 
+            // Minus
+            // 
+            Minus.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Minus.FillWeight = 53.5013351F;
+            Minus.HeaderText = "";
+            Minus.Image = (Image)resources.GetObject("Minus.Image");
+            Minus.Name = "Minus";
+            // 
+            // Quantity
+            // 
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Quantity.FillWeight = 90.62495F;
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            // 
+            // Add
+            // 
+            Add.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Add.FillWeight = 47.9555626F;
+            Add.HeaderText = "";
+            Add.Image = (Image)resources.GetObject("Add.Image");
+            Add.Name = "Add";
+            // 
+            // Sell
+            // 
+            Sell.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Sell.HeaderText = "";
+            Sell.Image = (Image)resources.GetObject("Sell.Image");
+            Sell.MinimumWidth = 50;
+            Sell.Name = "Sell";
+            Sell.Width = 50;
+            // 
             // upper_panel
             // 
             upper_panel.BackColor = Color.White;
@@ -490,7 +582,7 @@
             data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             data_Grid_Transaction.ColumnHeadersHeight = 30;
             data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, productID, productName, Column5, orderQuantity, Amount, Remove });
+            data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, productstockID, productID, productName, Column5, orderQuantity, Amount, Remove });
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Window;
             dataGridViewCellStyle4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -672,98 +764,6 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn1.FillWeight = 70.62577F;
-            dataGridViewTextBoxColumn1.HeaderText = "#";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // ProductStock_ID
-            // 
-            ProductStock_ID.HeaderText = "ProductStock_ID";
-            ProductStock_ID.Name = "ProductStock_ID";
-            ProductStock_ID.Visible = false;
-            // 
-            // Product_ID
-            // 
-            Product_ID.HeaderText = "Product_ID";
-            Product_ID.Name = "Product_ID";
-            Product_ID.Visible = false;
-            // 
-            // Product_Code
-            // 
-            Product_Code.HeaderText = "Product_Code";
-            Product_Code.Name = "Product_Code";
-            Product_Code.Visible = false;
-            // 
-            // Product_Name
-            // 
-            Product_Name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Product_Name.FillWeight = 153.369919F;
-            Product_Name.HeaderText = "Name";
-            Product_Name.Name = "Product_Name";
-            // 
-            // Category
-            // 
-            Category.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Category.FillWeight = 111.979416F;
-            Category.HeaderText = "Category";
-            Category.Name = "Category";
-            Category.Visible = false;
-            // 
-            // Price
-            // 
-            Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Price.FillWeight = 120.537521F;
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            // 
-            // Size
-            // 
-            Size.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Size.FillWeight = 129.478317F;
-            Size.HeaderText = "Size";
-            Size.Name = "Size";
-            // 
-            // Discount
-            // 
-            Discount.HeaderText = "Discount";
-            Discount.Name = "Discount";
-            Discount.Visible = false;
-            // 
-            // Minus
-            // 
-            Minus.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Minus.FillWeight = 53.5013351F;
-            Minus.HeaderText = "";
-            Minus.Image = (Image)resources.GetObject("Minus.Image");
-            Minus.Name = "Minus";
-            // 
-            // Quantity
-            // 
-            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Quantity.FillWeight = 90.62495F;
-            Quantity.HeaderText = "Quantity";
-            Quantity.Name = "Quantity";
-            // 
-            // Add
-            // 
-            Add.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Add.FillWeight = 47.9555626F;
-            Add.HeaderText = "";
-            Add.Image = (Image)resources.GetObject("Add.Image");
-            Add.Name = "Add";
-            // 
-            // Sell
-            // 
-            Sell.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Sell.HeaderText = "";
-            Sell.Image = (Image)resources.GetObject("Sell.Image");
-            Sell.MinimumWidth = 50;
-            Sell.Name = "Sell";
-            Sell.Width = 50;
-            // 
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -771,6 +771,12 @@
             Column1.HeaderText = "#";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
+            // 
+            // productstockID
+            // 
+            productstockID.HeaderText = "ProductStock_ID";
+            productstockID.Name = "productstockID";
+            productstockID.ReadOnly = true;
             // 
             // productID
             // 
@@ -914,6 +920,7 @@
         private DataGridViewImageColumn Add;
         private DataGridViewImageColumn Sell;
         private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn productstockID;
         private DataGridViewTextBoxColumn productID;
         private DataGridViewTextBoxColumn productName;
         private DataGridViewTextBoxColumn Column5;

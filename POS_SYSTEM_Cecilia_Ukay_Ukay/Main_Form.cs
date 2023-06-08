@@ -102,7 +102,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             foreach (DataGridViewRow item in data_Grid_Transaction.Rows)
             {
 
-                total += double.Parse(item.Cells[5].Value.ToString());
+                total += double.Parse(item.Cells["Amount"].Value.ToString());
 
             }
 
@@ -172,6 +172,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             if (e.ColumnIndex == data_Grid_Available.Columns["sell"].Index && e.RowIndex >= 0)
             {
                 // selected product's details
+                int product_stockID = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["ProductStock_ID"].Value);
                 int id = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Product_ID"].Value);
                 string productName = data_Grid_Available.Rows[e.RowIndex].Cells["Product_Name"].Value.ToString();
                 decimal price = Convert.ToDecimal(data_Grid_Available.Rows[e.RowIndex].Cells["Price"].Value);
@@ -201,14 +202,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     decimal amount = price * quantity;
 
                     // Add the details to data_grid_transaction
-                    data_Grid_Transaction.Rows.Add(0, id, productName, price, quantity, amount);
+                    data_Grid_Transaction.Rows.Add(0, product_stockID, id, productName, price, quantity, amount);
                     get_total();
                 }
             }
 
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
-                //   DataGridView dataGridView = (DataGridView)sender;
                 string column_available = data_Grid_Available.Columns[e.ColumnIndex].Name;
 
                 if (column_available == "Add")
@@ -287,15 +287,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     // for table order_transction
                     foreach (DataGridViewRow row in data_Grid_Transaction.Rows)
                     {
-                        int productStockID = Convert.ToInt32(row.Cells["productID"].Value);
+                        int productStockID = Convert.ToInt32(row.Cells["productstockID"].Value);
+                        int productID = Convert.ToInt32(row.Cells["productID"].Value);
                         int orderQuantity = Convert.ToInt32(row.Cells["orderQuantity"].Value);
                         decimal amount = Convert.ToDecimal(row.Cells["Amount"].Value);
 
-                        string sql1 = "INSERT INTO Order_Product (OrderProduct_ID, Product_ID, Order_Quantity, Amount) VALUES " +
+                        string sql1 = "INSERT INTO Order_Product (Transaction_ID, Product_ID, Order_Quantity, Amount) VALUES " +
                                       "(@Transaction_ID, @Product_ID, @Order_Quantity, @Amount)";
                         SqlCommand command1 = new SqlCommand(sql1, connect);
 
-                        command1.Parameters.AddWithValue("@OrderProduct_ID", transactionID);
+                        command1.Parameters.AddWithValue("@Transaction_ID", transactionID);
                         command1.Parameters.AddWithValue("@Product_ID", productID);
                         command1.Parameters.AddWithValue("@Order_Quantity", orderQuantity);
                         command1.Parameters.AddWithValue("@Amount", amount);
@@ -303,14 +304,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
 
                         // update
-                        string selectProductStock = "SELECT ProductStock_Qty FROM Product_Stock WHERE ProductStock_ID = @ProductStock_ID";
+                        string selectProductStock = "SELECT ProductStock_Qyt FROM Product_Stock WHERE ProductStock_ID = @ProductStock_ID";
                         SqlCommand selectProductStockCmd = new SqlCommand(selectProductStock, connect);
-                        selectProductStockCmd.Parameters.AddWithValue("@Product_ID", productStockID);
+                        selectProductStockCmd.Parameters.AddWithValue("@ProductStock_ID", productStockID);
                         int currentQuantity = Convert.ToInt32(selectProductStockCmd.ExecuteScalar());
 
                         int updatedQuantity = currentQuantity - orderQuantity;
 
-                        string updateProductStock = "UPDATE Product_Stock SET ProductStock_Qty = @UpdatedQuantity WHERE ProductStock_ID = @ProductStock_ID";
+                        string updateProductStock = "UPDATE Product_Stock SET ProductStock_Qyt = @UpdatedQuantity WHERE ProductStock_ID = @ProductStock_ID";
                         SqlCommand updateProductStockCmd = new SqlCommand(updateProductStock, connect);
                         updateProductStockCmd.Parameters.AddWithValue("@ProductStock_ID", productStockID);
                         updateProductStockCmd.Parameters.AddWithValue("@UpdatedQuantity", updatedQuantity);
