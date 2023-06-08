@@ -28,70 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            data_Purchase_Item = new DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            data_Grid_Today = new DataGridView();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             panel4 = new Panel();
             title_product = new Label();
             panel3 = new Panel();
             btnClose = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)data_Purchase_Item).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)data_Grid_Today).BeginInit();
             panel4.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // data_Purchase_Item
+            // data_Grid_Today
             // 
-            data_Purchase_Item.AllowUserToAddRows = false;
-            data_Purchase_Item.AllowUserToOrderColumns = true;
-            data_Purchase_Item.AllowUserToResizeColumns = false;
-            data_Purchase_Item.AllowUserToResizeRows = false;
-            data_Purchase_Item.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            data_Purchase_Item.BackgroundColor = Color.White;
-            data_Purchase_Item.BorderStyle = BorderStyle.None;
-            data_Purchase_Item.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            data_Purchase_Item.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            data_Purchase_Item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            data_Purchase_Item.ColumnHeadersHeight = 50;
-            data_Purchase_Item.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Purchase_Item.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, Column2 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            data_Purchase_Item.DefaultCellStyle = dataGridViewCellStyle2;
-            data_Purchase_Item.Dock = DockStyle.Fill;
-            data_Purchase_Item.EnableHeadersVisualStyles = false;
-            data_Purchase_Item.Location = new Point(0, 0);
-            data_Purchase_Item.Name = "data_Purchase_Item";
-            data_Purchase_Item.ReadOnly = true;
-            data_Purchase_Item.RowHeadersVisible = false;
-            data_Purchase_Item.RowHeadersWidth = 50;
-            data_Purchase_Item.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            data_Purchase_Item.RowTemplate.Height = 40;
-            data_Purchase_Item.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            data_Purchase_Item.Size = new Size(880, 462);
-            data_Purchase_Item.TabIndex = 6;
+            data_Grid_Today.AllowUserToAddRows = false;
+            data_Grid_Today.AllowUserToOrderColumns = true;
+            data_Grid_Today.AllowUserToResizeColumns = false;
+            data_Grid_Today.AllowUserToResizeRows = false;
+            data_Grid_Today.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            data_Grid_Today.BackgroundColor = Color.White;
+            data_Grid_Today.BorderStyle = BorderStyle.None;
+            data_Grid_Today.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            data_Grid_Today.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            data_Grid_Today.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            data_Grid_Today.ColumnHeadersHeight = 50;
+            data_Grid_Today.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            data_Grid_Today.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, Column2 });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            data_Grid_Today.DefaultCellStyle = dataGridViewCellStyle4;
+            data_Grid_Today.Dock = DockStyle.Fill;
+            data_Grid_Today.EnableHeadersVisualStyles = false;
+            data_Grid_Today.Location = new Point(0, 0);
+            data_Grid_Today.Name = "data_Grid_Today";
+            data_Grid_Today.ReadOnly = true;
+            data_Grid_Today.RowHeadersVisible = false;
+            data_Grid_Today.RowHeadersWidth = 50;
+            data_Grid_Today.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            data_Grid_Today.RowTemplate.Height = 40;
+            data_Grid_Today.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            data_Grid_Today.Size = new Size(880, 462);
+            data_Grid_Today.TabIndex = 6;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn2.FillWeight = 46.70051F;
+            dataGridViewTextBoxColumn2.HeaderText = "#";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn4.FillWeight = 104.868011F;
+            dataGridViewTextBoxColumn4.HeaderText = "Product Name";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.FillWeight = 92.09565F;
+            dataGridViewTextBoxColumn5.HeaderText = "Quantity";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Amount";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // panel4
             // 
-            panel4.Controls.Add(data_Purchase_Item);
+            panel4.Controls.Add(data_Grid_Today);
             panel4.Dock = DockStyle.Fill;
             panel4.Location = new Point(10, 128);
             panel4.Name = "panel4";
@@ -149,37 +180,6 @@
             panel1.Size = new Size(880, 45);
             panel1.TabIndex = 81;
             // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.FillWeight = 46.70051F;
-            dataGridViewTextBoxColumn2.HeaderText = "#";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.FillWeight = 104.868011F;
-            dataGridViewTextBoxColumn4.HeaderText = "Product Name";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.FillWeight = 92.09565F;
-            dataGridViewTextBoxColumn5.HeaderText = "Quantity";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Amount";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
             // View_Today_Sales_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -196,7 +196,7 @@
             Name = "View_Today_Sales_Form";
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)data_Purchase_Item).EndInit();
+            ((System.ComponentModel.ISupportInitialize)data_Grid_Today).EndInit();
             panel4.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -205,7 +205,7 @@
 
         #endregion
 
-        private DataGridView data_Purchase_Item;
+        private DataGridView data_Grid_Today;
         private Panel panel4;
         public Label title_product;
         private Panel panel3;
