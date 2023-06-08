@@ -96,9 +96,9 @@
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(455, 168);
             label1.Name = "label1";
-            label1.Size = new Size(98, 21);
+            label1.Size = new Size(104, 21);
             label1.TabIndex = 11;
-            label1.Text = "Username *";
+            label1.Text = "Staff Name*";
             // 
             // txtUsername
             // 

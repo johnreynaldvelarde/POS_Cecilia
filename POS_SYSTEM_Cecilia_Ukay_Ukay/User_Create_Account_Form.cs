@@ -78,7 +78,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     command.Parameters.AddWithValue("@Staff_Image", select_image);
                     command.Parameters.AddWithValue("@Password", txtPassword.Text);
                     command.Parameters.AddWithValue("@Contact_Number", txtContact.Text);
-                    command.Parameters.AddWithValue("@Role", cmdRole.Text);
+                    command.Parameters.AddWithValue("@Role", cmdRole.SelectedItem);
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
                     command.Parameters.AddWithValue("@Archive", 0);
                     command.ExecuteNonQuery();

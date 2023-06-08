@@ -30,27 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile_Popup_Form));
             panel1 = new Panel();
+            popup_picture = new CircularPictureBox();
             label5 = new Label();
             btn_View_Account = new Label();
-            label3 = new Label();
+            popup_staff_name = new Label();
             panel3 = new Panel();
             btn_Sign_Out = new Label();
             panel2 = new Panel();
             label1 = new Label();
             btn_Close = new Button();
-            circularPictureBox1 = new CircularPictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)popup_picture).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)circularPictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(circularPictureBox1);
+            panel1.Controls.Add(popup_picture);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(btn_View_Account);
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(popup_staff_name);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
@@ -58,6 +58,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(380, 212);
             panel1.TabIndex = 0;
+            // 
+            // popup_picture
+            // 
+            popup_picture.Image = (Image)resources.GetObject("popup_picture.Image");
+            popup_picture.Location = new Point(24, 58);
+            popup_picture.Name = "popup_picture";
+            popup_picture.Size = new Size(103, 103);
+            popup_picture.SizeMode = PictureBoxSizeMode.StretchImage;
+            popup_picture.TabIndex = 6;
+            popup_picture.TabStop = false;
             // 
             // label5
             // 
@@ -81,15 +91,15 @@
             btn_View_Account.TabIndex = 4;
             btn_View_Account.Text = "View Account";
             // 
-            // label3
+            // popup_staff_name
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(146, 78);
-            label3.Name = "label3";
-            label3.Size = new Size(52, 21);
-            label3.TabIndex = 3;
-            label3.Text = "Name";
+            popup_staff_name.AutoSize = true;
+            popup_staff_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            popup_staff_name.Location = new Point(146, 78);
+            popup_staff_name.Name = "popup_staff_name";
+            popup_staff_name.Size = new Size(52, 21);
+            popup_staff_name.TabIndex = 3;
+            popup_staff_name.Text = "Name";
             // 
             // panel3
             // 
@@ -147,16 +157,6 @@
             btn_Close.UseVisualStyleBackColor = true;
             btn_Close.Click += btn_Close_Click;
             // 
-            // circularPictureBox1
-            // 
-            circularPictureBox1.Image = (Image)resources.GetObject("circularPictureBox1.Image");
-            circularPictureBox1.Location = new Point(24, 58);
-            circularPictureBox1.Name = "circularPictureBox1";
-            circularPictureBox1.Size = new Size(103, 103);
-            circularPictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            circularPictureBox1.TabIndex = 6;
-            circularPictureBox1.TabStop = false;
-            // 
             // Profile_Popup_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -172,11 +172,11 @@
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)popup_picture).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)circularPictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -188,9 +188,9 @@
         private Panel panel3;
         private Label btn_Sign_Out;
         private Label btn_View_Account;
-        private Label label3;
         private Label label5;
         private Button btn_Close;
-        private CircularPictureBox circularPictureBox1;
+        public Label popup_staff_name;
+        public CircularPictureBox popup_picture;
     }
 }

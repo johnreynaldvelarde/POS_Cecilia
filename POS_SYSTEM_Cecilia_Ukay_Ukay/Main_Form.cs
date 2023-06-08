@@ -412,7 +412,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
         private void user_profile_Click(object sender, EventArgs e)
         {
+            Account_Class account = new Account_Class();
             Profile_Popup_Form frm = new Profile_Popup_Form();
+            frm.popup_picture.Image = account.Staff_Image;
+            frm.popup_staff_name.Text = account.Staff_Name;
             frm.ShowDialog();
             frm.Dispose();
         }

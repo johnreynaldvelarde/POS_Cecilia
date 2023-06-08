@@ -8,15 +8,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public class Account_Class
     {
-        private string staff_id;
+        private int staff_id;
         private Image staff_image;
         private string staff_name;
         private string staff_role;
 
-        public string Staff_ID
+        public int Staff_ID
         {
             get { return staff_id; }
-            set { Staff_ID = value; }
+            set { staff_id = value; }
         }
 
         public Image Staff_Image
