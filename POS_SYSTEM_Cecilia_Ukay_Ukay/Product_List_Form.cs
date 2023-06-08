@@ -64,7 +64,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     {
                         i += 1;
                         data_Grid_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
-                                                      reader["Price"].ToString(), 1 , reader["Size"].ToString(), reader["Date_Added"].ToString());
+                                                      reader["Price"].ToString(), reader["Size"].ToString(), reader["Date_Added"].ToString());
 
                     }
 

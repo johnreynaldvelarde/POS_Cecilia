@@ -32,7 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btn_Discount = new Button();
             button1 = new Button();
             btn_Add_Product = new Button();
             label1 = new Label();
@@ -43,7 +42,6 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
@@ -55,7 +53,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btn_Discount);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(btn_Add_Product);
             panel1.Controls.Add(label1);
@@ -64,24 +61,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1090, 68);
             panel1.TabIndex = 0;
-            // 
-            // btn_Discount
-            // 
-            btn_Discount.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Discount.Cursor = Cursors.Hand;
-            btn_Discount.FlatAppearance.BorderSize = 0;
-            btn_Discount.FlatStyle = FlatStyle.Flat;
-            btn_Discount.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Discount.ForeColor = Color.White;
-            btn_Discount.Image = (Image)resources.GetObject("btn_Discount.Image");
-            btn_Discount.Location = new Point(461, 9);
-            btn_Discount.Name = "btn_Discount";
-            btn_Discount.Size = new Size(210, 38);
-            btn_Discount.TabIndex = 17;
-            btn_Discount.Text = "Create new discount";
-            btn_Discount.TextAlign = ContentAlignment.MiddleRight;
-            btn_Discount.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Discount.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -161,7 +140,7 @@
             data_Grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Product.ColumnHeadersHeight = 50;
             data_Grid_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column3, Column2, Column4, Column5, Column7, Column8, Edit, Delete });
+            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column3, Column2, Column4, Column7, Column8, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -188,7 +167,7 @@
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 61.7645569F;
+            Column1.FillWeight = 34.5617F;
             Column1.HeaderText = "#";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
@@ -203,7 +182,7 @@
             // Column3
             // 
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 102.940956F;
+            Column3.FillWeight = 122.053375F;
             Column3.HeaderText = "Product Code";
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
@@ -211,7 +190,7 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.FillWeight = 149.732269F;
+            Column2.FillWeight = 148.8379F;
             Column2.HeaderText = "Product Name";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
@@ -219,30 +198,22 @@
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 71.63917F;
+            Column4.FillWeight = 108.821739F;
             Column4.HeaderText = "Price";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 68.0412445F;
-            Column5.HeaderText = "Quantity";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column7.FillWeight = 102.940956F;
+            Column7.FillWeight = 88.8420639F;
             Column7.HeaderText = "Size";
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
             // Column8
             // 
-            Column8.FillWeight = 102.940956F;
+            Column8.FillWeight = 88.8420639F;
             Column8.HeaderText = "Date Added";
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
@@ -294,13 +265,11 @@
         private Button button1;
         private Panel panel2;
         private DataGridView data_Grid_Product;
-        private Button btn_Discount;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewImageColumn Edit;

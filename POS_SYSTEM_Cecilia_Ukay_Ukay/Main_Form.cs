@@ -22,7 +22,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             InitializeComponent();
             button_highligted();
             load_category();
-            //view_product();
+            view_product();
         }
 
 
@@ -291,11 +291,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         int orderQuantity = Convert.ToInt32(row.Cells["orderQuantity"].Value);
                         decimal amount = Convert.ToDecimal(row.Cells["Amount"].Value);
 
-                        string sql1 = "INSERT INTO Order_Product (Transaction_ID, Product_ID, Order_Quantity, Amount) VALUES " +
+                        string sql1 = "INSERT INTO Order_Product (OrderProduct_ID, Product_ID, Order_Quantity, Amount) VALUES " +
                                       "(@Transaction_ID, @Product_ID, @Order_Quantity, @Amount)";
                         SqlCommand command1 = new SqlCommand(sql1, connect);
 
-                        command1.Parameters.AddWithValue("@Transaction_ID", transactionID);
+                        command1.Parameters.AddWithValue("@OrderProduct_ID", transactionID);
                         command1.Parameters.AddWithValue("@Product_ID", productID);
                         command1.Parameters.AddWithValue("@Order_Quantity", orderQuantity);
                         command1.Parameters.AddWithValue("@Amount", amount);

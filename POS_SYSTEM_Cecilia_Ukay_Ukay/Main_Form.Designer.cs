@@ -52,30 +52,12 @@
             splitContainer1 = new SplitContainer();
             center_panel = new Panel();
             data_Grid_Available = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            Product_ID = new DataGridViewTextBoxColumn();
-            Product_Name = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            Price = new DataGridViewTextBoxColumn();
-            Size = new DataGridViewTextBoxColumn();
-            Discount = new DataGridViewTextBoxColumn();
-            Minus = new DataGridViewImageColumn();
-            Quantity = new DataGridViewTextBoxColumn();
-            Add = new DataGridViewImageColumn();
-            Sell = new DataGridViewImageColumn();
             upper_panel = new Panel();
             label6 = new Label();
             cmd_Category = new ComboBox();
             label4 = new Label();
             panel3 = new Panel();
             data_Grid_Transaction = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            productID = new DataGridViewTextBoxColumn();
-            productName = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            orderQuantity = new DataGridViewTextBoxColumn();
-            Amount = new DataGridViewTextBoxColumn();
-            Remove = new DataGridViewImageColumn();
             down_panel = new Panel();
             panel4 = new Panel();
             label7 = new Label();
@@ -90,6 +72,26 @@
             btn_Clear_All = new Button();
             label3 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            ProductStock_ID = new DataGridViewTextBoxColumn();
+            Product_ID = new DataGridViewTextBoxColumn();
+            Product_Code = new DataGridViewTextBoxColumn();
+            Product_Name = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            Size = new DataGridViewTextBoxColumn();
+            Discount = new DataGridViewTextBoxColumn();
+            Minus = new DataGridViewImageColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Add = new DataGridViewImageColumn();
+            Sell = new DataGridViewImageColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            productID = new DataGridViewTextBoxColumn();
+            productName = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            orderQuantity = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            Remove = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)user_profile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -387,7 +389,7 @@
             data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Available.ColumnHeadersHeight = 50;
             data_Grid_Available.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, Product_ID, Product_Name, Category, Price, Size, Discount, Minus, Quantity, Add, Sell });
+            data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, ProductStock_ID, Product_ID, Product_Code, Product_Name, Category, Price, Size, Discount, Minus, Quantity, Add, Sell });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -408,85 +410,6 @@
             data_Grid_Available.Size = new Size(793, 424);
             data_Grid_Available.TabIndex = 8;
             data_Grid_Available.CellContentClick += data_Grid_Available_CellContentClick;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn1.FillWeight = 70.62577F;
-            dataGridViewTextBoxColumn1.HeaderText = "#";
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // Product_ID
-            // 
-            Product_ID.HeaderText = "Product_ID";
-            Product_ID.Name = "Product_ID";
-            Product_ID.Visible = false;
-            // 
-            // Product_Name
-            // 
-            Product_Name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Product_Name.FillWeight = 153.369919F;
-            Product_Name.HeaderText = "Name";
-            Product_Name.Name = "Product_Name";
-            // 
-            // Category
-            // 
-            Category.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Category.FillWeight = 111.979416F;
-            Category.HeaderText = "Category";
-            Category.Name = "Category";
-            Category.Visible = false;
-            // 
-            // Price
-            // 
-            Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Price.FillWeight = 120.537521F;
-            Price.HeaderText = "Price";
-            Price.Name = "Price";
-            // 
-            // Size
-            // 
-            Size.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Size.FillWeight = 129.478317F;
-            Size.HeaderText = "Size";
-            Size.Name = "Size";
-            // 
-            // Discount
-            // 
-            Discount.HeaderText = "Discount";
-            Discount.Name = "Discount";
-            // 
-            // Minus
-            // 
-            Minus.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Minus.FillWeight = 53.5013351F;
-            Minus.HeaderText = "";
-            Minus.Image = (Image)resources.GetObject("Minus.Image");
-            Minus.Name = "Minus";
-            // 
-            // Quantity
-            // 
-            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Quantity.FillWeight = 90.62495F;
-            Quantity.HeaderText = "Quantity";
-            Quantity.Name = "Quantity";
-            // 
-            // Add
-            // 
-            Add.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Add.FillWeight = 47.9555626F;
-            Add.HeaderText = "";
-            Add.Image = (Image)resources.GetObject("Add.Image");
-            Add.Name = "Add";
-            // 
-            // Sell
-            // 
-            Sell.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Sell.HeaderText = "";
-            Sell.Image = (Image)resources.GetObject("Sell.Image");
-            Sell.MinimumWidth = 50;
-            Sell.Name = "Sell";
-            Sell.Width = 50;
             // 
             // upper_panel
             // 
@@ -590,62 +513,6 @@
             data_Grid_Transaction.TabIndex = 7;
             data_Grid_Transaction.CellFormatting += data_Grid_Transaction_CellFormatting;
             // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 34.9684563F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // productID
-            // 
-            productID.HeaderText = "Product_ID";
-            productID.Name = "productID";
-            productID.ReadOnly = true;
-            productID.Visible = false;
-            // 
-            // productName
-            // 
-            productName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            productName.FillWeight = 183.248428F;
-            productName.HeaderText = "Name";
-            productName.Name = "productName";
-            productName.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 93.83203F;
-            Column5.HeaderText = "Price";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // orderQuantity
-            // 
-            orderQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            orderQuantity.FillWeight = 54.8579F;
-            orderQuantity.HeaderText = "Qyt";
-            orderQuantity.Name = "orderQuantity";
-            orderQuantity.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Amount.FillWeight = 91.07616F;
-            Amount.HeaderText = "Amount";
-            Amount.Name = "Amount";
-            Amount.ReadOnly = true;
-            // 
-            // Remove
-            // 
-            Remove.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Remove.HeaderText = "";
-            Remove.Image = (Image)resources.GetObject("Remove.Image");
-            Remove.Name = "Remove";
-            Remove.ReadOnly = true;
-            Remove.Width = 5;
-            // 
             // down_panel
             // 
             down_panel.Controls.Add(panel4);
@@ -675,7 +542,7 @@
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.Location = new Point(15, 18);
             label7.Name = "label7";
-            label7.Size = new Size(131, 21);
+            label7.Size = new Size(130, 21);
             label7.TabIndex = 3;
             label7.Text = "Payment Amount";
             // 
@@ -805,6 +672,153 @@
             timer1.Enabled = true;
             timer1.Tick += timer1_Tick;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn1.FillWeight = 70.62577F;
+            dataGridViewTextBoxColumn1.HeaderText = "#";
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // ProductStock_ID
+            // 
+            ProductStock_ID.HeaderText = "ProductStock_ID";
+            ProductStock_ID.Name = "ProductStock_ID";
+            ProductStock_ID.Visible = false;
+            // 
+            // Product_ID
+            // 
+            Product_ID.HeaderText = "Product_ID";
+            Product_ID.Name = "Product_ID";
+            Product_ID.Visible = false;
+            // 
+            // Product_Code
+            // 
+            Product_Code.HeaderText = "Product_Code";
+            Product_Code.Name = "Product_Code";
+            Product_Code.Visible = false;
+            // 
+            // Product_Name
+            // 
+            Product_Name.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Product_Name.FillWeight = 153.369919F;
+            Product_Name.HeaderText = "Name";
+            Product_Name.Name = "Product_Name";
+            // 
+            // Category
+            // 
+            Category.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Category.FillWeight = 111.979416F;
+            Category.HeaderText = "Category";
+            Category.Name = "Category";
+            Category.Visible = false;
+            // 
+            // Price
+            // 
+            Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Price.FillWeight = 120.537521F;
+            Price.HeaderText = "Price";
+            Price.Name = "Price";
+            // 
+            // Size
+            // 
+            Size.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Size.FillWeight = 129.478317F;
+            Size.HeaderText = "Size";
+            Size.Name = "Size";
+            // 
+            // Discount
+            // 
+            Discount.HeaderText = "Discount";
+            Discount.Name = "Discount";
+            Discount.Visible = false;
+            // 
+            // Minus
+            // 
+            Minus.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Minus.FillWeight = 53.5013351F;
+            Minus.HeaderText = "";
+            Minus.Image = (Image)resources.GetObject("Minus.Image");
+            Minus.Name = "Minus";
+            // 
+            // Quantity
+            // 
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Quantity.FillWeight = 90.62495F;
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            // 
+            // Add
+            // 
+            Add.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Add.FillWeight = 47.9555626F;
+            Add.HeaderText = "";
+            Add.Image = (Image)resources.GetObject("Add.Image");
+            Add.Name = "Add";
+            // 
+            // Sell
+            // 
+            Sell.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Sell.HeaderText = "";
+            Sell.Image = (Image)resources.GetObject("Sell.Image");
+            Sell.MinimumWidth = 50;
+            Sell.Name = "Sell";
+            Sell.Width = 50;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 34.9684563F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // productID
+            // 
+            productID.HeaderText = "Product_ID";
+            productID.Name = "productID";
+            productID.ReadOnly = true;
+            // 
+            // productName
+            // 
+            productName.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            productName.FillWeight = 183.248428F;
+            productName.HeaderText = "Name";
+            productName.Name = "productName";
+            productName.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 93.83203F;
+            Column5.HeaderText = "Price";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // orderQuantity
+            // 
+            orderQuantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            orderQuantity.FillWeight = 54.8579F;
+            orderQuantity.HeaderText = "Qyt";
+            orderQuantity.Name = "orderQuantity";
+            orderQuantity.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            Amount.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Amount.FillWeight = 91.07616F;
+            Amount.HeaderText = "Amount";
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            // 
+            // Remove
+            // 
+            Remove.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Remove.HeaderText = "";
+            Remove.Image = (Image)resources.GetObject("Remove.Image");
+            Remove.Name = "Remove";
+            Remove.ReadOnly = true;
+            Remove.Width = 5;
+            // 
             // Main_Form
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -877,8 +891,19 @@
         private DataGridView data_Grid_Available;
         private Panel upper_panel;
         private Label label4;
+        private Label label6;
+        private ComboBox cmd_Category;
+        private Label label7;
+        public TextBox txt_Payment_Amount;
+        private CircularPictureBox user_profile;
+        public TextBox txt_Refund;
+        private Label label5;
+        private Panel downward_panel;
+        private Panel panel4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn ProductStock_ID;
         private DataGridViewTextBoxColumn Product_ID;
+        private DataGridViewTextBoxColumn Product_Code;
         private DataGridViewTextBoxColumn Product_Name;
         private DataGridViewTextBoxColumn Category;
         private DataGridViewTextBoxColumn Price;
@@ -888,11 +913,6 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewImageColumn Add;
         private DataGridViewImageColumn Sell;
-        private Label label6;
-        private ComboBox cmd_Category;
-        private Label label7;
-        public TextBox txt_Payment_Amount;
-        private CircularPictureBox user_profile;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn productID;
         private DataGridViewTextBoxColumn productName;
@@ -900,9 +920,5 @@
         private DataGridViewTextBoxColumn orderQuantity;
         private DataGridViewTextBoxColumn Amount;
         private DataGridViewImageColumn Remove;
-        public TextBox txt_Refund;
-        private Label label5;
-        private Panel downward_panel;
-        private Panel panel4;
     }
 }
