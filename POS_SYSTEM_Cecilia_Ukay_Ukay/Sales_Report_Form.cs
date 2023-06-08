@@ -22,6 +22,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             MonitorSales();
         }
 
+        decimal today_sales = 0;
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -29,7 +31,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         public void MonitorSales()
         {
-            label_today.Text = GetTodaySales().ToString("#,##0.00");
+            today_sales = Convert.ToDecimal(GetTodaySales().ToString("#,##0.00"));
+            label_today.Text = today_sales.ToString();
+
             // lblWeek.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(week, Transaction_Date) = DATEPART(week, GETDATE()) AND DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
             // lblMonth.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(month, Transaction_Date) = DATEPART(month, GETDATE()) AND DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
             //  lblAnnual.Text = GetTotal("SELECT SUM(Total_Amount) AS total_sum FROM Transaction_Log WHERE DATEPART(year, Transaction_Date) = DATEPART(year, GETDATE())").ToString("#,##0.00");
@@ -65,5 +69,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             return todaySales;
         }
 
+        private void btn_todaySales_Click(object sender, EventArgs e)
+        {
+            View_Today_Sales_Form frm = new View_Today_Sales_Form();
+            frm.ShowDialog();
+        }
     }
 }
