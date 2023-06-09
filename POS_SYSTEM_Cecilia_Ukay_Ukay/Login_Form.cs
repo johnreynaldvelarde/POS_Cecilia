@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Collections;
+using System.Diagnostics;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
@@ -180,7 +181,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Change_DateTime_Click(object sender, EventArgs e)
         {
-
+            Process.Start("control", "timedate.cpl");
         }
     }
 }

@@ -54,7 +54,7 @@
             btnClear.Cursor = Cursors.Hand;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClear.Location = new Point(455, 389);
+            btnClear.Location = new Point(455, 374);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(300, 48);
             btnClear.TabIndex = 15;
@@ -69,7 +69,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(455, 331);
+            btnLogin.Location = new Point(455, 316);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(300, 48);
             btnLogin.TabIndex = 14;
@@ -81,7 +81,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(455, 224);
+            label2.Location = new Point(455, 209);
             label2.Name = "label2";
             label2.Size = new Size(92, 21);
             label2.TabIndex = 13;
@@ -91,7 +91,7 @@
             // 
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(455, 259);
+            txtPassword.Location = new Point(455, 244);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(300, 29);
             txtPassword.TabIndex = 12;
@@ -100,7 +100,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(455, 120);
+            label1.Location = new Point(455, 105);
             label1.Name = "label1";
             label1.Size = new Size(104, 21);
             label1.TabIndex = 11;
@@ -110,7 +110,7 @@
             // 
             txtUsername.BorderStyle = BorderStyle.FixedSingle;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(455, 155);
+            txtUsername.Location = new Point(455, 140);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 29);
             txtUsername.TabIndex = 10;
@@ -152,7 +152,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(425, 487);
+            label3.Location = new Point(425, 479);
             label3.Name = "label3";
             label3.Size = new Size(48, 17);
             label3.TabIndex = 18;
@@ -162,7 +162,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(425, 515);
+            label4.Location = new Point(425, 507);
             label4.Name = "label4";
             label4.Size = new Size(45, 17);
             label4.TabIndex = 19;
@@ -172,7 +172,7 @@
             // 
             label_date.AutoSize = true;
             label_date.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label_date.Location = new Point(479, 487);
+            label_date.Location = new Point(479, 479);
             label_date.Name = "label_date";
             label_date.Size = new Size(48, 17);
             label_date.TabIndex = 20;
@@ -182,7 +182,7 @@
             // 
             label_time.AutoSize = true;
             label_time.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label_time.Location = new Point(479, 515);
+            label_time.Location = new Point(479, 507);
             label_time.Name = "label_time";
             label_time.Size = new Size(45, 17);
             label_time.TabIndex = 21;
@@ -202,7 +202,7 @@
             btn_Change_DateTime.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Change_DateTime.ForeColor = Color.White;
             btn_Change_DateTime.Image = (Image)resources.GetObject("btn_Change_DateTime.Image");
-            btn_Change_DateTime.Location = new Point(425, 544);
+            btn_Change_DateTime.Location = new Point(425, 536);
             btn_Change_DateTime.Name = "btn_Change_DateTime";
             btn_Change_DateTime.Size = new Size(228, 38);
             btn_Change_DateTime.TabIndex = 22;
