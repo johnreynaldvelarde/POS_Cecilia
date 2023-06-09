@@ -31,7 +31,7 @@
             btn_Update = new Button();
             btnClose = new Button();
             panel2 = new Panel();
-            label1 = new Label();
+            label_item = new Label();
             btn_Clear = new Button();
             btn_Save = new Button();
             panel1 = new Panel();
@@ -86,16 +86,16 @@
             panel2.Size = new Size(880, 3);
             panel2.TabIndex = 69;
             // 
-            // label1
+            // label_item
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(12, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(161, 24);
-            label1.TabIndex = 0;
-            label1.Text = "Add new item ";
+            label_item.AutoSize = true;
+            label_item.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label_item.ForeColor = Color.FromArgb(14, 159, 104);
+            label_item.Location = new Point(12, 10);
+            label_item.Name = "label_item";
+            label_item.Size = new Size(161, 24);
+            label_item.TabIndex = 0;
+            label_item.Text = "Add new item ";
             // 
             // btn_Clear
             // 
@@ -129,7 +129,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label_item);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
@@ -275,19 +275,19 @@
         public Button btn_Update;
         private Button btnClose;
         private Panel panel2;
-        private Label label1;
         private Button btn_Clear;
-        private Button btn_Save;
         private Panel panel1;
         private Label label6;
         private TextBox txt_Date_Added;
         private Label label4;
         private Label label3;
-        private TextBox txt_Price;
         private Label label2;
-        private TextBox txt_Item_Name;
-        private ComboBox cmd_Piece;
         private Label label5;
-        private TextBox txt_Item_Code;
+        public Label label_item;
+        public TextBox txt_Price;
+        public TextBox txt_Item_Name;
+        public ComboBox cmd_Piece;
+        public Button btn_Save;
+        public TextBox txt_Item_Code;
     }
 }

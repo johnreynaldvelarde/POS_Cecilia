@@ -486,5 +486,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
 
         }
+
+        private void txt_mainsearch_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
     }
 }

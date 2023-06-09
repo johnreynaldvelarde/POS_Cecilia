@@ -22,7 +22,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             show_item_list();
         }
 
-        private string ItemID, item_name, price, per_piece;
+        private string ItemID, item_code, item_name, price, per_piece;
 
         public void show_item_list()
         {
@@ -62,13 +62,44 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void data_Grid_Item_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string column_item = data_Grid_Item.Columns[e.ColumnIndex].Name;
+
             if (column_item == "Edit")
             {
+                Add_New_Item_Form frm = new Add_New_Item_Form(this);
+                frm.label_item.Text = "Update the item";
+                frm.btn_Save.Enabled = false;
+                frm.btn_Update.Enabled = true;
+                frm.txt_Item_Code.Enabled = false;
+                frm.itemID = ItemID.ToString();
+                frm.txt_Item_Code.Text = item_code;
+                frm.txt_Item_Name.Text = item_name;
+                frm.txt_Price.Text = price;
+                frm.cmd_Piece.SelectedText = per_piece;
+                frm.ShowDialog();
+
 
             }
             else if (column_item == "Delete")
             {
+                if (e.ColumnIndex == data_Grid_Item.Columns["Delete"].Index && e.RowIndex >= 0)
+                {
+                    if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                        {
+                            connect.Open();
+                            string sql = "UPDATE Item SET Archive = 1 WHERE Item_ID = @Item_ID";
+                            SqlCommand command = new SqlCommand(sql, connect);
+                            command.Parameters.AddWithValue("@Item_ID", Convert.ToInt32(ItemID));
+                            command.ExecuteNonQuery();
+                            connect.Close();
 
+                        }
+
+                        data_Grid_Item.Rows.RemoveAt(e.RowIndex);
+                        show_item_list();
+                    }
+                }
             }
         }
 
@@ -78,9 +109,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = data_Grid_Item.CurrentRow.Index;
                 ItemID = data_Grid_Item[1, i].Value.ToString();
-                item_name = data_Grid_Item[2, i].Value.ToString();
-                price = data_Grid_Item[3, i].Value.ToString();
-                per_piece = data_Grid_Item[4, i].Value.ToString();
+                item_code = data_Grid_Item[2, i].Value.ToString();
+                item_name = data_Grid_Item[3, i].Value.ToString();
+                price = data_Grid_Item[4, i].Value.ToString();
+                per_piece = data_Grid_Item[5, i].Value.ToString();
             }
         }
     }
