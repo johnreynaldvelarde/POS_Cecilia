@@ -28,11 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
             center_panel = new Panel();
+            label4 = new Label();
             chart_sales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel11 = new Panel();
             btn_Product = new Button();
@@ -62,6 +66,7 @@
             panel2 = new Panel();
             btnClose = new Button();
             panel1 = new Panel();
+            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             center_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)chart_sales).BeginInit();
             panel11.SuspendLayout();
@@ -70,10 +75,13 @@
             panel8.SuspendLayout();
             panel4.SuspendLayout();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // center_panel
             // 
+            center_panel.Controls.Add(chart1);
+            center_panel.Controls.Add(label4);
             center_panel.Controls.Add(chart_sales);
             center_panel.Controls.Add(panel11);
             center_panel.Controls.Add(panel10);
@@ -84,22 +92,33 @@
             center_panel.Location = new Point(10, 73);
             center_panel.Name = "center_panel";
             center_panel.Padding = new Padding(5, 20, 0, 0);
-            center_panel.Size = new Size(1080, 617);
+            center_panel.Size = new Size(1243, 617);
             center_panel.TabIndex = 24;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(12, 182);
+            label4.Name = "label4";
+            label4.Size = new Size(159, 21);
+            label4.TabIndex = 4;
+            label4.Text = "Top Sales By Month";
             // 
             // chart_sales
             // 
-            chartArea1.Name = "ChartArea1";
-            chart_sales.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart_sales.Legends.Add(legend1);
-            chart_sales.Location = new Point(304, 23);
+            chartArea2.Name = "ChartArea1";
+            chart_sales.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            chart_sales.Legends.Add(legend2);
+            chart_sales.Location = new Point(17, 219);
             chart_sales.Name = "chart_sales";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chart_sales.Series.Add(series1);
-            chart_sales.Size = new Size(414, 229);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Monthly Sales";
+            chart_sales.Series.Add(series2);
+            chart_sales.Size = new Size(576, 383);
             chart_sales.TabIndex = 8;
             chart_sales.Text = "chart1";
             // 
@@ -109,9 +128,9 @@
             panel11.Controls.Add(btn_Product);
             panel11.Controls.Add(label_product_sold);
             panel11.Controls.Add(label23);
-            panel11.Location = new Point(12, 502);
+            panel11.Location = new Point(995, 23);
             panel11.Name = "panel11";
-            panel11.Size = new Size(271, 109);
+            panel11.Size = new Size(240, 109);
             panel11.TabIndex = 7;
             // 
             // btn_Product
@@ -121,7 +140,7 @@
             btn_Product.FlatAppearance.BorderSize = 0;
             btn_Product.FlatStyle = FlatStyle.Flat;
             btn_Product.Image = (Image)resources.GetObject("btn_Product.Image");
-            btn_Product.Location = new Point(242, 3);
+            btn_Product.Location = new Point(207, 3);
             btn_Product.Name = "btn_Product";
             btn_Product.Size = new Size(22, 26);
             btn_Product.TabIndex = 3;
@@ -152,24 +171,24 @@
             // 
             // panel10
             // 
-            panel10.BackColor = Color.FromArgb(78, 181, 234);
+            panel10.BackColor = Color.FromArgb(14, 159, 104);
             panel10.Controls.Add(btn_Annual);
             panel10.Controls.Add(label_annual);
             panel10.Controls.Add(label19);
             panel10.Controls.Add(label20);
-            panel10.Location = new Point(12, 382);
+            panel10.Location = new Point(747, 23);
             panel10.Name = "panel10";
-            panel10.Size = new Size(271, 109);
+            panel10.Size = new Size(240, 109);
             panel10.TabIndex = 6;
             // 
             // btn_Annual
             // 
-            btn_Annual.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Annual.BackColor = Color.FromArgb(14, 159, 104);
             btn_Annual.Cursor = Cursors.Hand;
             btn_Annual.FlatAppearance.BorderSize = 0;
             btn_Annual.FlatStyle = FlatStyle.Flat;
             btn_Annual.Image = (Image)resources.GetObject("btn_Annual.Image");
-            btn_Annual.Location = new Point(242, 3);
+            btn_Annual.Location = new Point(207, 3);
             btn_Annual.Name = "btn_Annual";
             btn_Annual.Size = new Size(22, 26);
             btn_Annual.TabIndex = 3;
@@ -181,7 +200,7 @@
             label_annual.AutoSize = true;
             label_annual.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label_annual.ForeColor = Color.White;
-            label_annual.Location = new Point(102, 45);
+            label_annual.Location = new Point(96, 45);
             label_annual.Name = "label_annual";
             label_annual.Size = new Size(42, 30);
             label_annual.TabIndex = 2;
@@ -192,7 +211,7 @@
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label19.ForeColor = Color.White;
-            label19.Location = new Point(52, 45);
+            label19.Location = new Point(46, 45);
             label19.Name = "label19";
             label19.Size = new Size(52, 30);
             label19.TabIndex = 1;
@@ -211,24 +230,24 @@
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(78, 181, 234);
+            panel9.BackColor = Color.FromArgb(14, 159, 104);
             panel9.Controls.Add(btn_Monthly);
             panel9.Controls.Add(label_monthly);
             panel9.Controls.Add(label16);
             panel9.Controls.Add(label17);
-            panel9.Location = new Point(12, 263);
+            panel9.Location = new Point(501, 23);
             panel9.Name = "panel9";
-            panel9.Size = new Size(271, 109);
+            panel9.Size = new Size(240, 109);
             panel9.TabIndex = 5;
             // 
             // btn_Monthly
             // 
-            btn_Monthly.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Monthly.BackColor = Color.FromArgb(14, 159, 104);
             btn_Monthly.Cursor = Cursors.Hand;
             btn_Monthly.FlatAppearance.BorderSize = 0;
             btn_Monthly.FlatStyle = FlatStyle.Flat;
             btn_Monthly.Image = (Image)resources.GetObject("btn_Monthly.Image");
-            btn_Monthly.Location = new Point(242, 3);
+            btn_Monthly.Location = new Point(207, 3);
             btn_Monthly.Name = "btn_Monthly";
             btn_Monthly.Size = new Size(22, 26);
             btn_Monthly.TabIndex = 3;
@@ -240,7 +259,7 @@
             label_monthly.AutoSize = true;
             label_monthly.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label_monthly.ForeColor = Color.White;
-            label_monthly.Location = new Point(102, 45);
+            label_monthly.Location = new Point(96, 45);
             label_monthly.Name = "label_monthly";
             label_monthly.Size = new Size(42, 30);
             label_monthly.TabIndex = 2;
@@ -251,7 +270,7 @@
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label16.ForeColor = Color.White;
-            label16.Location = new Point(52, 45);
+            label16.Location = new Point(46, 45);
             label16.Name = "label16";
             label16.Size = new Size(52, 30);
             label16.TabIndex = 1;
@@ -270,24 +289,24 @@
             // 
             // panel8
             // 
-            panel8.BackColor = Color.FromArgb(78, 181, 234);
+            panel8.BackColor = Color.FromArgb(14, 159, 104);
             panel8.Controls.Add(btn_Weekly);
             panel8.Controls.Add(label_weekly);
             panel8.Controls.Add(label13);
             panel8.Controls.Add(label14);
-            panel8.Location = new Point(12, 143);
+            panel8.Location = new Point(255, 23);
             panel8.Name = "panel8";
-            panel8.Size = new Size(271, 109);
+            panel8.Size = new Size(240, 109);
             panel8.TabIndex = 4;
             // 
             // btn_Weekly
             // 
-            btn_Weekly.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Weekly.BackColor = Color.FromArgb(14, 159, 104);
             btn_Weekly.Cursor = Cursors.Hand;
             btn_Weekly.FlatAppearance.BorderSize = 0;
             btn_Weekly.FlatStyle = FlatStyle.Flat;
             btn_Weekly.Image = (Image)resources.GetObject("btn_Weekly.Image");
-            btn_Weekly.Location = new Point(242, 3);
+            btn_Weekly.Location = new Point(207, 3);
             btn_Weekly.Name = "btn_Weekly";
             btn_Weekly.Size = new Size(22, 26);
             btn_Weekly.TabIndex = 3;
@@ -299,7 +318,7 @@
             label_weekly.AutoSize = true;
             label_weekly.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label_weekly.ForeColor = Color.White;
-            label_weekly.Location = new Point(102, 45);
+            label_weekly.Location = new Point(96, 45);
             label_weekly.Name = "label_weekly";
             label_weekly.Size = new Size(42, 30);
             label_weekly.TabIndex = 2;
@@ -310,7 +329,7 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label13.ForeColor = Color.White;
-            label13.Location = new Point(52, 45);
+            label13.Location = new Point(46, 45);
             label13.Name = "label13";
             label13.Size = new Size(52, 30);
             label13.TabIndex = 1;
@@ -329,24 +348,24 @@
             // 
             // panel4
             // 
-            panel4.BackColor = Color.FromArgb(78, 181, 234);
+            panel4.BackColor = Color.FromArgb(14, 159, 104);
             panel4.Controls.Add(btn_todaySales);
             panel4.Controls.Add(label_today);
             panel4.Controls.Add(label3);
             panel4.Controls.Add(label2);
-            panel4.Location = new Point(12, 23);
+            panel4.Location = new Point(9, 23);
             panel4.Name = "panel4";
-            panel4.Size = new Size(271, 109);
+            panel4.Size = new Size(240, 109);
             panel4.TabIndex = 0;
             // 
             // btn_todaySales
             // 
-            btn_todaySales.BackColor = Color.FromArgb(78, 181, 234);
+            btn_todaySales.BackColor = Color.FromArgb(14, 159, 104);
             btn_todaySales.Cursor = Cursors.Hand;
             btn_todaySales.FlatAppearance.BorderSize = 0;
             btn_todaySales.FlatStyle = FlatStyle.Flat;
             btn_todaySales.Image = (Image)resources.GetObject("btn_todaySales.Image");
-            btn_todaySales.Location = new Point(242, 3);
+            btn_todaySales.Location = new Point(207, 3);
             btn_todaySales.Name = "btn_todaySales";
             btn_todaySales.Size = new Size(22, 26);
             btn_todaySales.TabIndex = 3;
@@ -358,7 +377,7 @@
             label_today.AutoSize = true;
             label_today.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label_today.ForeColor = Color.White;
-            label_today.Location = new Point(102, 45);
+            label_today.Location = new Point(96, 45);
             label_today.Name = "label_today";
             label_today.Size = new Size(42, 30);
             label_today.TabIndex = 2;
@@ -369,7 +388,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(52, 45);
+            label3.Location = new Point(46, 45);
             label3.Name = "label3";
             label3.Size = new Size(52, 30);
             label3.TabIndex = 1;
@@ -403,7 +422,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(10, 70);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1080, 3);
+            panel2.Size = new Size(1243, 3);
             panel2.TabIndex = 22;
             // 
             // btnClose
@@ -412,7 +431,7 @@
             btnClose.FlatAppearance.BorderSize = 0;
             btnClose.FlatStyle = FlatStyle.Flat;
             btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClose.Location = new Point(1045, 0);
+            btnClose.Location = new Point(1208, 0);
             btnClose.Name = "btnClose";
             btnClose.Size = new Size(55, 27);
             btnClose.TabIndex = 20;
@@ -426,15 +445,31 @@
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1080, 60);
+            panel1.Size = new Size(1243, 60);
             panel1.TabIndex = 21;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart1.Legends.Add(legend1);
+            chart1.Location = new Point(648, 219);
+            chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Monthly Sales";
+            chart1.Series.Add(series1);
+            chart1.Size = new Size(576, 383);
+            chart1.TabIndex = 9;
+            chart1.Text = "chart1";
             // 
             // Sales_Report_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1100, 700);
+            ClientSize = new Size(1263, 700);
             ControlBox = false;
             Controls.Add(center_panel);
             Controls.Add(panel2);
@@ -445,6 +480,7 @@
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
             center_panel.ResumeLayout(false);
+            center_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)chart_sales).EndInit();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
@@ -458,6 +494,7 @@
             panel4.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
         }
 
@@ -493,5 +530,7 @@
         private Label label13;
         private Label label14;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_sales;
+        private Label label4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }

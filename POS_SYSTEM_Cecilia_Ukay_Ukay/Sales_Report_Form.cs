@@ -33,6 +33,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             label_weekly.Text = GetWeeklySales().ToString("#,##0.00");
             label_monthly.Text = GetMonthlySales().ToString("#,##0.00");
             label_annual.Text = GetAnnualSales().ToString("#,##0.00");
+            label_product_sold.Text = GetProductTotal().ToString();
 
         }
 
@@ -157,6 +158,38 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             return annual_sales;
+        }
+
+        public int GetProductTotal()
+        {
+            int product_total = 0;
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "SELECT SUM(Order_Quantity) AS TotalQuantity FROM Order_Product";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        if (!reader.IsDBNull(0))
+                        {
+                            product_total = reader.GetInt32(0);
+                        }
+                    }
+
+                    reader.Close();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return product_total;
         }
 
         public void chart_SalesMonth()
