@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
             center_panel = new Panel();
-            cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             panel11 = new Panel();
-            btn_Psold = new Button();
+            btn_Product = new Button();
             label_product_sold = new Label();
             label23 = new Label();
             panel10 = new Panel();
@@ -70,7 +69,6 @@
             // 
             // center_panel
             // 
-            center_panel.Controls.Add(cartesianChart1);
             center_panel.Controls.Add(panel11);
             center_panel.Controls.Add(panel10);
             center_panel.Controls.Add(panel9);
@@ -83,18 +81,10 @@
             center_panel.Size = new Size(1080, 617);
             center_panel.TabIndex = 24;
             // 
-            // cartesianChart1
-            // 
-            cartesianChart1.Location = new Point(289, 23);
-            cartesianChart1.Name = "cartesianChart1";
-            cartesianChart1.Size = new Size(348, 229);
-            cartesianChart1.TabIndex = 8;
-            cartesianChart1.Text = "cartesianChart1";
-            // 
             // panel11
             // 
             panel11.BackColor = Color.FromArgb(78, 181, 234);
-            panel11.Controls.Add(btn_Psold);
+            panel11.Controls.Add(btn_Product);
             panel11.Controls.Add(label_product_sold);
             panel11.Controls.Add(label23);
             panel11.Location = new Point(12, 502);
@@ -102,19 +92,19 @@
             panel11.Size = new Size(271, 109);
             panel11.TabIndex = 7;
             // 
-            // btn_Psold
+            // btn_Product
             // 
-            btn_Psold.BackColor = Color.FromArgb(78, 181, 234);
-            btn_Psold.Cursor = Cursors.Hand;
-            btn_Psold.FlatAppearance.BorderSize = 0;
-            btn_Psold.FlatStyle = FlatStyle.Flat;
-            btn_Psold.Image = (Image)resources.GetObject("btn_Psold.Image");
-            btn_Psold.Location = new Point(242, 3);
-            btn_Psold.Name = "btn_Psold";
-            btn_Psold.Size = new Size(22, 26);
-            btn_Psold.TabIndex = 3;
-            btn_Psold.UseVisualStyleBackColor = false;
-            btn_Psold.Click += btn_Psold_Click;
+            btn_Product.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Product.Cursor = Cursors.Hand;
+            btn_Product.FlatAppearance.BorderSize = 0;
+            btn_Product.FlatStyle = FlatStyle.Flat;
+            btn_Product.Image = (Image)resources.GetObject("btn_Product.Image");
+            btn_Product.Location = new Point(242, 3);
+            btn_Product.Name = "btn_Product";
+            btn_Product.Size = new Size(22, 26);
+            btn_Product.TabIndex = 3;
+            btn_Product.UseVisualStyleBackColor = false;
+            btn_Product.Click += btn_Product_Click;
             // 
             // label_product_sold
             // 
@@ -461,7 +451,7 @@
         private Label label_today;
         private Button btn_todaySales;
         private Panel panel11;
-        private Button btn_Psold;
+        private Button btn_Product;
         private Label label_product_sold;
         private Label label23;
         private Panel panel10;
@@ -479,6 +469,5 @@
         private Label label_weekly;
         private Label label13;
         private Label label14;
-        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }

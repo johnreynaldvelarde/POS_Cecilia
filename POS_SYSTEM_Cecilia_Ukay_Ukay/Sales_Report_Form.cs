@@ -8,9 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LiveCharts;
-using LiveCharts.WinForms;
-using LiveCharts.Wpf;
+
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
@@ -22,7 +20,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             MonitorSales();
-            PopulateChart();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -176,61 +173,20 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Monthly_Click(object sender, EventArgs e)
         {
-
+            View_Monthly_Sales_Form frm = new View_Monthly_Sales_Form();
+            frm.ShowDialog();
         }
 
         private void btn_Annual_Click(object sender, EventArgs e)
         {
-
+            View_Annual_Sales_Form frm = new View_Annual_Sales_Form();
+            frm.ShowDialog();
         }
 
-        private void btn_Psold_Click(object sender, EventArgs e)
+        private void btn_Product_Click(object sender, EventArgs e)
         {
-
+            View_Product_Sold_Form frm = new View_Product_Sold_Form();
+            frm.ShowDialog();
         }
-
-
-        private void PopulateChart()
-        {
-            // Create a new CartesianChart instance
-            var chart = new LiveCharts.WinForms.CartesianChart();
-
-            // Create a new SeriesCollection
-            var seriesCollection = new SeriesCollection();
-
-            // Add some sample data
-            seriesCollection.Add(new LineSeries
-            {
-                Title = "Series 1",
-                Values = new ChartValues<double> { 3, 5, 7, 4, 2 }
-            });
-
-            seriesCollection.Add(new LineSeries
-            {
-                Title = "Series 2",
-                Values = new ChartValues<double> { 7, 2, 4, 2, 5 }
-            });
-
-            // Assign the SeriesCollection to the chart
-            chart.Series = seriesCollection;
-
-            // Set the X and Y axis labels
-            chart.AxisX.Add(new Axis
-            {
-                Title = "X Axis",
-                Labels = new[] { "A", "B", "C", "D", "E" }
-            });
-
-            chart.AxisY.Add(new Axis
-            {
-                Title = "Y Axis"
-            });
-
-            // Add the chart to your form's controls
-            cartesianChart1.Dock = DockStyle.Fill;
-            Controls.Add(cartesianChart1);
-        }
-
-        
     }
 }
