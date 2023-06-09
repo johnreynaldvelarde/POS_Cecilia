@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LiveCharts;
+using LiveCharts.WinForms;
 using LiveCharts.Wpf;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
@@ -161,24 +162,20 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             return annual_sales;
         }
 
-
-
-
-
-
         private void btn_todaySales_Click(object sender, EventArgs e)
         {
             View_Today_Sales_Form frm = new View_Today_Sales_Form();
             frm.ShowDialog();
         }
 
+
         private void PopulateChart()
         {
             // Create a new CartesianChart instance
-            CartesianChart chart = new CartesianChart();
+            var chart = new LiveCharts.WinForms.CartesianChart();
 
             // Create a new SeriesCollection
-            SeriesCollection seriesCollection = new SeriesCollection();
+            var seriesCollection = new SeriesCollection();
 
             // Add some sample data
             seriesCollection.Add(new LineSeries
@@ -212,5 +209,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             cartesianChart1.Dock = DockStyle.Fill;
             Controls.Add(cartesianChart1);
         }
+
     }
 }
