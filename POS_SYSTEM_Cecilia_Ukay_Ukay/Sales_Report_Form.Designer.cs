@@ -32,21 +32,21 @@
             center_panel = new Panel();
             cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             panel11 = new Panel();
-            button4 = new Button();
+            btn_Psold = new Button();
             label_product_sold = new Label();
             label23 = new Label();
             panel10 = new Panel();
-            button3 = new Button();
+            btn_Annual = new Button();
             label_annual = new Label();
             label19 = new Label();
             label20 = new Label();
             panel9 = new Panel();
-            button2 = new Button();
+            btn_Monthly = new Button();
             label_monthly = new Label();
             label16 = new Label();
             label17 = new Label();
             panel8 = new Panel();
-            button1 = new Button();
+            btn_Weekly = new Button();
             label_weekly = new Label();
             label13 = new Label();
             label14 = new Label();
@@ -94,7 +94,7 @@
             // panel11
             // 
             panel11.BackColor = Color.FromArgb(78, 181, 234);
-            panel11.Controls.Add(button4);
+            panel11.Controls.Add(btn_Psold);
             panel11.Controls.Add(label_product_sold);
             panel11.Controls.Add(label23);
             panel11.Location = new Point(12, 502);
@@ -102,18 +102,19 @@
             panel11.Size = new Size(271, 109);
             panel11.TabIndex = 7;
             // 
-            // button4
+            // btn_Psold
             // 
-            button4.BackColor = Color.FromArgb(78, 181, 234);
-            button4.Cursor = Cursors.Hand;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(242, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(22, 26);
-            button4.TabIndex = 3;
-            button4.UseVisualStyleBackColor = false;
+            btn_Psold.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Psold.Cursor = Cursors.Hand;
+            btn_Psold.FlatAppearance.BorderSize = 0;
+            btn_Psold.FlatStyle = FlatStyle.Flat;
+            btn_Psold.Image = (Image)resources.GetObject("btn_Psold.Image");
+            btn_Psold.Location = new Point(242, 3);
+            btn_Psold.Name = "btn_Psold";
+            btn_Psold.Size = new Size(22, 26);
+            btn_Psold.TabIndex = 3;
+            btn_Psold.UseVisualStyleBackColor = false;
+            btn_Psold.Click += btn_Psold_Click;
             // 
             // label_product_sold
             // 
@@ -140,7 +141,7 @@
             // panel10
             // 
             panel10.BackColor = Color.FromArgb(78, 181, 234);
-            panel10.Controls.Add(button3);
+            panel10.Controls.Add(btn_Annual);
             panel10.Controls.Add(label_annual);
             panel10.Controls.Add(label19);
             panel10.Controls.Add(label20);
@@ -149,18 +150,19 @@
             panel10.Size = new Size(271, 109);
             panel10.TabIndex = 6;
             // 
-            // button3
+            // btn_Annual
             // 
-            button3.BackColor = Color.FromArgb(78, 181, 234);
-            button3.Cursor = Cursors.Hand;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(242, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(22, 26);
-            button3.TabIndex = 3;
-            button3.UseVisualStyleBackColor = false;
+            btn_Annual.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Annual.Cursor = Cursors.Hand;
+            btn_Annual.FlatAppearance.BorderSize = 0;
+            btn_Annual.FlatStyle = FlatStyle.Flat;
+            btn_Annual.Image = (Image)resources.GetObject("btn_Annual.Image");
+            btn_Annual.Location = new Point(242, 3);
+            btn_Annual.Name = "btn_Annual";
+            btn_Annual.Size = new Size(22, 26);
+            btn_Annual.TabIndex = 3;
+            btn_Annual.UseVisualStyleBackColor = false;
+            btn_Annual.Click += btn_Annual_Click;
             // 
             // label_annual
             // 
@@ -198,7 +200,7 @@
             // panel9
             // 
             panel9.BackColor = Color.FromArgb(78, 181, 234);
-            panel9.Controls.Add(button2);
+            panel9.Controls.Add(btn_Monthly);
             panel9.Controls.Add(label_monthly);
             panel9.Controls.Add(label16);
             panel9.Controls.Add(label17);
@@ -207,18 +209,19 @@
             panel9.Size = new Size(271, 109);
             panel9.TabIndex = 5;
             // 
-            // button2
+            // btn_Monthly
             // 
-            button2.BackColor = Color.FromArgb(78, 181, 234);
-            button2.Cursor = Cursors.Hand;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(242, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(22, 26);
-            button2.TabIndex = 3;
-            button2.UseVisualStyleBackColor = false;
+            btn_Monthly.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Monthly.Cursor = Cursors.Hand;
+            btn_Monthly.FlatAppearance.BorderSize = 0;
+            btn_Monthly.FlatStyle = FlatStyle.Flat;
+            btn_Monthly.Image = (Image)resources.GetObject("btn_Monthly.Image");
+            btn_Monthly.Location = new Point(242, 3);
+            btn_Monthly.Name = "btn_Monthly";
+            btn_Monthly.Size = new Size(22, 26);
+            btn_Monthly.TabIndex = 3;
+            btn_Monthly.UseVisualStyleBackColor = false;
+            btn_Monthly.Click += btn_Monthly_Click;
             // 
             // label_monthly
             // 
@@ -256,7 +259,7 @@
             // panel8
             // 
             panel8.BackColor = Color.FromArgb(78, 181, 234);
-            panel8.Controls.Add(button1);
+            panel8.Controls.Add(btn_Weekly);
             panel8.Controls.Add(label_weekly);
             panel8.Controls.Add(label13);
             panel8.Controls.Add(label14);
@@ -265,18 +268,19 @@
             panel8.Size = new Size(271, 109);
             panel8.TabIndex = 4;
             // 
-            // button1
+            // btn_Weekly
             // 
-            button1.BackColor = Color.FromArgb(78, 181, 234);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(242, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(22, 26);
-            button1.TabIndex = 3;
-            button1.UseVisualStyleBackColor = false;
+            btn_Weekly.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Weekly.Cursor = Cursors.Hand;
+            btn_Weekly.FlatAppearance.BorderSize = 0;
+            btn_Weekly.FlatStyle = FlatStyle.Flat;
+            btn_Weekly.Image = (Image)resources.GetObject("btn_Weekly.Image");
+            btn_Weekly.Location = new Point(242, 3);
+            btn_Weekly.Name = "btn_Weekly";
+            btn_Weekly.Size = new Size(22, 26);
+            btn_Weekly.TabIndex = 3;
+            btn_Weekly.UseVisualStyleBackColor = false;
+            btn_Weekly.Click += btn_Weekly_Click;
             // 
             // label_weekly
             // 
@@ -457,21 +461,21 @@
         private Label label_today;
         private Button btn_todaySales;
         private Panel panel11;
-        private Button button4;
+        private Button btn_Psold;
         private Label label_product_sold;
         private Label label23;
         private Panel panel10;
-        private Button button3;
+        private Button btn_Annual;
         private Label label_annual;
         private Label label19;
         private Label label20;
         private Panel panel9;
-        private Button button2;
+        private Button btn_Monthly;
         private Label label_monthly;
         private Label label16;
         private Label label17;
         private Panel panel8;
-        private Button button1;
+        private Button btn_Weekly;
         private Label label_weekly;
         private Label label13;
         private Label label14;

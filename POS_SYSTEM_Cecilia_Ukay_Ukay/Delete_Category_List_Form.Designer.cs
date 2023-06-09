@@ -110,7 +110,7 @@
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 60F;
+            Column1.FillWeight = 108.199493F;
             Column1.HeaderText = "#";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
@@ -126,6 +126,7 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 149.594437F;
             Column2.HeaderText = "Category Name";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
@@ -133,29 +134,28 @@
             // Column5
             // 
             Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 93.4010239F;
             Column5.HeaderText = "Date Added";
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
             // Restore
             // 
-            Restore.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Restore.FillWeight = 54.4025269F;
             Restore.HeaderText = "";
             Restore.Image = (Image)resources.GetObject("Restore.Image");
             Restore.MinimumWidth = 50;
             Restore.Name = "Restore";
             Restore.ReadOnly = true;
-            Restore.Width = 50;
             // 
             // Total_Delete
             // 
-            Total_Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Total_Delete.FillWeight = 54.4025269F;
             Total_Delete.HeaderText = "";
             Total_Delete.Image = (Image)resources.GetObject("Total_Delete.Image");
             Total_Delete.MinimumWidth = 50;
             Total_Delete.Name = "Total_Delete";
             Total_Delete.ReadOnly = true;
-            Total_Delete.Width = 50;
             // 
             // Delete_Category_List_Form
             // 

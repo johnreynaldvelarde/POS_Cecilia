@@ -168,6 +168,27 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.ShowDialog();
         }
 
+        private void btn_Weekly_Click(object sender, EventArgs e)
+        {
+            View_Weekly_Sales_Form frm = new View_Weekly_Sales_Form();
+            frm.ShowDialog();
+        }
+
+        private void btn_Monthly_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Annual_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Psold_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void PopulateChart()
         {
@@ -210,5 +231,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Controls.Add(cartesianChart1);
         }
 
+        
     }
 }
