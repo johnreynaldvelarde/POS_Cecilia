@@ -28,8 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
             center_panel = new Panel();
+            chart_sales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel11 = new Panel();
             btn_Product = new Button();
             label_product_sold = new Label();
@@ -59,6 +63,7 @@
             btnClose = new Button();
             panel1 = new Panel();
             center_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart_sales).BeginInit();
             panel11.SuspendLayout();
             panel10.SuspendLayout();
             panel9.SuspendLayout();
@@ -69,6 +74,7 @@
             // 
             // center_panel
             // 
+            center_panel.Controls.Add(chart_sales);
             center_panel.Controls.Add(panel11);
             center_panel.Controls.Add(panel10);
             center_panel.Controls.Add(panel9);
@@ -80,6 +86,22 @@
             center_panel.Padding = new Padding(5, 20, 0, 0);
             center_panel.Size = new Size(1080, 617);
             center_panel.TabIndex = 24;
+            // 
+            // chart_sales
+            // 
+            chartArea1.Name = "ChartArea1";
+            chart_sales.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart_sales.Legends.Add(legend1);
+            chart_sales.Location = new Point(304, 23);
+            chart_sales.Name = "chart_sales";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chart_sales.Series.Add(series1);
+            chart_sales.Size = new Size(414, 229);
+            chart_sales.TabIndex = 8;
+            chart_sales.Text = "chart1";
             // 
             // panel11
             // 
@@ -423,6 +445,7 @@
             Padding = new Padding(10);
             StartPosition = FormStartPosition.CenterScreen;
             center_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)chart_sales).EndInit();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
             panel10.ResumeLayout(false);
@@ -469,5 +492,6 @@
         private Label label_weekly;
         private Label label13;
         private Label label14;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_sales;
     }
 }

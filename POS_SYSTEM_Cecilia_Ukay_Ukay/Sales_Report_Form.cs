@@ -159,6 +159,18 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             return annual_sales;
         }
 
+        public void chart_SalesMonth()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
         private void btn_todaySales_Click(object sender, EventArgs e)
         {
             View_Today_Sales_Form frm = new View_Today_Sales_Form();
