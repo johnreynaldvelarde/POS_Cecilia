@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Microsoft.Office.Interop.Excel;
 using System.IO;
 
 
@@ -113,9 +112,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
+        
         // export in excel
         private void btn_Export_Click(object sender, EventArgs e)
         {
+        /*
             var excelApp = new Microsoft.Office.Interop.Excel.Application();
             var workbook = excelApp.Workbooks.Add();
 
@@ -145,8 +146,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             workbook.Close();
             excelApp.Quit();
             System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+        */
         }
 
-
+            
     }
+        
 }

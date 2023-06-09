@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Microsoft.Office.Interop.Excel;
+
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
