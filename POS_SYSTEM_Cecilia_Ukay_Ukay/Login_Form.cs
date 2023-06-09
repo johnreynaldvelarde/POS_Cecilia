@@ -146,15 +146,18 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             */
         }
 
+
         private void openForm_Click(object sender, EventArgs e) //----------This is a sample bttn only to open the other form
         {
             Inventory_Form showForm = new Inventory_Form();
             showForm.Show();
         }
 
+
         private void Login_Form_Load(object sender, EventArgs e)
         {
-
+            label_date.Text = DateTime.Now.ToLongDateString();
+            label_time.Text = DateTime.Now.ToLongTimeString();
         }
 
         // button for application exit
@@ -167,6 +170,17 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label_time.Text = DateTime.Now.ToLongTimeString();
+            timer1.Start();
+        }
+
+        private void btn_Change_DateTime_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

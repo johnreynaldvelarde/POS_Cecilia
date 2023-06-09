@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
             btnClear = new Button();
             btnLogin = new Button();
@@ -38,7 +39,12 @@
             btnClose = new Button();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            openForm = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            label_date = new Label();
+            label_time = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            btn_Change_DateTime = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -48,7 +54,7 @@
             btnClear.Cursor = Cursors.Hand;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClear.Location = new Point(455, 437);
+            btnClear.Location = new Point(455, 389);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(300, 48);
             btnClear.TabIndex = 15;
@@ -63,7 +69,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(455, 379);
+            btnLogin.Location = new Point(455, 331);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(300, 48);
             btnLogin.TabIndex = 14;
@@ -75,7 +81,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(455, 272);
+            label2.Location = new Point(455, 224);
             label2.Name = "label2";
             label2.Size = new Size(92, 21);
             label2.TabIndex = 13;
@@ -85,7 +91,7 @@
             // 
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(455, 307);
+            txtPassword.Location = new Point(455, 259);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(300, 29);
             txtPassword.TabIndex = 12;
@@ -94,7 +100,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(455, 168);
+            label1.Location = new Point(455, 120);
             label1.Name = "label1";
             label1.Size = new Size(104, 21);
             label1.TabIndex = 11;
@@ -104,7 +110,7 @@
             // 
             txtUsername.BorderStyle = BorderStyle.FixedSingle;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(455, 203);
+            txtUsername.Location = new Point(455, 155);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 29);
             txtUsername.TabIndex = 10;
@@ -142,20 +148,69 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // openForm
+            // label3
             // 
-            openForm.BackColor = Color.FromArgb(14, 159, 104);
-            openForm.Cursor = Cursors.Hand;
-            openForm.FlatStyle = FlatStyle.Flat;
-            openForm.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            openForm.ForeColor = Color.White;
-            openForm.Location = new Point(422, 34);
-            openForm.Name = "openForm";
-            openForm.Size = new Size(181, 34);
-            openForm.TabIndex = 17;
-            openForm.Text = "Open Another Form Test";
-            openForm.UseVisualStyleBackColor = false;
-            openForm.Click += openForm_Click;
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(425, 487);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 17);
+            label3.TabIndex = 18;
+            label3.Text = "Date :";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(425, 515);
+            label4.Name = "label4";
+            label4.Size = new Size(45, 17);
+            label4.TabIndex = 19;
+            label4.Text = "Time :";
+            // 
+            // label_date
+            // 
+            label_date.AutoSize = true;
+            label_date.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label_date.Location = new Point(479, 487);
+            label_date.Name = "label_date";
+            label_date.Size = new Size(48, 17);
+            label_date.TabIndex = 20;
+            label_date.Text = "Date :";
+            // 
+            // label_time
+            // 
+            label_time.AutoSize = true;
+            label_time.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label_time.Location = new Point(479, 515);
+            label_time.Name = "label_time";
+            label_time.Size = new Size(45, 17);
+            label_time.TabIndex = 21;
+            label_time.Text = "Time :";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
+            // btn_Change_DateTime
+            // 
+            btn_Change_DateTime.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Change_DateTime.Cursor = Cursors.Hand;
+            btn_Change_DateTime.FlatAppearance.BorderSize = 0;
+            btn_Change_DateTime.FlatStyle = FlatStyle.Flat;
+            btn_Change_DateTime.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Change_DateTime.ForeColor = Color.White;
+            btn_Change_DateTime.Image = (Image)resources.GetObject("btn_Change_DateTime.Image");
+            btn_Change_DateTime.Location = new Point(425, 544);
+            btn_Change_DateTime.Name = "btn_Change_DateTime";
+            btn_Change_DateTime.Size = new Size(228, 38);
+            btn_Change_DateTime.TabIndex = 22;
+            btn_Change_DateTime.Text = "  Change date and time";
+            btn_Change_DateTime.TextAlign = ContentAlignment.MiddleRight;
+            btn_Change_DateTime.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Change_DateTime.UseVisualStyleBackColor = false;
+            btn_Change_DateTime.Click += btn_Change_DateTime_Click;
             // 
             // Login_Form
             // 
@@ -164,7 +219,11 @@
             BackColor = Color.White;
             ClientSize = new Size(800, 600);
             ControlBox = false;
-            Controls.Add(openForm);
+            Controls.Add(btn_Change_DateTime);
+            Controls.Add(label_time);
+            Controls.Add(label_date);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(panel1);
             Controls.Add(btnClear);
             Controls.Add(btnLogin);
@@ -194,6 +253,11 @@
         private Button btnClose;
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Button openForm;
+        private Label label3;
+        private Label label4;
+        private Label label_date;
+        private Label label_time;
+        private System.Windows.Forms.Timer timer1;
+        private Button btn_Change_DateTime;
     }
 }

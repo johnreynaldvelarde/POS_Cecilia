@@ -722,4 +722,22 @@
         BiDsBECD/9k=
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="btn_Change_DateTime.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAZRJREFUSEvt
+        1D8ohHEcx/EHpdNl0BkMBos6RjZlUBYTKwaXKAN1RbEoswwyMBKFMtmUwSKKIlIy4JRiv8nA4/353ffc
+        0dP9eVAGn3r1/P59f7/rd/ec95+S4/t+Pc7xirBR7Rlitm0uDA5oxQ+l37bNhcFEZu5HkrBtc9FgZs4/
+        xH5IqlUKHtBkQ2VHtZkt/soBtFNYy2sHJeUWE9plH5BEX157LkDSLSa0f/2KqtGOwPcg9BUhW6usuuKv
+        YSL0FUGffBMPiNr6Sj0/wkCoK2J9lT1XXLXv32EWF+hxixQ6xa7oXpN50SefxBHcnfOsQy90iLKtcRc6
+        xa5oDNNmHG14wS4u0eCKCG0d9IgRGwo+oFBYt4h1RKB/0Bt02bTmh3Bi3U8HDKK7iBrsYcJqm6G/6je0
+        2lgcabVd6GQPKCUt2MGMlat+GQeotX4Hnt2kQicGvSSliGIUV4jYFp/C+Co2rFt+tDGusQX321doV2AK
+        acRtOFzYoBGnuIW+9Hkc4wmdtux7YaNK6Le/gCUMw30Pnud5707JKUKvS2LQAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>
