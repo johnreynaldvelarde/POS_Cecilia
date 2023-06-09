@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             MonitorSales();
+            chart_SalesMonth();
+            chart_Product_Stock_Level();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -196,7 +199,55 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             try
             {
+                string sql = "SELECT MONTH(Transaction_Date) as month, YEAR(Transaction_Date) as year, SUM(Total_Amount) as Total_Amount " +
+                             "FROM Order_Transaction " +
+                             "GROUP BY MONTH(Transaction_Date), YEAR(Transaction_Date)";
 
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        int month = reader.GetInt32(0);
+                        int year = reader.GetInt32(1);
+                        decimal total_amount = reader.GetDecimal(2);
+                        string month_name = CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(month);
+
+                        chart_sales.Series["Monthly Sales"].Points.AddXY(month_name + "/" + year, total_amount);
+
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        public void chart_Product_Stock_Level()
+        {
+            try
+            {
+                string sql = "SELECT SUM(ProductStock_Qyt) AS TotalStock FROM Product_Stock";
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    object result = command.ExecuteScalar();
+
+                    if (result != DBNull.Value)
+                    {
+                        int totalStock = Convert.ToInt32(result);
+                        chart_ProductStock.Series["Product Stock"].Points.AddXY("Total Stock", totalStock);
+
+                    }
+
+                }
             }
             catch (Exception ex)
             {

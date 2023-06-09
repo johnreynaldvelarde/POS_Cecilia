@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             center_panel = new Panel();
+            btn_view_monthly = new Button();
+            chart_ProductStock = new System.Windows.Forms.DataVisualization.Charting.Chart();
             label4 = new Label();
             chart_sales = new System.Windows.Forms.DataVisualization.Charting.Chart();
             panel11 = new Panel();
@@ -66,8 +68,8 @@
             panel2 = new Panel();
             btnClose = new Button();
             panel1 = new Panel();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             center_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)chart_ProductStock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)chart_sales).BeginInit();
             panel11.SuspendLayout();
             panel10.SuspendLayout();
@@ -75,12 +77,12 @@
             panel8.SuspendLayout();
             panel4.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // center_panel
             // 
-            center_panel.Controls.Add(chart1);
+            center_panel.Controls.Add(btn_view_monthly);
+            center_panel.Controls.Add(chart_ProductStock);
             center_panel.Controls.Add(label4);
             center_panel.Controls.Add(chart_sales);
             center_panel.Controls.Add(panel11);
@@ -95,12 +97,43 @@
             center_panel.Size = new Size(1243, 617);
             center_panel.TabIndex = 24;
             // 
+            // btn_view_monthly
+            // 
+            btn_view_monthly.BackColor = Color.White;
+            btn_view_monthly.Cursor = Cursors.Hand;
+            btn_view_monthly.FlatAppearance.BorderSize = 0;
+            btn_view_monthly.FlatStyle = FlatStyle.Flat;
+            btn_view_monthly.Image = (Image)resources.GetObject("btn_view_monthly.Image");
+            btn_view_monthly.Location = new Point(177, 189);
+            btn_view_monthly.Name = "btn_view_monthly";
+            btn_view_monthly.Size = new Size(33, 32);
+            btn_view_monthly.TabIndex = 4;
+            btn_view_monthly.UseVisualStyleBackColor = false;
+            // 
+            // chart_ProductStock
+            // 
+            chartArea1.Name = "ChartArea1";
+            chart_ProductStock.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart_ProductStock.Legends.Add(legend1);
+            chart_ProductStock.Location = new Point(648, 219);
+            chart_ProductStock.Name = "chart_ProductStock";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Product Stock";
+            series1.YValuesPerPoint = 4;
+            chart_ProductStock.Series.Add(series1);
+            chart_ProductStock.Size = new Size(576, 383);
+            chart_ProductStock.TabIndex = 9;
+            chart_ProductStock.Text = "chart1";
+            // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(12, 182);
+            label4.Location = new Point(12, 195);
             label4.Name = "label4";
             label4.Size = new Size(159, 21);
             label4.TabIndex = 4;
@@ -448,22 +481,6 @@
             panel1.Size = new Size(1243, 60);
             panel1.TabIndex = 21;
             // 
-            // chart1
-            // 
-            chartArea1.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart1.Legends.Add(legend1);
-            chart1.Location = new Point(648, 219);
-            chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Monthly Sales";
-            chart1.Series.Add(series1);
-            chart1.Size = new Size(576, 383);
-            chart1.TabIndex = 9;
-            chart1.Text = "chart1";
-            // 
             // Sales_Report_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -481,6 +498,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             center_panel.ResumeLayout(false);
             center_panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)chart_ProductStock).EndInit();
             ((System.ComponentModel.ISupportInitialize)chart_sales).EndInit();
             panel11.ResumeLayout(false);
             panel11.PerformLayout();
@@ -494,7 +512,6 @@
             panel4.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
         }
 
@@ -531,6 +548,7 @@
         private Label label14;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_sales;
         private Label label4;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart_ProductStock;
+        private Button btn_view_monthly;
     }
 }

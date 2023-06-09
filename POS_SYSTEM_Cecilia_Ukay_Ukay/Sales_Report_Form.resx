@@ -58,6 +58,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_view_monthly.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPpJREFUSEvt
+        lTsOwjAQBQO3pKHkAhS0fCUKENDyOQkFF+ASUMEp4E3ilSzLThwJuow0ynqz6wU5gaKjLZ+ENxlCLlaL
+        SazgISeeAxlCzq95yqwBL3fdkMhkK/3eJNycypWLj7IvU3CPGmqXkt6sAUBD3RByJ2mbQ6sBkBoS2xwa
+        B1zlsApLevIgadq5Ne5djitrg172aM1CjquwhJhcRwkHepb+e0HMIceerlruclSFJW0PmV72SEKTPab2
+        ycnNSQRwyNyjxr5J9ntAw8WtY5sb4ZCsATOZs7lBjQ2ht3HA33/s8C3Xnv7BG+T8GnqsP4kVhP7sD6cj
+        oCi+PJp4eireK1QAAAAASUVORK5CYII=
+</value>
+  </data>
   <data name="btn_Product.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAMlJREFUSEvt
