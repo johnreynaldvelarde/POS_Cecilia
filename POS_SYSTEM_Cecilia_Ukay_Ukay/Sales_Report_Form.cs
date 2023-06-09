@@ -253,6 +253,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
         }
 
         private void btn_todaySales_Click(object sender, EventArgs e)
