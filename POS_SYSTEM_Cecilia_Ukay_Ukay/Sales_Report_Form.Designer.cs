@@ -30,23 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
             center_panel = new Panel();
+            cartesianChart1 = new LiveCharts.WinForms.CartesianChart();
             panel11 = new Panel();
             button4 = new Button();
-            label21 = new Label();
+            label_product_sold = new Label();
             label23 = new Label();
             panel10 = new Panel();
             button3 = new Button();
-            label18 = new Label();
+            label_annual = new Label();
             label19 = new Label();
             label20 = new Label();
             panel9 = new Panel();
             button2 = new Button();
-            label15 = new Label();
+            label_monthly = new Label();
             label16 = new Label();
             label17 = new Label();
             panel8 = new Panel();
             button1 = new Button();
-            label12 = new Label();
+            label_weekly = new Label();
             label13 = new Label();
             label14 = new Label();
             panel4 = new Panel();
@@ -69,6 +70,7 @@
             // 
             // center_panel
             // 
+            center_panel.Controls.Add(cartesianChart1);
             center_panel.Controls.Add(panel11);
             center_panel.Controls.Add(panel10);
             center_panel.Controls.Add(panel9);
@@ -81,11 +83,19 @@
             center_panel.Size = new Size(1080, 617);
             center_panel.TabIndex = 24;
             // 
+            // cartesianChart1
+            // 
+            cartesianChart1.Location = new Point(289, 23);
+            cartesianChart1.Name = "cartesianChart1";
+            cartesianChart1.Size = new Size(348, 229);
+            cartesianChart1.TabIndex = 8;
+            cartesianChart1.Text = "cartesianChart1";
+            // 
             // panel11
             // 
             panel11.BackColor = Color.FromArgb(78, 181, 234);
             panel11.Controls.Add(button4);
-            panel11.Controls.Add(label21);
+            panel11.Controls.Add(label_product_sold);
             panel11.Controls.Add(label23);
             panel11.Location = new Point(12, 502);
             panel11.Name = "panel11";
@@ -105,16 +115,16 @@
             button4.TabIndex = 3;
             button4.UseVisualStyleBackColor = false;
             // 
-            // label21
+            // label_product_sold
             // 
-            label21.AutoSize = true;
-            label21.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label21.ForeColor = Color.White;
-            label21.Location = new Point(102, 45);
-            label21.Name = "label21";
-            label21.Size = new Size(25, 30);
-            label21.TabIndex = 2;
-            label21.Text = "0";
+            label_product_sold.AutoSize = true;
+            label_product_sold.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label_product_sold.ForeColor = Color.White;
+            label_product_sold.Location = new Point(102, 45);
+            label_product_sold.Name = "label_product_sold";
+            label_product_sold.Size = new Size(25, 30);
+            label_product_sold.TabIndex = 2;
+            label_product_sold.Text = "0";
             // 
             // label23
             // 
@@ -131,7 +141,7 @@
             // 
             panel10.BackColor = Color.FromArgb(78, 181, 234);
             panel10.Controls.Add(button3);
-            panel10.Controls.Add(label18);
+            panel10.Controls.Add(label_annual);
             panel10.Controls.Add(label19);
             panel10.Controls.Add(label20);
             panel10.Location = new Point(12, 382);
@@ -152,16 +162,16 @@
             button3.TabIndex = 3;
             button3.UseVisualStyleBackColor = false;
             // 
-            // label18
+            // label_annual
             // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label18.ForeColor = Color.White;
-            label18.Location = new Point(102, 45);
-            label18.Name = "label18";
-            label18.Size = new Size(42, 30);
-            label18.TabIndex = 2;
-            label18.Text = "0.0";
+            label_annual.AutoSize = true;
+            label_annual.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label_annual.ForeColor = Color.White;
+            label_annual.Location = new Point(102, 45);
+            label_annual.Name = "label_annual";
+            label_annual.Size = new Size(42, 30);
+            label_annual.TabIndex = 2;
+            label_annual.Text = "0.0";
             // 
             // label19
             // 
@@ -189,7 +199,7 @@
             // 
             panel9.BackColor = Color.FromArgb(78, 181, 234);
             panel9.Controls.Add(button2);
-            panel9.Controls.Add(label15);
+            panel9.Controls.Add(label_monthly);
             panel9.Controls.Add(label16);
             panel9.Controls.Add(label17);
             panel9.Location = new Point(12, 263);
@@ -210,16 +220,16 @@
             button2.TabIndex = 3;
             button2.UseVisualStyleBackColor = false;
             // 
-            // label15
+            // label_monthly
             // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label15.ForeColor = Color.White;
-            label15.Location = new Point(102, 45);
-            label15.Name = "label15";
-            label15.Size = new Size(42, 30);
-            label15.TabIndex = 2;
-            label15.Text = "0.0";
+            label_monthly.AutoSize = true;
+            label_monthly.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label_monthly.ForeColor = Color.White;
+            label_monthly.Location = new Point(102, 45);
+            label_monthly.Name = "label_monthly";
+            label_monthly.Size = new Size(42, 30);
+            label_monthly.TabIndex = 2;
+            label_monthly.Text = "0.0";
             // 
             // label16
             // 
@@ -247,7 +257,7 @@
             // 
             panel8.BackColor = Color.FromArgb(78, 181, 234);
             panel8.Controls.Add(button1);
-            panel8.Controls.Add(label12);
+            panel8.Controls.Add(label_weekly);
             panel8.Controls.Add(label13);
             panel8.Controls.Add(label14);
             panel8.Location = new Point(12, 143);
@@ -268,16 +278,16 @@
             button1.TabIndex = 3;
             button1.UseVisualStyleBackColor = false;
             // 
-            // label12
+            // label_weekly
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label12.ForeColor = Color.White;
-            label12.Location = new Point(102, 45);
-            label12.Name = "label12";
-            label12.Size = new Size(42, 30);
-            label12.TabIndex = 2;
-            label12.Text = "0.0";
+            label_weekly.AutoSize = true;
+            label_weekly.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label_weekly.ForeColor = Color.White;
+            label_weekly.Location = new Point(102, 45);
+            label_weekly.Name = "label_weekly";
+            label_weekly.Size = new Size(42, 30);
+            label_weekly.TabIndex = 2;
+            label_weekly.Text = "0.0";
             // 
             // label13
             // 
@@ -448,22 +458,23 @@
         private Button btn_todaySales;
         private Panel panel11;
         private Button button4;
-        private Label label21;
+        private Label label_product_sold;
         private Label label23;
         private Panel panel10;
         private Button button3;
-        private Label label18;
+        private Label label_annual;
         private Label label19;
         private Label label20;
         private Panel panel9;
         private Button button2;
-        private Label label15;
+        private Label label_monthly;
         private Label label16;
         private Label label17;
         private Panel panel8;
         private Button button1;
-        private Label label12;
+        private Label label_weekly;
         private Label label13;
         private Label label14;
+        private LiveCharts.WinForms.CartesianChart cartesianChart1;
     }
 }
