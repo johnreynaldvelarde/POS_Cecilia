@@ -372,6 +372,7 @@
             data_Grid_Purchase.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Purchase.Size = new Size(880, 234);
             data_Grid_Purchase.TabIndex = 4;
+            data_Grid_Purchase.CellContentClick += data_Grid_Purchase_CellContentClick;
             data_Grid_Purchase.CellFormatting += data_Grid_Purchase_CellFormatting;
             // 
             // label_amount
@@ -463,6 +464,7 @@
             // 
             Cancel.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Cancel.HeaderText = "";
+            Cancel.Image = (Image)resources.GetObject("Cancel.Image");
             Cancel.Name = "Cancel";
             Cancel.ReadOnly = true;
             Cancel.Width = 5;

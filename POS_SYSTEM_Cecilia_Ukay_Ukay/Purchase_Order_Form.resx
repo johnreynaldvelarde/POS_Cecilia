@@ -95,4 +95,15 @@
   <metadata name="Cancel.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="Cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAFESURBVEhL7ZPNTsJAEMd7BrotaKLyCnqQB+JkUqYQE1+nCWHAjwfAiEc/Tn6hiRf1bXRmmTXE
+        ltppOfJLNmlmd37/trvrbVDRGMKBwd5ViCehlAoTXMRN7m2MB/tSSmMwvjQI32YML9wg5X9ZyGFue0cw
+        lXKadhLV/FHvhhf6CO9+Em3L1Erq2N8l6YftoV52yFQ2mhC13GFDEG7zQkrLHTun3fqqECtH+Cwtd2SF
+        rE3u4CNLsmcW0uCT8rp4jh+bSRTIsmr8CVmvnKmdRXsktr/FDtpc/lUyXQ1/Mtgi4ZvIn/gSyvNccxkz
+        WX5z3mzedB4Bwr0NqfIly3IS3rFYprzW+bGh+oMNoTXqkDy5o3SIyL/y5A51iEbuUIX8bp7yhJjhUcud
+        NL7dUk4TTqBDi2b8VlIqDF88CrkOsX8opQ1F8LwfTRP/op8EPykAAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

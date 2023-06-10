@@ -212,7 +212,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Buy_Click(object sender, EventArgs e)
         {
-            if(cmd_Supplier.SelectedIndex == -1)
+            if (cmd_Supplier.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a supplier.");
             }
@@ -293,7 +293,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         string selectStockItem = "SELECT ItemStock_Qyt FROM Item_Stock WHERE ItemStock_ID = @ItemStock_ID";
                         SqlCommand select_stock = new SqlCommand(selectStockItem, connect);
                         select_stock.Parameters.AddWithValue("@ItemStock_ID", stockitemID);
-                        
+
                         int current_quantity = Convert.ToInt32(select_stock.ExecuteScalar());
 
                         int update_quantity = current_quantity + itemQuantity;
@@ -310,6 +310,16 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     Clear_Purchase();
                     this.Close();
                 }
+            }
+        }
+
+        private void data_Grid_Purchase_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string column_purchase= data_Grid_Purchase.Columns[e.ColumnIndex].Name;
+            if (column_purchase == "Cancel")
+            {
+                DataGridViewRow selectedRow = data_Grid_Purchase.Rows[e.RowIndex];
+                data_Grid_Purchase.Rows.Remove(selectedRow);
             }
         }
     }
