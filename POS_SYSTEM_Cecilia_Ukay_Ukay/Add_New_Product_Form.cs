@@ -18,8 +18,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         Product_List_Form frm;
 
-        public string productID;
-        private int stockItemID;
+        public string productID, c_id;
 
         public Add_New_Product_Form(Product_List_Form product)
         {
@@ -169,7 +168,23 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else
             {
+                
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "UPDATE Product SET Product_Name = @Product_Name, Price  = @Price, Size = @Size, Category_ID, @Category_ID, Date_Added = @Date_Added WHERE Product_ID = @Product_ID ";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
+                    command.Parameters.AddWithValue("@Price", txt_Price.Text);
+                    command.Parameters.AddWithValue("@Size", cmd_Measurement.SelectedItem);
+                   // command.Parameters.AddWithValue("@Category_ID", );
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
+                    command.Parameters.AddWithValue("@Product_ID", Convert.ToInt32(productID));
 
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connect.Close();
+                }
+                
             }
         }
 

@@ -90,6 +90,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 frm.txt_Product_Name.Text = product_name;
                 frm.txt_Price.Text = price;
                 frm.cmd_Measurement.SelectedItem = size;
+              //  frm.c_id = category_id;
 
                 frm.ShowDialog();
             }
@@ -125,8 +126,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 product_id = data_Grid_Product[1, i].Value.ToString();
                 product_code = data_Grid_Product[2, i].Value.ToString();
                 product_name = data_Grid_Product[3, i].Value.ToString();
-                price = data_Grid_Product[4, i].Value.ToString();
-                size = data_Grid_Product[5, i].Value.ToString();
+              //  category_id = data_Grid_Product[4, i];
+                price = data_Grid_Product[5, i].Value.ToString();
+                size = data_Grid_Product[6, i].Value.ToString();
             }
         }
     }
