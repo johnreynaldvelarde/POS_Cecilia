@@ -319,8 +319,6 @@
         }
 
         #endregion
-
-        private ComboBox cmd_Category;
         private Button btn_Clear;
         private Label label5;
         private Label label2;
@@ -332,7 +330,6 @@
         private Label label8;
         private Label label4;
         private Label label9;
-        private ComboBox cmd_Measurement;
         private Label label10;
         private TextBox txt_Date_Added;
         public Button btn_Update;
@@ -341,5 +338,7 @@
         public Label title_product;
         public Button btn_Save;
         public TextBox txt_Product_Code;
+        public ComboBox cmd_Category;
+        public ComboBox cmd_Measurement;
     }
 }

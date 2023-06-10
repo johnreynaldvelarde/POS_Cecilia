@@ -74,7 +74,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 frm.txt_Item_Code.Text = item_code;
                 frm.txt_Item_Name.Text = item_name;
                 frm.txt_Price.Text = price;
-                frm.cmd_Piece.SelectedText = per_piece;
+                frm.cmd_Piece.SelectedItem = per_piece;
                 frm.ShowDialog();
 
 
@@ -113,6 +113,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 item_name = data_Grid_Item[3, i].Value.ToString();
                 price = data_Grid_Item[4, i].Value.ToString();
                 per_piece = data_Grid_Item[5, i].Value.ToString();
+
             }
         }
     }
