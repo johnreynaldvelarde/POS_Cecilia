@@ -107,7 +107,7 @@
             btn_Supplier_List.Name = "btn_Supplier_List";
             btn_Supplier_List.Size = new Size(197, 38);
             btn_Supplier_List.TabIndex = 17;
-            btn_Supplier_List.Text = "List of Supplier";
+            btn_Supplier_List.Text = " List of Supplier";
             btn_Supplier_List.TextAlign = ContentAlignment.MiddleRight;
             btn_Supplier_List.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Supplier_List.UseVisualStyleBackColor = false;
@@ -126,7 +126,7 @@
             btn_Staff_List.Name = "btn_Staff_List";
             btn_Staff_List.Size = new Size(197, 38);
             btn_Staff_List.TabIndex = 16;
-            btn_Staff_List.Text = "List of Staff";
+            btn_Staff_List.Text = " List of Staff";
             btn_Staff_List.TextAlign = ContentAlignment.MiddleRight;
             btn_Staff_List.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Staff_List.UseVisualStyleBackColor = false;

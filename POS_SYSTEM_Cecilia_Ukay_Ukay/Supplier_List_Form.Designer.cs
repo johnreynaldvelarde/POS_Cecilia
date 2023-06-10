@@ -32,10 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Supplier_List_Form));
             data_Grid_Supplier = new DataGridView();
-            panel1 = new Panel();
-            btn_Export = new Button();
-            btn_Add_New_Supplier = new Button();
-            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -44,6 +40,9 @@
             Column6 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            panel1 = new Panel();
+            btn_Add_New_Supplier = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Supplier).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -90,65 +89,7 @@
             data_Grid_Supplier.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Supplier.Size = new Size(1088, 492);
             data_Grid_Supplier.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btn_Export);
-            panel1.Controls.Add(btn_Add_New_Supplier);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(5, 20);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1088, 68);
-            panel1.TabIndex = 5;
-            // 
-            // btn_Export
-            // 
-            btn_Export.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Export.Cursor = Cursors.Hand;
-            btn_Export.FlatAppearance.BorderSize = 0;
-            btn_Export.FlatStyle = FlatStyle.Flat;
-            btn_Export.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Export.ForeColor = Color.White;
-            btn_Export.Image = (Image)resources.GetObject("btn_Export.Image");
-            btn_Export.Location = new Point(908, 9);
-            btn_Export.Name = "btn_Export";
-            btn_Export.Size = new Size(159, 38);
-            btn_Export.TabIndex = 16;
-            btn_Export.Text = "Excel Export";
-            btn_Export.TextAlign = ContentAlignment.MiddleRight;
-            btn_Export.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Export.UseVisualStyleBackColor = false;
-            // 
-            // btn_Add_New_Supplier
-            // 
-            btn_Add_New_Supplier.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Add_New_Supplier.Cursor = Cursors.Hand;
-            btn_Add_New_Supplier.FlatAppearance.BorderSize = 0;
-            btn_Add_New_Supplier.FlatStyle = FlatStyle.Flat;
-            btn_Add_New_Supplier.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Add_New_Supplier.ForeColor = Color.White;
-            btn_Add_New_Supplier.Image = (Image)resources.GetObject("btn_Add_New_Supplier.Image");
-            btn_Add_New_Supplier.Location = new Point(689, 9);
-            btn_Add_New_Supplier.Name = "btn_Add_New_Supplier";
-            btn_Add_New_Supplier.Size = new Size(204, 38);
-            btn_Add_New_Supplier.TabIndex = 15;
-            btn_Add_New_Supplier.Text = "Add new supplier";
-            btn_Add_New_Supplier.TextAlign = ContentAlignment.MiddleRight;
-            btn_Add_New_Supplier.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Add_New_Supplier.UseVisualStyleBackColor = false;
-            btn_Add_New_Supplier.Click += btn_Add_New_Supplier_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(3, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(193, 33);
-            label1.TabIndex = 1;
-            label1.Text = "List of supplier";
+            data_Grid_Supplier.CellContentClick += data_Grid_Supplier_CellContentClick;
             // 
             // Column1
             // 
@@ -213,6 +154,47 @@
             Delete.ReadOnly = true;
             Delete.Width = 50;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(btn_Add_New_Supplier);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(5, 20);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1088, 68);
+            panel1.TabIndex = 5;
+            // 
+            // btn_Add_New_Supplier
+            // 
+            btn_Add_New_Supplier.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Add_New_Supplier.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Add_New_Supplier.Cursor = Cursors.Hand;
+            btn_Add_New_Supplier.FlatAppearance.BorderSize = 0;
+            btn_Add_New_Supplier.FlatStyle = FlatStyle.Flat;
+            btn_Add_New_Supplier.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Add_New_Supplier.ForeColor = Color.White;
+            btn_Add_New_Supplier.Image = (Image)resources.GetObject("btn_Add_New_Supplier.Image");
+            btn_Add_New_Supplier.Location = new Point(883, 9);
+            btn_Add_New_Supplier.Name = "btn_Add_New_Supplier";
+            btn_Add_New_Supplier.Size = new Size(204, 38);
+            btn_Add_New_Supplier.TabIndex = 15;
+            btn_Add_New_Supplier.Text = "Add new supplier";
+            btn_Add_New_Supplier.TextAlign = ContentAlignment.MiddleRight;
+            btn_Add_New_Supplier.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Add_New_Supplier.UseVisualStyleBackColor = false;
+            btn_Add_New_Supplier.Click += btn_Add_New_Supplier_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(14, 159, 104);
+            label1.Location = new Point(3, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(193, 33);
+            label1.TabIndex = 1;
+            label1.Text = "List of supplier";
+            // 
             // Supplier_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -236,7 +218,6 @@
 
         private DataGridView data_Grid_Supplier;
         private Panel panel1;
-        private Button btn_Export;
         private Button btn_Add_New_Supplier;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;

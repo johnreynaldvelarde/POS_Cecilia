@@ -32,10 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_List_Form));
             data_Grid_Staff = new DataGridView();
-            panel1 = new Panel();
-            btn_Export = new Button();
-            btn_Add_New_Staff = new Button();
-            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewImageColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -44,6 +40,9 @@
             Column6 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            panel1 = new Panel();
+            btn_Add_New_Staff = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Staff).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -91,65 +90,6 @@
             data_Grid_Staff.Size = new Size(1088, 492);
             data_Grid_Staff.TabIndex = 4;
             data_Grid_Staff.CellContentClick += data_Grid_Staff_CellContentClick;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btn_Export);
-            panel1.Controls.Add(btn_Add_New_Staff);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(5, 20);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1088, 68);
-            panel1.TabIndex = 3;
-            // 
-            // btn_Export
-            // 
-            btn_Export.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Export.Cursor = Cursors.Hand;
-            btn_Export.FlatAppearance.BorderSize = 0;
-            btn_Export.FlatStyle = FlatStyle.Flat;
-            btn_Export.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Export.ForeColor = Color.White;
-            btn_Export.Image = (Image)resources.GetObject("btn_Export.Image");
-            btn_Export.Location = new Point(908, 9);
-            btn_Export.Name = "btn_Export";
-            btn_Export.Size = new Size(159, 38);
-            btn_Export.TabIndex = 16;
-            btn_Export.Text = "Excel Export";
-            btn_Export.TextAlign = ContentAlignment.MiddleRight;
-            btn_Export.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Export.UseVisualStyleBackColor = false;
-            // 
-            // btn_Add_New_Staff
-            // 
-            btn_Add_New_Staff.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Add_New_Staff.Cursor = Cursors.Hand;
-            btn_Add_New_Staff.FlatAppearance.BorderSize = 0;
-            btn_Add_New_Staff.FlatStyle = FlatStyle.Flat;
-            btn_Add_New_Staff.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Add_New_Staff.ForeColor = Color.White;
-            btn_Add_New_Staff.Image = (Image)resources.GetObject("btn_Add_New_Staff.Image");
-            btn_Add_New_Staff.Location = new Point(689, 9);
-            btn_Add_New_Staff.Name = "btn_Add_New_Staff";
-            btn_Add_New_Staff.Size = new Size(204, 38);
-            btn_Add_New_Staff.TabIndex = 15;
-            btn_Add_New_Staff.Text = "Add new staff";
-            btn_Add_New_Staff.TextAlign = ContentAlignment.MiddleRight;
-            btn_Add_New_Staff.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Add_New_Staff.UseVisualStyleBackColor = false;
-            btn_Add_New_Staff.Click += btn_Add_New_Staff_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(3, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(150, 33);
-            label1.TabIndex = 1;
-            label1.Text = "List of Staff";
             // 
             // Column1
             // 
@@ -213,6 +153,47 @@
             Delete.ReadOnly = true;
             Delete.Width = 50;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(btn_Add_New_Staff);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(5, 20);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1088, 68);
+            panel1.TabIndex = 3;
+            // 
+            // btn_Add_New_Staff
+            // 
+            btn_Add_New_Staff.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Add_New_Staff.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Add_New_Staff.Cursor = Cursors.Hand;
+            btn_Add_New_Staff.FlatAppearance.BorderSize = 0;
+            btn_Add_New_Staff.FlatStyle = FlatStyle.Flat;
+            btn_Add_New_Staff.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Add_New_Staff.ForeColor = Color.White;
+            btn_Add_New_Staff.Image = (Image)resources.GetObject("btn_Add_New_Staff.Image");
+            btn_Add_New_Staff.Location = new Point(883, 9);
+            btn_Add_New_Staff.Name = "btn_Add_New_Staff";
+            btn_Add_New_Staff.Size = new Size(204, 38);
+            btn_Add_New_Staff.TabIndex = 15;
+            btn_Add_New_Staff.Text = "Add new staff";
+            btn_Add_New_Staff.TextAlign = ContentAlignment.MiddleRight;
+            btn_Add_New_Staff.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Add_New_Staff.UseVisualStyleBackColor = false;
+            btn_Add_New_Staff.Click += btn_Add_New_Staff_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(14, 159, 104);
+            label1.Location = new Point(3, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(150, 33);
+            label1.TabIndex = 1;
+            label1.Text = "List of Staff";
+            // 
             // User_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -236,7 +217,6 @@
 
         private DataGridView data_Grid_Staff;
         private Panel panel1;
-        private Button btn_Export;
         private Button btn_Add_New_Staff;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;

@@ -50,5 +50,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             }
         }
+
+        private void data_Grid_Supplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
