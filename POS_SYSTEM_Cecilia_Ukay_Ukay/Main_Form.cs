@@ -247,6 +247,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // button to send the transaction to database
         private void btn_Sell_Click(object sender, EventArgs e)
         {
+
+            int id_staff;
+
             if (data_Grid_Transaction.Rows.Count == 0)
             {
                 MessageBox.Show("No transaction input try again");
@@ -255,7 +258,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
-                    int staff_id = 1;
+                    Account_Class pass = new Account_Class();
+                    id_staff = pass.Staff_ID;
+
                     int total_quantity = 0;
                     decimal total_amount = 0;
 
@@ -266,7 +271,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                                  "(@Staff_ID, @Transaction_Date, @Total_Quantity, @Total_Amount); SELECT SCOPE_IDENTITY();";
                     SqlCommand command = new SqlCommand(sql, connect);
 
-                    command.Parameters.AddWithValue("@Staff_ID", staff_id);
+                    command.Parameters.AddWithValue("@Staff_ID", id_staff);
                     command.Parameters.AddWithValue("@Transaction_Date", DateTime.Now);
 
                     // compute the total quantity and total amount
