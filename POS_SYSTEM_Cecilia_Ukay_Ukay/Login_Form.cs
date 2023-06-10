@@ -37,12 +37,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // login button to main form
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Main_Form frm = new Main_Form();
-            frm.Show();
-            /*
+           // Main_Form frm = new Main_Form();
+           // frm.Show();
+            
             if (String.IsNullOrEmpty(txtUsername.Text) || String.IsNullOrEmpty(txtPassword.Text))
             {
-
+                MessageBox.Show("Please enter both Staff Name and Password.", "Input Required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else 
             {

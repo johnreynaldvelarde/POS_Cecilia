@@ -37,7 +37,7 @@
             panel3 = new Panel();
             btn_Sign_Out = new Label();
             panel2 = new Panel();
-            label1 = new Label();
+            lblupper_role = new Label();
             btn_Close = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)popup_picture).BeginInit();
@@ -125,23 +125,23 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(lblupper_role);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(380, 38);
             panel2.TabIndex = 0;
             // 
-            // label1
+            // lblupper_role
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(8, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(152, 18);
-            label1.TabIndex = 0;
-            label1.Text = "Administrator Mode";
+            lblupper_role.AutoSize = true;
+            lblupper_role.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblupper_role.ForeColor = Color.FromArgb(14, 159, 104);
+            lblupper_role.Location = new Point(8, 10);
+            lblupper_role.Name = "lblupper_role";
+            lblupper_role.Size = new Size(152, 18);
+            lblupper_role.TabIndex = 0;
+            lblupper_role.Text = "Administrator Mode";
             // 
             // btn_Close
             // 
@@ -184,7 +184,6 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Label label1;
         private Panel panel3;
         private Label btn_Sign_Out;
         private Label btn_View_Account;
@@ -192,5 +191,6 @@
         private Button btn_Close;
         public Label popup_staff_name;
         public CircularPictureBox popup_picture;
+        public Label lblupper_role;
     }
 }
