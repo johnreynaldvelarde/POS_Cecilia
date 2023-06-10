@@ -105,6 +105,7 @@
             data_Delete_Product.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Delete_Product.Size = new Size(1088, 492);
             data_Delete_Product.TabIndex = 6;
+            data_Delete_Product.CellContentClick += data_Delete_Product_CellContentClick;
             // 
             // Column1
             // 

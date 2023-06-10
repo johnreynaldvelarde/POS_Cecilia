@@ -47,5 +47,52 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 connect.Close();
             }
         }
+
+        private void data_Delete_Product_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string columnProduct = data_Delete_Product.Columns[e.ColumnIndex].Name;
+            if (columnProduct == "Restore")
+            {
+
+                if (MessageBox.Show("Do you want to restore this product?", "Restore the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (e.ColumnIndex == data_Delete_Product.Columns["Restore"].Index && e.RowIndex >= 0)
+                    {
+                        int id = Convert.ToInt32(data_Delete_Product.Rows[e.RowIndex].Cells["Product_ID"].Value);
+
+                        using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                        {
+
+                            connect.Open();
+                            string sql = "UPDATE Product SET Archive = 1 WHERE Product_ID = @Product_ID";
+                            SqlCommand command = new SqlCommand(sql, connect);
+                            command.Parameters.AddWithValue("@Product_ID", Convert.ToInt32(id));
+                            command.ExecuteNonQuery();
+                            connect.Close();
+
+                        }
+
+                        data_Delete_Product.Rows.RemoveAt(e.RowIndex);
+
+                    }
+                    else if (columnProduct == "Total_Delete")
+                    {
+                        if (MessageBox.Show("Are you sure to delete this permanently?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            /*
+                            connect.Open();
+                            command = new SqlCommand("delete from tblProduct where productID like '" + datagridProduct[1, e.RowIndex].Value.ToString() + "'", connect);
+                            command.ExecuteNonQuery();
+                            connect.Close();
+                            MessageBox.Show("The selected record has been successfully deleted.", "Tea Hara", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            showBin();
+                            */
+
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }

@@ -487,9 +487,27 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
+        private void FilterDataGridView(string filterText)
+        {
+            foreach (DataGridViewRow row in data_Grid_Available.Rows)
+            {
+                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().Contains(filterText))
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
+
         private void txt_mainsearch_TextChanged(object sender, EventArgs e)
         {
-          
+            string filterText = txt_mainsearch.Text;
+            FilterDataGridView(filterText);
         }
+
     }
 }
