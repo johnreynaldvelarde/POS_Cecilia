@@ -37,7 +37,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                              "FROM Order_Product op " +
                              "JOIN Order_Transaction ot ON op.Transaction_ID = ot.Transaction_ID " +
                              "JOIN Product p ON op.Product_ID = p.Product_ID " +
-                             "WHERE CONVERT(DATE, ot.Transaction_Date) = CAST(GETDATE() AS DATE)";
+                             "WHERE ot.Transaction_Date >= DATEADD(WEEK, DATEDIFF(WEEK, 0, GETDATE()), 0) " +
+                            "AND ot.Transaction_Date < DATEADD(WEEK, DATEDIFF(WEEK, 0, GETDATE()) + 1, 0)";
 
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
