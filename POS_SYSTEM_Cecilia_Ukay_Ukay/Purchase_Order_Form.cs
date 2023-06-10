@@ -15,11 +15,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     {
         DB_Connection database = new DB_Connection();
 
-        public Purchase_Order_Form()
+        View_Stock_List_Form frm;
+        public Purchase_Order_Form(View_Stock_List_Form order)
         {
             InitializeComponent();
             view_supplier();
             view_stock();
+            frm = order;
         }
 
         private int stock_ID;
@@ -33,6 +35,18 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             txt_Date_Created.Text = DateTime.Now.ToLongDateString();
             label_amount.Text = "0.00";
+
+            Account_Class account = new Account_Class();
+            txtUsername.Text = account.Staff_Name;
+
+            if (account.Staff_Role == "Default")
+            {
+                btn_Buy.Enabled = false;
+            }
+            else
+            {
+                btn_Buy.Enabled = true;
+            }
         }
 
         public void Clear_Purchase()
@@ -212,6 +226,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Buy_Click(object sender, EventArgs e)
         {
+            int ss_id;
+
             if (cmd_Supplier.SelectedIndex == -1)
             {
                 MessageBox.Show("Please select a supplier.");
@@ -249,6 +265,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 // for putting input in purhcase log in database
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
+                    Account_Class pass = new Account_Class();
+                    ss_id = pass.Staff_ID;
+
                     int staff_id = 1;
                     decimal total_amount = 0;
 
@@ -257,7 +276,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     string sql1 = "INSERT INTO Purchase_Transaction (Staff_ID, Supplier_ID, Purchase_Date, Total_Amount) VALUES " +
                                   "(@Staff_ID, @Supplier_ID, @Purchase_Date, @Total_Amount); SELECT SCOPE_IDENTITY();";
                     SqlCommand command1 = new SqlCommand(sql1, connect);
-                    command1.Parameters.AddWithValue("@Staff_ID", staff_id);
+                    command1.Parameters.AddWithValue("@Staff_ID", ss_id);
                     command1.Parameters.AddWithValue("@Supplier_ID", supplierId);
                     command1.Parameters.AddWithValue("@Purchase_Date", DateTime.Now);
 
@@ -308,6 +327,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     MessageBox.Show("New purchase order added");
                     connect.Close();
                     Clear_Purchase();
+                    frm.show_item_stock();
                     this.Close();
                 }
             }

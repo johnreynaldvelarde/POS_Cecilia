@@ -26,10 +26,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
-
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Supplier_ID, Supplier_Name, Date_Added Archive FROM Suppliers WHERE Archive = 1 ";
+                string sql = "SELECT Supplier_ID, Supplier_Name, Date_Added FROM Suppliers WHERE Archive = 1";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -37,17 +36,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 while (reader.Read())
                 {
-                    if (reader["Archive"].ToString() == "1")
-                    {
-                        i += 1;
-                        data_Delete_Supplier.Rows.Add(i, reader["Suppier_ID"].ToString(), reader["Supplier_Name"].ToString(), reader["Date_Added"].ToString());
-                    }
-
+                    i += 1;
+                    data_Delete_Supplier.Rows.Add(i, reader["Supplier_ID"].ToString(), reader["Supplier_Name"].ToString(), reader["Date_Added"].ToString());
                 }
+
                 reader.Close();
                 connect.Close();
             }
         }
+
 
         private void data_Delete_Supplier_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

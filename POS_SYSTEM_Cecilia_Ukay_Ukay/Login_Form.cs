@@ -55,7 +55,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 mainForm.btn_Sell.Enabled = false;
                 mainForm.Show();
             }
-            else 
+            else
             {
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
@@ -124,7 +124,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                             }
                         }
                     }
-                   
+
                 }
             }
         }
