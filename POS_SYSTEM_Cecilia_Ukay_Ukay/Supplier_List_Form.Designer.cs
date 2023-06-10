@@ -90,6 +90,7 @@
             data_Grid_Supplier.Size = new Size(1088, 492);
             data_Grid_Supplier.TabIndex = 6;
             data_Grid_Supplier.CellContentClick += data_Grid_Supplier_CellContentClick;
+            data_Grid_Supplier.SelectionChanged += data_Grid_Supplier_SelectionChanged;
             // 
             // Column1
             // 

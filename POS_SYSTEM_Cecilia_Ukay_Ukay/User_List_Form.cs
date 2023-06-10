@@ -22,7 +22,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             view_user_account();
         }
 
-        private string staff_Id, staff_Name, staff_Password, c_Number, role;
+        private string staffaccount_ID, staff_Name, staff_Password, c_Number, role;
         private Image u_profile;
 
         // button for adding new staff_account
@@ -66,7 +66,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 User_Create_Account_Form frm = new User_Create_Account_Form(this);
                 frm.btn_Save.Enabled = false;
                 frm.label_title_staff.Text = "Update the account";
-                frm.staffID = staff_Id;
+                frm.staffID = staffaccount_ID;
                 frm.txtUsername.Text = staff_Name;
                 frm.txtPassword.Text = staff_Password;
                 frm.txtContact.Text = c_Number;
@@ -84,7 +84,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                             connect.Open();
                             string sql = "UPDATE Staff_Account SET Archive = 1 WHERE Staff_ID = @Staff_ID";
                             SqlCommand command = new SqlCommand(sql, connect);
-                            command.Parameters.AddWithValue("@Staff_ID", Convert.ToInt32(staff_Id));
+                            command.Parameters.AddWithValue("@Staff_ID", Convert.ToInt32(staffaccount_ID));
                             command.ExecuteNonQuery();
                             connect.Close();
 
@@ -102,8 +102,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             if (data_Grid_Staff.CurrentRow != null)
             {
                 int i = data_Grid_Staff.CurrentRow.Index;
-                staff_Id = data_Grid_Staff[1, i].Value.ToString();
-                u_profile = (Image)data_Grid_Staff[2, i].Value;
+                staffaccount_ID = data_Grid_Staff[1, i].Value.ToString();
+                //u_profile = (Image)data_Grid_Staff[2, i].Value;
                 staff_Name = data_Grid_Staff[3, i].Value.ToString();
                 //i = data_Grid_Staff[3, i].Value.ToString();
                 c_Number = data_Grid_Staff[5, i].Value.ToString();

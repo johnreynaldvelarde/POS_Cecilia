@@ -19,10 +19,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         Supplier_List_Form frm;
 
+        public string supplier_id;
+
         public Add_New_Supplier_Form(Supplier_List_Form supplier)
         {
             InitializeComponent();
-            frm= supplier;
+            frm = supplier;
         }
 
         public void Clear()

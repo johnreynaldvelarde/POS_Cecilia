@@ -37,7 +37,7 @@
             label3 = new Label();
             txt_Address = new TextBox();
             label2 = new Label();
-            label1 = new Label();
+            label_title_supplier = new Label();
             txt_Supplier_Name = new TextBox();
             btnClose = new Button();
             panel2 = new Panel();
@@ -143,16 +143,16 @@
             label2.TabIndex = 39;
             label2.Text = "Supplier Name *";
             // 
-            // label1
+            // label_title_supplier
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(12, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(187, 24);
-            label1.TabIndex = 0;
-            label1.Text = "Add new supplier";
+            label_title_supplier.AutoSize = true;
+            label_title_supplier.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label_title_supplier.ForeColor = Color.FromArgb(14, 159, 104);
+            label_title_supplier.Location = new Point(12, 10);
+            label_title_supplier.Name = "label_title_supplier";
+            label_title_supplier.Size = new Size(187, 24);
+            label_title_supplier.TabIndex = 0;
+            label_title_supplier.Text = "Add new supplier";
             // 
             // txt_Supplier_Name
             // 
@@ -188,7 +188,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label_title_supplier);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
@@ -244,17 +244,18 @@
         private Button btn_Clear;
         private Button btn_Save;
         private Label label6;
-        private TextBox txt_Email;
         private Label label4;
-        private TextBox txt_Contact_Number;
         private Label label3;
-        private TextBox txt_Address;
         private Label label2;
         private Label label1;
-        private TextBox txt_Supplier_Name;
         private Button btnClose;
         private Panel panel2;
         private Panel panel1;
         public Button btn_Update;
+        public TextBox txt_Email;
+        public TextBox txt_Contact_Number;
+        public TextBox txt_Address;
+        public Label label_title_supplier;
+        public TextBox txt_Supplier_Name;
     }
 }
