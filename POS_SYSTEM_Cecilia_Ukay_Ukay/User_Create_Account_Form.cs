@@ -46,6 +46,44 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Clear();
         }
 
+ void regex(string name, string pass) {   //functions for regex userName and pass
+
+            try {
+            string namePattern = @"\W";  //any non character
+            string passPattern = @"\s"; //any space or newline
+
+            Regex regName = new Regex(namePattern);
+            Match matchName = regName.Match(name);
+
+            Regex regPass = new Regex(passPattern);
+            Match matchPass = regPass.Match(pass);
+
+            if (!matchName.Success && !matchPass.Success && pass.Length >= 6) // if matchName and matchPass not equal to true nean success
+            {
+                MessageBox.Show("Success");
+
+
+            }
+            else {
+
+                MessageBox.Show("Failed");
+            
+            }
+
+
+            }
+            catch (Exception ex) {
+
+                MessageBox.Show(ex.Message);
+            
+            }
+
+        
+            
+            
+            
+        }
+
         // button save info to database
         private void btn_Save_Click(object sender, EventArgs e)
         {
@@ -64,6 +102,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else
             {
+             regex(txtUsername.Text.ToString(), txtPassword.Text.ToString()); //this is the regex function for user and password --dapits
                 MemoryStream mstream = new MemoryStream();
                 User_Profile.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png);
                 byte[] select_image = mstream.ToArray();
