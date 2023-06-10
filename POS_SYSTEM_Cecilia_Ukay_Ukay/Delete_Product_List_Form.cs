@@ -76,23 +76,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         data_Delete_Product.Rows.RemoveAt(e.RowIndex);
 
                     }
-                    else if (columnProduct == "Total_Delete")
-                    {
-                        if (MessageBox.Show("Are you sure to delete this permanently?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                        {
-                            /*
-                            connect.Open();
-                            command = new SqlCommand("delete from tblProduct where productID like '" + datagridProduct[1, e.RowIndex].Value.ToString() + "'", connect);
-                            command.ExecuteNonQuery();
-                            connect.Close();
-                            MessageBox.Show("The selected record has been successfully deleted.", "Tea Hara", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            showBin();
-                            */
-
-                        }
-                    }
                 }
-
             }
         }
     }

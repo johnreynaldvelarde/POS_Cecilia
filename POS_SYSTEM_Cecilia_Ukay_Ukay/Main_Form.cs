@@ -487,11 +487,17 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
-        private void FilterDataGridView(string filterText)
+        private void filter_data_available(string filterText)
         {
             foreach (DataGridViewRow row in data_Grid_Available.Rows)
             {
-                if (row.Cells[0].Value != null && row.Cells[0].Value.ToString().Contains(filterText))
+                string p_code = row.Cells["Product_Code"].Value?.ToString();
+                string p_name = row.Cells["Product_Name"].Value?.ToString();
+                string c_tegory = row.Cells["Category"].Value?.ToString();
+
+                if (p_code != null && p_code.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    p_name != null && p_name.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    c_tegory != null && c_tegory.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0)
                 {
                     row.Visible = true;
                 }
@@ -506,7 +512,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void txt_mainsearch_TextChanged(object sender, EventArgs e)
         {
             string filterText = txt_mainsearch.Text;
-            FilterDataGridView(filterText);
+            filter_data_available(filterText);
         }
 
         private void data_Grid_Transaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -517,6 +523,40 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 DataGridViewRow selectedRow = data_Grid_Transaction.Rows[e.RowIndex];
                 data_Grid_Transaction.Rows.Remove(selectedRow);
                 view_product();
+            }
+        }
+
+        private void cmd_Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = cmd_Category.SelectedItem?.ToString();
+            if (selectedCategory == "All")
+            {
+                foreach (DataGridViewRow row in data_Grid_Available.Rows)
+                {
+                    row.Visible = true;
+                }
+            }
+            else
+            {
+                filter_data_available(selectedCategory);
+            }
+        }
+
+        private void filter_data_cmdCategory(string filterText)
+        {
+            foreach (DataGridViewRow row in data_Grid_Available.Rows)
+            {
+                string category = row.Cells["Category"].Value?.ToString();
+
+                if (filterText == "All" || category.Equals(filterText, StringComparison.OrdinalIgnoreCase))
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+
             }
         }
     }

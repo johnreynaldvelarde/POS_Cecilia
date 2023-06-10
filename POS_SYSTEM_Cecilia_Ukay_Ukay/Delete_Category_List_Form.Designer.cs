@@ -35,11 +35,10 @@
             panel1 = new Panel();
             label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            Category_ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Restore = new DataGridViewImageColumn();
-            Total_Delete = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)data_Delete_Category).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -65,7 +64,7 @@
             data_Delete_Category.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Delete_Category.ColumnHeadersHeight = 50;
             data_Delete_Category.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Delete_Category.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column5, Restore, Total_Delete });
+            data_Delete_Category.Columns.AddRange(new DataGridViewColumn[] { Column1, Category_ID, Column2, Column5, Restore });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -115,13 +114,12 @@
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
-            // Column3
+            // Category_ID
             // 
-            Column3.DataPropertyName = "Category_ID";
-            Column3.HeaderText = "Category_ID";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Visible = false;
+            Category_ID.HeaderText = "Category_ID";
+            Category_ID.Name = "Category_ID";
+            Category_ID.ReadOnly = true;
+            Category_ID.Visible = false;
             // 
             // Column2
             // 
@@ -148,15 +146,6 @@
             Restore.Name = "Restore";
             Restore.ReadOnly = true;
             // 
-            // Total_Delete
-            // 
-            Total_Delete.FillWeight = 54.4025269F;
-            Total_Delete.HeaderText = "";
-            Total_Delete.Image = (Image)resources.GetObject("Total_Delete.Image");
-            Total_Delete.MinimumWidth = 50;
-            Total_Delete.Name = "Total_Delete";
-            Total_Delete.ReadOnly = true;
-            // 
             // Delete_Category_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -182,10 +171,9 @@
         private Panel panel1;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Category_ID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewImageColumn Restore;
-        private DataGridViewImageColumn Total_Delete;
     }
 }

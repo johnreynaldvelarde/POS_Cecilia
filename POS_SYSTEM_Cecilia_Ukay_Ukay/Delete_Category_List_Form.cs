@@ -53,11 +53,28 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             string delete_category = data_Delete_Category.Columns[e.ColumnIndex].Name;
             if (delete_category == "Restore")
             {
+                if (MessageBox.Show("Do you want to restore this product?", "Restore the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (e.ColumnIndex == data_Delete_Category.Columns["Restore"].Index && e.RowIndex >= 0)
+                    {
+                        int id = Convert.ToInt32(data_Delete_Category.Rows[e.RowIndex].Cells["Category_ID"].Value);
 
-            }
-            else if (delete_category == "Total_Delete")
-            {
+                        using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                        {
 
+                            connect.Open();
+                            string sql = "UPDATE Categories SET Archive = 0 WHERE Category_ID = @Category_ID";
+                            SqlCommand command = new SqlCommand(sql, connect);
+                            command.Parameters.AddWithValue("@Category_ID", Convert.ToInt32(id));
+                            command.ExecuteNonQuery();
+                            connect.Close();
+
+                        }
+
+                        data_Delete_Category.Rows.RemoveAt(e.RowIndex);
+
+                    }
+                }
             }
         }
     }

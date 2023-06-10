@@ -148,8 +148,9 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(258, 12);
+            pictureBox2.Location = new Point(270, 12);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(31, 41);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -178,9 +179,10 @@
             // 
             // txt_mainsearch
             // 
+            txt_mainsearch.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             txt_mainsearch.BorderStyle = BorderStyle.FixedSingle;
             txt_mainsearch.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_mainsearch.Location = new Point(296, 17);
+            txt_mainsearch.Location = new Point(308, 17);
             txt_mainsearch.Name = "txt_mainsearch";
             txt_mainsearch.Size = new Size(326, 31);
             txt_mainsearch.TabIndex = 0;
@@ -538,6 +540,7 @@
             cmd_Category.Name = "cmd_Category";
             cmd_Category.Size = new Size(165, 28);
             cmd_Category.TabIndex = 50;
+            cmd_Category.SelectedIndexChanged += cmd_Category_SelectedIndexChanged;
             // 
             // label4
             // 
