@@ -55,7 +55,7 @@
             btnClear.Cursor = Cursors.Hand;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClear.Location = new Point(447, 374);
+            btnClear.Location = new Point(448, 374);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(300, 48);
             btnClear.TabIndex = 15;
@@ -70,7 +70,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(447, 316);
+            btnLogin.Location = new Point(448, 316);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(300, 48);
             btnLogin.TabIndex = 14;
@@ -82,7 +82,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(447, 209);
+            label2.Location = new Point(448, 209);
             label2.Name = "label2";
             label2.Size = new Size(92, 21);
             label2.TabIndex = 13;
@@ -92,7 +92,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(447, 105);
+            label1.Location = new Point(448, 105);
             label1.Name = "label1";
             label1.Size = new Size(104, 21);
             label1.TabIndex = 11;
@@ -102,7 +102,7 @@
             // 
             txtUsername.BorderStyle = BorderStyle.FixedSingle;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(447, 140);
+            txtUsername.Location = new Point(448, 140);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 29);
             txtUsername.TabIndex = 10;
@@ -213,7 +213,7 @@
             passhide1.FlatAppearance.BorderSize = 0;
             passhide1.FlatStyle = FlatStyle.Flat;
             passhide1.Image = (Image)resources.GetObject("passhide1.Image");
-            passhide1.Location = new Point(753, 243);
+            passhide1.Location = new Point(754, 243);
             passhide1.Name = "passhide1";
             passhide1.Size = new Size(30, 30);
             passhide1.TabIndex = 33;
@@ -224,7 +224,7 @@
             // 
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
             txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(447, 244);
+            txtPassword.Location = new Point(448, 244);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '●';
