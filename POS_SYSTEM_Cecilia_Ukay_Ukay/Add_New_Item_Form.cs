@@ -85,7 +85,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         connect.Close();
                         MessageBox.Show("Successfully added");
                         frm.show_item_list();
-                        this.Hide();
+                        this.Dispose();
                         Clear();
                     }
                 }

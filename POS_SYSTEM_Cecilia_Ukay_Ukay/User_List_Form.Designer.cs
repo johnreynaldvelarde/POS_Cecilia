@@ -90,6 +90,7 @@
             data_Grid_Staff.Size = new Size(1088, 492);
             data_Grid_Staff.TabIndex = 4;
             data_Grid_Staff.CellContentClick += data_Grid_Staff_CellContentClick;
+            data_Grid_Staff.SelectionChanged += data_Grid_Staff_SelectionChanged;
             // 
             // Column1
             // 

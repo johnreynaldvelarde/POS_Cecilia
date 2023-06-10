@@ -15,11 +15,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     {
         DB_Connection database = new DB_Connection();
 
-        public User_Create_Account_Form()
+        User_List_Form frm;
+
+        public User_Create_Account_Form(User_List_Form user)
         {
             InitializeComponent();
-
+            frm = user;
         }
+
+        public  string staffID;
 
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -46,7 +50,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Clear();
         }
 
- void regex(string name, string pass) {   //functions for regex userName and pass
+        /*
+    public void regex(string name, string pass) {   //functions for regex userName and pass
 
             try {
             string namePattern = @"\W";  //any non character
@@ -83,6 +88,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             
             
         }
+        */
 
         // button save info to database
         private void btn_Save_Click(object sender, EventArgs e)
@@ -102,7 +108,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else
             {
-             regex(txtUsername.Text.ToString(), txtPassword.Text.ToString()); //this is the regex function for user and password --dapits
+                // regex(txtUsername.Text.ToString(), txtPassword.Text.ToString()); //this is the regex function for user and password --dapits
                 MemoryStream mstream = new MemoryStream();
                 User_Profile.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png);
                 byte[] select_image = mstream.ToArray();
@@ -124,6 +130,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     connect.Close();
                     MessageBox.Show("Successfully saved");
+                    frm.view_user_account();
+                    this.Dispose();
                     Clear();
                 }
             }
@@ -201,6 +209,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 txtRetype.UseSystemPasswordChar = false;
             }
+        }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

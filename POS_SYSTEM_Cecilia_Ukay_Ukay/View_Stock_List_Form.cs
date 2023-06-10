@@ -135,5 +135,55 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 stock_quantity = data_Stock_Item[4, i].Value.ToString();
             }
         }
+
+        private void filter_data_product(string filterText)
+        {
+            foreach (DataGridViewRow row in data_Stock_Product.Rows)
+            {
+                string p_code = row.Cells["Product_Code"].Value?.ToString();
+                string p_name = row.Cells["Product_Name"].Value?.ToString();
+
+                if (p_code != null && p_code.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    p_name != null && p_name.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
+        private void filter_data_item(string filterText)
+        {
+            foreach (DataGridViewRow row in data_Stock_Item.Rows)
+            {
+                string i_code = row.Cells["Item_Code"].Value?.ToString();
+                string i_name = row.Cells["Item_Name"].Value?.ToString();
+
+                if (i_code != null && i_code.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    i_name != null && i_name.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0)
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
+        private void txt_search_product_TextChanged(object sender, EventArgs e)
+        {
+            string filterText = txt_search_product.Text;
+            filter_data_product(filterText);
+        }
+
+        private void txt_search_item_TextChanged(object sender, EventArgs e)
+        {
+            string filterText = txt_search_item.Text;
+            filter_data_item(filterText);
+        }
     }
 }

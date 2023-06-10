@@ -32,7 +32,7 @@
             btnClose = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
-            label1 = new Label();
+            label_title_staff = new Label();
             User_Profile = new PictureBox();
             btn_Add_Profile = new Button();
             label2 = new Label();
@@ -49,6 +49,7 @@
             cmdRole = new ComboBox();
             passhide2 = new CheckBox();
             passhide1 = new CheckBox();
+            btn_Update = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)User_Profile).BeginInit();
             SuspendLayout();
@@ -78,23 +79,23 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label_title_staff);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(10, 10);
             panel1.Name = "panel1";
             panel1.Size = new Size(880, 45);
             panel1.TabIndex = 14;
             // 
-            // label1
+            // label_title_staff
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(12, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(228, 24);
-            label1.TabIndex = 0;
-            label1.Text = "Create new account";
+            label_title_staff.AutoSize = true;
+            label_title_staff.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label_title_staff.ForeColor = Color.FromArgb(14, 159, 104);
+            label_title_staff.Location = new Point(12, 10);
+            label_title_staff.Name = "label_title_staff";
+            label_title_staff.Size = new Size(228, 24);
+            label_title_staff.TabIndex = 0;
+            label_title_staff.Text = "Create new account";
             // 
             // User_Profile
             // 
@@ -223,7 +224,7 @@
             btn_Save.FlatStyle = FlatStyle.Flat;
             btn_Save.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Save.ForeColor = Color.White;
-            btn_Save.Location = new Point(590, 539);
+            btn_Save.Location = new Point(427, 539);
             btn_Save.Name = "btn_Save";
             btn_Save.Size = new Size(145, 48);
             btn_Save.TabIndex = 28;
@@ -287,6 +288,21 @@
             passhide1.UseVisualStyleBackColor = true;
             passhide1.CheckedChanged += passhide1_CheckedChanged;
             // 
+            // btn_Update
+            // 
+            btn_Update.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Update.Cursor = Cursors.Hand;
+            btn_Update.FlatStyle = FlatStyle.Flat;
+            btn_Update.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Update.ForeColor = Color.White;
+            btn_Update.Location = new Point(586, 539);
+            btn_Update.Name = "btn_Update";
+            btn_Update.Size = new Size(145, 48);
+            btn_Update.TabIndex = 33;
+            btn_Update.Text = "Update";
+            btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
+            // 
             // User_Create_Account_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -294,6 +310,7 @@
             BackColor = Color.White;
             ClientSize = new Size(900, 600);
             ControlBox = false;
+            Controls.Add(btn_Update);
             Controls.Add(passhide1);
             Controls.Add(passhide2);
             Controls.Add(cmdRole);
@@ -330,21 +347,23 @@
         private Panel panel2;
         private Panel panel1;
         private Label label1;
-        private PictureBox User_Profile;
         private Button btn_Add_Profile;
         private Label label2;
-        private TextBox txtUsername;
         private Label label3;
-        private TextBox txtPassword;
         private Label label4;
-        private TextBox txtRetype;
         private Label label5;
         private Label label6;
-        private TextBox txtContact;
-        private Button btn_Save;
         private Button btn_Clear;
-        private ComboBox cmdRole;
         private CheckBox passhide2;
         private CheckBox passhide1;
+        public Button btn_Update;
+        public Button btn_Save;
+        public Label label_title_staff;
+        public TextBox txtUsername;
+        public TextBox txtPassword;
+        public TextBox txtRetype;
+        public TextBox txtContact;
+        public ComboBox cmdRole;
+        public PictureBox User_Profile;
     }
 }

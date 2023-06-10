@@ -490,7 +490,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void txt_Payment_Amount_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true; 
+            }
         }
 
         private void filter_data_available(string filterText)
