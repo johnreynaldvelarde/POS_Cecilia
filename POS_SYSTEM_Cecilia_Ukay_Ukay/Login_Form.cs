@@ -51,54 +51,114 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
                     connect.Open();
 
-                    string sql = "SELECT Staff_ID, Staff_Image, Staff_Name, Role FROM Staff_Account WHERE Staff_Name = @username AND Password = @password ";
+
+                    string sql = "SELECT Staff_ID, Staff_Image, Staff_Name, Role, Password FROM Staff_Account WHERE Staff_Name = @username";
 
                     using (SqlCommand command = new SqlCommand(sql, connect))
                     {
-                        command.Parameters.AddWithValue("@username", txtUsername.Text.ToString()); // Replace username with the actual value from the login form
-                        command.Parameters.AddWithValue("@password", txtPassword.Text.ToString()); // Replace password with the actual value from the login form
+                        command.Parameters.AddWithValue("@username", txtUsername.Text);
 
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
+                                string storedUsername = reader.GetString("Staff_Name");
+                                string storedPassword = reader.GetString("Password");
 
-                                Account_Class account = new Account_Class();
-
-                                account.Staff_ID = reader.GetInt32("Staff_ID");
-                                // Assuming staff_image is stored as a byte array in the database
-                                byte[] imageData = (byte[])reader["Staff_Image"];
-                                using (MemoryStream ms = new MemoryStream(imageData))
+                                if (string.Equals(txtUsername.Text, storedUsername, StringComparison.Ordinal) && string.Equals(txtPassword.Text, storedPassword, StringComparison.Ordinal))
                                 {
-                                    account.Staff_Image = Image.FromStream(ms);
-                                }
-                                account.Staff_Name = reader.GetString(2);
-                                account.Staff_Role = reader.GetString(3);
+                                    Account_Class account = new Account_Class();
 
-                                if (account.Staff_Role == "Manager")
-                                {
-                                    
-                                    Main_Form manager = new Main_Form();
-                                    manager.user_profile.Image = account.Staff_Image;
-                                    manager.Show();
+                                    account.Staff_ID = reader.GetInt32("Staff_ID");
 
-                                }
-                                else if (account.Staff_Role == "Cashier")
-                                {
-                                    Main_Form cashier = new Main_Form();
-                                    
+                                    byte[] imageData = (byte[])reader["Staff_Image"];
+                                    using (MemoryStream ms = new MemoryStream(imageData))
+                                    {
+                                        account.Staff_Image = Image.FromStream(ms);
+                                    }
+                                    account.Staff_Name = storedUsername;
+                                    account.Staff_Role = reader.GetString("Role");
+
+                                    if (account.Staff_Role == "Manager")
+                                    {
+                                        Main_Form manager = new Main_Form();
+                                        manager.user_profile.Image = account.Staff_Image;
+                                        manager.Show();
+                                    }
+                                    else if (account.Staff_Role == "Cashier")
+                                    {
+                                        Main_Form cashier = new Main_Form();
+                                        // Rest of the code for the cashier role
+                                    }
+                                    else
+                                    {
+                                        // Handle other roles or show an error message for unrecognized roles
+                                    }
                                 }
                                 else
                                 {
-                                    // Handle other roles or show an error message for unrecognized roles
+                                    MessageBox.Show("Invalid Staff Name or Password");
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Invalid Staff Name and Password");
+                                MessageBox.Show("Invalid Staff Name");
                             }
                         }
                     }
+                    // string sql = "SELECT Staff_ID, Staff_Image, Staff_Name, Role FROM Staff_Account WHERE Staff_Name = @username AND Password = @password ";
+                    // string sql = "SELECT Staff_ID, Staff_Image, Staff_Name, Role FROM Staff_Account WHERE LOWER(Staff_Name) = LOWER(@username) AND Password = @password";
+                    /*
+                     string sql = "SELECT Staff_ID, Staff_Image, Staff_Name, Role FROM Staff_Account WHERE Staff_Name = @username COLLATE Latin1_General_CS_AS AND Password = @password COLLATE Latin1_General_CS_AS";
+
+                     using (SqlCommand command = new SqlCommand(sql, connect))
+                     {
+                         command.Parameters.AddWithValue("@username", txtUsername.Text.ToString());
+                         command.Parameters.AddWithValue("@password", txtPassword.Text.ToString()); 
+
+                         using (SqlDataReader reader = command.ExecuteReader())
+                         {
+                             if (reader.Read())
+                             {
+
+                                 Account_Class account = new Account_Class();
+
+                                 account.Staff_ID = reader.GetInt32("Staff_ID");
+
+                                 byte[] imageData = (byte[])reader["Staff_Image"];
+                                 using (MemoryStream ms = new MemoryStream(imageData))
+                                 {
+                                     account.Staff_Image = Image.FromStream(ms);
+                                 }
+                                 account.Staff_Name = reader.GetString(2);
+                                 account.Staff_Role = reader.GetString(3);
+
+                                 if (account.Staff_Role == "Manager")
+                                 {
+
+                                     Main_Form manager = new Main_Form();
+                                     manager.user_profile.Image = account.Staff_Image;
+                                     manager.Show();
+
+                                 }
+                                 else if (account.Staff_Role == "Cashier")
+                                 {
+                                     Main_Form cashier = new Main_Form();
+
+                                 }
+                                 else
+                                 {
+                                     // Handle other roles or show an error message for unrecognized roles
+                                 }
+                             }
+                             else
+                             {
+                                 MessageBox.Show("Invalid Staff Name and Password");
+                             }
+                         }
+                     }
+                     */
+
                 }
             }
 
