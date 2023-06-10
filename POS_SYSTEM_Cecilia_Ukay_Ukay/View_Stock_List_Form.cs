@@ -140,8 +140,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             foreach (DataGridViewRow row in data_Stock_Product.Rows)
             {
-                string p_code = row.Cells["Product_Code"].Value?.ToString();
-                string p_name = row.Cells["Product_Name"].Value?.ToString();
+                string p_code = row.Cells[2].Value?.ToString();
+                string p_name = row.Cells[3].Value?.ToString();
 
                 if (p_code != null && p_code.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
                     p_name != null && p_name.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0)
@@ -159,8 +159,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             foreach (DataGridViewRow row in data_Stock_Item.Rows)
             {
-                string i_code = row.Cells["Item_Code"].Value?.ToString();
-                string i_name = row.Cells["Item_Name"].Value?.ToString();
+                string i_code = row.Cells[2].Value?.ToString();
+                string i_name = row.Cells[3].Value?.ToString();
 
                 if (i_code != null && i_code.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
                     i_name != null && i_name.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0)
