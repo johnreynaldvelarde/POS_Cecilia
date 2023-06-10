@@ -509,5 +509,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             FilterDataGridView(filterText);
         }
 
+        private void data_Grid_Transaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string column_order = data_Grid_Transaction.Columns[e.ColumnIndex].Name;
+            if (column_order == "Remove")
+            {
+                DataGridViewRow selectedRow = data_Grid_Transaction.Rows[e.RowIndex];
+                data_Grid_Transaction.Rows.Remove(selectedRow);
+                view_product();
+            }
+        }
     }
 }
