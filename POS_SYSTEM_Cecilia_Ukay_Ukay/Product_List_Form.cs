@@ -25,7 +25,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private Color defaultColor = Color.FromArgb(14, 159, 104);
         private Color settingsColor = Color.FromArgb(242, 197, 70);
 
-        private string product_id, product_code, product_name, price, quantity, size;
+        private string product_id, product_code, product_name, cate_type, price, quantity, size;
         private int category_id;
 
         public void button_highligted()
@@ -90,7 +90,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 frm.txt_Product_Name.Text = product_name;
                 frm.txt_Price.Text = price;
                 frm.cmd_Measurement.SelectedItem = size;
-              //  frm.c_id = category_id;
+                frm.cmd_Category.SelectedItem = cate_type;
 
                 frm.ShowDialog();
             }
@@ -126,7 +126,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 product_id = data_Grid_Product[1, i].Value.ToString();
                 product_code = data_Grid_Product[2, i].Value.ToString();
                 product_name = data_Grid_Product[3, i].Value.ToString();
-              //  category_id = data_Grid_Product[4, i];
+                cate_type = data_Grid_Product[4, i].Value.ToString();
+                //  category_id = data_Grid_Product[4, i];
                 price = data_Grid_Product[5, i].Value.ToString();
                 size = data_Grid_Product[6, i].Value.ToString();
             }

@@ -33,7 +33,6 @@
             btnClear = new Button();
             btnLogin = new Button();
             label2 = new Label();
-            txtPassword = new TextBox();
             label1 = new Label();
             txtUsername = new TextBox();
             btnClose = new Button();
@@ -45,6 +44,8 @@
             label_time = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             btn_Change_DateTime = new Button();
+            passhide1 = new CheckBox();
+            txtPassword = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -54,7 +55,7 @@
             btnClear.Cursor = Cursors.Hand;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btnClear.Location = new Point(455, 374);
+            btnClear.Location = new Point(447, 374);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(300, 48);
             btnClear.TabIndex = 15;
@@ -69,7 +70,7 @@
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btnLogin.ForeColor = Color.White;
-            btnLogin.Location = new Point(455, 316);
+            btnLogin.Location = new Point(447, 316);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(300, 48);
             btnLogin.TabIndex = 14;
@@ -81,27 +82,17 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(455, 209);
+            label2.Location = new Point(447, 209);
             label2.Name = "label2";
             label2.Size = new Size(92, 21);
             label2.TabIndex = 13;
             label2.Text = "Password *";
             // 
-            // txtPassword
-            // 
-            txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPassword.Location = new Point(455, 244);
-            txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(300, 29);
-            txtPassword.TabIndex = 12;
-            txtPassword.Text = "12345";
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(455, 105);
+            label1.Location = new Point(447, 105);
             label1.Name = "label1";
             label1.Size = new Size(104, 21);
             label1.TabIndex = 11;
@@ -111,7 +102,7 @@
             // 
             txtUsername.BorderStyle = BorderStyle.FixedSingle;
             txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtUsername.Location = new Point(455, 140);
+            txtUsername.Location = new Point(447, 140);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 29);
             txtUsername.TabIndex = 10;
@@ -214,6 +205,32 @@
             btn_Change_DateTime.UseVisualStyleBackColor = false;
             btn_Change_DateTime.Click += btn_Change_DateTime_Click;
             // 
+            // passhide1
+            // 
+            passhide1.Appearance = Appearance.Button;
+            passhide1.AutoSize = true;
+            passhide1.Cursor = Cursors.Hand;
+            passhide1.FlatAppearance.BorderSize = 0;
+            passhide1.FlatStyle = FlatStyle.Flat;
+            passhide1.Image = (Image)resources.GetObject("passhide1.Image");
+            passhide1.Location = new Point(753, 243);
+            passhide1.Name = "passhide1";
+            passhide1.Size = new Size(30, 30);
+            passhide1.TabIndex = 33;
+            passhide1.UseVisualStyleBackColor = true;
+            passhide1.CheckedChanged += passhide1_CheckedChanged;
+            // 
+            // txtPassword
+            // 
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.Location = new Point(447, 244);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
+            txtPassword.Size = new Size(300, 29);
+            txtPassword.TabIndex = 34;
+            // 
             // Login_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -221,6 +238,8 @@
             BackColor = Color.White;
             ClientSize = new Size(800, 600);
             ControlBox = false;
+            Controls.Add(txtPassword);
+            Controls.Add(passhide1);
             Controls.Add(btn_Change_DateTime);
             Controls.Add(label_time);
             Controls.Add(label_date);
@@ -230,7 +249,6 @@
             Controls.Add(btnClear);
             Controls.Add(btnLogin);
             Controls.Add(label2);
-            Controls.Add(txtPassword);
             Controls.Add(label1);
             Controls.Add(txtUsername);
             Controls.Add(btnClose);
@@ -249,7 +267,6 @@
         private Button btnClear;
         private Button btnLogin;
         private Label label2;
-        private TextBox txtPassword;
         private Label label1;
         private TextBox txtUsername;
         private Button btnClose;
@@ -261,5 +278,7 @@
         private Label label_time;
         private System.Windows.Forms.Timer timer1;
         private Button btn_Change_DateTime;
+        private CheckBox passhide1;
+        public TextBox txtPassword;
     }
 }

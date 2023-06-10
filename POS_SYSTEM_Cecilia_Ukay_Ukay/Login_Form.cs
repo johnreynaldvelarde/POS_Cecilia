@@ -157,5 +157,17 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             Process.Start("control", "timedate.cpl");
         }
+
+        private void passhide1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (passhide1.Checked)
+            {
+                txtPassword.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txtPassword.UseSystemPasswordChar = false;
+            }
+        }
     }
 }

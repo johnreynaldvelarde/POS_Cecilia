@@ -168,23 +168,45 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else
             {
-                
+                int categoryId = 0;
+
+                string selectedCategory = cmd_Category.SelectedItem.ToString();
+
+                // looking for  Category_ID value in the Categories table
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    string sql = "UPDATE Product SET Product_Name = @Product_Name, Price  = @Price, Size = @Size, Category_ID, @Category_ID, Date_Added = @Date_Added WHERE Product_ID = @Product_ID ";
+                    string sql = "SELECT Category_ID FROM Categories WHERE Category_Name = @Category_Name AND Archive = 0";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Category_Name", selectedCategory);
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        categoryId = Convert.ToInt32(result);
+                    }
+                    connect.Close();
+                }
+
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "UPDATE Product SET Product_Name = @Product_Name, Price  = @Price, Size = @Size, Category_ID = @Category_ID, Date_Added = @Date_Added WHERE Product_ID = @Product_ID ";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Product_Name", txt_Product_Name.Text);
                     command.Parameters.AddWithValue("@Price", txt_Price.Text);
                     command.Parameters.AddWithValue("@Size", cmd_Measurement.SelectedItem);
-                   // command.Parameters.AddWithValue("@Category_ID", );
+                    command.Parameters.AddWithValue("@Category_ID", categoryId);
                     command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
                     command.Parameters.AddWithValue("@Product_ID", Convert.ToInt32(productID));
 
                     int rowsAffected = command.ExecuteNonQuery();
                     connect.Close();
                 }
-                
+                this.Dispose();
+                MessageBox.Show("Edit successfully");
+                frm.view_product_list();
+
             }
         }
 

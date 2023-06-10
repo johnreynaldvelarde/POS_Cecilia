@@ -23,7 +23,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm = user;
         }
 
-        public  string staffID;
+        public string staffID;
 
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -188,6 +188,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // password hide 
         private void passhide1_CheckedChanged(object sender, EventArgs e)
         {
+
             if (passhide1.Checked)
             {
                 txtPassword.UseSystemPasswordChar = true;
@@ -196,6 +197,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 txtPassword.UseSystemPasswordChar = false;
             }
+
         }
 
         // retype password hide
