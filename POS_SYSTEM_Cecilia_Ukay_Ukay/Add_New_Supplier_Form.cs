@@ -75,5 +75,34 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             this.Dispose();
         }
+
+        private void btn_Update_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txt_Supplier_Name.Text) || String.IsNullOrEmpty(txt_Address.Text) || String.IsNullOrEmpty(txt_Contact_Number.Text))
+            {
+                MessageBox.Show("Fill in the blank");
+            }
+            else
+            {
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "UPDATE Suppliers SET Supplier_Name = @Supplier_Name, Address = @Address, Contact_Number = @Contact_Number, Email = @Email, Date_Added = @Date_Added WHERE Supplier_ID = @Supplier_ID ";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Supplier_Name", txt_Supplier_Name.Text);
+                    command.Parameters.AddWithValue("@Address", txt_Address.Text);
+                    command.Parameters.AddWithValue("@Contact_Number", txt_Contact_Number.Text);
+                    command.Parameters.AddWithValue("@Email", txt_Email.Text);
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
+                    command.Parameters.AddWithValue("@Supplier_ID", Convert.ToInt32(supplier_id));
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connect.Close();
+                }
+                MessageBox.Show("Edit successfully");
+                frm.view_supplier();
+                this.Dispose();
+            }
+        }
     }
 }

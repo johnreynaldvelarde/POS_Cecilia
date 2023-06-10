@@ -27,6 +27,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btn_Add_New_Supplier_Click(object sender, EventArgs e)
         {
             Add_New_Supplier_Form frm = new Add_New_Supplier_Form(this);
+            frm.btn_Update.Enabled = false;
             frm.ShowDialog();
         }
 
@@ -60,12 +61,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             if (column_supplier == "Edit")
             {
                 Add_New_Supplier_Form frm = new Add_New_Supplier_Form(this);
+                frm.btn_Save.Enabled = false;
                 frm.label_title_supplier.Text = "Update the supplier";
                 frm.supplier_id = supplierID;
                 frm.txt_Supplier_Name.Text = supplierName;
                 frm.txt_Address.Text = supplierAddress;
                 frm.txt_Contact_Number.Text = supplierNumber;
                 frm.txt_Email.Text = supplierEmail;
+                frm.ShowDialog();
 
             }
             else if (column_supplier == "Delete")

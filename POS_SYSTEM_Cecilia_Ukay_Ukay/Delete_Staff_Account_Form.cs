@@ -49,5 +49,37 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 connect.Close();
             }
         }
+
+        private void data_Delete_Staff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string columnSupplier = data_Delete_Staff.Columns[e.ColumnIndex].Name;
+
+            if (columnSupplier == "Restore")
+            {
+
+                if (MessageBox.Show("Do you want to restore this staff", "Restore the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (e.ColumnIndex == data_Delete_Staff.Columns["Restore"].Index && e.RowIndex >= 0)
+                    {
+                        int id = Convert.ToInt32(data_Delete_Staff.Rows[e.RowIndex].Cells["Staff_ID"].Value);
+
+                        using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                        {
+
+                            connect.Open();
+                            string sql = "UPDATE Staff_Account SET Archive = 0 WHERE Staff_ID = @Staff_ID";
+                            SqlCommand command = new SqlCommand(sql, connect);
+                            command.Parameters.AddWithValue("@Staff_ID", Convert.ToInt32(id));
+                            command.ExecuteNonQuery();
+                            connect.Close();
+
+                        }
+
+                        data_Delete_Staff.Rows.RemoveAt(e.RowIndex);
+
+                    }
+                }
+            }
+        }
     }
 }

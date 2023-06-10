@@ -55,7 +55,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             if (columnItem == "Restore")
             {
 
-                if (MessageBox.Show("Do you want to restore this product?", "Restore the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to restore this item?", "Restore the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (e.ColumnIndex == data_Delete_Item.Columns["Restore"].Index && e.RowIndex >= 0)
                     {

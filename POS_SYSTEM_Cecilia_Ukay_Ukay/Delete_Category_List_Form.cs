@@ -53,7 +53,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             string delete_category = data_Delete_Category.Columns[e.ColumnIndex].Name;
             if (delete_category == "Restore")
             {
-                if (MessageBox.Show("Do you want to restore this product?", "Restore the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Do you want to restore this category?", "Restore the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     if (e.ColumnIndex == data_Delete_Category.Columns["Restore"].Index && e.RowIndex >= 0)
                     {

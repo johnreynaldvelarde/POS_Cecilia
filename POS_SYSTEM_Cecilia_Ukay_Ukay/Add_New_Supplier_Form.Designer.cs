@@ -208,6 +208,7 @@
             btn_Update.TabIndex = 95;
             btn_Update.Text = "Update";
             btn_Update.UseVisualStyleBackColor = false;
+            btn_Update.Click += btn_Update_Click;
             // 
             // Add_New_Supplier_Form
             // 
@@ -242,7 +243,6 @@
 
         #endregion
         private Button btn_Clear;
-        private Button btn_Save;
         private Label label6;
         private Label label4;
         private Label label3;
@@ -257,5 +257,6 @@
         public TextBox txt_Address;
         public Label label_title_supplier;
         public TextBox txt_Supplier_Name;
+        public Button btn_Save;
     }
 }

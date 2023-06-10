@@ -136,9 +136,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     int rowsAffected = command.ExecuteNonQuery();
                     connect.Close();
                 }
-                this.Dispose();
                 MessageBox.Show("Edit successfully");
                 frm.show_item_list();
+                this.Dispose();
+
             }
 
         }

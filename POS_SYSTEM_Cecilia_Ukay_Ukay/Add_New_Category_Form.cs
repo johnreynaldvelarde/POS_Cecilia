@@ -86,9 +86,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     connect.Close();
                 }
 
-                this.Dispose();
                 MessageBox.Show("Edit successfully");
                 frm.view_category();
+                this.Dispose();
+
             }
         }
 

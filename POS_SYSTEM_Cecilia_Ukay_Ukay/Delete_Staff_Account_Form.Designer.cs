@@ -105,6 +105,7 @@
             data_Delete_Staff.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Delete_Staff.Size = new Size(1088, 492);
             data_Delete_Staff.TabIndex = 7;
+            data_Delete_Staff.CellContentClick += data_Delete_Staff_CellContentClick;
             // 
             // Column1
             // 
