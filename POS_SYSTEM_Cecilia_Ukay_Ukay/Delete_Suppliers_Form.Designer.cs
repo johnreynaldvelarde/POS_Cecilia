@@ -35,7 +35,7 @@
             label1 = new Label();
             data_Delete_Supplier = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            Supplier_ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Restore = new DataGridViewImageColumn();
@@ -84,7 +84,7 @@
             data_Delete_Supplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Delete_Supplier.ColumnHeadersHeight = 50;
             data_Delete_Supplier.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Delete_Supplier.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column5, Restore, Total_Delete });
+            data_Delete_Supplier.Columns.AddRange(new DataGridViewColumn[] { Column1, Supplier_ID, Column2, Column5, Restore, Total_Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -114,13 +114,12 @@
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
-            // Column3
+            // Supplier_ID
             // 
-            Column3.DataPropertyName = "Category_ID";
-            Column3.HeaderText = "Supplier_ID";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Visible = false;
+            Supplier_ID.HeaderText = "Supplier_ID";
+            Supplier_ID.Name = "Supplier_ID";
+            Supplier_ID.ReadOnly = true;
+            Supplier_ID.Visible = false;
             // 
             // Column2
             // 
@@ -180,7 +179,7 @@
         private Label label1;
         private DataGridView data_Delete_Supplier;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Supplier_ID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewImageColumn Restore;

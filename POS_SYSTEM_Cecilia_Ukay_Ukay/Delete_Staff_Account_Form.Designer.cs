@@ -35,7 +35,7 @@
             label1 = new Label();
             data_Delete_Staff = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            Staff_ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Restore = new DataGridViewImageColumn();
@@ -84,7 +84,7 @@
             data_Delete_Staff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Delete_Staff.ColumnHeadersHeight = 50;
             data_Delete_Staff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Delete_Staff.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column5, Restore, Total_Delete });
+            data_Delete_Staff.Columns.AddRange(new DataGridViewColumn[] { Column1, Staff_ID, Column2, Column5, Restore, Total_Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -114,13 +114,12 @@
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
-            // Column3
+            // Staff_ID
             // 
-            Column3.DataPropertyName = "Category_ID";
-            Column3.HeaderText = "Staff_ID";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Visible = false;
+            Staff_ID.HeaderText = "Staff_ID";
+            Staff_ID.Name = "Staff_ID";
+            Staff_ID.ReadOnly = true;
+            Staff_ID.Visible = false;
             // 
             // Column2
             // 
@@ -180,7 +179,7 @@
         private Label label1;
         private DataGridView data_Delete_Staff;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Staff_ID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewImageColumn Restore;
