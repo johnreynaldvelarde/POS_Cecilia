@@ -48,12 +48,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
                     connect.Open();
 
-                    string sql = "INSERT INTO Suppliers (Supplier_Name, Address, Contact_Number, Email, Archive) VALUES (@Supplier_Name, @Address, @Contact_Number, @Email, @Archive)";
+                    string sql = "INSERT INTO Suppliers (Supplier_Name, Address, Contact_Number, Email, Date_Added, Archive) VALUES (@Supplier_Name, @Address, @Contact_Number, @Email, @Date_Addded, @Archive)";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Supplier_Name", txt_Supplier_Name.Text);
                     command.Parameters.AddWithValue("@Address", txt_Address.Text);
                     command.Parameters.AddWithValue("@Contact_Number", txt_Contact_Number.Text);
                     command.Parameters.AddWithValue("@Email", txt_Email.Text);
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
                     command.Parameters.AddWithValue("@Archive", 0);
                     command.ExecuteNonQuery();
 
