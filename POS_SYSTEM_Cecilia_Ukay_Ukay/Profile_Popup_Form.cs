@@ -30,7 +30,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             if (res == DialogResult.Yes)
             {
                 Application.Exit();
-
+                Login_Form frm = new Login_Form();
+                frm.Show();
             }
             else
             {

@@ -50,6 +50,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 account.Staff_Name = name;
                 account.Staff_Role = role;
 
+                this.Hide();
                 Main_Form mainForm = new Main_Form();
                 mainForm.btn_Sell.Enabled = false;
                 mainForm.Show();
@@ -89,12 +90,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                                     if (account.Staff_Role == "Manager")
                                     {
+                                        this.Hide();
                                         Main_Form manager = new Main_Form();
                                         manager.user_profile.Image = account.Staff_Image;
                                         manager.Show();
                                     }
                                     else if (account.Staff_Role == "Cashier")
                                     {
+                                        this.Hide();
                                         Main_Form cashier = new Main_Form();
                                         cashier.btn_Inventory.Enabled = false;
                                         cashier.btn_Archive.Enabled = false;
