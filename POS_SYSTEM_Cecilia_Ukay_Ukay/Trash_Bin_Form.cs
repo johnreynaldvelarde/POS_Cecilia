@@ -55,11 +55,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Category_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Category_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
+            btn_Item.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Item.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
+            btn_Staff.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Staff.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
-            // btn_Item_List.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
-            //  btn_Item_List.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
-
+            btn_Supplier.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+            btn_Supplier.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
         }
 
@@ -67,8 +70,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             btn_Product_List.BackColor = defaultColor;
             btn_Category_List.BackColor = defaultColor;
-            // btn_Stock_List.BackColor = defaultColor;
-            // btn_Item_List.BackColor = defaultColor;
+            btn_Item.BackColor = defaultColor;
+            btn_Staff.BackColor = defaultColor;
+            btn_Supplier.BackColor = defaultColor;
+
         }
 
         public void view_product_list()
@@ -95,17 +100,23 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Item_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Delete_Item_List_Form());
+            resetButtonColors();
+            btn_Item.BackColor = Color.FromArgb(242, 197, 70);
         }
 
         private void btn_Staff_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Delete_Staff_Account_Form());
+            resetButtonColors();
+            btn_Staff.BackColor = Color.FromArgb(242, 197, 70);
         }
 
         private void btn_Supplier_Click(object sender, EventArgs e)
         {
-
+            openChildForm(new Delete_Suppliers_Form());
+            resetButtonColors();
+            btn_Supplier.BackColor = Color.FromArgb(242, 197, 70);
         }
     }
 }

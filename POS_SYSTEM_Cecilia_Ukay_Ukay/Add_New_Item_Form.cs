@@ -125,7 +125,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    string sql = "UPDATE Item SET Item_Name = @Item_Name, Price, Per_Piece, Date_Added = @Date_Added WHERE Item_ID = @Item_ID ";
+                    string sql = "UPDATE Item SET Item_Name = @Item_Name, Price = @Price, Per_Piece = @Per_Piece, Date_Added = @Date_Added WHERE Item_ID = @Item_ID";
                     SqlCommand command = new SqlCommand(sql, connect);
                     command.Parameters.AddWithValue("@Item_Name", txt_Item_Name.Text);
                     command.Parameters.AddWithValue("@Price", txt_Price.Text);

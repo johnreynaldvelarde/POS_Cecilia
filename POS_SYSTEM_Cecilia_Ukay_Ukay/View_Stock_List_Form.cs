@@ -88,12 +88,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.ShowDialog();
         }
 
-        private void btn_Create_Item_Click(object sender, EventArgs e)
-        {
-            // Add_New_Item_Form frm = new Add_New_Item_Form();
-            // frm.ShowDialog();
-        }
-
         private void data_Stock_Product_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string stock_product = data_Stock_Product.Columns[e.ColumnIndex].Name;
@@ -119,9 +113,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void data_Stock_Item_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string stock_item = data_Stock_Item.Columns[e.ColumnIndex].Name;
-            if (stock_item == "Remove")
+            if (stock_item == "Defect")
             {
-                Remove_Stock_Form frm = new Remove_Stock_Form();
+                Remove_Stock_Form frm = new Remove_Stock_Form(this);
                 frm.txt_Item_Code.Text = stock_itemCode;
                 frm.txt_Item_Name.Text = stock_itemName;
                 frm.txt_Quantity.Text = stock_quantity;

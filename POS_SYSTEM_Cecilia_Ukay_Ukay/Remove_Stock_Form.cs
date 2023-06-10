@@ -16,9 +16,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     {
         DB_Connection database = new DB_Connection();
 
-        public Remove_Stock_Form()
+        View_Stock_List_Form frm;
+        public Remove_Stock_Form(View_Stock_List_Form stock)
         {
             InitializeComponent();
+            frm = stock;
         }
 
         public string stock_ItemID;
@@ -30,8 +32,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         public void Clear()
         {
-            txt_Quantity.Clear();
-            txt_Quantity.Focus();
+            txt_Reduce_Quantity.Clear();
+            txt_Reduce_Quantity.Focus();
         }
 
 
@@ -50,30 +52,31 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
                     MessageBox.Show("The quantity is zero");
                 }
-                else if (reduce_quantity >= stock_quantity)
+                else if (reduce_quantity > stock_quantity)
+                {
+                    MessageBox.Show("Quantity exceeds the stock limit.");
+                    Clear();
+                }
+                else
                 {
                     using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                     {
                         connect.Open();
 
                         // update for stock quantity
-                        string update_stock = "UPDATE Stock_Item SET Quantity = Quantity - @Subtract_Quantity WHERE StockItem_ID = @StockItem_ID";
+                        string update_stock = "UPDATE Item_Stock SET ItemStock_Qyt = ItemStock_Qyt - @Subtract_Quantity WHERE ItemStock_ID = @ItemStock_ID";
                         SqlCommand command = new SqlCommand(update_stock, connect);
-                        command.Parameters.AddWithValue("@StockItem_ID", stock_ItemID);
+                        command.Parameters.AddWithValue("@ItemStock_ID", stock_ItemID);
                         command.Parameters.AddWithValue("@Subtract_Quantity", Convert.ToInt32(txt_Reduce_Quantity.Text));
                         command.ExecuteNonQuery();
 
                         connect.Close();
                         MessageBox.Show("Successfully reduce the stock");
                         Clear();
+                        frm.show_item_stock();
                         this.Close();
 
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Quantity exceeds the stock limit.");
-                    Clear();
                 }
             }
         }
