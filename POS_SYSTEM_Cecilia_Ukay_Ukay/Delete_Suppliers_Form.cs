@@ -18,10 +18,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Delete_Suppliers_Form()
         {
             InitializeComponent();
-            show_delete_supplier();
+            Delete_Supplier();
+
         }
 
-        public void show_delete_supplier()
+        public void Delete_Supplier()
         {
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
@@ -78,6 +79,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     }
                 }
             }
+        }
+
+        private void Delete_Suppliers_Form_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
