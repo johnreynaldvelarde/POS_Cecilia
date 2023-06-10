@@ -41,6 +41,7 @@
             Column6 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             Column8 = new DataGridViewTextBoxColumn();
@@ -140,7 +141,7 @@
             data_Grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Product.ColumnHeadersHeight = 50;
             data_Grid_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column3, Column2, Column4, Column7, Column8, Edit, Delete });
+            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column3, Column2, Column5, Column4, Column7, Column8, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -167,7 +168,7 @@
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 34.5617F;
+            Column1.FillWeight = 35.93783F;
             Column1.HeaderText = "#";
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
@@ -182,7 +183,7 @@
             // Column3
             // 
             Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.FillWeight = 122.053375F;
+            Column3.FillWeight = 126.913147F;
             Column3.HeaderText = "Product Code";
             Column3.Name = "Column3";
             Column3.ReadOnly = true;
@@ -190,15 +191,23 @@
             // Column2
             // 
             Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.FillWeight = 148.8379F;
-            Column2.HeaderText = "Product Name";
+            Column2.FillWeight = 154.764145F;
+            Column2.HeaderText = " Name";
             Column2.Name = "Column2";
             Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 103.981682F;
+            Column5.HeaderText = "Category";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             // 
             // Column4
             // 
             Column4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column4.FillWeight = 108.821739F;
+            Column4.FillWeight = 85.60315F;
             Column4.HeaderText = "Price";
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
@@ -206,14 +215,14 @@
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column7.FillWeight = 88.8420639F;
+            Column7.FillWeight = 92.37947F;
             Column7.HeaderText = "Size";
             Column7.Name = "Column7";
             Column7.ReadOnly = true;
             // 
             // Column8
             // 
-            Column8.FillWeight = 88.8420639F;
+            Column8.FillWeight = 92.37947F;
             Column8.HeaderText = "Date Added";
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
@@ -269,6 +278,7 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;

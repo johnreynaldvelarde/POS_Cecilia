@@ -109,6 +109,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btnClose_Click(object sender, EventArgs e)
         {
             frm.view_product();
+            frm.cmd_Category.Items.Clear();
             frm.load_category();
             this.Dispose();
         }

@@ -906,7 +906,6 @@
         private Panel upper_panel;
         private Label label4;
         private Label label6;
-        private ComboBox cmd_Category;
         private Label label7;
         public TextBox txt_Payment_Amount;
         public TextBox txt_Refund;
@@ -935,5 +934,6 @@
         private DataGridViewTextBoxColumn Amount;
         private DataGridViewImageColumn Remove;
         public CircularPictureBox user_profile;
+        public ComboBox cmd_Category;
     }
 }

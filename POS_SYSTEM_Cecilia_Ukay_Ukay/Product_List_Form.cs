@@ -52,7 +52,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT Product_ID, Product_Code, Product_Name, Price,  Date_Added, Size, Archive FROM Product WHERE Archive = 0";
+                //string sql = "SELECT Product_ID, Product_Code, Product_Name, Price,  Date_Added, Size, Archive FROM Product WHERE Archive = 0";
+                string sql = "SELECT P.Product_ID, P.Product_Code, P.Product_Name, P.Price, P.Date_Added, P.Size, C.Category_Name " +
+                             "FROM Product P " +
+                             "INNER JOIN Categories C ON P.Category_ID = C.Category_ID " +
+                             "WHERE P.Archive = 0";
+
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
@@ -60,14 +65,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 while (reader.Read())
                 {
-                    if (reader["Archive"].ToString() == "0")
-                    {
-                        i += 1;
-                        data_Grid_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
-                                                      reader["Price"].ToString(), reader["Size"].ToString(), reader["Date_Added"].ToString());
-
-                    }
-
+                    i += 1;
+                    data_Grid_Product.Rows.Add(i, reader["Product_ID"].ToString(), reader["Product_Code"].ToString(), reader["Product_Name"].ToString(),
+                                                  reader["Category_Name"].ToString(), reader["Price"].ToString(), reader["Size"].ToString(), reader["Date_Added"].ToString());
                 }
                 reader.Close();
                 connect.Close();
