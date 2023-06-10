@@ -362,7 +362,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void btn_Inventory_Click(object sender, EventArgs e)
         {
             btn_Inventory.BackColor = settingsColor;
-            Inventory_Form frm = new Inventory_Form();
+            Inventory_Form frm = new Inventory_Form(this);
             frm.ShowDialog();
             frm.Dispose();
             btn_Inventory.BackColor = defaultColor;
@@ -386,7 +386,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             btn_Archive.BackColor = settingsColor;
 
-            Trash_Bin_Form frm = new Trash_Bin_Form();
+            Trash_Bin_Form frm = new Trash_Bin_Form(this);
             frm.ShowDialog();
             frm.Dispose();
             btn_Archive.BackColor = defaultColor;

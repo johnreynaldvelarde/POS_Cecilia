@@ -15,6 +15,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     {
         DB_Connection database = new DB_Connection();
 
+    
         public Delete_Product_List_Form()
         {
             InitializeComponent();
@@ -64,7 +65,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         {
 
                             connect.Open();
-                            string sql = "UPDATE Product SET Archive = 1 WHERE Product_ID = @Product_ID";
+                            string sql = "UPDATE Product SET Archive = 0 WHERE Product_ID = @Product_ID";
                             SqlCommand command = new SqlCommand(sql, connect);
                             command.Parameters.AddWithValue("@Product_ID", Convert.ToInt32(id));
                             command.ExecuteNonQuery();

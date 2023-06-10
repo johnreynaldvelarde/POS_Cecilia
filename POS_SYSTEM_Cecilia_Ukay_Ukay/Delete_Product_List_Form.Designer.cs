@@ -35,11 +35,10 @@
             label1 = new Label();
             data_Delete_Product = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
+            Product_ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Restore = new DataGridViewImageColumn();
-            Total_Delete = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Delete_Product).BeginInit();
             SuspendLayout();
@@ -84,7 +83,7 @@
             data_Delete_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Delete_Product.ColumnHeadersHeight = 50;
             data_Delete_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Delete_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column5, Restore, Total_Delete });
+            data_Delete_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Product_ID, Column2, Column5, Restore });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -115,13 +114,13 @@
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
-            // Column3
+            // Product_ID
             // 
-            Column3.DataPropertyName = "Category_ID";
-            Column3.HeaderText = "Product_ID";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Visible = false;
+            Product_ID.DataPropertyName = "Product_ID";
+            Product_ID.HeaderText = "Product_ID";
+            Product_ID.Name = "Product_ID";
+            Product_ID.ReadOnly = true;
+            Product_ID.Visible = false;
             // 
             // Column2
             // 
@@ -148,15 +147,6 @@
             Restore.Name = "Restore";
             Restore.ReadOnly = true;
             // 
-            // Total_Delete
-            // 
-            Total_Delete.FillWeight = 54.4025269F;
-            Total_Delete.HeaderText = "";
-            Total_Delete.Image = (Image)resources.GetObject("Total_Delete.Image");
-            Total_Delete.MinimumWidth = 50;
-            Total_Delete.Name = "Total_Delete";
-            Total_Delete.ReadOnly = true;
-            // 
             // Delete_Product_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -181,10 +171,9 @@
         private Label label1;
         private DataGridView data_Delete_Product;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Product_ID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewImageColumn Restore;
-        private DataGridViewImageColumn Total_Delete;
     }
 }

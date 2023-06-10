@@ -60,7 +60,7 @@
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Product_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -85,23 +85,6 @@
         n9ayz1mNghgs3r/I6MwP9IbUoWxKjO27yxTrVHNzbIoHTbZn+/oMPTHOpoEkbjSCTwxuTXXQczs6SHVV
         hGQ8920QYPQJCqcGX3b6XBj3DXuSIT13AifqJ4Kpsehq3qKrmgTHsfO6/kFbxGHpoZ+K9JWHhRqQe5YG
         alXBS7znaUP+F8t6AJsaDeQCZkqaAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="Total_Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Total_Delete.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAe9JREFUSEvt
-        VE1LW0EUfV1of0EXUnAl3XQxM+Q3KIgLnUmz7TJ25aIFRdG1Iuom/poWWtKWokYEFwrJvNCdS+MHwS4K
-        8Zxx3iOvL89MqHTVA4d3536cOzOZm+g/ngSxUR+skR2w59mxZfHeh/8eELyJjfxktVghnQ2fD4+GuCyr
-        tiyPM8SuIXqRrJ3Nk/Tn0I9aL1OMWKu3SL4kudMQpvmo9TKPw2r5hfTLoRg1/982GNUOQlFxiB2EouIQ
-        OwhFxf12S8s67CaeawNDd0e2jDziUz2ulsaYU4gi0cRuVsRLiP10s2BkPdZy+4HqazIf56Y0wZqBGCSa
-        2hCE+Cm+VzjFNP39sG/EDPKuET85q7we9+4scqLZBpa7RJO5dqU0ie8yYwRt+pA373K0WvKhLHKiWfsG
-        xT+4bhm1QSFbVluOrrFYd7lGHoIHtHPoF21r8YpMbNx11xqxw3Uvip7hvvddE0dVo48x+PegcU07ByR/
-        But+mQH8t0kDItm5oxab3j2sgaqhoGu12k2Pn16DaCPmrgjfNSecxlyjVR/jFX2nnYOtqBcIfgR/g/74
-        KVv8Bv7I73woHHZ26jmETnl8DNWCd6eIjdAQ50MofqbDwEGjAHfJ4UoGDY2/0Td00ELA3eFJLkKwAf4i
-        0eCPv4oougdIt+okkF7AawAAAABJRU5ErkJggg==
 </value>
   </data>
 </root>

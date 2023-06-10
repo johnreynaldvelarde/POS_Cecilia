@@ -12,10 +12,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class Trash_Bin_Form : Form
     {
-        public Trash_Bin_Form()
+        Main_Form frm;
+        public Trash_Bin_Form(Main_Form main)
         {
             InitializeComponent();
             view_product_list();
+            frm = main;
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
@@ -38,7 +40,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            frm.view_product();
             this.Close();
+
         }
 
         public void button_highligted()
@@ -67,10 +71,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         public void view_product_list()
         {
-            
+
             openChildForm(new Delete_Product_List_Form());
             btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
-            
+
         }
 
         private void btn_Category_List_Click(object sender, EventArgs e)
@@ -85,6 +89,21 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             openChildForm(new Delete_Product_List_Form());
             resetButtonColors();
             btn_Product_List.BackColor = Color.FromArgb(242, 197, 70);
+        }
+
+        private void btn_Item_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Staff_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Supplier_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

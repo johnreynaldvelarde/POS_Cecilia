@@ -14,10 +14,12 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
     public partial class Inventory_Form : Form
     {
-        public Inventory_Form()
+        Main_Form frm;
+        public Inventory_Form(Main_Form main)
         {
             InitializeComponent();
             view_product_list();
+            frm = main;
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
@@ -104,27 +106,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             btn_Stock_List.BackColor = Color.FromArgb(242, 197, 70);
         }
 
-        /*
-        private void btn_Product_List_Click_1(object sender, EventArgs e)
-        {
-            SqlConnection con = new SqlConnection("Data Source=COLA\\SQLEXPRESS;Initial Catalog=cecila;Integrated Security=True");
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Select * from viewProduct", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-
-            dataGridView1.DataSource = dt;
-        }
-        */
-
-        private void gridInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
+            frm.view_product();
             this.Dispose();
         }
 
