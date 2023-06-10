@@ -101,6 +101,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                                         cashier.btn_History.Enabled = false;
                                         cashier.btn_Settings.Enabled = false;
                                         cashier.btn_User.Enabled = false;
+                                        cashier.user_profile.Image = account.Staff_Image;
+                                        cashier.Show();
                                         // Rest of the code for the cashier role
                                     }
                                     else
