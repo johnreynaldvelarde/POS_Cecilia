@@ -154,6 +154,7 @@
             Total_Delete.MinimumWidth = 50;
             Total_Delete.Name = "Total_Delete";
             Total_Delete.ReadOnly = true;
+            Total_Delete.Visible = false;
             // 
             // Delete_Staff_Account_Form
             // 

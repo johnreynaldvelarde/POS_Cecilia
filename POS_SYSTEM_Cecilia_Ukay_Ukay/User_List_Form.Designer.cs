@@ -32,17 +32,19 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_List_Form));
             data_Grid_Staff = new DataGridView();
+            panel1 = new Panel();
+            btn_Add_New_Staff = new Button();
+            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewImageColumn();
+            Staff_ID = new DataGridViewTextBoxColumn();
+            Staff_Image = new DataGridViewImageColumn();
             Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
-            panel1 = new Panel();
-            btn_Add_New_Staff = new Button();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Staff).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -68,7 +70,7 @@
             data_Grid_Staff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Staff.ColumnHeadersHeight = 50;
             data_Grid_Staff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Staff.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column5, Column4, Column6, Edit, Delete });
+            data_Grid_Staff.Columns.AddRange(new DataGridViewColumn[] { Column1, Staff_ID, Staff_Image, Column2, Column3, Column5, Column4, Column6, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -91,68 +93,6 @@
             data_Grid_Staff.TabIndex = 4;
             data_Grid_Staff.CellContentClick += data_Grid_Staff_CellContentClick;
             data_Grid_Staff.SelectionChanged += data_Grid_Staff_SelectionChanged;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 60F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column3.HeaderText = "Profile Picture";
-            Column3.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Staff Name";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.HeaderText = "Date Added";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Contact Number";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Role";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Edit.HeaderText = "";
-            Edit.Image = (Image)resources.GetObject("Edit.Image");
-            Edit.MinimumWidth = 50;
-            Edit.Name = "Edit";
-            Edit.ReadOnly = true;
-            Edit.Width = 50;
-            // 
-            // Delete
-            // 
-            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            Delete.HeaderText = "";
-            Delete.Image = (Image)resources.GetObject("Delete.Image");
-            Delete.MinimumWidth = 50;
-            Delete.Name = "Delete";
-            Delete.ReadOnly = true;
-            Delete.Width = 50;
             // 
             // panel1
             // 
@@ -195,6 +135,82 @@
             label1.TabIndex = 1;
             label1.Text = "List of Staff";
             // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 60F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Staff_ID
+            // 
+            Staff_ID.HeaderText = "Staff_ID";
+            Staff_ID.Name = "Staff_ID";
+            Staff_ID.ReadOnly = true;
+            Staff_ID.Visible = false;
+            // 
+            // Staff_Image
+            // 
+            Staff_Image.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Staff_Image.HeaderText = "Profile Picture";
+            Staff_Image.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Staff_Image.Name = "Staff_Image";
+            Staff_Image.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Staff Name";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Password";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Visible = false;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.HeaderText = "Date Added";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Contact Number";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Role";
+            Column6.Name = "Column6";
+            Column6.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Edit.HeaderText = "";
+            Edit.Image = (Image)resources.GetObject("Edit.Image");
+            Edit.MinimumWidth = 50;
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Width = 50;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            Delete.HeaderText = "";
+            Delete.Image = (Image)resources.GetObject("Delete.Image");
+            Delete.MinimumWidth = 50;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Width = 50;
+            // 
             // User_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -221,8 +237,10 @@
         private Button btn_Add_New_Staff;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewImageColumn Column3;
+        private DataGridViewTextBoxColumn Staff_ID;
+        private DataGridViewImageColumn Staff_Image;
         private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column6;

@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Delete_Item_List_Form));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Delete_Item_List_Form));
             panel1 = new Panel();
             label1 = new Label();
-            Total_Delete = new DataGridViewImageColumn();
-            Restore = new DataGridViewImageColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
             data_Delete_Item = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Item_ID = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Restore = new DataGridViewImageColumn();
+            Total_Delete = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Delete_Item).BeginInit();
             SuspendLayout();
@@ -63,56 +63,6 @@
             label1.Size = new Size(0, 33);
             label1.TabIndex = 1;
             // 
-            // Total_Delete
-            // 
-            Total_Delete.FillWeight = 54.4025269F;
-            Total_Delete.HeaderText = "";
-            Total_Delete.Image = (Image)resources.GetObject("Total_Delete.Image");
-            Total_Delete.MinimumWidth = 50;
-            Total_Delete.Name = "Total_Delete";
-            Total_Delete.ReadOnly = true;
-            // 
-            // Restore
-            // 
-            Restore.FillWeight = 54.4025269F;
-            Restore.HeaderText = "";
-            Restore.Image = (Image)resources.GetObject("Restore.Image");
-            Restore.MinimumWidth = 50;
-            Restore.Name = "Restore";
-            Restore.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 93.4010239F;
-            Column5.HeaderText = "Date Added";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.FillWeight = 149.594437F;
-            Column2.HeaderText = "Item Name";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.DataPropertyName = "Category_ID";
-            Column3.HeaderText = "Item_ID";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Visible = false;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 108.199493F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
             // data_Delete_Item
             // 
             data_Delete_Item.AllowUserToAddRows = false;
@@ -134,7 +84,7 @@
             data_Delete_Item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Delete_Item.ColumnHeadersHeight = 50;
             data_Delete_Item.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Delete_Item.Columns.AddRange(new DataGridViewColumn[] { Column1, Column3, Column2, Column5, Restore, Total_Delete });
+            data_Delete_Item.Columns.AddRange(new DataGridViewColumn[] { Column1, Item_ID, Column2, Column5, Restore, Total_Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -156,6 +106,56 @@
             data_Delete_Item.Size = new Size(1088, 492);
             data_Delete_Item.TabIndex = 7;
             data_Delete_Item.CellContentClick += data_Delete_Item_CellContentClick;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 108.199493F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Item_ID
+            // 
+            Item_ID.HeaderText = "Item_ID";
+            Item_ID.Name = "Item_ID";
+            Item_ID.ReadOnly = true;
+            Item_ID.Visible = false;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 149.594437F;
+            Column2.HeaderText = "Item Name";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 93.4010239F;
+            Column5.HeaderText = "Date Added";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Restore
+            // 
+            Restore.FillWeight = 54.4025269F;
+            Restore.HeaderText = "";
+            Restore.Image = (Image)resources.GetObject("Restore.Image");
+            Restore.MinimumWidth = 50;
+            Restore.Name = "Restore";
+            Restore.ReadOnly = true;
+            // 
+            // Total_Delete
+            // 
+            Total_Delete.FillWeight = 54.4025269F;
+            Total_Delete.HeaderText = "";
+            Total_Delete.Image = (Image)resources.GetObject("Total_Delete.Image");
+            Total_Delete.MinimumWidth = 50;
+            Total_Delete.Name = "Total_Delete";
+            Total_Delete.ReadOnly = true;
+            Total_Delete.Visible = false;
             // 
             // Delete_Item_List_Form
             // 
@@ -179,12 +179,12 @@
         #endregion
         private Panel panel1;
         private Label label1;
-        private DataGridViewImageColumn Total_Delete;
-        private DataGridViewImageColumn Restore;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column1;
         private DataGridView data_Delete_Item;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Item_ID;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewImageColumn Restore;
+        private DataGridViewImageColumn Total_Delete;
     }
 }

@@ -50,7 +50,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     if (reader["Archive"].ToString() == "0")
                     {
                         i += 1;
-                        data_Grid_Staff.Rows.Add(i, reader["Staff_Image"], reader["Staff_Name"].ToString(), reader["Date_Added"].ToString(), reader["Contact_Number"].ToString(), reader["Role"].ToString());
+                        data_Grid_Staff.Rows.Add(i, reader["Staff_ID"], reader["Staff_Image"], reader["Staff_Name"].ToString(), reader["Password"].ToString(), reader["Date_Added"].ToString(), reader["Contact_Number"].ToString(), reader["Role"].ToString());
                     }
                 }
                 reader.Close();
@@ -91,7 +91,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         }
 
                         data_Grid_Staff.Rows.RemoveAt(e.RowIndex);
-                        view_user_account() ;
+                        view_user_account();
                     }
                 }
             }
@@ -102,12 +102,23 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             if (data_Grid_Staff.CurrentRow != null)
             {
                 int i = data_Grid_Staff.CurrentRow.Index;
+
+                if (data_Grid_Staff.Rows[i].Cells["Staff_Image"].Value is byte[] img)
+                {
+                    u_profile = Image.FromStream(new MemoryStream(img));
+                }
+                else
+                {
+                    // Handle the case where the value is not a byte array
+                    // You can assign a default image or show an error message
+                    u_profile = null; // or assign a default image
+                }
+
                 staffaccount_ID = data_Grid_Staff[1, i].Value.ToString();
-                //u_profile = (Image)data_Grid_Staff[2, i].Value;
                 staff_Name = data_Grid_Staff[3, i].Value.ToString();
-                //i = data_Grid_Staff[3, i].Value.ToString();
-                c_Number = data_Grid_Staff[5, i].Value.ToString();
-                role = data_Grid_Staff[6, i].Value.ToString();
+                staff_Password = data_Grid_Staff[4, i].Value.ToString();
+               // c_Number = data_Grid_Staff[6, i].Value.ToString();
+               // role = data_Grid_Staff[7, i].Value.ToString();
 
             }
         }

@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Delete_Suppliers_Form));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Delete_Suppliers_Form));
             panel1 = new Panel();
             label1 = new Label();
-            Total_Delete = new DataGridViewImageColumn();
-            Restore = new DataGridViewImageColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Supplier_ID = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
             data_Delete_Supplier = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Supplier_ID = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Restore = new DataGridViewImageColumn();
+            Total_Delete = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Delete_Supplier).BeginInit();
             SuspendLayout();
@@ -62,55 +62,6 @@
             label1.Name = "label1";
             label1.Size = new Size(0, 33);
             label1.TabIndex = 1;
-            // 
-            // Total_Delete
-            // 
-            Total_Delete.FillWeight = 54.4025269F;
-            Total_Delete.HeaderText = "";
-            Total_Delete.Image = (Image)resources.GetObject("Total_Delete.Image");
-            Total_Delete.MinimumWidth = 50;
-            Total_Delete.Name = "Total_Delete";
-            Total_Delete.ReadOnly = true;
-            // 
-            // Restore
-            // 
-            Restore.FillWeight = 54.4025269F;
-            Restore.HeaderText = "";
-            Restore.Image = (Image)resources.GetObject("Restore.Image");
-            Restore.MinimumWidth = 50;
-            Restore.Name = "Restore";
-            Restore.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column5.FillWeight = 93.4010239F;
-            Column5.HeaderText = "Date Added";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.FillWeight = 149.594437F;
-            Column2.HeaderText = "Supplier Name";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Supplier_ID
-            // 
-            Supplier_ID.HeaderText = "Supplier_ID";
-            Supplier_ID.Name = "Supplier_ID";
-            Supplier_ID.ReadOnly = true;
-            Supplier_ID.Visible = false;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 108.199493F;
-            Column1.HeaderText = "#";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
             // 
             // data_Delete_Supplier
             // 
@@ -156,6 +107,56 @@
             data_Delete_Supplier.TabIndex = 8;
             data_Delete_Supplier.CellContentClick += data_Delete_Supplier_CellContentClick;
             // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 108.199493F;
+            Column1.HeaderText = "#";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Supplier_ID
+            // 
+            Supplier_ID.HeaderText = "Supplier_ID";
+            Supplier_ID.Name = "Supplier_ID";
+            Supplier_ID.ReadOnly = true;
+            Supplier_ID.Visible = false;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 149.594437F;
+            Column2.HeaderText = "Supplier Name";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            Column5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column5.FillWeight = 93.4010239F;
+            Column5.HeaderText = "Date Added";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            // 
+            // Restore
+            // 
+            Restore.FillWeight = 54.4025269F;
+            Restore.HeaderText = "";
+            Restore.Image = (Image)resources.GetObject("Restore.Image");
+            Restore.MinimumWidth = 50;
+            Restore.Name = "Restore";
+            Restore.ReadOnly = true;
+            // 
+            // Total_Delete
+            // 
+            Total_Delete.FillWeight = 54.4025269F;
+            Total_Delete.HeaderText = "";
+            Total_Delete.Image = (Image)resources.GetObject("Total_Delete.Image");
+            Total_Delete.MinimumWidth = 50;
+            Total_Delete.Name = "Total_Delete";
+            Total_Delete.ReadOnly = true;
+            Total_Delete.Visible = false;
+            // 
             // Delete_Suppliers_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -179,12 +180,12 @@
         #endregion
         private Panel panel1;
         private Label label1;
-        private DataGridViewImageColumn Total_Delete;
-        private DataGridViewImageColumn Restore;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Supplier_ID;
-        private DataGridViewTextBoxColumn Column1;
         private DataGridView data_Delete_Supplier;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Supplier_ID;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewImageColumn Restore;
+        private DataGridViewImageColumn Total_Delete;
     }
 }

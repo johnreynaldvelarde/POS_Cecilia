@@ -80,7 +80,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void Delete_Suppliers_Form_Load(object sender, EventArgs e)
         {
-           
+
         }
     }
 }

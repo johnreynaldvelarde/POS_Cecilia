@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
-    
+
 
     public partial class Delete_Staff_Account_Form : Form
     {
