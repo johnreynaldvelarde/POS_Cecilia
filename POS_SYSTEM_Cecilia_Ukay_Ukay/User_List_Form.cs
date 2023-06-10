@@ -61,6 +61,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void data_Grid_Staff_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             string column_staff = data_Grid_Staff.Columns[e.ColumnIndex].Name;
+
             if (column_staff == "Edit")
             {
                 User_Create_Account_Form frm = new User_Create_Account_Form(this);
@@ -72,6 +73,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 frm.txtContact.Text = c_Number;
                 frm.User_Profile.Image = u_profile;
                 frm.cmdRole.SelectedItem = role;
+                frm.ShowDialog();
             }
             else if (column_staff == "Delete")
             {
@@ -109,16 +111,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 }
                 else
                 {
-                    // Handle the case where the value is not a byte array
-                    // You can assign a default image or show an error message
-                    u_profile = null; // or assign a default image
+                    u_profile = null; 
                 }
 
                 staffaccount_ID = data_Grid_Staff[1, i].Value.ToString();
                 staff_Name = data_Grid_Staff[3, i].Value.ToString();
                 staff_Password = data_Grid_Staff[4, i].Value.ToString();
-               // c_Number = data_Grid_Staff[6, i].Value.ToString();
-               // role = data_Grid_Staff[7, i].Value.ToString();
+                c_Number = data_Grid_Staff[6, i].Value.ToString();
+                role = data_Grid_Staff[7, i].Value.ToString();
 
             }
         }
