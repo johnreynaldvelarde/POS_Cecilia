@@ -20,9 +20,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         public Sales_Report_Form()
         {
             InitializeComponent();
-            MonitorSales();
-            chart_SalesMonth();
-            chart_Product_Stock_Level();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -229,32 +226,82 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
-        public void chart_Product_Stock_Level()
+        public void Monitor_Product_Stock_Level()
         {
             try
             {
-                string sql = "SELECT SUM(ProductStock_Qyt) AS TotalStock FROM Product_Stock";
+                string query = "SELECT SUM(ProductStock_Qyt) FROM Product_Stock";
+
                 using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
                     connect.Open();
-                    SqlCommand command = new SqlCommand(sql, connect);
-                    object result = command.ExecuteScalar();
+                    SqlCommand command = new SqlCommand(query, connect);
 
-                    if (result != DBNull.Value)
+                    int totalStockQyt = (int)command.ExecuteScalar();
+
+                    Nproduct_stock.Text = totalStockQyt.ToString();
+
+                    Color textColor;
+                    if (totalStockQyt <= 20)
                     {
-                        int totalStock = Convert.ToInt32(result);
-                        chart_ProductStock.Series["Product Stock"].Points.AddXY("Total Stock", totalStock);
-
+                        textColor = Color.FromArgb(234, 67, 53);
+                    }
+                    else if (totalStockQyt <= 50)
+                    {
+                        textColor = Color.FromArgb(251, 188, 5);
+                    }
+                    else
+                    {
+                        textColor = Color.FromArgb(14, 159, 104);
                     }
 
+                    Nproduct_stock.ForeColor = textColor;
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
+
+        public void Monitor_Item_Stock_Level()
+        {
+            try
+            {
+                string query = "SELECT SUM(ItemStock_Qyt) FROM Item_Stock";
+
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    SqlCommand command = new SqlCommand(query, connect);
+
+                    int totalStockQyt = (int)command.ExecuteScalar();
+
+                    Nitem_stock.Text = totalStockQyt.ToString();
+
+                    Color textColor;
+                    if (totalStockQyt <= 20)
+                    {
+                        textColor = Color.FromArgb(234, 67, 53);
+                    }
+                    else if (totalStockQyt <= 50)
+                    {
+                        textColor = Color.FromArgb(251, 188, 5);
+                    }
+                    else
+                    {
+                        textColor = Color.FromArgb(14, 159, 104);
+                    }
+
+                    Nitem_stock.ForeColor = textColor;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
 
         private void btn_todaySales_Click(object sender, EventArgs e)
         {
@@ -284,6 +331,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             View_Product_Sold_Form frm = new View_Product_Sold_Form();
             frm.ShowDialog();
+        }
+
+        private void Sales_Report_Form_Load(object sender, EventArgs e)
+        {
+            MonitorSales();
+            chart_SalesMonth();
+            Monitor_Product_Stock_Level();
+            Monitor_Item_Stock_Level();
         }
     }
 }
