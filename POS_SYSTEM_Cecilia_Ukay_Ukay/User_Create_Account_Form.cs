@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 {
@@ -51,7 +52,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         }
 
         /*
-    public void regex(string name, string pass) {   //functions for regex userName and pass
+         public void regex(string name, string pass) {   //functions for regex userName and pass
 
             try {
             string namePattern = @"\W";  //any non character
@@ -83,12 +84,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             
             }
 
-        
-            
-            
-            
         }
         */
+
+        public bool IsPasswordValid(string password)
+        {
+            string pattern = @"^[a-zA-Z0-9]{8}$";
+            return Regex.IsMatch(password, pattern);
+        }
 
         // button save info to database
         private void btn_Save_Click(object sender, EventArgs e)
@@ -102,39 +105,74 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 MessageBox.Show("Password did not match");
             }
+            else if (!IsPasswordValid(txtPassword.Text))
+            {
+                MessageBox.Show("Invalid password format. Password should be 8 characters consisting of letters or numbers");
+            }
             else if (User_Profile != null && User_Profile.Image == null)
             {
                 MessageBox.Show("No Staff Image Try Again");
             }
             else
             {
-                // regex(txtUsername.Text.ToString(), txtPassword.Text.ToString()); //this is the regex function for user and password --dapits
-                MemoryStream mstream = new MemoryStream();
-                User_Profile.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png);
-                byte[] select_image = mstream.ToArray();
+                bool nameExists = staff_name_exists(txtUsername.Text);
 
-                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                if (nameExists)
                 {
-                    connect.Open();
-                    string sql = "INSERT INTO Staff_Account (Staff_Name, Staff_Image, Password, Contact_Number, Role, Date_Added, Archive) " +
-                                 "VALUES (@Staff_Name, @Staff_Image, @Password, @Contact_Number, @Role, @Date_Added, @Archive)";
-                    SqlCommand command = new SqlCommand(sql, connect);
-                    command.Parameters.AddWithValue("@Staff_Name", txtUsername.Text);
-                    command.Parameters.AddWithValue("@Staff_Image", select_image);
-                    command.Parameters.AddWithValue("@Password", txtPassword.Text);
-                    command.Parameters.AddWithValue("@Contact_Number", txtContact.Text);
-                    command.Parameters.AddWithValue("@Role", cmdRole.SelectedItem);
-                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
-                    command.Parameters.AddWithValue("@Archive", 0);
-                    command.ExecuteNonQuery();
+                    MessageBox.Show("Staff Name is already exists. Please enter a different staff name.");
+                }
+                else
+                {
+                    // regex(txtUsername.Text.ToString(), txtPassword.Text.ToString()); //this is the regex function for user and password --dapits
+                    MemoryStream mstream = new MemoryStream();
+                    User_Profile.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png);
+                    byte[] select_image = mstream.ToArray();
 
-                    connect.Close();
-                    MessageBox.Show("Successfully saved");
-                    frm.view_user_account();
-                    this.Dispose();
-                    Clear();
+                    using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                    {
+                        connect.Open();
+                        string sql = "INSERT INTO Staff_Account (Staff_Name, Staff_Image, Password, Contact_Number, Role, Date_Added, Archive) " +
+                                     "VALUES (@Staff_Name, @Staff_Image, @Password, @Contact_Number, @Role, @Date_Added, @Archive)";
+                        SqlCommand command = new SqlCommand(sql, connect);
+                        command.Parameters.AddWithValue("@Staff_Name", txtUsername.Text);
+                        command.Parameters.AddWithValue("@Staff_Image", select_image);
+                        command.Parameters.AddWithValue("@Password", txtPassword.Text);
+                        command.Parameters.AddWithValue("@Contact_Number", txtContact.Text);
+                        command.Parameters.AddWithValue("@Role", cmdRole.SelectedItem);
+                        command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
+                        command.Parameters.AddWithValue("@Archive", 0);
+                        command.ExecuteNonQuery();
+
+                        connect.Close();
+                        MessageBox.Show("Successfully saved");
+                        frm.view_user_account();
+                        this.Dispose();
+                        Clear();
+
+                    }
                 }
             }
+        }
+
+        private bool staff_name_exists(string staffName)
+        {
+            bool exists = false;
+
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "SELECT COUNT(*) FROM Staff_Account WHERE LOWER(Staff_Name) = LOWER(@StaffName)";
+                SqlCommand command = new SqlCommand(sql, connect);
+                command.Parameters.AddWithValue("@StaffName", staffName);
+                int count = (int)command.ExecuteScalar();
+
+                if (count > 0)
+                {
+                    exists = true;
+                }
+
+            }
+            return exists;
         }
 
 

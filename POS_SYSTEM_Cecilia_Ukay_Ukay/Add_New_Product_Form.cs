@@ -86,7 +86,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
                     MessageBox.Show("Product code already exists. Please enter a different product code.");
                 }
-
                 else
                 {
                     int categoryId = 0;
