@@ -81,6 +81,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             data_Grid_Transaction.Refresh();
             txt_Payment_Amount.Clear();
             txt_Refund.Clear();
+            txt_discount.Clear();
             label_amount.Text = "0.00";
         }
 
@@ -94,18 +95,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // method to compute total amount 
         public void get_total()
         {
-            /*
-            double total = 0;
-            label_amount.Text = "";
-            foreach (DataGridViewRow item in data_Grid_Transaction.Rows)
-            {
-
-                total += double.Parse(item.Cells["Amount"].Value.ToString());
-
-            }
-
-            label_amount.Text = total.ToString("N2");
-            */
             double total = 0;
             label_amount.Text = "";
 
@@ -296,10 +285,20 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         total_amount += amount;
                     }
 
-                    int discount = 0;
+                    int discount;
+                    if (string.IsNullOrEmpty(txt_discount.Text))
+                    {
+                        discount = 0;
+                    }
+                    else
+                    {
+                        discount = Convert.ToInt32(txt_discount.Text);
+                    }
+
+                    decimal discounted_amount = total_amount - (total_amount * discount / 100);
 
                     command.Parameters.AddWithValue("@Total_Quantity", total_quantity);
-                    command.Parameters.AddWithValue("@Total_Amount", total_amount);
+                    command.Parameters.AddWithValue("@Total_Amount", discounted_amount);
 
                     int transactionID = Convert.ToInt32(command.ExecuteScalar());
 
@@ -482,6 +481,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 DataGridViewRow selectedRow = data_Grid_Transaction.Rows[e.RowIndex];
                 data_Grid_Transaction.Rows.Remove(selectedRow);
+                get_total();
                 view_product();
             }
         }
@@ -555,6 +555,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     }
                 }
             }
+        }
+
+        private void txt_discount_TextChanged(object sender, EventArgs e)
+        {
+            get_total();
         }
     }
 }

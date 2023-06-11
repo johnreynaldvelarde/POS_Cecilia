@@ -4110,11 +4110,11 @@
   </data>
   <data name="btn_Sales_Report.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAMVJREFUSEvt
-        kDEKAkEQBO8JCiqCpv7TUHySkbkmmoh+Zu2dqQOPWe8WNBC8gk6qZ2Zhm5GPSCntlA5UAWoDVYfm977m
-        oAPUBmoYzS6Uq20BVYDaQPWjuZVyt42UTop9F3Ugdy2o92gmH3/YtB+f4Lc2UMAmAVVG/evxszKl6sXH
-        HVRE3Vppj1+UGdUgvuKgIuqOPpJuyhJdha85qIi6jXJQ5qgi+UgLqu6BWrhjoP75AXYM1A8/QG+gxge6
-        0Buo7z4wEmmaJzdrY6cVQbm7AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAADFSURBVEhL7ZAxCgJBEATvCQoqgqb+01B8kpG5JpqIfmbtnakDj1nvFjQQvIJOqmdmYZuRj0gp
+        7ZQOVAFqA1WH5ve+5qAD1AZqGM0ulKttAVWA2kD1o7mVcreNlE6KfRd1IHctqPdoJh9/2LQfn+C3NlDA
+        JgFVRv3r8bMyperFxx1URN1aaY9flBnVIL7ioCLqjj6SbsoSXYWvOaiIuo1yUOaoIvlIC6rugVq4Y6D+
+        +QF2DNQPP0BvoMYHutAbqO8+MBJpmic3a2OnFUG5uwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
