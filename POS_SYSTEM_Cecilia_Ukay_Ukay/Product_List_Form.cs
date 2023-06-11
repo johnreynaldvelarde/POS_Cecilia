@@ -38,13 +38,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Add_Product_Click(object sender, EventArgs e)
         {
-            btn_Add_Product.BackColor = settingsColor;
+           // btn_Add_Product.BackColor = settingsColor;
 
             Add_New_Product_Form frm = new Add_New_Product_Form(this);
             frm.btn_Update.Enabled = false;
             frm.ShowDialog();
             frm.Dispose();
-            btn_Add_Product.BackColor = defaultColor;
+           // btn_Add_Product.BackColor = defaultColor;
         }
 
         public void view_product_list()
