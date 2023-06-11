@@ -246,11 +246,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     {
                         textColor = Color.FromArgb(234, 67, 53);
                         picture_product.Image = Properties.Resources.Red;
+                        text_itm.ForeColor = textColor;
+                        text_itm.Text = "Product stock quantity is critically low.";
                     }
                     else if (totalStockQyt <= 50)
                     {
                         textColor = Color.FromArgb(251, 188, 5);
                         picture_product.Image = Properties.Resources.Yellow;
+                        text_itm.ForeColor = textColor;
+                        text_itm.Text = "Product stock quantity is low.";
                     }
                     else
                     {
@@ -287,11 +291,17 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     {
                         textColor = Color.FromArgb(234, 67, 53);
                         picture_item.Image = Properties.Resources.Red;
+
+                        text_pdt.ForeColor = textColor;
+                        text_pdt.Text = "Item stock quantity is critically low.";
                     }
                     else if (totalStockQyt <= 50)
                     {
                         textColor = Color.FromArgb(251, 188, 5);
                         picture_item.Image = Properties.Resources.Yellow;
+                        text_pdt.ForeColor = textColor;
+                        text_pdt.Text = "Item stock quantity is low.";
+
                     }
                     else
                     {

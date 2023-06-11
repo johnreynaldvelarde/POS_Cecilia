@@ -33,11 +33,12 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             center_panel = new Panel();
+            text_itm = new TextBox();
+            text_pdt = new TextBox();
             label7 = new Label();
             Nproduct_Stock = new TextBox();
             label6 = new Label();
             Nitem_Stock = new TextBox();
-            button1 = new Button();
             label5 = new Label();
             btn_view_monthly = new Button();
             label4 = new Label();
@@ -86,11 +87,12 @@
             // 
             // center_panel
             // 
+            center_panel.Controls.Add(text_itm);
+            center_panel.Controls.Add(text_pdt);
             center_panel.Controls.Add(label7);
             center_panel.Controls.Add(Nproduct_Stock);
             center_panel.Controls.Add(label6);
             center_panel.Controls.Add(Nitem_Stock);
-            center_panel.Controls.Add(button1);
             center_panel.Controls.Add(label5);
             center_panel.Controls.Add(btn_view_monthly);
             center_panel.Controls.Add(label4);
@@ -110,12 +112,32 @@
             center_panel.Size = new Size(1243, 617);
             center_panel.TabIndex = 24;
             // 
+            // text_itm
+            // 
+            text_itm.BorderStyle = BorderStyle.None;
+            text_itm.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            text_itm.Location = new Point(961, 491);
+            text_itm.Name = "text_itm";
+            text_itm.Size = new Size(258, 16);
+            text_itm.TabIndex = 21;
+            text_itm.TextAlign = HorizontalAlignment.Center;
+            // 
+            // text_pdt
+            // 
+            text_pdt.BorderStyle = BorderStyle.None;
+            text_pdt.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            text_pdt.Location = new Point(648, 576);
+            text_pdt.Name = "text_pdt";
+            text_pdt.Size = new Size(299, 20);
+            text_pdt.TabIndex = 20;
+            text_pdt.TextAlign = HorizontalAlignment.Center;
+            // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(1050, 444);
+            label7.Location = new Point(1035, 231);
             label7.Name = "label7";
             label7.Size = new Size(106, 21);
             label7.TabIndex = 19;
@@ -126,7 +148,7 @@
             Nproduct_Stock.BorderStyle = BorderStyle.None;
             Nproduct_Stock.Font = new Font("Century Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point);
             Nproduct_Stock.ForeColor = Color.FromArgb(14, 159, 104);
-            Nproduct_Stock.Location = new Point(1025, 291);
+            Nproduct_Stock.Location = new Point(1022, 343);
             Nproduct_Stock.Name = "Nproduct_Stock";
             Nproduct_Stock.Size = new Size(139, 59);
             Nproduct_Stock.TabIndex = 18;
@@ -138,7 +160,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.Black;
-            label6.Location = new Point(762, 581);
+            label6.Location = new Point(754, 254);
             label6.Name = "label6";
             label6.Size = new Size(83, 21);
             label6.TabIndex = 17;
@@ -149,25 +171,12 @@
             Nitem_Stock.BorderStyle = BorderStyle.None;
             Nitem_Stock.Font = new Font("Century Gothic", 50.25F, FontStyle.Regular, GraphicsUnit.Point);
             Nitem_Stock.ForeColor = Color.FromArgb(14, 159, 104);
-            Nitem_Stock.Location = new Point(728, 386);
+            Nitem_Stock.Location = new Point(729, 385);
             Nitem_Stock.Name = "Nitem_Stock";
             Nitem_Stock.Size = new Size(139, 83);
             Nitem_Stock.TabIndex = 16;
             Nitem_Stock.Text = "0";
             Nitem_Stock.TextAlign = HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.White;
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(843, 189);
-            button1.Name = "button1";
-            button1.Size = new Size(33, 32);
-            button1.TabIndex = 10;
-            button1.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
@@ -505,7 +514,7 @@
             // 
             // picture_product
             // 
-            picture_product.Location = new Point(965, 208);
+            picture_product.Location = new Point(961, 261);
             picture_product.Name = "picture_product";
             picture_product.Size = new Size(258, 224);
             picture_product.SizeMode = PictureBoxSizeMode.Zoom;
@@ -634,7 +643,6 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart_sales;
         private Label label4;
         private Button btn_view_monthly;
-        private Button button1;
         private Label label5;
         private Label Nitem_stock;
         private PictureBox picture_product;
@@ -643,5 +651,7 @@
         private Label label6;
         private TextBox Nproduct_Stock;
         private Label label7;
+        private TextBox text_pdt;
+        private TextBox text_itm;
     }
 }
