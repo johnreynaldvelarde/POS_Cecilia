@@ -30,10 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panel1 = new Panel();
             user_profile = new CircularPictureBox();
             pictureBox2 = new PictureBox();
@@ -80,6 +80,8 @@
             Remove = new DataGridViewImageColumn();
             down_panel = new Panel();
             panel4 = new Panel();
+            label8 = new Label();
+            txt_discount = new TextBox();
             label7 = new Label();
             txt_Payment_Amount = new TextBox();
             txt_Refund = new TextBox();
@@ -362,25 +364,25 @@
             data_Grid_Available.BorderStyle = BorderStyle.None;
             data_Grid_Available.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Available.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            data_Grid_Available.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Available.ColumnHeadersHeight = 50;
             data_Grid_Available.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Available.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, ProductStock_ID, Product_ID, Product_Code, Product_Name, Category, Price, Size, Discount, Minus, Quantity, Add, Sell });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            data_Grid_Available.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            data_Grid_Available.DefaultCellStyle = dataGridViewCellStyle2;
             data_Grid_Available.Dock = DockStyle.Fill;
             data_Grid_Available.EnableHeadersVisualStyles = false;
             data_Grid_Available.Location = new Point(10, 78);
@@ -556,25 +558,25 @@
             data_Grid_Transaction.BorderStyle = BorderStyle.None;
             data_Grid_Transaction.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Transaction.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            data_Grid_Transaction.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             data_Grid_Transaction.ColumnHeadersHeight = 30;
             data_Grid_Transaction.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             data_Grid_Transaction.Columns.AddRange(new DataGridViewColumn[] { Column1, productstockID, productID, productName, Column5, orderQuantity, Amount, Remove });
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = SystemColors.Window;
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            data_Grid_Transaction.DefaultCellStyle = dataGridViewCellStyle4;
             data_Grid_Transaction.Dock = DockStyle.Fill;
             data_Grid_Transaction.EnableHeadersVisualStyles = false;
             data_Grid_Transaction.Location = new Point(0, 37);
@@ -585,7 +587,7 @@
             data_Grid_Transaction.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             data_Grid_Transaction.RowTemplate.Height = 40;
             data_Grid_Transaction.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            data_Grid_Transaction.Size = new Size(368, 168);
+            data_Grid_Transaction.Size = new Size(368, 137);
             data_Grid_Transaction.TabIndex = 7;
             data_Grid_Transaction.CellContentClick += data_Grid_Transaction_CellContentClick;
             data_Grid_Transaction.CellFormatting += data_Grid_Transaction_CellFormatting;
@@ -658,31 +660,56 @@
             down_panel.Controls.Add(panel4);
             down_panel.Controls.Add(downward_panel);
             down_panel.Dock = DockStyle.Bottom;
-            down_panel.Location = new Point(0, 205);
+            down_panel.Location = new Point(0, 174);
             down_panel.Name = "down_panel";
-            down_panel.Size = new Size(368, 240);
+            down_panel.Size = new Size(368, 271);
             down_panel.TabIndex = 5;
             // 
             // panel4
             // 
+            panel4.Controls.Add(label8);
+            panel4.Controls.Add(txt_discount);
             panel4.Controls.Add(label7);
             panel4.Controls.Add(txt_Payment_Amount);
             panel4.Controls.Add(txt_Refund);
             panel4.Controls.Add(label5);
             panel4.Dock = DockStyle.Fill;
+            panel4.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             panel4.Location = new Point(0, 0);
             panel4.Name = "panel4";
-            panel4.Size = new Size(368, 191);
+            panel4.Size = new Size(368, 222);
             panel4.TabIndex = 55;
+            // 
+            // label8
+            // 
+            label8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label8.AutoSize = true;
+            label8.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Location = new Point(15, 13);
+            label8.Name = "label8";
+            label8.Size = new Size(106, 16);
+            label8.TabIndex = 54;
+            label8.Text = "Enter discount %";
+            // 
+            // txt_discount
+            // 
+            txt_discount.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txt_discount.BorderStyle = BorderStyle.FixedSingle;
+            txt_discount.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_discount.Location = new Point(15, 48);
+            txt_discount.Name = "txt_discount";
+            txt_discount.Size = new Size(336, 22);
+            txt_discount.TabIndex = 55;
+            txt_discount.KeyPress += txt_discount_KeyPress;
             // 
             // label7
             // 
             label7.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(15, 18);
+            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Location = new Point(15, 81);
             label7.Name = "label7";
-            label7.Size = new Size(131, 21);
+            label7.Size = new Size(106, 17);
             label7.TabIndex = 3;
             label7.Text = "Payment Amount";
             // 
@@ -690,10 +717,10 @@
             // 
             txt_Payment_Amount.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txt_Payment_Amount.BorderStyle = BorderStyle.FixedSingle;
-            txt_Payment_Amount.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Payment_Amount.Location = new Point(15, 53);
+            txt_Payment_Amount.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Payment_Amount.Location = new Point(15, 116);
             txt_Payment_Amount.Name = "txt_Payment_Amount";
-            txt_Payment_Amount.Size = new Size(336, 29);
+            txt_Payment_Amount.Size = new Size(336, 25);
             txt_Payment_Amount.TabIndex = 51;
             txt_Payment_Amount.TextChanged += txt_Payment_Amount_TextChanged;
             txt_Payment_Amount.KeyPress += txt_Payment_Amount_KeyPress;
@@ -703,20 +730,20 @@
             txt_Refund.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             txt_Refund.BorderStyle = BorderStyle.FixedSingle;
             txt_Refund.Enabled = false;
-            txt_Refund.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_Refund.Location = new Point(15, 145);
+            txt_Refund.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_Refund.Location = new Point(15, 186);
             txt_Refund.Name = "txt_Refund";
-            txt_Refund.Size = new Size(336, 29);
+            txt_Refund.Size = new Size(336, 25);
             txt_Refund.TabIndex = 53;
             // 
             // label5
             // 
             label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(15, 110);
+            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(15, 151);
             label5.Name = "label5";
-            label5.Size = new Size(119, 21);
+            label5.Size = new Size(98, 17);
             label5.TabIndex = 52;
             label5.Text = "Change/Refund";
             // 
@@ -725,7 +752,7 @@
             downward_panel.Controls.Add(label1);
             downward_panel.Controls.Add(label_amount);
             downward_panel.Dock = DockStyle.Bottom;
-            downward_panel.Location = new Point(0, 191);
+            downward_panel.Location = new Point(0, 222);
             downward_panel.Name = "downward_panel";
             downward_panel.Size = new Size(368, 49);
             downward_panel.TabIndex = 54;
@@ -913,5 +940,7 @@
         public Button btn_History;
         public Button btn_Sales_Report;
         public Button btn_Sell;
+        private Label label8;
+        public TextBox txt_discount;
     }
 }

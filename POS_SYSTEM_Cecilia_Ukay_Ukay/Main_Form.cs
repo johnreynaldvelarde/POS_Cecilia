@@ -94,7 +94,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // method to compute total amount 
         public void get_total()
         {
-
+            /*
             double total = 0;
             label_amount.Text = "";
             foreach (DataGridViewRow item in data_Grid_Transaction.Rows)
@@ -102,6 +102,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 total += double.Parse(item.Cells["Amount"].Value.ToString());
 
+            }
+
+            label_amount.Text = total.ToString("N2");
+            */
+            double total = 0;
+            label_amount.Text = "";
+
+            foreach (DataGridViewRow item in data_Grid_Transaction.Rows)
+            {
+                total += double.Parse(item.Cells["Amount"].Value.ToString());
+            }
+
+            // Check if discount is entered by the user
+            if (!string.IsNullOrEmpty(txt_discount.Text))
+            {
+                // Retrieve discount from txt_Discount control
+                int discount = Convert.ToInt32(txt_discount.Text);
+
+                // Apply the discount to the total amount
+                total -= total * discount / 100;
             }
 
             label_amount.Text = total.ToString("N2");
@@ -176,12 +196,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 decimal price = Convert.ToDecimal(data_Grid_Available.Rows[e.RowIndex].Cells["Price"].Value);
                 int quantity = Convert.ToInt32(data_Grid_Available.Rows[e.RowIndex].Cells["Quantity"].Value);
 
-                // Calculate the amount
-                // decimal amount = price * quantity;
-
-                // Add the details to data_grid_transaction
-
-                //data_Grid_Transaction.Rows.Add(0, id, productName, price, quantity, amount);
 
                 bool productExists = false;
                 foreach (DataGridViewRow row in data_Grid_Transaction.Rows)
@@ -282,6 +296,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         total_amount += amount;
                     }
 
+                    int discount = 0;
+
                     command.Parameters.AddWithValue("@Total_Quantity", total_quantity);
                     command.Parameters.AddWithValue("@Total_Amount", total_amount);
 
@@ -320,24 +336,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         updateProductStockCmd.Parameters.AddWithValue("@UpdatedQuantity", updatedQuantity);
                         updateProductStockCmd.ExecuteNonQuery();
 
-
-
-
-                        // for select /update the table product and reduce the quantity of specific product
-                        /*
-                        string selectProduct = "SELECT Quantity FROM Product WHERE Product_ID = @Product_ID";
-                        SqlCommand select_product = new SqlCommand(selectProduct, connect);
-                        select_product.Parameters.AddWithValue("@Product_ID", productID);
-                        int current_quantity = Convert.ToInt32(select_product.ExecuteScalar());
-
-                        int update_quantity = current_quantity - orderQuantity;
-
-                        string updateProduct = "UPDATE Product SET Quantity = @UpdatedQuantity WHERE Product_ID = @Product_ID";
-                        SqlCommand update_product = new SqlCommand(updateProduct, connect);
-                        update_product.Parameters.AddWithValue("@Product_ID", productID);
-                        update_product.Parameters.AddWithValue("@UpdatedQuantity", update_quantity);
-                        update_product.ExecuteNonQuery();
-                        */
                     }
 
                     MessageBox.Show("New transaction added");
@@ -376,14 +374,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // button for settings
         private void btn_Settings_Click(object sender, EventArgs e)
         {
-            /*
-            btn_Settings.BackColor = settingsColor;
 
-            Settings_Form frm = new Settings_Form();
-            frm.ShowDialog();
-            frm.Dispose();
-            btn_Settings.BackColor = defaultColor;
-            */
         }
 
         // button for trash bin
@@ -529,5 +520,41 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
+        private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits, backspace, and delete keys
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '\u007F')
+            {
+                e.Handled = true;
+            }
+            else if (e.KeyChar == '\b') // Handle backspace key
+            {
+                // No further action needed for backspace key
+            }
+            else
+            {
+                // Get the current text in the TextBox
+                string currentText = txt_discount.Text;
+
+                // Handle the case of leading zero
+                if (currentText == "0")
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    // Allow up to 3 digits and restrict input to values up to 100
+                    if (currentText.Length >= 2 || (currentText.Length == 1 && currentText[0] != '0'))
+                    {
+                        int value;
+                        bool isNumeric = int.TryParse(currentText + e.KeyChar, out value);
+                        if (!isNumeric || value > 100)
+                        {
+                            e.Handled = true;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
