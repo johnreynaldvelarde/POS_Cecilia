@@ -30,9 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile_Popup_Form));
             panel1 = new Panel();
+            popup_role = new Label();
+            label1 = new Label();
             popup_picture = new CircularPictureBox();
             label5 = new Label();
-            btn_View_Account = new Label();
             popup_staff_name = new Label();
             panel3 = new Panel();
             btn_Sign_Out = new Label();
@@ -47,9 +48,10 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(popup_role);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(popup_picture);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(btn_View_Account);
             panel1.Controls.Add(popup_staff_name);
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
@@ -58,6 +60,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(380, 212);
             panel1.TabIndex = 0;
+            // 
+            // popup_role
+            // 
+            popup_role.AutoSize = true;
+            popup_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            popup_role.ForeColor = Color.FromArgb(234, 67, 53);
+            popup_role.Location = new Point(207, 116);
+            popup_role.Name = "popup_role";
+            popup_role.Size = new Size(44, 21);
+            popup_role.TabIndex = 8;
+            popup_role.Text = "Role:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(146, 78);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 21);
+            label1.TabIndex = 7;
+            label1.Text = "Name:";
             // 
             // popup_picture
             // 
@@ -72,30 +95,18 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(146, 99);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(146, 116);
             label5.Name = "label5";
-            label5.Size = new Size(96, 20);
+            label5.Size = new Size(44, 21);
             label5.TabIndex = 5;
-            label5.Text = "Time Remain";
-            // 
-            // btn_View_Account
-            // 
-            btn_View_Account.AutoSize = true;
-            btn_View_Account.Cursor = Cursors.Hand;
-            btn_View_Account.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_View_Account.ForeColor = Color.FromArgb(38, 134, 245);
-            btn_View_Account.Location = new Point(146, 130);
-            btn_View_Account.Name = "btn_View_Account";
-            btn_View_Account.Size = new Size(85, 17);
-            btn_View_Account.TabIndex = 4;
-            btn_View_Account.Text = "View Account";
+            label5.Text = "Role:";
             // 
             // popup_staff_name
             // 
             popup_staff_name.AutoSize = true;
             popup_staff_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            popup_staff_name.Location = new Point(146, 78);
+            popup_staff_name.Location = new Point(207, 78);
             popup_staff_name.Name = "popup_staff_name";
             popup_staff_name.Size = new Size(52, 21);
             popup_staff_name.TabIndex = 3;
@@ -186,11 +197,12 @@
         private Panel panel2;
         private Panel panel3;
         private Label btn_Sign_Out;
-        private Label btn_View_Account;
         private Label label5;
         private Button btn_Close;
         public Label popup_staff_name;
         public CircularPictureBox popup_picture;
         public Label lblupper_role;
+        public Label label1;
+        public Label popup_role;
     }
 }

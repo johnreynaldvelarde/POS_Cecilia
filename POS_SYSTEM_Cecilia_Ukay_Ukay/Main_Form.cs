@@ -411,6 +411,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Profile_Popup_Form frm = new Profile_Popup_Form();
             frm.popup_picture.Image = account.Staff_Image;
             frm.popup_staff_name.Text = account.Staff_Name;
+            frm.popup_role.Text = account.Staff_Role;
             frm.lblupper_role.Text = account.Staff_Role + " Mode";
             frm.ShowDialog();
             frm.Dispose();
