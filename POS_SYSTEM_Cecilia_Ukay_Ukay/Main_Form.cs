@@ -435,46 +435,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             label_Time.Text = DateTime.Now.ToLongTimeString();
             timer1.Start();
         }
-        public void aa()
-        {
-            /*
-                 i += 1;
-                 string productName = reader["Product_Name"].ToString();
-                 string price = reader["Price"].ToString();
-                 string quantity = reader["Quantity"].ToString();
-                 string categoryName = reader["Category_Name"].ToString();
-                 string unitMeasurement = reader["Unit_Measurement"].ToString();
-
-                 data_Grid_Available.Rows.Add(i, productName, categoryName, price, quantity, unitMeasurement);
-                 */
-
-            /*
-           if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-           {
-               DataGridView dataGridView = (DataGridView)sender;
-               DataGridViewCell cell = dataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex];
-
-               // Check if the clicked cell is in the Quantity column
-               if (cell.OwningColumn.Name == "Quantity")
-               {
-                   int quantity = Convert.ToInt32(cell.Value);
-
-                   if (e.ColumnIndex == dataGridView.Columns[7].Index)
-                   {
-                       // Increment the quantity by 1 (if not exceeding the range)
-                       if (quantity < int.MaxValue)
-                           cell.Value = quantity + 1;
-                   }
-                   else if (e.ColumnIndex == dataGridView.Columns[9].Index)
-                   {
-                       // Decrement the quantity by 1 (if not exceeding the range)
-                       if (quantity > 1)
-                           cell.Value = quantity - 1;
-                   }
-               }
-           }
-           */
-        }
 
         private void txt_Payment_Amount_TextChanged(object sender, EventArgs e)
         {
@@ -568,5 +528,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             }
         }
+
     }
 }
