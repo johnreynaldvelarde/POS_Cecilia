@@ -341,6 +341,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     connect.Close();
                     Clear_Transaction();
                     view_product();
+                    Check_ProductStockLevels();
                 }
 
             }
@@ -561,6 +562,62 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void txt_discount_TextChanged(object sender, EventArgs e)
         {
             get_total();
+        }
+
+        public void Check_ItemStockLevels()
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+
+                string sql = "SELECT SUM(ItemStock_Qyt) AS TotalStock FROM Item_Stock";
+
+                using (SqlCommand command = new SqlCommand(sql, connect))
+                {
+                    int totalStock = (int)command.ExecuteScalar();
+
+                    if (totalStock < 50)
+                    {
+                        if (totalStock < 20)
+                        {
+                            string message = "Item stock is critical (below 20)";
+                            MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                           
+                        }
+                        else
+                        {
+                            string message = "Item stock is below 50";
+                            MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            
+                        }
+                    }
+                }
+                connect.Close();
+            }
+        }
+
+        public void Check_ProductStockLevels()
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+
+                string sql = "SELECT SUM(ProductStock_Qyt) AS TotalStock FROM Product_Stock";
+
+                using (SqlCommand command = new SqlCommand(sql, connect))
+                {
+                    int totalStock = (int)command.ExecuteScalar();
+
+                    if (totalStock < 10)
+                    {
+                        string message = "Product stock is critical (below 10)";
+                        MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+
+                }
+                connect.Close();
+            }
         }
     }
 }

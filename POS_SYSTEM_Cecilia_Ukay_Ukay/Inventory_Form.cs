@@ -111,6 +111,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             frm.view_product();
             frm.cmd_Category.Items.Clear();
             frm.load_category();
+            frm.Check_ItemStockLevels();
+            frm.Check_ProductStockLevels();
             this.Dispose();
         }
 
