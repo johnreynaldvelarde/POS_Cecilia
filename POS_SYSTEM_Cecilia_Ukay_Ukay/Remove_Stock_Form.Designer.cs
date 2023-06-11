@@ -107,6 +107,7 @@
             txt_Reduce_Quantity.Name = "txt_Reduce_Quantity";
             txt_Reduce_Quantity.Size = new Size(200, 33);
             txt_Reduce_Quantity.TabIndex = 80;
+            txt_Reduce_Quantity.KeyPress += txt_Reduce_Quantity_KeyPress;
             // 
             // label1
             // 

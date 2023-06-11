@@ -85,5 +85,33 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             Clear();
         }
+
+        private void txt_Reduce_Quantity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits, backspace, and delete keys
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '\u007F')
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                // Get the current text in the TextBox
+                string currentText = txt_Reduce_Quantity.Text;
+
+                // Handle the case of leading zero
+                if (currentText == "0" && e.KeyChar != '\b' && e.KeyChar != '\u007F')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    // Allow up to 3 digits and ignore additional input
+                    if (currentText.Length >= 3 && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
     }
 }

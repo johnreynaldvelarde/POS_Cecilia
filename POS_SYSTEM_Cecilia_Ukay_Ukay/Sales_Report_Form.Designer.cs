@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             center_panel = new Panel();
-            Nitem_stock = new Label();
-            Nproduct_stock = new Label();
+            label7 = new Label();
+            Nproduct_Stock = new TextBox();
+            label6 = new Label();
+            Nitem_Stock = new TextBox();
             button1 = new Button();
             label5 = new Label();
             btn_view_monthly = new Button();
@@ -64,6 +66,8 @@
             label_today = new Label();
             label3 = new Label();
             label2 = new Label();
+            picture_product = new PictureBox();
+            picture_item = new PictureBox();
             label1 = new Label();
             panel2 = new Panel();
             btnClose = new Button();
@@ -75,13 +79,17 @@
             panel9.SuspendLayout();
             panel8.SuspendLayout();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picture_product).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picture_item).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // center_panel
             // 
-            center_panel.Controls.Add(Nitem_stock);
-            center_panel.Controls.Add(Nproduct_stock);
+            center_panel.Controls.Add(label7);
+            center_panel.Controls.Add(Nproduct_Stock);
+            center_panel.Controls.Add(label6);
+            center_panel.Controls.Add(Nitem_Stock);
             center_panel.Controls.Add(button1);
             center_panel.Controls.Add(label5);
             center_panel.Controls.Add(btn_view_monthly);
@@ -92,6 +100,8 @@
             center_panel.Controls.Add(panel9);
             center_panel.Controls.Add(panel8);
             center_panel.Controls.Add(panel4);
+            center_panel.Controls.Add(picture_product);
+            center_panel.Controls.Add(picture_item);
             center_panel.Dock = DockStyle.Fill;
             center_panel.Font = new Font("Century Gothic", 72F, FontStyle.Regular, GraphicsUnit.Point);
             center_panel.Location = new Point(10, 73);
@@ -100,25 +110,51 @@
             center_panel.Size = new Size(1243, 617);
             center_panel.TabIndex = 24;
             // 
-            // Nitem_stock
+            // label7
             // 
-            Nitem_stock.AutoSize = true;
-            Nitem_stock.ForeColor = Color.FromArgb(14, 159, 104);
-            Nitem_stock.Location = new Point(1006, 329);
-            Nitem_stock.Name = "Nitem_stock";
-            Nitem_stock.Size = new Size(102, 115);
-            Nitem_stock.TabIndex = 13;
-            Nitem_stock.Text = "0";
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.Black;
+            label7.Location = new Point(1050, 444);
+            label7.Name = "label7";
+            label7.Size = new Size(106, 21);
+            label7.TabIndex = 19;
+            label7.Text = "Product Stock";
             // 
-            // Nproduct_stock
+            // Nproduct_Stock
             // 
-            Nproduct_stock.AutoSize = true;
-            Nproduct_stock.ForeColor = Color.FromArgb(14, 159, 104);
-            Nproduct_stock.Location = new Point(764, 329);
-            Nproduct_stock.Name = "Nproduct_stock";
-            Nproduct_stock.Size = new Size(102, 115);
-            Nproduct_stock.TabIndex = 12;
-            Nproduct_stock.Text = "0";
+            Nproduct_Stock.BorderStyle = BorderStyle.None;
+            Nproduct_Stock.Font = new Font("Century Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point);
+            Nproduct_Stock.ForeColor = Color.FromArgb(14, 159, 104);
+            Nproduct_Stock.Location = new Point(1025, 291);
+            Nproduct_Stock.Name = "Nproduct_Stock";
+            Nproduct_Stock.Size = new Size(139, 59);
+            Nproduct_Stock.TabIndex = 18;
+            Nproduct_Stock.Text = "0";
+            Nproduct_Stock.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(762, 581);
+            label6.Name = "label6";
+            label6.Size = new Size(83, 21);
+            label6.TabIndex = 17;
+            label6.Text = "Item Stock";
+            // 
+            // Nitem_Stock
+            // 
+            Nitem_Stock.BorderStyle = BorderStyle.None;
+            Nitem_Stock.Font = new Font("Century Gothic", 50.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Nitem_Stock.ForeColor = Color.FromArgb(14, 159, 104);
+            Nitem_Stock.Location = new Point(728, 386);
+            Nitem_Stock.Name = "Nitem_Stock";
+            Nitem_Stock.Size = new Size(139, 83);
+            Nitem_Stock.TabIndex = 16;
+            Nitem_Stock.Text = "0";
+            Nitem_Stock.TextAlign = HorizontalAlignment.Center;
             // 
             // button1
             // 
@@ -127,7 +163,7 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(742, 187);
+            button1.Location = new Point(843, 189);
             button1.Name = "button1";
             button1.Size = new Size(33, 32);
             button1.TabIndex = 10;
@@ -138,11 +174,11 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(648, 193);
+            label5.Location = new Point(648, 195);
             label5.Name = "label5";
-            label5.Size = new Size(96, 21);
+            label5.Size = new Size(189, 21);
             label5.TabIndex = 11;
-            label5.Text = "Stock Level";
+            label5.Text = "Stock Quantity Monitor";
             // 
             // btn_view_monthly
             // 
@@ -170,23 +206,23 @@
             // 
             // chart_sales
             // 
-            chartArea2.Name = "ChartArea1";
-            chart_sales.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            chart_sales.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            chart_sales.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart_sales.Legends.Add(legend1);
             chart_sales.Location = new Point(17, 219);
             chart_sales.Name = "chart_sales";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Monthly Sales";
-            chart_sales.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Monthly Sales";
+            chart_sales.Series.Add(series1);
             chart_sales.Size = new Size(576, 383);
             chart_sales.TabIndex = 8;
             chart_sales.Text = "chart1";
             // 
             // panel11
             // 
-            panel11.BackColor = Color.FromArgb(78, 181, 234);
+            panel11.BackColor = Color.FromArgb(196, 111, 212);
             panel11.Controls.Add(btn_Product);
             panel11.Controls.Add(label_product_sold);
             panel11.Controls.Add(label23);
@@ -197,7 +233,7 @@
             // 
             // btn_Product
             // 
-            btn_Product.BackColor = Color.FromArgb(78, 181, 234);
+            btn_Product.BackColor = Color.FromArgb(196, 111, 212);
             btn_Product.Cursor = Cursors.Hand;
             btn_Product.FlatAppearance.BorderSize = 0;
             btn_Product.FlatStyle = FlatStyle.Flat;
@@ -467,6 +503,24 @@
             label2.TabIndex = 0;
             label2.Text = "Today's Sales";
             // 
+            // picture_product
+            // 
+            picture_product.Location = new Point(965, 208);
+            picture_product.Name = "picture_product";
+            picture_product.Size = new Size(258, 224);
+            picture_product.SizeMode = PictureBoxSizeMode.Zoom;
+            picture_product.TabIndex = 14;
+            picture_product.TabStop = false;
+            // 
+            // picture_item
+            // 
+            picture_item.Location = new Point(648, 284);
+            picture_item.Name = "picture_item";
+            picture_item.Size = new Size(299, 286);
+            picture_item.SizeMode = PictureBoxSizeMode.Zoom;
+            picture_item.TabIndex = 15;
+            picture_item.TabStop = false;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -539,6 +593,8 @@
             panel8.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picture_product).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picture_item).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -580,7 +636,12 @@
         private Button btn_view_monthly;
         private Button button1;
         private Label label5;
-        private Label Nproduct_stock;
         private Label Nitem_stock;
+        private PictureBox picture_product;
+        private PictureBox picture_item;
+        private TextBox Nitem_Stock;
+        private Label label6;
+        private TextBox Nproduct_Stock;
+        private Label label7;
     }
 }

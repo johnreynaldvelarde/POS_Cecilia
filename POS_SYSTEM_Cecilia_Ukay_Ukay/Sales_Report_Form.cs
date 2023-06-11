@@ -239,23 +239,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     int totalStockQyt = (int)command.ExecuteScalar();
 
-                    Nproduct_stock.Text = totalStockQyt.ToString();
+                    Nproduct_Stock.Text = totalStockQyt.ToString();
 
                     Color textColor;
                     if (totalStockQyt <= 20)
                     {
                         textColor = Color.FromArgb(234, 67, 53);
+                        picture_product.Image = Properties.Resources.Red;
                     }
                     else if (totalStockQyt <= 50)
                     {
                         textColor = Color.FromArgb(251, 188, 5);
+                        picture_product.Image = Properties.Resources.Yellow;
                     }
                     else
                     {
                         textColor = Color.FromArgb(14, 159, 104);
+                        picture_product.Image = Properties.Resources.Green;
                     }
 
-                    Nproduct_stock.ForeColor = textColor;
+                    Nproduct_Stock.ForeColor = textColor;
                 }
             }
             catch (Exception ex)
@@ -277,23 +280,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                     int totalStockQyt = (int)command.ExecuteScalar();
 
-                    Nitem_stock.Text = totalStockQyt.ToString();
+                    Nitem_Stock.Text = totalStockQyt.ToString();
 
                     Color textColor;
                     if (totalStockQyt <= 20)
                     {
                         textColor = Color.FromArgb(234, 67, 53);
+                        picture_item.Image = Properties.Resources.Red;
                     }
                     else if (totalStockQyt <= 50)
                     {
                         textColor = Color.FromArgb(251, 188, 5);
+                        picture_item.Image = Properties.Resources.Yellow;
                     }
                     else
                     {
                         textColor = Color.FromArgb(14, 159, 104);
+                        picture_item.Image = Properties.Resources.Green;
                     }
 
-                    Nitem_stock.ForeColor = textColor;
+                    Nitem_Stock.ForeColor = textColor;
                 }
             }
             catch (Exception ex)
@@ -339,6 +345,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             chart_SalesMonth();
             Monitor_Product_Stock_Level();
             Monitor_Item_Stock_Level();
+
         }
     }
 }
