@@ -106,7 +106,6 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(300, 29);
             txtUsername.TabIndex = 10;
-            txtUsername.Text = "Admin";
             // 
             // btnClose
             // 
