@@ -121,7 +121,7 @@
             btn_Category_List.Name = "btn_Category_List";
             btn_Category_List.Size = new Size(185, 38);
             btn_Category_List.TabIndex = 15;
-            btn_Category_List.Text = "Category List";
+            btn_Category_List.Text = " Category List";
             btn_Category_List.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Category_List.UseVisualStyleBackColor = false;
             btn_Category_List.Click += btn_Category_List_Click;
@@ -151,7 +151,7 @@
             btn_Item_List.Name = "btn_Item_List";
             btn_Item_List.Size = new Size(193, 38);
             btn_Item_List.TabIndex = 18;
-            btn_Item_List.Text = "Item List";
+            btn_Item_List.Text = " Item List";
             btn_Item_List.TextAlign = ContentAlignment.MiddleRight;
             btn_Item_List.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Item_List.UseVisualStyleBackColor = false;
@@ -168,9 +168,9 @@
             btn_Stock_List.Image = (Image)resources.GetObject("btn_Stock_List.Image");
             btn_Stock_List.Location = new Point(656, 11);
             btn_Stock_List.Name = "btn_Stock_List";
-            btn_Stock_List.Size = new Size(193, 38);
+            btn_Stock_List.Size = new Size(201, 38);
             btn_Stock_List.TabIndex = 17;
-            btn_Stock_List.Text = "  Stock Availability";
+            btn_Stock_List.Text = " Stock Availability";
             btn_Stock_List.TextAlign = ContentAlignment.MiddleRight;
             btn_Stock_List.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Stock_List.UseVisualStyleBackColor = false;

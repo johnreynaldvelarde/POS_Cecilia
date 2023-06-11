@@ -114,6 +114,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             this.Dispose();
         }
 
-        
+
     }
 }

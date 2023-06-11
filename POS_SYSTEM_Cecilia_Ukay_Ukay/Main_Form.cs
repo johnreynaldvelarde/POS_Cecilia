@@ -42,8 +42,6 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // method for over the mouse color
         public void button_highligted()
         {
-            btn_Settings.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
-            btn_Settings.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
             btn_Inventory.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
             btn_Inventory.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
@@ -378,12 +376,14 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         // button for settings
         private void btn_Settings_Click(object sender, EventArgs e)
         {
+            /*
             btn_Settings.BackColor = settingsColor;
 
             Settings_Form frm = new Settings_Form();
             frm.ShowDialog();
             frm.Dispose();
             btn_Settings.BackColor = defaultColor;
+            */
         }
 
         // button for trash bin
@@ -452,7 +452,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
         }
 

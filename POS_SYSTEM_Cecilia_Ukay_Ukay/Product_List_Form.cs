@@ -30,8 +30,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         public void button_highligted()
         {
-            btn_Add_Product.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
-            btn_Add_Product.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
+          //  btn_Add_Product.FlatAppearance.MouseDownBackColor = Color.FromArgb(242, 197, 70);
+          //  btn_Add_Product.FlatAppearance.MouseOverBackColor = Color.FromArgb(242, 197, 70);
 
         }
 

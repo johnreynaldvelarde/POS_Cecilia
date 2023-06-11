@@ -32,7 +32,6 @@
             panel_center = new Panel();
             label1 = new Label();
             panel3 = new Panel();
-            button1 = new Button();
             btn_Transaction = new Button();
             btn_Retailer = new Button();
             panel2 = new Panel();
@@ -63,7 +62,6 @@
             // 
             // panel3
             // 
-            panel3.Controls.Add(button1);
             panel3.Controls.Add(btn_Transaction);
             panel3.Controls.Add(btn_Retailer);
             panel3.Dock = DockStyle.Top;
@@ -71,24 +69,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1080, 60);
             panel3.TabIndex = 23;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(14, 159, 104);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(523, 11);
-            button1.Name = "button1";
-            button1.Size = new Size(184, 38);
-            button1.TabIndex = 18;
-            button1.Text = "Activity Log";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
             // 
             // btn_Transaction
             // 
@@ -99,11 +79,11 @@
             btn_Transaction.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Transaction.ForeColor = Color.White;
             btn_Transaction.Image = (Image)resources.GetObject("btn_Transaction.Image");
-            btn_Transaction.Location = new Point(279, 11);
+            btn_Transaction.Location = new Point(296, 11);
             btn_Transaction.Name = "btn_Transaction";
             btn_Transaction.Size = new Size(227, 38);
             btn_Transaction.TabIndex = 17;
-            btn_Transaction.Text = "Order Transaction";
+            btn_Transaction.Text = " Order Transaction";
             btn_Transaction.TextAlign = ContentAlignment.MiddleRight;
             btn_Transaction.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Transaction.UseVisualStyleBackColor = false;
@@ -120,9 +100,9 @@
             btn_Retailer.Image = (Image)resources.GetObject("btn_Retailer.Image");
             btn_Retailer.Location = new Point(12, 11);
             btn_Retailer.Name = "btn_Retailer";
-            btn_Retailer.Size = new Size(249, 38);
+            btn_Retailer.Size = new Size(269, 38);
             btn_Retailer.TabIndex = 16;
-            btn_Retailer.Text = "Management Transaction";
+            btn_Retailer.Text = " Management Transaction";
             btn_Retailer.TextAlign = ContentAlignment.MiddleRight;
             btn_Retailer.TextImageRelation = TextImageRelation.ImageBeforeText;
             btn_Retailer.UseVisualStyleBackColor = false;
@@ -192,6 +172,5 @@
         private Panel panel2;
         private Button btnClose;
         private Panel panel1;
-        private Button button1;
     }
 }
