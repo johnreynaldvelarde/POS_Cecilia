@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile_Popup_Form));
             panel1 = new Panel();
             popup_role = new Label();
             label1 = new Label();
@@ -84,7 +83,7 @@
             // 
             // popup_picture
             // 
-            popup_picture.Image = (Image)resources.GetObject("popup_picture.Image");
+            popup_picture.Image = Properties.Resources.user;
             popup_picture.Location = new Point(24, 58);
             popup_picture.Name = "popup_picture";
             popup_picture.Size = new Size(103, 103);

@@ -9,7 +9,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     public class Account_Class
     {
         static int staff_id;
-        static Image staff_image;
+        static Image staff_image = Properties.Resources.user;
         static string staff_name;
         static string staff_role;
 
