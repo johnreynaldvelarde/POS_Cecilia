@@ -211,7 +211,7 @@
             cmd_Piece.DropDownStyle = ComboBoxStyle.DropDownList;
             cmd_Piece.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             cmd_Piece.FormattingEnabled = true;
-            cmd_Piece.Items.AddRange(new object[] { "50", "100", "150", "200", "250", "300", "350", "400", "450", "500" });
+            cmd_Piece.Items.AddRange(new object[] { "5", "10", "20", "30", "40", "50", "100", "150", "200", "250", "300" });
             cmd_Piece.Location = new Point(266, 373);
             cmd_Piece.Name = "cmd_Piece";
             cmd_Piece.Size = new Size(400, 29);

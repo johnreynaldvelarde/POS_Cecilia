@@ -340,6 +340,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 DataGridViewRow selectedRow = data_Grid_Purchase.Rows[e.RowIndex];
                 data_Grid_Purchase.Rows.Remove(selectedRow);
+                get_total();
             }
         }
     }
