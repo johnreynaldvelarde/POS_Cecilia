@@ -566,58 +566,74 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         public void Check_ItemStockLevels()
         {
-            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            try
             {
-                connect.Open();
-
-                string sql = "SELECT SUM(ItemStock_Qyt) AS TotalStock FROM Item_Stock";
-
-                using (SqlCommand command = new SqlCommand(sql, connect))
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
-                    int totalStock = (int)command.ExecuteScalar();
+                    connect.Open();
 
-                    if (totalStock < 50)
+                    string sql = "SELECT SUM(ItemStock_Qyt) AS TotalStock FROM Item_Stock";
+
+                    using (SqlCommand command = new SqlCommand(sql, connect))
                     {
-                        if (totalStock < 20)
+                        int totalStock = (int)command.ExecuteScalar();
+
+                        if (totalStock < 50)
                         {
-                            string message = "Item stock is critical (below 20)";
-                            MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                           
-                        }
-                        else
-                        {
-                            string message = "Item stock is below 50";
-                            MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            
+                            if (totalStock < 20)
+                            {
+                                string message = "Item stock is critical (below 20)";
+                                MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            }
+                            else
+                            {
+                                string message = "Item stock is below 50";
+                                MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            }
                         }
                     }
+                    connect.Close();
                 }
-                connect.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+           
         }
 
         public void Check_ProductStockLevels()
         {
-            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            try
             {
-                connect.Open();
-
-                string sql = "SELECT SUM(ProductStock_Qyt) AS TotalStock FROM Product_Stock";
-
-                using (SqlCommand command = new SqlCommand(sql, connect))
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                 {
-                    int totalStock = (int)command.ExecuteScalar();
+                    connect.Open();
 
-                    if (totalStock < 10)
+                    string sql = "SELECT SUM(ProductStock_Qyt) AS TotalStock FROM Product_Stock";
+
+                    using (SqlCommand command = new SqlCommand(sql, connect))
                     {
-                        string message = "Product stock is critical (below 10)";
-                        MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        int totalStock = (int)command.ExecuteScalar();
+
+                        if (totalStock < 10)
+                        {
+                            string message = "Product stock is critical (below 10)";
+                            MessageBox.Show(message, "Stock Reminder", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
 
                     }
-
+                    connect.Close();
                 }
-                connect.Close();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+          
         }
     }
 }
