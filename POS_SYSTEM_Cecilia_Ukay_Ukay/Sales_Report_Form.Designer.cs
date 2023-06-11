@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
             center_panel = new Panel();
             text_itm = new TextBox();
             text_pdt = new TextBox();
@@ -53,8 +53,9 @@
             label19 = new Label();
             label20 = new Label();
             panel9 = new Panel();
-            btn_Monthly = new Button();
-            label_monthly = new Label();
+            label_deduct = new Label();
+            label9 = new Label();
+            label_net = new Label();
             label16 = new Label();
             label17 = new Label();
             panel8 = new Panel();
@@ -216,16 +217,16 @@
             // 
             // chart_sales
             // 
-            chartArea1.Name = "ChartArea1";
-            chart_sales.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart_sales.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            chart_sales.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            chart_sales.Legends.Add(legend7);
             chart_sales.Location = new Point(17, 219);
             chart_sales.Name = "chart_sales";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Monthly Sales";
-            chart_sales.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Monthly Sales";
+            chart_sales.Series.Add(series7);
             chart_sales.Size = new Size(576, 383);
             chart_sales.TabIndex = 8;
             chart_sales.Text = "chart1";
@@ -236,7 +237,7 @@
             panel11.Controls.Add(btn_Product);
             panel11.Controls.Add(label_product_sold);
             panel11.Controls.Add(label23);
-            panel11.Location = new Point(995, 23);
+            panel11.Location = new Point(747, 23);
             panel11.Name = "panel11";
             panel11.Size = new Size(240, 109);
             panel11.TabIndex = 7;
@@ -284,7 +285,7 @@
             panel10.Controls.Add(label_annual);
             panel10.Controls.Add(label19);
             panel10.Controls.Add(label20);
-            panel10.Location = new Point(747, 23);
+            panel10.Location = new Point(501, 23);
             panel10.Name = "panel10";
             panel10.Size = new Size(240, 109);
             panel10.TabIndex = 6;
@@ -338,49 +339,58 @@
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(14, 159, 104);
-            panel9.Controls.Add(btn_Monthly);
-            panel9.Controls.Add(label_monthly);
+            panel9.BackColor = Color.FromArgb(238, 241, 247);
+            panel9.Controls.Add(label_deduct);
+            panel9.Controls.Add(label9);
+            panel9.Controls.Add(label_net);
             panel9.Controls.Add(label16);
             panel9.Controls.Add(label17);
-            panel9.Location = new Point(501, 23);
+            panel9.Location = new Point(993, 23);
             panel9.Name = "panel9";
             panel9.Size = new Size(240, 109);
             panel9.TabIndex = 5;
             // 
-            // btn_Monthly
+            // label_deduct
             // 
-            btn_Monthly.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Monthly.Cursor = Cursors.Hand;
-            btn_Monthly.FlatAppearance.BorderSize = 0;
-            btn_Monthly.FlatStyle = FlatStyle.Flat;
-            btn_Monthly.Image = (Image)resources.GetObject("btn_Monthly.Image");
-            btn_Monthly.Location = new Point(207, 3);
-            btn_Monthly.Name = "btn_Monthly";
-            btn_Monthly.Size = new Size(22, 26);
-            btn_Monthly.TabIndex = 3;
-            btn_Monthly.UseVisualStyleBackColor = false;
-            btn_Monthly.Click += btn_Monthly_Click;
+            label_deduct.AutoSize = true;
+            label_deduct.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label_deduct.ForeColor = Color.FromArgb(234, 67, 53);
+            label_deduct.Location = new Point(116, 74);
+            label_deduct.Name = "label_deduct";
+            label_deduct.Size = new Size(32, 21);
+            label_deduct.TabIndex = 4;
+            label_deduct.Text = "0.0";
             // 
-            // label_monthly
+            // label9
             // 
-            label_monthly.AutoSize = true;
-            label_monthly.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label_monthly.ForeColor = Color.White;
-            label_monthly.Location = new Point(96, 45);
-            label_monthly.Name = "label_monthly";
-            label_monthly.Size = new Size(42, 30);
-            label_monthly.TabIndex = 2;
-            label_monthly.Text = "0.0";
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.ForeColor = Color.FromArgb(234, 67, 53);
+            label9.Location = new Point(94, 74);
+            label9.Name = "label9";
+            label9.Size = new Size(16, 21);
+            label9.TabIndex = 3;
+            label9.Text = "-";
+            // 
+            // label_net
+            // 
+            label_net.AutoSize = true;
+            label_net.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label_net.ForeColor = Color.FromArgb(7, 124, 214);
+            label_net.Location = new Point(96, 42);
+            label_net.Name = "label_net";
+            label_net.Size = new Size(39, 25);
+            label_net.TabIndex = 2;
+            label_net.Text = "0.0";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label16.ForeColor = Color.White;
-            label16.Location = new Point(46, 45);
+            label16.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label16.ForeColor = Color.Black;
+            label16.Location = new Point(46, 42);
             label16.Name = "label16";
-            label16.Size = new Size(52, 30);
+            label16.Size = new Size(48, 25);
             label16.TabIndex = 1;
             label16.Text = "PHP";
             // 
@@ -388,12 +398,12 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label17.ForeColor = Color.White;
+            label17.ForeColor = Color.Black;
             label17.Location = new Point(8, 9);
             label17.Name = "label17";
-            label17.Size = new Size(107, 20);
+            label17.Size = new Size(91, 20);
             label17.TabIndex = 0;
-            label17.Text = "Monthly Sales";
+            label17.Text = "Net Income";
             // 
             // panel8
             // 
@@ -632,8 +642,7 @@
         private Label label19;
         private Label label20;
         private Panel panel9;
-        private Button btn_Monthly;
-        private Label label_monthly;
+        private Label label_net;
         private Label label16;
         private Label label17;
         private Panel panel8;
@@ -654,5 +663,7 @@
         private Label label7;
         private TextBox text_pdt;
         private TextBox text_itm;
+        private Label label_deduct;
+        private Label label9;
     }
 }

@@ -31,9 +31,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             label_today.Text = GetTodaySales().ToString("#,##0.00");
             label_weekly.Text = GetWeeklySales().ToString("#,##0.00");
-            label_monthly.Text = GetMonthlySales().ToString("#,##0.00");
             label_annual.Text = GetAnnualSales().ToString("#,##0.00");
+            label_net.Text = GetNetIncome().ToString("#,##0.00");
             label_product_sold.Text = GetProductTotal().ToString();
+            label_deduct.Text = GetDeductAmount().ToString("#,##0.00");
 
         }
 
@@ -128,6 +129,84 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             return monthly_sales;
         }
+
+        public double GetNetIncome()
+        {
+            double net_income = 0;
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+
+                    // Calculate the sum of Total Amount from Purchase_Transaction table
+                    string purchaseSql = "SELECT SUM(Total_Amount) AS total_sum FROM Purchase_Transaction";
+
+                    using (SqlCommand purchaseCommand = new SqlCommand(purchaseSql, connect))
+                    {
+                        object purchaseResult = purchaseCommand.ExecuteScalar();
+                        if (purchaseResult != DBNull.Value)
+                        {
+                            double totalPurchaseAmount = Convert.ToDouble(purchaseResult);
+
+                            // Calculate the sum of Total Amount from Order_Transaction table
+                            string orderSql = "SELECT SUM(Total_Amount) AS total_sum FROM Order_Transaction";
+                            using (SqlCommand orderCommand = new SqlCommand(orderSql, connect))
+                            {
+                                object orderResult = orderCommand.ExecuteScalar();
+                                if (orderResult != DBNull.Value)
+                                {
+                                    double totalOrderAmount = Convert.ToDouble(orderResult);
+
+                                    net_income = totalOrderAmount - totalPurchaseAmount;
+
+                                }
+                            }
+                        }
+                    }
+
+                    connect.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return net_income;
+        }
+
+        public double GetDeductAmount()
+        {
+            double deduct_income = 0;
+
+            try
+            {
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "SELECT SUM(Total_Amount) AS total_sum FROM Purchase_Transaction";
+                    using (SqlCommand command = new SqlCommand(sql, connect))
+                    {
+                        object result = command.ExecuteScalar();
+                        if (result != DBNull.Value)
+                        {
+                            deduct_income = Convert.ToDouble(result);
+
+                            // Update the label with the deduct income value
+                            label_deduct.Text = deduct_income.ToString();
+                        }
+                    }
+
+                    connect.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            return deduct_income;
+        }
+
 
         public double GetAnnualSales()
         {
