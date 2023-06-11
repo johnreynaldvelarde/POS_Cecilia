@@ -112,44 +112,44 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
-        
+
         // export in excel
         private void btn_Export_Click(object sender, EventArgs e)
         {
-        /*
-            var excelApp = new Microsoft.Office.Interop.Excel.Application();
-            var workbook = excelApp.Workbooks.Add();
+            /*
+                var excelApp = new Microsoft.Office.Interop.Excel.Application();
+                var workbook = excelApp.Workbooks.Add();
 
-            var worksheet = workbook.Sheets.Add() as Worksheet;
-            worksheet.Name = "Categories";
+                var worksheet = workbook.Sheets.Add() as Worksheet;
+                worksheet.Name = "Categories";
 
-            for (int i = 1; i <= data_Grid_Category.Columns.Count; i++)
-            {
-                worksheet.Cells[1, i] = data_Grid_Category.Columns[i - 1].HeaderText;
-            }
-            for (int i = 0; i < data_Grid_Category.Rows.Count; i++)
-            {
-                for (int j = 0; j < data_Grid_Category.Columns.Count; j++)
+                for (int i = 1; i <= data_Grid_Category.Columns.Count; i++)
                 {
-                    worksheet.Cells[i + 2, j + 1] = data_Grid_Category.Rows[i].Cells[j].Value.ToString();
+                    worksheet.Cells[1, i] = data_Grid_Category.Columns[i - 1].HeaderText;
                 }
-            }
+                for (int i = 0; i < data_Grid_Category.Rows.Count; i++)
+                {
+                    for (int j = 0; j < data_Grid_Category.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 2, j + 1] = data_Grid_Category.Rows[i].Cells[j].Value.ToString();
+                    }
+                }
 
-            var saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "Excel Workbook|*.xlsx";
-            saveFileDialog.Title = "Save as Excel Workbook";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                workbook.SaveAs(saveFileDialog.FileName);
-            }
+                var saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "Excel Workbook|*.xlsx";
+                saveFileDialog.Title = "Save as Excel Workbook";
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(saveFileDialog.FileName);
+                }
 
-            workbook.Close();
-            excelApp.Quit();
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
-        */
+                workbook.Close();
+                excelApp.Quit();
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(excelApp);
+            */
         }
 
-            
+
     }
-        
+
 }

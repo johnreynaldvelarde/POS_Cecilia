@@ -36,7 +36,6 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            button1 = new Button();
             btn_Purchase = new Button();
             label1 = new Label();
             panel2 = new Panel();
@@ -80,7 +79,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(btn_Purchase);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -89,26 +87,9 @@
             panel1.Size = new Size(1088, 68);
             panel1.TabIndex = 4;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(14, 159, 104);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(908, 9);
-            button1.Name = "button1";
-            button1.Size = new Size(159, 38);
-            button1.TabIndex = 16;
-            button1.Text = "Excel Export";
-            button1.TextAlign = ContentAlignment.MiddleRight;
-            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
-            button1.UseVisualStyleBackColor = false;
-            // 
             // btn_Purchase
             // 
+            btn_Purchase.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Purchase.BackColor = Color.FromArgb(14, 159, 104);
             btn_Purchase.Cursor = Cursors.Hand;
             btn_Purchase.FlatAppearance.BorderSize = 0;
@@ -116,7 +97,7 @@
             btn_Purchase.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Purchase.ForeColor = Color.White;
             btn_Purchase.Image = (Image)resources.GetObject("btn_Purchase.Image");
-            btn_Purchase.Location = new Point(694, 9);
+            btn_Purchase.Location = new Point(887, 9);
             btn_Purchase.Name = "btn_Purchase";
             btn_Purchase.Size = new Size(199, 38);
             btn_Purchase.TabIndex = 15;
@@ -480,7 +461,6 @@
 
         #endregion
         private Panel panel1;
-        private Button button1;
         private Label label1;
         private Panel panel2;
         private SplitContainer splitContainer1;

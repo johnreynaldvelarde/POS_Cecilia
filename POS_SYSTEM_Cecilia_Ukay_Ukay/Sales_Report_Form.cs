@@ -357,5 +357,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             Monitor_Item_Stock_Level();
 
         }
+
+        private void btn_view_monthly_Click(object sender, EventArgs e)
+        {
+            View_Monthly_Sales_Form frm = new View_Monthly_Sales_Form();
+            frm.ShowDialog();
+        }
     }
 }
