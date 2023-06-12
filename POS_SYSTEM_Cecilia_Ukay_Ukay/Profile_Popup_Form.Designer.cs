@@ -28,30 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile_Popup_Form));
             panel1 = new Panel();
+            popup_role = new Label();
+            label1 = new Label();
+            popup_picture = new CircularPictureBox();
             label5 = new Label();
-            btn_View_Account = new Label();
-            label3 = new Label();
+            popup_staff_name = new Label();
             panel3 = new Panel();
             btn_Sign_Out = new Label();
-            pictureBox1 = new PictureBox();
             panel2 = new Panel();
-            label1 = new Label();
+            lblupper_role = new Label();
             btn_Close = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)popup_picture).BeginInit();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(popup_role);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(popup_picture);
             panel1.Controls.Add(label5);
-            panel1.Controls.Add(btn_View_Account);
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(popup_staff_name);
             panel1.Controls.Add(panel3);
-            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(10, 10);
@@ -59,37 +60,56 @@
             panel1.Size = new Size(380, 212);
             panel1.TabIndex = 0;
             // 
+            // popup_role
+            // 
+            popup_role.AutoSize = true;
+            popup_role.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            popup_role.ForeColor = Color.FromArgb(234, 67, 53);
+            popup_role.Location = new Point(207, 116);
+            popup_role.Name = "popup_role";
+            popup_role.Size = new Size(44, 21);
+            popup_role.TabIndex = 8;
+            popup_role.Text = "Role:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(146, 78);
+            label1.Name = "label1";
+            label1.Size = new Size(55, 21);
+            label1.TabIndex = 7;
+            label1.Text = "Name:";
+            // 
+            // popup_picture
+            // 
+            popup_picture.Image = Properties.Resources.user;
+            popup_picture.Location = new Point(24, 58);
+            popup_picture.Name = "popup_picture";
+            popup_picture.Size = new Size(103, 103);
+            popup_picture.SizeMode = PictureBoxSizeMode.StretchImage;
+            popup_picture.TabIndex = 6;
+            popup_picture.TabStop = false;
+            // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(146, 99);
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(146, 116);
             label5.Name = "label5";
-            label5.Size = new Size(96, 20);
+            label5.Size = new Size(44, 21);
             label5.TabIndex = 5;
-            label5.Text = "Time Remain";
+            label5.Text = "Role:";
             // 
-            // btn_View_Account
+            // popup_staff_name
             // 
-            btn_View_Account.AutoSize = true;
-            btn_View_Account.Cursor = Cursors.Hand;
-            btn_View_Account.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_View_Account.ForeColor = Color.FromArgb(38, 134, 245);
-            btn_View_Account.Location = new Point(146, 130);
-            btn_View_Account.Name = "btn_View_Account";
-            btn_View_Account.Size = new Size(85, 17);
-            btn_View_Account.TabIndex = 4;
-            btn_View_Account.Text = "View Account";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(146, 78);
-            label3.Name = "label3";
-            label3.Size = new Size(52, 21);
-            label3.TabIndex = 3;
-            label3.Text = "Name";
+            popup_staff_name.AutoSize = true;
+            popup_staff_name.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            popup_staff_name.Location = new Point(207, 78);
+            popup_staff_name.Name = "popup_staff_name";
+            popup_staff_name.Size = new Size(52, 21);
+            popup_staff_name.TabIndex = 3;
+            popup_staff_name.Text = "Name";
             // 
             // panel3
             // 
@@ -113,35 +133,25 @@
             btn_Sign_Out.Text = "Sign out";
             btn_Sign_Out.Click += btn_Sign_Out_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(19, 58);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(103, 103);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
-            panel2.Controls.Add(label1);
+            panel2.Controls.Add(lblupper_role);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(380, 38);
             panel2.TabIndex = 0;
             // 
-            // label1
+            // lblupper_role
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(8, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(152, 18);
-            label1.TabIndex = 0;
-            label1.Text = "Administrator Mode";
+            lblupper_role.AutoSize = true;
+            lblupper_role.Font = new Font("Century Gothic", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblupper_role.ForeColor = Color.FromArgb(14, 159, 104);
+            lblupper_role.Location = new Point(8, 10);
+            lblupper_role.Name = "lblupper_role";
+            lblupper_role.Size = new Size(152, 18);
+            lblupper_role.TabIndex = 0;
+            lblupper_role.Text = "Administrator Mode";
             // 
             // btn_Close
             // 
@@ -172,9 +182,9 @@
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)popup_picture).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ResumeLayout(false);
@@ -184,13 +194,14 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Label label1;
         private Panel panel3;
-        private PictureBox pictureBox1;
         private Label btn_Sign_Out;
-        private Label btn_View_Account;
-        private Label label3;
         private Label label5;
         private Button btn_Close;
+        public Label popup_staff_name;
+        public CircularPictureBox popup_picture;
+        public Label lblupper_role;
+        public Label label1;
+        public Label popup_role;
     }
 }

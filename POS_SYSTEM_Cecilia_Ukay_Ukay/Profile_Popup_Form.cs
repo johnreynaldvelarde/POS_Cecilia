@@ -20,7 +20,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         }
 
-       
+
 
         private void btn_Sign_Out_Click(object sender, EventArgs e)
         {
@@ -29,8 +29,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             if (res == DialogResult.Yes)
             {
-                Application.Exit();
-
+                this.Dispose();
+                Application.OpenForms["Main_Form"].Close();
+                Login_Form frm = new Login_Form();
+                frm.Show();
             }
             else
             {

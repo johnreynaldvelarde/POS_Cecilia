@@ -11,10 +11,31 @@
     <Compile Update="Add_New_Product_Form.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Add_New_Supplier_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Category_List_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="CircularPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Delete_Category_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Delete_Item_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Delete_Product_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Delete_Staff_Account_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Delete_Suppliers_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="History_Log_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Inventory_Form.cs">
@@ -29,16 +50,40 @@
     <Compile Update="Main_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Popup_Category.cs">
-      <SubType>UserControl</SubType>
+    <Compile Update="Management_Transaction_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Notification_Log_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Order_Transaction_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Popup_Notification_Form.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Update="Product_List_Form.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Product_Show.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Update="Profile_Popup_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="progressBar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Purchase_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Purchase_Order_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Remove_Product_Stock_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Remove_Stock_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Restock_Product_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Sales_Report_Form.cs">
@@ -47,10 +92,43 @@
     <Compile Update="Settings_Form.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Show_Order_Product_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Show_Purchase_Item_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Supplier_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Trash_Bin_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="User_Create_Account_Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="User_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View_Annual_Sales_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View_Monthly_Sales_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View_Product_Sold_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View_Stock_List_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View_Today_Sales_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View_Weekly_Sales_Form.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

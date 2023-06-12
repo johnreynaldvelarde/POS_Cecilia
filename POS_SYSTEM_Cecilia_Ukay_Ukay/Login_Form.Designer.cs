@@ -28,160 +28,237 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login_Form));
-            this.btnClear = new System.Windows.Forms.Button();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.openForm = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            btnClear = new Button();
+            btnLogin = new Button();
+            label2 = new Label();
+            label1 = new Label();
+            txtUsername = new TextBox();
+            btnClose = new Button();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
+            label3 = new Label();
+            label4 = new Label();
+            label_date = new Label();
+            label_time = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            btn_Change_DateTime = new Button();
+            passhide1 = new CheckBox();
+            txtPassword = new TextBox();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // btnClear
             // 
-            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClear.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClear.Location = new System.Drawing.Point(455, 437);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(300, 48);
-            this.btnClear.TabIndex = 15;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
+            btnClear.Cursor = Cursors.Hand;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnClear.Location = new Point(448, 374);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(300, 48);
+            btnClear.TabIndex = 15;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(104)))));
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(455, 379);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(300, 48);
-            this.btnLogin.TabIndex = 14;
-            this.btnLogin.Text = "Login in";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
+            btnLogin.BackColor = Color.FromArgb(14, 159, 104);
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLogin.ForeColor = Color.White;
+            btnLogin.Location = new Point(448, 316);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(300, 48);
+            btnLogin.TabIndex = 14;
+            btnLogin.Text = "Login in";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(455, 272);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 21);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Password *";
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtPassword.Location = new System.Drawing.Point(455, 307);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(300, 29);
-            this.txtPassword.TabIndex = 12;
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(448, 209);
+            label2.Name = "label2";
+            label2.Size = new Size(92, 21);
+            label2.TabIndex = 13;
+            label2.Text = "Password *";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(455, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 21);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Username *";
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(448, 105);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 21);
+            label1.TabIndex = 11;
+            label1.Text = "Staff Name*";
             // 
             // txtUsername
             // 
-            this.txtUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtUsername.Location = new System.Drawing.Point(455, 203);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(300, 29);
-            this.txtUsername.TabIndex = 10;
+            txtUsername.BorderStyle = BorderStyle.FixedSingle;
+            txtUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUsername.Location = new Point(448, 140);
+            txtUsername.Name = "txtUsername";
+            txtUsername.Size = new Size(300, 29);
+            txtUsername.TabIndex = 10;
             // 
             // btnClose
             // 
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.Location = new System.Drawing.Point(745, 0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(55, 27);
-            this.btnClose.TabIndex = 9;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClose.Location = new Point(745, 0);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(55, 27);
+            btnClose.TabIndex = 9;
+            btnClose.Text = "Close";
+            btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(400, 600);
-            this.panel1.TabIndex = 16;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(400, 600);
+            panel1.TabIndex = 16;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(400, 600);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(400, 600);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
-            // openForm
+            // label3
             // 
-            this.openForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(159)))), ((int)(((byte)(104)))));
-            this.openForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.openForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.openForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.openForm.ForeColor = System.Drawing.Color.White;
-            this.openForm.Location = new System.Drawing.Point(422, 34);
-            this.openForm.Name = "openForm";
-            this.openForm.Size = new System.Drawing.Size(181, 34);
-            this.openForm.TabIndex = 17;
-            this.openForm.Text = "Open Another Form Test";
-            this.openForm.UseVisualStyleBackColor = false;
-            this.openForm.Click += new System.EventHandler(this.openForm_Click);
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(425, 479);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 17);
+            label3.TabIndex = 18;
+            label3.Text = "Date :";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(425, 507);
+            label4.Name = "label4";
+            label4.Size = new Size(45, 17);
+            label4.TabIndex = 19;
+            label4.Text = "Time :";
+            // 
+            // label_date
+            // 
+            label_date.AutoSize = true;
+            label_date.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label_date.Location = new Point(479, 479);
+            label_date.Name = "label_date";
+            label_date.Size = new Size(48, 17);
+            label_date.TabIndex = 20;
+            label_date.Text = "Date :";
+            // 
+            // label_time
+            // 
+            label_time.AutoSize = true;
+            label_time.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label_time.Location = new Point(479, 507);
+            label_time.Name = "label_time";
+            label_time.Size = new Size(45, 17);
+            label_time.TabIndex = 21;
+            label_time.Text = "Time :";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Tick += timer1_Tick;
+            // 
+            // btn_Change_DateTime
+            // 
+            btn_Change_DateTime.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Change_DateTime.Cursor = Cursors.Hand;
+            btn_Change_DateTime.FlatAppearance.BorderSize = 0;
+            btn_Change_DateTime.FlatStyle = FlatStyle.Flat;
+            btn_Change_DateTime.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Change_DateTime.ForeColor = Color.White;
+            btn_Change_DateTime.Image = (Image)resources.GetObject("btn_Change_DateTime.Image");
+            btn_Change_DateTime.Location = new Point(425, 536);
+            btn_Change_DateTime.Name = "btn_Change_DateTime";
+            btn_Change_DateTime.Size = new Size(228, 38);
+            btn_Change_DateTime.TabIndex = 22;
+            btn_Change_DateTime.Text = "  Change date and time";
+            btn_Change_DateTime.TextAlign = ContentAlignment.MiddleRight;
+            btn_Change_DateTime.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Change_DateTime.UseVisualStyleBackColor = false;
+            btn_Change_DateTime.Click += btn_Change_DateTime_Click;
+            // 
+            // passhide1
+            // 
+            passhide1.Appearance = Appearance.Button;
+            passhide1.AutoSize = true;
+            passhide1.Cursor = Cursors.Hand;
+            passhide1.FlatAppearance.BorderSize = 0;
+            passhide1.FlatStyle = FlatStyle.Flat;
+            passhide1.Image = (Image)resources.GetObject("passhide1.Image");
+            passhide1.Location = new Point(754, 243);
+            passhide1.Name = "passhide1";
+            passhide1.Size = new Size(30, 30);
+            passhide1.TabIndex = 33;
+            passhide1.UseVisualStyleBackColor = true;
+            passhide1.CheckedChanged += passhide1_CheckedChanged;
+            // 
+            // txtPassword
+            // 
+            txtPassword.BorderStyle = BorderStyle.FixedSingle;
+            txtPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtPassword.Location = new Point(448, 244);
+            txtPassword.Multiline = true;
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '●';
+            txtPassword.Size = new Size(300, 29);
+            txtPassword.TabIndex = 34;
             // 
             // Login_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 600);
-            this.ControlBox = false;
-            this.Controls.Add(this.openForm);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtUsername);
-            this.Controls.Add(this.btnClose);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Login_Form";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Login_Form_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(800, 600);
+            ControlBox = false;
+            Controls.Add(txtPassword);
+            Controls.Add(passhide1);
+            Controls.Add(btn_Change_DateTime);
+            Controls.Add(label_time);
+            Controls.Add(label_date);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(panel1);
+            Controls.Add(btnClear);
+            Controls.Add(btnLogin);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(txtUsername);
+            Controls.Add(btnClose);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "Login_Form";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += Login_Form_Load;
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -189,12 +266,18 @@
         private Button btnClear;
         private Button btnLogin;
         private Label label2;
-        private TextBox txtPassword;
         private Label label1;
         private TextBox txtUsername;
         private Button btnClose;
         private Panel panel1;
         private PictureBox pictureBox1;
-        private Button openForm;
+        private Label label3;
+        private Label label4;
+        private Label label_date;
+        private Label label_time;
+        private System.Windows.Forms.Timer timer1;
+        private Button btn_Change_DateTime;
+        private CheckBox passhide1;
+        public TextBox txtPassword;
     }
 }

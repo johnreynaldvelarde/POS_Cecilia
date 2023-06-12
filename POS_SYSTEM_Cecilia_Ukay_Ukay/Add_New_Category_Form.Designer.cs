@@ -45,7 +45,7 @@
             btn_Close.FlatAppearance.BorderSize = 0;
             btn_Close.FlatStyle = FlatStyle.Flat;
             btn_Close.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Close.Location = new Point(633, 2);
+            btn_Close.Location = new Point(633, 1);
             btn_Close.Name = "btn_Close";
             btn_Close.Size = new Size(55, 27);
             btn_Close.TabIndex = 32;
@@ -75,6 +75,7 @@
             // 
             // txt_Category
             // 
+            txt_Category.BorderStyle = BorderStyle.FixedSingle;
             txt_Category.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             txt_Category.Location = new Point(13, 86);
             txt_Category.Name = "txt_Category";

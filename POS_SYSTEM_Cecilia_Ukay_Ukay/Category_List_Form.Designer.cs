@@ -32,7 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
-            btn_Export = new Button();
             btn_Add_Category = new Button();
             label1 = new Label();
             data_Grid_Category = new DataGridView();
@@ -48,7 +47,6 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btn_Export);
             panel1.Controls.Add(btn_Add_Category);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -57,27 +55,9 @@
             panel1.Size = new Size(1088, 68);
             panel1.TabIndex = 1;
             // 
-            // btn_Export
-            // 
-            btn_Export.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Export.Cursor = Cursors.Hand;
-            btn_Export.FlatAppearance.BorderSize = 0;
-            btn_Export.FlatStyle = FlatStyle.Flat;
-            btn_Export.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Export.ForeColor = Color.White;
-            btn_Export.Image = (Image)resources.GetObject("btn_Export.Image");
-            btn_Export.Location = new Point(908, 9);
-            btn_Export.Name = "btn_Export";
-            btn_Export.Size = new Size(159, 38);
-            btn_Export.TabIndex = 16;
-            btn_Export.Text = "Excel Export";
-            btn_Export.TextAlign = ContentAlignment.MiddleRight;
-            btn_Export.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Export.UseVisualStyleBackColor = false;
-            btn_Export.Click += btn_Export_Click;
-            // 
             // btn_Add_Category
             // 
+            btn_Add_Category.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btn_Add_Category.BackColor = Color.FromArgb(14, 159, 104);
             btn_Add_Category.Cursor = Cursors.Hand;
             btn_Add_Category.FlatAppearance.BorderSize = 0;
@@ -85,9 +65,9 @@
             btn_Add_Category.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_Add_Category.ForeColor = Color.White;
             btn_Add_Category.Image = (Image)resources.GetObject("btn_Add_Category.Image");
-            btn_Add_Category.Location = new Point(694, 9);
+            btn_Add_Category.Location = new Point(883, 9);
             btn_Add_Category.Name = "btn_Add_Category";
-            btn_Add_Category.Size = new Size(199, 38);
+            btn_Add_Category.Size = new Size(204, 38);
             btn_Add_Category.TabIndex = 15;
             btn_Add_Category.Text = "Add new category";
             btn_Add_Category.TextAlign = ContentAlignment.MiddleRight;
@@ -144,7 +124,7 @@
             data_Grid_Category.RowHeadersVisible = false;
             data_Grid_Category.RowHeadersWidth = 50;
             data_Grid_Category.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            data_Grid_Category.RowTemplate.Height = 25;
+            data_Grid_Category.RowTemplate.Height = 40;
             data_Grid_Category.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Category.Size = new Size(1088, 492);
             data_Grid_Category.TabIndex = 2;
@@ -223,7 +203,6 @@
         #endregion
 
         private Panel panel1;
-        private Button btn_Export;
         private Button btn_Add_Category;
         private Label label1;
         private DataGridView data_Grid_Category;
