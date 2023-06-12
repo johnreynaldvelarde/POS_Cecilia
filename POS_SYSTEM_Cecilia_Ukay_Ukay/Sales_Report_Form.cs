@@ -63,7 +63,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
             return todaySales;
         }
@@ -94,7 +94,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
             return weekly_sales;
         }
@@ -125,7 +125,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
             return monthly_sales;
         }
@@ -170,7 +170,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
             return net_income;
         }
@@ -202,7 +202,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
             return deduct_income;
         }
@@ -234,7 +234,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
             return annual_sales;
         }
@@ -266,7 +266,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No data available in the database.");
             }
             return product_total;
         }
@@ -301,7 +301,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("No data available in the database.");
             }
         }
 
@@ -346,7 +346,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
         }
 
@@ -393,7 +393,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
         }
 

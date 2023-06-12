@@ -31,10 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             data_Grid_Monthly = new DataGridView();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             panel4 = new Panel();
             title_product = new Label();
             panel3 = new Panel();
@@ -44,6 +40,11 @@
             btnClose = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Monthly).BeginInit();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -71,7 +72,7 @@
             data_Grid_Monthly.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Monthly.ColumnHeadersHeight = 50;
             data_Grid_Monthly.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Monthly.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, Column2 });
+            data_Grid_Monthly.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn4, Date, dataGridViewTextBoxColumn5, Column2 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -92,37 +93,6 @@
             data_Grid_Monthly.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Monthly.Size = new Size(880, 462);
             data_Grid_Monthly.TabIndex = 6;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.FillWeight = 46.70051F;
-            dataGridViewTextBoxColumn2.HeaderText = "#";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.FillWeight = 104.868011F;
-            dataGridViewTextBoxColumn4.HeaderText = "Product Name";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.FillWeight = 92.09565F;
-            dataGridViewTextBoxColumn5.HeaderText = "Quantity";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Amount";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
             // 
             // panel4
             // 
@@ -165,6 +135,7 @@
             cmd_Month.Name = "cmd_Month";
             cmd_Month.Size = new Size(234, 28);
             cmd_Month.TabIndex = 103;
+            cmd_Month.SelectedIndexChanged += cmd_Month_SelectedIndexChanged;
             // 
             // label_amount
             // 
@@ -221,6 +192,46 @@
             panel1.Size = new Size(880, 45);
             panel1.TabIndex = 91;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn2.FillWeight = 41.7832146F;
+            dataGridViewTextBoxColumn2.HeaderText = "#";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn4.FillWeight = 117.406761F;
+            dataGridViewTextBoxColumn4.HeaderText = "Product Name";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Date
+            // 
+            Date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Date.FillWeight = 112.60511F;
+            Date.HeaderText = "Date";
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.FillWeight = 82.39851F;
+            dataGridViewTextBoxColumn5.HeaderText = "Quantity";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 89.47058F;
+            Column2.HeaderText = "Amount";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
             // View_Monthly_Sales_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -249,10 +260,6 @@
         #endregion
 
         private DataGridView data_Grid_Monthly;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridViewTextBoxColumn Column2;
         private Panel panel4;
         public Label title_product;
         private Panel panel3;
@@ -262,5 +269,10 @@
         private Label label_amount;
         private Label label6;
         public ComboBox cmd_Month;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn Date;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn Column2;
     }
 }

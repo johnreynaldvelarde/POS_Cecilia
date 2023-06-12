@@ -599,7 +599,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+              //  MessageBox.Show("No data available in the database.");
             }
            
         }
@@ -631,7 +631,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+               // MessageBox.Show("No data available in the database.");
             }
           
         }
