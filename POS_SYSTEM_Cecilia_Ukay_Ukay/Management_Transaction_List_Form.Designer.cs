@@ -40,7 +40,6 @@
             Column4 = new DataGridViewTextBoxColumn();
             View = new DataGridViewImageColumn();
             panel1 = new Panel();
-            btn_Export = new Button();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Management).BeginInit();
             panel1.SuspendLayout();
@@ -148,31 +147,12 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(btn_Export);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(5, 20);
             panel1.Name = "panel1";
             panel1.Size = new Size(1088, 68);
             panel1.TabIndex = 3;
-            // 
-            // btn_Export
-            // 
-            btn_Export.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Export.Cursor = Cursors.Hand;
-            btn_Export.FlatAppearance.BorderSize = 0;
-            btn_Export.FlatStyle = FlatStyle.Flat;
-            btn_Export.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Export.ForeColor = Color.White;
-            btn_Export.Image = (Image)resources.GetObject("btn_Export.Image");
-            btn_Export.Location = new Point(908, 9);
-            btn_Export.Name = "btn_Export";
-            btn_Export.Size = new Size(159, 38);
-            btn_Export.TabIndex = 16;
-            btn_Export.Text = "Excel Export";
-            btn_Export.TextAlign = ContentAlignment.MiddleRight;
-            btn_Export.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Export.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -208,7 +188,6 @@
 
         private DataGridView data_Grid_Management;
         private Panel panel1;
-        private Button btn_Export;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column7;

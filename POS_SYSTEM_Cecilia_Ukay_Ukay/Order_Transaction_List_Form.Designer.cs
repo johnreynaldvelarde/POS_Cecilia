@@ -33,9 +33,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Order_Transaction_List_Form));
             data_Grid_Order_Transaction = new DataGridView();
-            panel1 = new Panel();
-            btn_Export = new Button();
-            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             transactionID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -43,6 +40,8 @@
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             View = new DataGridViewImageColumn();
+            panel1 = new Panel();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Order_Transaction).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -90,45 +89,6 @@
             data_Grid_Order_Transaction.Size = new Size(1088, 492);
             data_Grid_Order_Transaction.TabIndex = 6;
             data_Grid_Order_Transaction.CellContentClick += data_Grid_Order_Transaction_CellContentClick;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btn_Export);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(5, 20);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1088, 68);
-            panel1.TabIndex = 5;
-            // 
-            // btn_Export
-            // 
-            btn_Export.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Export.Cursor = Cursors.Hand;
-            btn_Export.FlatAppearance.BorderSize = 0;
-            btn_Export.FlatStyle = FlatStyle.Flat;
-            btn_Export.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Export.ForeColor = Color.White;
-            btn_Export.Image = (Image)resources.GetObject("btn_Export.Image");
-            btn_Export.Location = new Point(908, 9);
-            btn_Export.Name = "btn_Export";
-            btn_Export.Size = new Size(159, 38);
-            btn_Export.TabIndex = 16;
-            btn_Export.Text = "Excel Export";
-            btn_Export.TextAlign = ContentAlignment.MiddleRight;
-            btn_Export.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Export.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(3, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(246, 33);
-            label1.TabIndex = 1;
-            label1.Text = "Order Transaction";
             // 
             // Column1
             // 
@@ -188,6 +148,26 @@
             View.Name = "View";
             View.ReadOnly = true;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(5, 20);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1088, 68);
+            panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(14, 159, 104);
+            label1.Location = new Point(3, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(246, 33);
+            label1.TabIndex = 1;
+            label1.Text = "Order Transaction";
+            // 
             // Order_Transaction_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -211,7 +191,6 @@
 
         private DataGridView data_Grid_Order_Transaction;
         private Panel panel1;
-        private Button btn_Export;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn transactionID;
