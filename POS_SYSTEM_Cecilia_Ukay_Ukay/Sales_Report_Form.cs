@@ -34,7 +34,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             label_annual.Text = GetAnnualSales().ToString("#,##0.00");
             label_net.Text = GetNetIncome().ToString("#,##0.00");
             label_product_sold.Text = GetProductTotal().ToString();
-            label_deduct.Text = GetDeductAmount().ToString("#,##0.00");
+            label_deduct.Text = "- " + GetDeductAmount().ToString("#,##0.00");
 
         }
 
@@ -63,7 +63,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+                // MessageBox.Show("No data available in the database.");
             }
             return todaySales;
         }
@@ -94,7 +94,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+                // MessageBox.Show("No data available in the database.");
             }
             return weekly_sales;
         }
@@ -125,7 +125,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+                // MessageBox.Show("No data available in the database.");
             }
             return monthly_sales;
         }
@@ -170,7 +170,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+                // MessageBox.Show("No data available in the database.");
             }
             return net_income;
         }
@@ -193,7 +193,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                             deduct_income = Convert.ToDouble(result);
 
                             // Update the label with the deduct income value
-                            label_deduct.Text = deduct_income.ToString();
+                            // label_deduct.Text = deduct_income.ToString();
                         }
                     }
 
@@ -202,7 +202,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+                // MessageBox.Show("No data available in the database.");
             }
             return deduct_income;
         }
@@ -234,7 +234,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+                // MessageBox.Show("No data available in the database.");
             }
             return annual_sales;
         }
@@ -346,7 +346,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+                // MessageBox.Show("No data available in the database.");
             }
         }
 
@@ -393,7 +393,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+                // MessageBox.Show("No data available in the database.");
             }
         }
 

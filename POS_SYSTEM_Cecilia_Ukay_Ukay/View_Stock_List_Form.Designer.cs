@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Stock_List_Form));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btn_Purchase = new Button();
             label1 = new Label();
@@ -49,13 +49,6 @@
             txt_search_product = new TextBox();
             splitContainer1 = new SplitContainer();
             data_Stock_Product = new DataGridView();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            ReStock = new DataGridViewImageColumn();
-            Stock_Out = new DataGridViewImageColumn();
             data_Stock_Item = new DataGridView();
             dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
@@ -63,6 +56,13 @@
             dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
             Defect = new DataGridViewImageColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            ReStock = new DataGridViewImageColumn();
+            Stock_Out = new DataGridViewImageColumn();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel4.SuspendLayout();
@@ -156,7 +156,7 @@
             label3.ForeColor = Color.Black;
             label3.Location = new Point(3, 12);
             label3.Name = "label3";
-            label3.Size = new Size(132, 25);
+            label3.Size = new Size(131, 25);
             label3.TabIndex = 3;
             label3.Text = "Item Stock List";
             // 
@@ -199,7 +199,7 @@
             label2.ForeColor = Color.Black;
             label2.Location = new Point(3, 12);
             label2.Name = "label2";
-            label2.Size = new Size(161, 25);
+            label2.Size = new Size(160, 25);
             label2.TabIndex = 2;
             label2.Text = "Product Stock List";
             // 
@@ -277,61 +277,6 @@
             data_Stock_Product.TabIndex = 5;
             data_Stock_Product.CellContentClick += data_Stock_Product_CellContentClick;
             data_Stock_Product.SelectionChanged += data_Stock_Product_SelectionChanged;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.FillWeight = 33.6456223F;
-            dataGridViewTextBoxColumn2.HeaderText = "#";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.HeaderText = "Product_ID";
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            dataGridViewTextBoxColumn3.Visible = false;
-            // 
-            // Column1
-            // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.FillWeight = 149.168F;
-            Column1.HeaderText = "Product Code";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.FillWeight = 128.055435F;
-            dataGridViewTextBoxColumn4.HeaderText = "Name";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewTextBoxColumn5.FillWeight = 108.020317F;
-            dataGridViewTextBoxColumn5.HeaderText = "Stock Qyt";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // ReStock
-            // 
-            ReStock.FillWeight = 112.458954F;
-            ReStock.HeaderText = "";
-            ReStock.Image = (Image)resources.GetObject("ReStock.Image");
-            ReStock.Name = "ReStock";
-            ReStock.ReadOnly = true;
-            // 
-            // Stock_Out
-            // 
-            Stock_Out.FillWeight = 28.6517143F;
-            Stock_Out.HeaderText = "";
-            Stock_Out.Image = (Image)resources.GetObject("Stock_Out.Image");
-            Stock_Out.Name = "Stock_Out";
-            Stock_Out.ReadOnly = true;
             // 
             // data_Stock_Item
             // 
@@ -427,6 +372,62 @@
             Defect.Name = "Defect";
             Defect.ReadOnly = true;
             // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn2.FillWeight = 33.6456223F;
+            dataGridViewTextBoxColumn2.HeaderText = "#";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Product_ID";
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Visible = false;
+            // 
+            // Column1
+            // 
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.FillWeight = 149.168F;
+            Column1.HeaderText = "Product Code";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.FillWeight = 128.055435F;
+            dataGridViewTextBoxColumn4.HeaderText = "Name";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewTextBoxColumn5.FillWeight = 108.020317F;
+            dataGridViewTextBoxColumn5.HeaderText = "Stock Qyt";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // ReStock
+            // 
+            ReStock.FillWeight = 112.458954F;
+            ReStock.HeaderText = "";
+            ReStock.Image = (Image)resources.GetObject("ReStock.Image");
+            ReStock.Name = "ReStock";
+            ReStock.ReadOnly = true;
+            // 
+            // Stock_Out
+            // 
+            Stock_Out.FillWeight = 28.6517143F;
+            Stock_Out.HeaderText = "";
+            Stock_Out.Image = (Image)resources.GetObject("Stock_Out.Image");
+            Stock_Out.Name = "Stock_Out";
+            Stock_Out.ReadOnly = true;
+            Stock_Out.Visible = false;
+            // 
             // View_Stock_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -480,6 +481,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private DataGridViewImageColumn Defect;
+        public Button btn_Purchase;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Column1;
@@ -487,6 +489,5 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private DataGridViewImageColumn ReStock;
         private DataGridViewImageColumn Stock_Out;
-        public Button btn_Purchase;
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales_Report_Form));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             center_panel = new Panel();
             text_itm = new TextBox();
             text_pdt = new TextBox();
@@ -54,7 +54,6 @@
             label20 = new Label();
             panel9 = new Panel();
             label_deduct = new Label();
-            label9 = new Label();
             label_net = new Label();
             label16 = new Label();
             label17 = new Label();
@@ -140,7 +139,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(1035, 231);
             label7.Name = "label7";
-            label7.Size = new Size(106, 21);
+            label7.Size = new Size(105, 21);
             label7.TabIndex = 19;
             label7.Text = "Product Stock";
             // 
@@ -163,7 +162,7 @@
             label6.ForeColor = Color.Black;
             label6.Location = new Point(754, 254);
             label6.Name = "label6";
-            label6.Size = new Size(83, 21);
+            label6.Size = new Size(82, 21);
             label6.TabIndex = 17;
             label6.Text = "Item Stock";
             // 
@@ -182,11 +181,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.Black;
             label5.Location = new Point(648, 195);
             label5.Name = "label5";
-            label5.Size = new Size(189, 21);
+            label5.Size = new Size(181, 21);
             label5.TabIndex = 11;
             label5.Text = "Stock Quantity Monitor";
             // 
@@ -207,26 +206,26 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.Black;
             label4.Location = new Point(12, 195);
             label4.Name = "label4";
-            label4.Size = new Size(159, 21);
+            label4.Size = new Size(153, 21);
             label4.TabIndex = 4;
             label4.Text = "Top Sales By Month";
             // 
             // chart_sales
             // 
-            chartArea7.Name = "ChartArea1";
-            chart_sales.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            chart_sales.Legends.Add(legend7);
+            chartArea1.Name = "ChartArea1";
+            chart_sales.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            chart_sales.Legends.Add(legend1);
             chart_sales.Location = new Point(17, 219);
             chart_sales.Name = "chart_sales";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Monthly Sales";
-            chart_sales.Series.Add(series7);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Monthly Sales";
+            chart_sales.Series.Add(series1);
             chart_sales.Size = new Size(576, 383);
             chart_sales.TabIndex = 8;
             chart_sales.Text = "chart1";
@@ -339,9 +338,8 @@
             // 
             // panel9
             // 
-            panel9.BackColor = Color.FromArgb(238, 241, 247);
+            panel9.BackColor = Color.FromArgb(250, 250, 250);
             panel9.Controls.Add(label_deduct);
-            panel9.Controls.Add(label9);
             panel9.Controls.Add(label_net);
             panel9.Controls.Add(label16);
             panel9.Controls.Add(label17);
@@ -355,22 +353,11 @@
             label_deduct.AutoSize = true;
             label_deduct.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label_deduct.ForeColor = Color.FromArgb(234, 67, 53);
-            label_deduct.Location = new Point(116, 74);
+            label_deduct.Location = new Point(108, 74);
             label_deduct.Name = "label_deduct";
             label_deduct.Size = new Size(32, 21);
             label_deduct.TabIndex = 4;
             label_deduct.Text = "0.0";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label9.ForeColor = Color.FromArgb(234, 67, 53);
-            label9.Location = new Point(94, 74);
-            label9.Name = "label9";
-            label9.Size = new Size(16, 21);
-            label9.TabIndex = 3;
-            label9.Text = "-";
             // 
             // label_net
             // 
@@ -397,11 +384,11 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label17.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label17.ForeColor = Color.Black;
             label17.Location = new Point(8, 9);
             label17.Name = "label17";
-            label17.Size = new Size(91, 20);
+            label17.Size = new Size(88, 20);
             label17.TabIndex = 0;
             label17.Text = "Net Income";
             // 
@@ -664,6 +651,5 @@
         private TextBox text_pdt;
         private TextBox text_itm;
         private Label label_deduct;
-        private Label label9;
     }
 }
