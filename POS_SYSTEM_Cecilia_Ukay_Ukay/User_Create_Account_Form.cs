@@ -208,11 +208,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void txtContact_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            int cursorPosition = txtContact.SelectionStart; // store the current cursor position
+            int cursorPosition = txtContact.SelectionStart; 
 
             if (e.KeyChar == '\b') // for backspace
             {
-                // Allow the use of backspace key to delete digits
+               
                 if (txtContact.Text.Length > 0)
                 {
                     txtContact.Text = txtContact.Text.Substring(0, txtContact.Text.Length - 1);
@@ -220,7 +220,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else if (!char.IsDigit(e.KeyChar) || txtContact.Text.Length >= 11)
             {
-                e.Handled = true; // prevent input of non-digits and limit the input to 11 digits
+                e.Handled = true; 
             }
 
             txtContact.SelectionStart = cursorPosition;

@@ -104,5 +104,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 this.Dispose();
             }
         }
+
+        private void txt_Contact_Number_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            int cursorPosition = txt_Contact_Number.SelectionStart; // store the current cursor position
+
+            if (e.KeyChar == '\b') // for backspace
+            {
+                // Allow the use of backspace key to delete digits
+                if (txt_Contact_Number.Text.Length > 0)
+                {
+                    txt_Contact_Number.Text = txt_Contact_Number.Text.Substring(0, txt_Contact_Number.Text.Length - 1);
+                }
+            }
+            else if (!char.IsDigit(e.KeyChar) || txt_Contact_Number.Text.Length >= 11)
+            {
+                e.Handled = true; // prevent input of non-digits and limit the input to 11 digits
+            }
+
+            txt_Contact_Number.SelectionStart = cursorPosition;
+        }
     }
 }

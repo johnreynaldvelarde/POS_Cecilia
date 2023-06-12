@@ -113,6 +113,7 @@
             txt_Contact_Number.Name = "txt_Contact_Number";
             txt_Contact_Number.Size = new Size(400, 29);
             txt_Contact_Number.TabIndex = 42;
+            txt_Contact_Number.KeyPress += txt_Contact_Number_KeyPress;
             // 
             // label3
             // 

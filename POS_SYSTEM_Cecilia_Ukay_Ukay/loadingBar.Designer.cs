@@ -28,51 +28,92 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.progressPanel = new System.Windows.Forms.Panel();
-            this.time01 = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loadingBar));
+            panel1 = new Panel();
+            label_logo = new Label();
+            progressPanel = new Panel();
+            time01 = new System.Windows.Forms.Timer(components);
+            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(110)))), ((int)(((byte)(140)))));
-            this.panel1.Controls.Add(this.progressPanel);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 185);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(622, 28);
-            this.panel1.TabIndex = 0;
+            panel1.BackColor = Color.FromArgb(238, 241, 247);
+            panel1.Controls.Add(label_logo);
+            panel1.Controls.Add(progressPanel);
+            panel1.Dock = DockStyle.Bottom;
+            panel1.Location = new Point(0, 185);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(622, 28);
+            panel1.TabIndex = 0;
+            // 
+            // label_logo
+            // 
+            label_logo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label_logo.AutoSize = true;
+            label_logo.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label_logo.Location = new Point(249, 5);
+            label_logo.Name = "label_logo";
+            label_logo.Size = new Size(135, 17);
+            label_logo.TabIndex = 1;
+            label_logo.Text = "Starting application...";
             // 
             // progressPanel
             // 
-            this.progressPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(69)))), ((int)(((byte)(140)))));
-            this.progressPanel.Location = new System.Drawing.Point(0, 0);
-            this.progressPanel.Name = "progressPanel";
-            this.progressPanel.Size = new System.Drawing.Size(50, 28);
-            this.progressPanel.TabIndex = 0;
+            progressPanel.BackColor = Color.FromArgb(14, 159, 104);
+            progressPanel.Location = new Point(0, 0);
+            progressPanel.Name = "progressPanel";
+            progressPanel.Size = new Size(50, 28);
+            progressPanel.TabIndex = 0;
             // 
             // time01
             // 
-            this.time01.Interval = 15;
-            this.time01.Tick += new System.EventHandler(this.time01_Tick);
+            time01.Interval = 15;
+            time01.Tick += time01_Tick;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(pictureBox1);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(622, 185);
+            panel2.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(622, 185);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // loadingBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(622, 213);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "loadingBar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "loadingBar";
-            this.Load += new System.EventHandler(this.loadingBar_Load);
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(622, 213);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "loadingBar";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "loadingBar";
+            Load += loadingBar_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -80,5 +121,8 @@
         private Panel panel1;
         private Panel progressPanel;
         private System.Windows.Forms.Timer time01;
+        private Panel panel2;
+        private PictureBox pictureBox1;
+        public Label label_logo;
     }
 }

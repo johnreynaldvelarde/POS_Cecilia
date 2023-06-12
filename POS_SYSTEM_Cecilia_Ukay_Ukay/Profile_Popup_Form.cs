@@ -31,8 +31,11 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 this.Dispose();
                 Application.OpenForms["Main_Form"].Close();
-                Login_Form frm = new Login_Form();
-                frm.Show();
+                loadingBar load = new loadingBar();
+                load.label_logo.Text = "Closing application...";
+                load.Show();
+                //Login_Form frm = new Login_Form();
+               // frm.Show();
             }
             else
             {
@@ -40,6 +43,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             }
         }
+      
 
         private void btn_Close_Click(object sender, EventArgs e)
         {
