@@ -93,7 +93,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     }
                     else
                     {
-                        if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("Do you want to delete this item?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                             {

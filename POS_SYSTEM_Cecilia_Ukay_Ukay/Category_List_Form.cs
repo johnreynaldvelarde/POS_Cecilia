@@ -80,7 +80,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 if (e.ColumnIndex == data_Grid_Category.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
                     //int id = Convert.ToInt32(data_Grid_Category.Rows[e.RowIndex].Cells["Category_ID"].Value);
-                    if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Do you want to delete this category?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                         {

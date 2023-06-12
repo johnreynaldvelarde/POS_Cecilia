@@ -75,7 +75,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 if (e.ColumnIndex == data_Grid_Supplier.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
-                    if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Do you want to delete this supplier?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         using (SqlConnection connect = new SqlConnection(database.MyConnection()))
                         {
