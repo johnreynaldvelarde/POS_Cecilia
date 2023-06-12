@@ -65,7 +65,10 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 int i = 0;
                 connect.Open();
-                string sql = "SELECT s.ItemStock_ID, i.Item_Code, i.Item_Name, s.ItemStock_Qyt FROM Item_Stock s JOIN Item i ON s.Item_ID = i.Item_ID;";
+                string sql = "SELECT s.ItemStock_ID, i.Item_Code, i.Item_Name, s.ItemStock_Qyt, i.Archive " +
+                             "FROM Item_Stock s " +
+                             "JOIN Item i ON s.Item_ID = i.Item_ID " +
+                             "WHERE i.Archive = 0 ";
 
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
@@ -73,9 +76,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 data_Stock_Item.Rows.Clear();
                 while (reader.Read())
                 {
-                    i += 1;
-                    data_Stock_Item.Rows.Add(i, reader["ItemStock_ID"].ToString(), reader["Item_Code"].ToString(), reader["Item_Name"].ToString(),
-                                                reader["ItemStock_Qyt"].ToString());
+                    if (reader["Archive"].ToString() == "0")
+                    {
+                        i += 1;
+                        data_Stock_Item.Rows.Add(i, reader["ItemStock_ID"].ToString(), reader["Item_Code"].ToString(), reader["Item_Name"].ToString(),
+                                                    reader["ItemStock_Qyt"].ToString());
+                    }
+                   
                 }
                 reader.Close();
                 connect.Close();

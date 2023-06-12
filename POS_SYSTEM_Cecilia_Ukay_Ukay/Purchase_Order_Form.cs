@@ -82,14 +82,20 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             using (SqlConnection connect = new SqlConnection(database.MyConnection()))
             {
                 connect.Open();
-                string sql = "SELECT s.ItemStock_ID, i.Item_Code, s.ItemStock_Qyt FROM Item_Stock s JOIN Item i ON s.Item_ID = i.Item_ID";
+                string sql = "SELECT s.ItemStock_ID, i.Item_Code, s.ItemStock_Qyt, i.Archive " +
+                             "FROM Item_Stock s JOIN Item i ON s.Item_ID = i.Item_ID " +
+                             "WHERE i.Archive = 0";
                 SqlCommand command = new SqlCommand(sql, connect);
                 SqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    string stock_itemName = reader.GetString(1);
-                    cmd_item_purchase.Items.Add(stock_itemName);
+                    if (reader["Archive"].ToString() == "0")
+                    {
+                        string stock_itemName = reader.GetString(1);
+                        cmd_item_purchase.Items.Add(stock_itemName);
+                    }
+                      
                 }
 
                 reader.Close();
