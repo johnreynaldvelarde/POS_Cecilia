@@ -19,11 +19,41 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         {
             InitializeComponent();
             view_monthly_sales();
+            select_month();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        public void select_month()
+        {
+            string[] months = new string[] {
+                            "January", "February", "March", "April", "May", "June",
+                            "July", "August", "September", "October", "November", "December"
+                            };
+
+            cmd_Month.Items.AddRange(months);
+            cmd_Month.SelectedIndex = 0;
+        }
+
+
+
+        public void get_total()
+        {
+
+            double total = 0;
+            label_amount.Text = "";
+            foreach (DataGridViewRow item in data_Grid_Monthly.Rows)
+            {
+
+                total += double.Parse(item.Cells[3].Value.ToString());
+
+            }
+
+            label_amount.Text = total.ToString("N2");
+
         }
 
         public void view_monthly_sales()
@@ -53,6 +83,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
                 reader.Close();
                 connect.Close();
+                get_total();
             }
         }
 
