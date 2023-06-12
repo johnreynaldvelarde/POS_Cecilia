@@ -37,7 +37,7 @@
             panel2 = new Panel();
             data_Grid_Product = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
+            productID = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
@@ -122,7 +122,7 @@
             data_Grid_Product.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Product.ColumnHeadersHeight = 50;
             data_Grid_Product.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, Column6, Column3, Column2, Column5, Column4, Column7, Column8, Edit, Delete });
+            data_Grid_Product.Columns.AddRange(new DataGridViewColumn[] { Column1, productID, Column3, Column2, Column5, Column4, Column7, Column8, Edit, Delete });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -154,12 +154,12 @@
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
-            // Column6
+            // productID
             // 
-            Column6.HeaderText = "Product_ID";
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            Column6.Visible = false;
+            productID.HeaderText = "Product_ID";
+            productID.Name = "productID";
+            productID.ReadOnly = true;
+            productID.Visible = false;
             // 
             // Column3
             // 
@@ -255,7 +255,7 @@
         private Panel panel2;
         private DataGridView data_Grid_Product;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn productID;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column5;

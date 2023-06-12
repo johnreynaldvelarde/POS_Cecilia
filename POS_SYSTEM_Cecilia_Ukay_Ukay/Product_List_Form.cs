@@ -38,13 +38,13 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Add_Product_Click(object sender, EventArgs e)
         {
-           // btn_Add_Product.BackColor = settingsColor;
+            // btn_Add_Product.BackColor = settingsColor;
 
             Add_New_Product_Form frm = new Add_New_Product_Form(this);
             frm.btn_Update.Enabled = false;
             frm.ShowDialog();
             frm.Dispose();
-           // btn_Add_Product.BackColor = defaultColor;
+            // btn_Add_Product.BackColor = defaultColor;
         }
 
         public void view_product_list()
@@ -99,23 +99,48 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 if (e.ColumnIndex == data_Grid_Product.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
-                    if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    int productID = Convert.ToInt32(data_Grid_Product.Rows[e.RowIndex].Cells["productID"].Value);
+
+                    bool hasExistingStock = CheckExistingProductStock(productID);
+
+                    if (hasExistingStock)
                     {
-                        using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                        MessageBox.Show("Cannot delete the product because it has existing stock.", "Delete product", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            connect.Open();
-                            string sql = "UPDATE Product SET Archive = 1 WHERE Product_ID = @Product_ID";
-                            SqlCommand command = new SqlCommand(sql, connect);
-                            command.Parameters.AddWithValue("@Product_ID", Convert.ToInt32(product_id));
-                            command.ExecuteNonQuery();
-                            connect.Close();
-
+                            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                            {
+                                connect.Open();
+                                string sql = "UPDATE Product SET Archive = 1 WHERE Product_ID = @Product_ID";
+                                SqlCommand command = new SqlCommand(sql, connect);
+                                command.Parameters.AddWithValue("@Product_ID", Convert.ToInt32(product_id));
+                                command.ExecuteNonQuery();
+                                connect.Close();
+                            }
+                            data_Grid_Product.Rows.RemoveAt(e.RowIndex);
+                            view_product_list();
                         }
-
-                        data_Grid_Product.Rows.RemoveAt(e.RowIndex);
-                        view_product_list();
                     }
                 }
+            }
+        }
+
+        private bool CheckExistingProductStock(int productID)
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "SELECT COUNT(*) FROM Product_Stock WHERE Product_ID = @Product_ID AND ProductStock_Qyt > 0";
+                SqlCommand command = new SqlCommand(sql, connect);
+                command.Parameters.AddWithValue("@Product_ID", productID);
+
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                connect.Close();
+
+                return count > 0;
             }
         }
 
@@ -133,30 +158,5 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 size = data_Grid_Product[6, i].Value.ToString();
             }
         }
-
-        /*
-        private void btn_export_Click(object sender, EventArgs e)
-        {
-            using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
-            {
-                if (sfd.ShowDialog() == DialogResult.OK)
-                {
-                    try
-                    {
-                        using (XLWorkbook workbook = new XLWorkbook())
-                        {
-
-                        }
-
-                    }
-                    catch(Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-        }
-        */
-
     }
 }

@@ -28,12 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Item_List_Form));
             data_Grid_Item = new DataGridView();
+            panel1 = new Panel();
+            btn_Add_Item = new Button();
+            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
+            Item_ID = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
@@ -41,9 +44,6 @@
             Column5 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
-            panel1 = new Panel();
-            btn_Add_Item = new Button();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Item).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -59,25 +59,25 @@
             data_Grid_Item.BorderStyle = BorderStyle.None;
             data_Grid_Item.CellBorderStyle = DataGridViewCellBorderStyle.None;
             data_Grid_Item.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(14, 159, 104);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            data_Grid_Item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(14, 159, 104);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            data_Grid_Item.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             data_Grid_Item.ColumnHeadersHeight = 50;
             data_Grid_Item.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            data_Grid_Item.Columns.AddRange(new DataGridViewColumn[] { Column1, Column4, Column7, Column2, Column6, Column3, Column5, Edit, Delete });
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            data_Grid_Item.DefaultCellStyle = dataGridViewCellStyle4;
+            data_Grid_Item.Columns.AddRange(new DataGridViewColumn[] { Column1, Item_ID, Column7, Column2, Column6, Column3, Column5, Edit, Delete });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            data_Grid_Item.DefaultCellStyle = dataGridViewCellStyle2;
             data_Grid_Item.Dock = DockStyle.Fill;
             data_Grid_Item.EnableHeadersVisualStyles = false;
             data_Grid_Item.Location = new Point(5, 88);
@@ -93,6 +93,47 @@
             data_Grid_Item.CellContentClick += data_Grid_Item_CellContentClick;
             data_Grid_Item.SelectionChanged += data_Grid_Item_SelectionChanged;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(btn_Add_Item);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(5, 20);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1088, 68);
+            panel1.TabIndex = 3;
+            // 
+            // btn_Add_Item
+            // 
+            btn_Add_Item.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Add_Item.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Add_Item.Cursor = Cursors.Hand;
+            btn_Add_Item.FlatAppearance.BorderSize = 0;
+            btn_Add_Item.FlatStyle = FlatStyle.Flat;
+            btn_Add_Item.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Add_Item.ForeColor = Color.White;
+            btn_Add_Item.Image = (Image)resources.GetObject("btn_Add_Item.Image");
+            btn_Add_Item.Location = new Point(902, 9);
+            btn_Add_Item.Name = "btn_Add_Item";
+            btn_Add_Item.Size = new Size(185, 38);
+            btn_Add_Item.TabIndex = 15;
+            btn_Add_Item.Text = "Add new item";
+            btn_Add_Item.TextAlign = ContentAlignment.MiddleRight;
+            btn_Add_Item.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Add_Item.UseVisualStyleBackColor = false;
+            btn_Add_Item.Click += btn_Add_Item_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(14, 159, 104);
+            label1.Location = new Point(3, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(153, 33);
+            label1.TabIndex = 1;
+            label1.Text = "List of Item";
+            // 
             // Column1
             // 
             Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -101,12 +142,12 @@
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
             // 
-            // Column4
+            // Item_ID
             // 
-            Column4.HeaderText = "Item_ID";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Visible = false;
+            Item_ID.HeaderText = "Item_ID";
+            Item_ID.Name = "Item_ID";
+            Item_ID.ReadOnly = true;
+            Item_ID.Visible = false;
             // 
             // Column7
             // 
@@ -167,47 +208,6 @@
             Delete.ReadOnly = true;
             Delete.Width = 50;
             // 
-            // panel1
-            // 
-            panel1.Controls.Add(btn_Add_Item);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(5, 20);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1088, 68);
-            panel1.TabIndex = 3;
-            // 
-            // btn_Add_Item
-            // 
-            btn_Add_Item.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Add_Item.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Add_Item.Cursor = Cursors.Hand;
-            btn_Add_Item.FlatAppearance.BorderSize = 0;
-            btn_Add_Item.FlatStyle = FlatStyle.Flat;
-            btn_Add_Item.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Add_Item.ForeColor = Color.White;
-            btn_Add_Item.Image = (Image)resources.GetObject("btn_Add_Item.Image");
-            btn_Add_Item.Location = new Point(902, 9);
-            btn_Add_Item.Name = "btn_Add_Item";
-            btn_Add_Item.Size = new Size(185, 38);
-            btn_Add_Item.TabIndex = 15;
-            btn_Add_Item.Text = "Add new item";
-            btn_Add_Item.TextAlign = ContentAlignment.MiddleRight;
-            btn_Add_Item.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Add_Item.UseVisualStyleBackColor = false;
-            btn_Add_Item.Click += btn_Add_Item_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(3, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(153, 33);
-            label1.TabIndex = 1;
-            label1.Text = "List of Item";
-            // 
             // Item_List_Form
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -234,7 +234,7 @@
         private Button btn_Add_Item;
         private Label label1;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Item_ID;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column6;

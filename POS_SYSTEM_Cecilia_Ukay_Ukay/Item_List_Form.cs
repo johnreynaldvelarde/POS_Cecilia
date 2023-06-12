@@ -83,23 +83,49 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 if (e.ColumnIndex == data_Grid_Item.Columns["Delete"].Index && e.RowIndex >= 0)
                 {
-                    if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    int itemID = Convert.ToInt32(data_Grid_Item.Rows[e.RowIndex].Cells["Item_ID"].Value);
+
+                    bool hasExistingStock = CheckExistingItemStock(itemID);
+
+                    if (hasExistingStock)
                     {
-                        using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                        MessageBox.Show("Cannot delete the item because it has existing stock.", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("Do you want to delete this product?", "Delete the record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            connect.Open();
-                            string sql = "UPDATE Item SET Archive = 1 WHERE Item_ID = @Item_ID";
-                            SqlCommand command = new SqlCommand(sql, connect);
-                            command.Parameters.AddWithValue("@Item_ID", Convert.ToInt32(ItemID));
-                            command.ExecuteNonQuery();
-                            connect.Close();
+                            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                            {
+                                connect.Open();
+                                string sql = "UPDATE Item SET Archive = 1 WHERE Item_ID = @Item_ID";
+                                SqlCommand command = new SqlCommand(sql, connect);
+                                command.Parameters.AddWithValue("@Item_ID", Convert.ToInt32(ItemID));
+                                command.ExecuteNonQuery();
+                                connect.Close();
 
+                            }
+                            data_Grid_Item.Rows.RemoveAt(e.RowIndex);
+                            show_item_list();
                         }
-
-                        data_Grid_Item.Rows.RemoveAt(e.RowIndex);
-                        show_item_list();
                     }
                 }
+            }
+        }
+
+        private bool CheckExistingItemStock(int itemID)
+        {
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "SELECT COUNT(*) FROM Item_Stock WHERE Item_ID = @Item_ID AND ItemStock_Qyt > 0";
+                SqlCommand command = new SqlCommand(sql, connect);
+                command.Parameters.AddWithValue("@Item_ID", itemID);
+
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                connect.Close();
+
+                return count > 0;
             }
         }
 
