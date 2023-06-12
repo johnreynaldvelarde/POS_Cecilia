@@ -239,7 +239,7 @@
             cmd_Measurement.DropDownStyle = ComboBoxStyle.DropDownList;
             cmd_Measurement.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             cmd_Measurement.FormattingEnabled = true;
-            cmd_Measurement.Items.AddRange(new object[] { "Small (S)", "Medium (M)", "Large (L)", "Extra Large (XL)", "Extra Small (XS)", "Double Extra Large (XXL)" });
+            cmd_Measurement.Items.AddRange(new object[] { "Small (S)", "Medium (M)", "Large (L)", "Extra Large (XL)", "Extra Small (XS)", "Double Extra Large (XXL)", "Others" });
             cmd_Measurement.Location = new Point(609, 277);
             cmd_Measurement.Name = "cmd_Measurement";
             cmd_Measurement.Size = new Size(240, 28);
