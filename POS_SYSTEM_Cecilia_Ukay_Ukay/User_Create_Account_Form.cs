@@ -89,8 +89,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         public bool IsPasswordValid(string password)
         {
-            string pattern = @"^[a-zA-Z0-9]{8}$";
-            return Regex.IsMatch(password, pattern);
+            string pattern = @"^[a-zA-Z0-9]{8,}$";
+            return password.Length >= 8 && Regex.IsMatch(password, pattern);
         }
 
         // button save info to database
@@ -107,11 +107,15 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             else if (!IsPasswordValid(txtPassword.Text))
             {
-                MessageBox.Show("Invalid password format. Password should be 8 characters consisting of letters or numbers");
+                MessageBox.Show("Invalid password format. Password should be 8 or higher characters consisting of letters or numbers");
             }
             else if (User_Profile != null && User_Profile.Image == null)
             {
                 MessageBox.Show("No Staff Image Try Again");
+            }
+            else if (cmdRole.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a role");
             }
             else
             {
@@ -253,7 +257,53 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void btn_Update_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtUsername.Text) || String.IsNullOrEmpty(txtPassword.Text) || String.IsNullOrEmpty(txtRetype.Text) ||
+               String.IsNullOrEmpty(txtContact.Text))
+            {
+                MessageBox.Show("Fill in the blank");
+            }
+            else if (txtPassword.Text != txtRetype.Text)
+            {
+                MessageBox.Show("Password did not match");
+            }
+            else if (!IsPasswordValid(txtPassword.Text))
+            {
+                MessageBox.Show("Invalid password format. Password should be 8 or higher characters consisting of letters or numbers");
+            }
+            else if (User_Profile != null && User_Profile.Image == null)
+            {
+                MessageBox.Show("No Staff Image Try Again");
+            }
+            else if (cmdRole.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a role");
+            }
+            else
+            {
+                MemoryStream mstream = new MemoryStream();
+                User_Profile.Image.Save(mstream, System.Drawing.Imaging.ImageFormat.Png);
+                byte[] select_image = mstream.ToArray();
 
+                using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+                {
+                    connect.Open();
+                    string sql = "UPDATE Staff_Account SET Staff_Name = @Staff_Name, Staff_Image = @Staff_Image, Password = @Password, Contact_Number = @Contact_Number, Role = @Role, Date_Added = @Date_Added WHERE Staff_ID = @Staff_ID ";
+                    SqlCommand command = new SqlCommand(sql, connect);
+                    command.Parameters.AddWithValue("@Staff_Name", txtUsername.Text);
+                    command.Parameters.AddWithValue("@Staff_Image", select_image);
+                    command.Parameters.AddWithValue("@Password", txtPassword.Text);
+                    command.Parameters.AddWithValue("@Contact_Number", txtContact.Text);
+                    command.Parameters.AddWithValue("@Role", cmdRole.SelectedItem);
+                    command.Parameters.AddWithValue("@Date_Added", DateTime.Now);
+                    command.Parameters.AddWithValue("@Staff_ID", Convert.ToInt32(staffID));
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    connect.Close();
+                }
+                MessageBox.Show("Edit successfully");
+                frm.view_user_account();
+                this.Dispose();
+            }
         }
     }
 }
