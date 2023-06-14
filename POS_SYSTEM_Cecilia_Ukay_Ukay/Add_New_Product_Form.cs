@@ -204,6 +204,9 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 }
                 MessageBox.Show("Edit successfully");
                 frm.view_product_list();
+                frm.cmd_Category.Items.Clear();
+                frm.txt_search_product.Clear();
+                frm.load_category();
                 this.Dispose();
 
 
@@ -223,21 +226,29 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void txt_Price_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 46)
-            {
-
-
-            }
-            else if (e.KeyChar == 8)
-            {
-
-            }
-            else if ((e.KeyChar < 48) || (e.KeyChar > 57)) //ascii code 48-57 between 0-9
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '\u007F')
             {
                 e.Handled = true;
             }
+            else
+            {
+                // Get the current text in the TextBox
+                string currentText = txt_Price.Text;
+
+                // Handle the case of leading zero
+                if (currentText == "0" && e.KeyChar != '\b' && e.KeyChar != '\u007F')
+                {
+                    e.Handled = true;
+                }
+                else
+                {
+                    // Allow up to 3 digits and ignore additional input
+                    if (currentText.Length >= 5 && !char.IsControl(e.KeyChar))
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
         }
-
-
     }
 }

@@ -32,6 +32,12 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            label2 = new Label();
+            cmd_OrderBy = new ComboBox();
+            pictureBox1 = new PictureBox();
+            txt_search_product = new TextBox();
+            label6 = new Label();
+            cmd_Category = new ComboBox();
             btn_Add_Product = new Button();
             label1 = new Label();
             panel2 = new Panel();
@@ -47,12 +53,19 @@
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Product).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(cmd_OrderBy);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(txt_search_product);
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(cmd_Category);
             panel1.Controls.Add(btn_Add_Product);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
@@ -60,6 +73,74 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1090, 68);
             panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(424, 18);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 21);
+            label2.TabIndex = 100;
+            label2.Text = "Sort by";
+            // 
+            // cmd_OrderBy
+            // 
+            cmd_OrderBy.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            cmd_OrderBy.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_OrderBy.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_OrderBy.FormattingEnabled = true;
+            cmd_OrderBy.Items.AddRange(new object[] { "A-z", "Z-a" });
+            cmd_OrderBy.Location = new Point(493, 15);
+            cmd_OrderBy.Name = "cmd_OrderBy";
+            cmd_OrderBy.Size = new Size(95, 28);
+            cmd_OrderBy.TabIndex = 101;
+            cmd_OrderBy.SelectedIndexChanged += cmd_OrderBy_SelectedIndexChanged;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(220, 15);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(28, 31);
+            pictureBox1.TabIndex = 99;
+            pictureBox1.TabStop = false;
+            // 
+            // txt_search_product
+            // 
+            txt_search_product.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            txt_search_product.BorderStyle = BorderStyle.FixedSingle;
+            txt_search_product.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_search_product.Location = new Point(254, 16);
+            txt_search_product.Name = "txt_search_product";
+            txt_search_product.Size = new Size(150, 27);
+            txt_search_product.TabIndex = 98;
+            txt_search_product.TextChanged += txt_search_product_TextChanged;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Location = new Point(612, 18);
+            label6.Name = "label6";
+            label6.Size = new Size(108, 21);
+            label6.TabIndex = 51;
+            label6.Text = "Category by";
+            // 
+            // cmd_Category
+            // 
+            cmd_Category.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            cmd_Category.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmd_Category.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            cmd_Category.FormattingEnabled = true;
+            cmd_Category.Location = new Point(726, 16);
+            cmd_Category.Name = "cmd_Category";
+            cmd_Category.Size = new Size(141, 28);
+            cmd_Category.TabIndex = 52;
+            cmd_Category.SelectedIndexChanged += cmd_Category_SelectedIndexChanged;
             // 
             // btn_Add_Product
             // 
@@ -242,6 +323,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)data_Grid_Product).EndInit();
             ResumeLayout(false);
@@ -264,5 +346,11 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewImageColumn Edit;
         private DataGridViewImageColumn Delete;
+        private Label label6;
+        public ComboBox cmd_Category;
+        private PictureBox pictureBox1;
+        public TextBox txt_search_product;
+        private Label label2;
+        public ComboBox cmd_OrderBy;
     }
 }

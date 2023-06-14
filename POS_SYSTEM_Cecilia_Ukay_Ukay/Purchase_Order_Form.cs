@@ -299,7 +299,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     foreach (DataGridViewRow row in data_Grid_Purchase.Rows)
                     {
                         int stockitemID = Convert.ToInt32(row.Cells[1].Value);
-                        int itemQuantity = Convert.ToInt32(row.Cells[5].Value);
+                        int itemQuantity = Convert.ToInt32(row.Cells[6].Value);
                         decimal itemAmount = Convert.ToDecimal(row.Cells[7].Value);
 
                         string sql2 = "INSERT INTO Purchase_Item (Purchase_ID, ItemStock_ID, Purchase_Quantity, Amount ) VALUES" +

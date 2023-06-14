@@ -82,6 +82,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             txt_Payment_Amount.Clear();
             txt_Refund.Clear();
             txt_discount.Clear();
+            cmd_Category.Items.Clear();
+            load_category();
             label_amount.Text = "0.00";
         }
 
@@ -448,32 +450,63 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
         }
 
-        private void filter_data_available(string filterText)
+        private void filter_data_available(string filterText, string selectedCategory)
         {
+            int rowNumber = 0;
+
             foreach (DataGridViewRow row in data_Grid_Available.Rows)
             {
                 string p_code = row.Cells["Product_Code"].Value?.ToString();
                 string p_name = row.Cells["Product_Name"].Value?.ToString();
                 string c_tegory = row.Cells["Category"].Value?.ToString();
 
-                if (p_code != null && p_code.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    p_name != null && p_name.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                    c_tegory != null && c_tegory.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0)
+                bool categoryMatches = selectedCategory == "All" || c_tegory.Equals(selectedCategory, StringComparison.OrdinalIgnoreCase);
+
+                if (categoryMatches && (p_code != null && p_code.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    p_name != null && p_name.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0))
                 {
+                    rowNumber++;
                     row.Visible = true;
                 }
                 else
                 {
                     row.Visible = false;
                 }
+
+                row.Cells[1].Value = rowNumber.ToString();
             }
         }
 
+        private void ResetRowNumbers()
+        {
+            int rowNumber = 0;
+
+            foreach (DataGridViewRow row in data_Grid_Available.Rows)
+            {
+                if (row.Visible)
+                {
+                    rowNumber++;
+                    row.Cells[0].Value = rowNumber.ToString();
+                }
+                else
+                {
+                    row.Cells[0].Value = "";
+                }
+            }
+        }
+
+        public void reset_combo_category()
+        {
+            cmd_Category.Items.Clear();
+            load_category();
+        }
 
         private void txt_mainsearch_TextChanged(object sender, EventArgs e)
         {
             string filterText = txt_mainsearch.Text;
-            filter_data_available(filterText);
+            string selectedCategory = cmd_Category.SelectedItem?.ToString();
+            filter_data_available(filterText, selectedCategory);
+            ResetRowNumbers();
         }
 
         private void data_Grid_Transaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -485,6 +518,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 data_Grid_Transaction.Rows.Remove(selectedRow);
                 get_total();
                 view_product();
+                reset_combo_category();
             }
         }
 
@@ -493,25 +527,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             string selectedCategory = cmd_Category.SelectedItem?.ToString();
             if (selectedCategory == "All")
             {
-                foreach (DataGridViewRow row in data_Grid_Available.Rows)
-                {
-                    row.Visible = true;
-                }
+                view_product();
             }
             else
             {
-                filter_data_available(selectedCategory);
+                filter_data_cmdCategory(selectedCategory);
+                txt_mainsearch.Clear();
             }
         }
 
         private void filter_data_cmdCategory(string filterText)
         {
+            int rowNumber = 0;
+
             foreach (DataGridViewRow row in data_Grid_Available.Rows)
             {
                 string category = row.Cells["Category"].Value?.ToString();
 
-                if (filterText == "All" || category.Equals(filterText, StringComparison.OrdinalIgnoreCase))
+                if (category.Equals(filterText, StringComparison.OrdinalIgnoreCase))
                 {
+                    rowNumber++;
                     row.Visible = true;
                 }
                 else
@@ -519,33 +554,32 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                     row.Visible = false;
                 }
 
+                row.Cells[0].Value = rowNumber.ToString();
             }
         }
 
         private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // Allow only digits, backspace, and delete keys
+           
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '\u007F')
             {
                 e.Handled = true;
             }
-            else if (e.KeyChar == '\b') // Handle backspace key
+            else if (e.KeyChar == '\b') 
             {
-                // No further action needed for backspace key
+                
             }
             else
             {
-                // Get the current text in the TextBox
                 string currentText = txt_discount.Text;
-
-                // Handle the case of leading zero
+              
                 if (currentText == "0")
                 {
                     e.Handled = true;
                 }
                 else
                 {
-                    // Allow up to 3 digits and restrict input to values up to 100
+                   
                     if (currentText.Length >= 2 || (currentText.Length == 1 && currentText[0] != '0'))
                     {
                         int value;
@@ -599,9 +633,8 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-              //  MessageBox.Show("No data available in the database.");
+
             }
-           
         }
 
         public void Check_ProductStockLevels()
@@ -631,7 +664,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             }
             catch (Exception ex)
             {
-               // MessageBox.Show("No data available in the database.");
+
             }
           
         }

@@ -21,6 +21,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             InitializeComponent();
             button_highligted();
             view_product_list();
+            load_category();
         }
 
         private Color defaultColor = Color.FromArgb(14, 159, 104);
@@ -53,7 +54,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
                 int i = 0;
                 connect.Open();
-                //string sql = "SELECT Product_ID, Product_Code, Product_Name, Price,  Date_Added, Size, Archive FROM Product WHERE Archive = 0";
+
                 string sql = "SELECT P.Product_ID, P.Product_Code, P.Product_Name, P.Price, P.Date_Added, P.Size, C.Category_Name " +
                              "FROM Product P " +
                              "INNER JOIN Categories C ON P.Category_ID = C.Category_ID " +
@@ -153,10 +154,160 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 product_code = data_Grid_Product[2, i].Value.ToString();
                 product_name = data_Grid_Product[3, i].Value.ToString();
                 cate_type = data_Grid_Product[4, i].Value.ToString();
-                //  category_id = data_Grid_Product[4, i];
                 price = data_Grid_Product[5, i].Value.ToString();
                 size = data_Grid_Product[6, i].Value.ToString();
             }
+        }
+
+        public void load_category()
+        {
+            cmd_Category.Items.Add("All");
+
+            using (SqlConnection connect = new SqlConnection(database.MyConnection()))
+            {
+                connect.Open();
+                string sql = "SELECT Category_Name FROM Categories WHERE Archive = 0";
+                SqlCommand command = new SqlCommand(sql, connect);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    string categoryName = reader.GetString(0);
+                    cmd_Category.Items.Add(categoryName);
+                }
+
+                reader.Close();
+                connect.Close();
+            }
+            cmd_Category.SelectedItem = "All";
+
+        }
+
+        private void cmd_Category_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedCategory = cmd_Category.SelectedItem?.ToString();
+            if (selectedCategory == "All")
+            {
+                view_product_list();
+                txt_search_product.Clear();
+                cmd_OrderBy.SelectedIndex = -1;
+            }
+            else
+            {
+                filter_data_cmdCategory(selectedCategory);
+                txt_search_product.Clear();
+                cmd_OrderBy.SelectedIndex = -1;
+            }
+
+        }
+
+        private void filter_data_cmdCategory(string filterText)
+        {
+            int rowNumber = 0;
+
+            foreach (DataGridViewRow row in data_Grid_Product.Rows)
+            {
+                string category = row.Cells[4].Value?.ToString();
+
+                if (category.Equals(filterText, StringComparison.OrdinalIgnoreCase))
+                {
+                    rowNumber++;
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+
+                row.Cells[0].Value = rowNumber.ToString();
+            }
+
+        }
+
+        private void txt_search_product_TextChanged(object sender, EventArgs e)
+        {
+            string filterText = txt_search_product.Text;
+            string selectedCategory = cmd_Category.SelectedItem?.ToString();
+
+            filter_data_product(filterText, selectedCategory);
+            ResetRowNumbers();
+        }
+
+        private void filter_data_product(string filterText, string selectedCategory)
+        {
+            int rowNumber = 0;
+
+            foreach (DataGridViewRow row in data_Grid_Product.Rows)
+            {
+                string p_code = row.Cells[2].Value?.ToString();
+                string p_name = row.Cells[3].Value?.ToString();
+                string c_tegory = row.Cells[4].Value?.ToString();
+
+                bool categoryMatches = selectedCategory == "All" || c_tegory.Equals(selectedCategory, StringComparison.OrdinalIgnoreCase);
+
+                if (categoryMatches && (p_code != null && p_code.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    p_name != null && p_name.IndexOf(filterText, StringComparison.OrdinalIgnoreCase) >= 0))
+                {
+                    rowNumber++;
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+
+                row.Cells[1].Value = rowNumber.ToString();
+            }
+        }
+
+        private void ResetRowNumbers()
+        {
+            int rowNumber = 0;
+
+            foreach (DataGridViewRow row in data_Grid_Product.Rows)
+            {
+                if (row.Visible)
+                {
+                    rowNumber++;
+                    row.Cells[0].Value = rowNumber.ToString();
+                }
+                else
+                {
+                    row.Cells[0].Value = "";
+                }
+            }
+        }
+
+        private void cmd_OrderBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedOption = cmd_OrderBy.SelectedItem?.ToString();
+
+            if (selectedOption == "A-z")
+            {
+                SortDataGrid("Product_Name", ListSortDirection.Ascending);
+                ResetRowNumbers();
+
+            }
+            else if (selectedOption == "Z-a")
+            {
+                SortDataGrid("Product_Name", ListSortDirection.Descending);
+                ResetRowNumbers();
+            }
+        }
+
+        private void SortDataGrid(string columnName, ListSortDirection direction)
+        {
+            data_Grid_Product.Sort(data_Grid_Product.Columns[3], ListSortDirection.Ascending);
+            
+            DataGridViewColumn column = data_Grid_Product.Columns[3];
+            data_Grid_Product.Sort(column, direction);
+
+            for (int i = 0; i < data_Grid_Product.Rows.Count; i++)
+            {
+                DataGridViewRow row = data_Grid_Product.Rows[i];
+                row.Cells[0].Value = (i + 1).ToString();
+            }
+            
         }
     }
 }

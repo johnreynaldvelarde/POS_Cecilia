@@ -139,7 +139,7 @@
             label7.ForeColor = Color.Black;
             label7.Location = new Point(1035, 231);
             label7.Name = "label7";
-            label7.Size = new Size(105, 21);
+            label7.Size = new Size(106, 21);
             label7.TabIndex = 19;
             label7.Text = "Product Stock";
             // 
@@ -162,7 +162,7 @@
             label6.ForeColor = Color.Black;
             label6.Location = new Point(754, 254);
             label6.Name = "label6";
-            label6.Size = new Size(82, 21);
+            label6.Size = new Size(83, 21);
             label6.TabIndex = 17;
             label6.Text = "Item Stock";
             // 
@@ -171,9 +171,9 @@
             Nitem_Stock.BorderStyle = BorderStyle.None;
             Nitem_Stock.Font = new Font("Century Gothic", 50.25F, FontStyle.Regular, GraphicsUnit.Point);
             Nitem_Stock.ForeColor = Color.FromArgb(14, 159, 104);
-            Nitem_Stock.Location = new Point(729, 385);
+            Nitem_Stock.Location = new Point(709, 385);
             Nitem_Stock.Name = "Nitem_Stock";
-            Nitem_Stock.Size = new Size(139, 83);
+            Nitem_Stock.Size = new Size(175, 83);
             Nitem_Stock.TabIndex = 16;
             Nitem_Stock.Text = "0";
             Nitem_Stock.TextAlign = HorizontalAlignment.Center;
