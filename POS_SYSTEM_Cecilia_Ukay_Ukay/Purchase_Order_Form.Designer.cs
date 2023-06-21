@@ -54,8 +54,6 @@
             btn_Buy = new Button();
             panel1 = new Panel();
             data_Grid_Purchase = new DataGridView();
-            label_amount = new Label();
-            label6 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             itemCode = new DataGridViewTextBoxColumn();
@@ -65,6 +63,8 @@
             Column8 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
             Cancel = new DataGridViewImageColumn();
+            label_amount = new Label();
+            label6 = new Label();
             panel3.SuspendLayout();
             panel4.SuspendLayout();
             panel1.SuspendLayout();
@@ -333,7 +333,6 @@
             // data_Grid_Purchase
             // 
             data_Grid_Purchase.AllowUserToAddRows = false;
-            data_Grid_Purchase.AllowUserToOrderColumns = true;
             data_Grid_Purchase.AllowUserToResizeColumns = false;
             data_Grid_Purchase.AllowUserToResizeRows = false;
             data_Grid_Purchase.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -374,29 +373,6 @@
             data_Grid_Purchase.TabIndex = 4;
             data_Grid_Purchase.CellContentClick += data_Grid_Purchase_CellContentClick;
             data_Grid_Purchase.CellFormatting += data_Grid_Purchase_CellFormatting;
-            // 
-            // label_amount
-            // 
-            label_amount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label_amount.AutoSize = true;
-            label_amount.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label_amount.ForeColor = Color.FromArgb(211, 82, 48);
-            label_amount.Location = new Point(158, 554);
-            label_amount.Name = "label_amount";
-            label_amount.Size = new Size(75, 25);
-            label_amount.TabIndex = 100;
-            label_amount.Text = "100000";
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(22, 554);
-            label6.Name = "label6";
-            label6.Size = new Size(133, 25);
-            label6.TabIndex = 99;
-            label6.Text = "Total Amount:";
             // 
             // Column1
             // 
@@ -468,6 +444,29 @@
             Cancel.Name = "Cancel";
             Cancel.ReadOnly = true;
             Cancel.Width = 5;
+            // 
+            // label_amount
+            // 
+            label_amount.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label_amount.AutoSize = true;
+            label_amount.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label_amount.ForeColor = Color.FromArgb(211, 82, 48);
+            label_amount.Location = new Point(158, 554);
+            label_amount.Name = "label_amount";
+            label_amount.Size = new Size(75, 25);
+            label_amount.TabIndex = 100;
+            label_amount.Text = "100000";
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(22, 554);
+            label6.Name = "label6";
+            label6.Size = new Size(133, 25);
+            label6.TabIndex = 99;
+            label6.Text = "Total Amount:";
             // 
             // Purchase_Order_Form
             // 

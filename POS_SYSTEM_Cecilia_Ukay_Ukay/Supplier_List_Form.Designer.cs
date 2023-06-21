@@ -50,7 +50,6 @@
             // data_Grid_Supplier
             // 
             data_Grid_Supplier.AllowUserToAddRows = false;
-            data_Grid_Supplier.AllowUserToOrderColumns = true;
             data_Grid_Supplier.AllowUserToResizeColumns = false;
             data_Grid_Supplier.AllowUserToResizeRows = false;
             data_Grid_Supplier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

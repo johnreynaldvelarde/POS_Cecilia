@@ -31,6 +31,11 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             data_Grid_Monthly = new DataGridView();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            Date = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             panel4 = new Panel();
             title_product = new Label();
             panel3 = new Panel();
@@ -40,11 +45,6 @@
             btnClose = new Button();
             panel2 = new Panel();
             panel1 = new Panel();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            Date = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Monthly).BeginInit();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
@@ -54,7 +54,6 @@
             // data_Grid_Monthly
             // 
             data_Grid_Monthly.AllowUserToAddRows = false;
-            data_Grid_Monthly.AllowUserToOrderColumns = true;
             data_Grid_Monthly.AllowUserToResizeColumns = false;
             data_Grid_Monthly.AllowUserToResizeRows = false;
             data_Grid_Monthly.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -93,6 +92,46 @@
             data_Grid_Monthly.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             data_Grid_Monthly.Size = new Size(880, 462);
             data_Grid_Monthly.TabIndex = 6;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn2.FillWeight = 41.7832146F;
+            dataGridViewTextBoxColumn2.HeaderText = "#";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn4.FillWeight = 117.406761F;
+            dataGridViewTextBoxColumn4.HeaderText = "Product Name";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // Date
+            // 
+            Date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Date.FillWeight = 112.60511F;
+            Date.HeaderText = "Date";
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.FillWeight = 82.39851F;
+            dataGridViewTextBoxColumn5.HeaderText = "Quantity";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.FillWeight = 89.47058F;
+            Column2.HeaderText = "Amount";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // panel4
             // 
@@ -191,46 +230,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(880, 45);
             panel1.TabIndex = 91;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.FillWeight = 41.7832146F;
-            dataGridViewTextBoxColumn2.HeaderText = "#";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn4.FillWeight = 117.406761F;
-            dataGridViewTextBoxColumn4.HeaderText = "Product Name";
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // Date
-            // 
-            Date.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Date.FillWeight = 112.60511F;
-            Date.HeaderText = "Date";
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.FillWeight = 82.39851F;
-            dataGridViewTextBoxColumn5.HeaderText = "Quantity";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.FillWeight = 89.47058F;
-            Column2.HeaderText = "Amount";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
             // 
             // View_Monthly_Sales_Form
             // 

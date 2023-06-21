@@ -89,7 +89,6 @@
             // data_Grid_Category
             // 
             data_Grid_Category.AllowUserToAddRows = false;
-            data_Grid_Category.AllowUserToOrderColumns = true;
             data_Grid_Category.AllowUserToResizeColumns = false;
             data_Grid_Category.AllowUserToResizeRows = false;
             data_Grid_Category.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

@@ -33,7 +33,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                             "January", "February", "March", "April", "May", "June",
                             "July", "August", "September", "October", "November", "December"
                             };
-           
+
             cmd_Month.Items.AddRange(months);
             cmd_Month.SelectedIndex = 0;
         }

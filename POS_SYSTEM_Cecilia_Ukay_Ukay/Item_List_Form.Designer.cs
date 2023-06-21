@@ -32,9 +32,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Item_List_Form));
             data_Grid_Item = new DataGridView();
-            panel1 = new Panel();
-            btn_Add_Item = new Button();
-            label1 = new Label();
             Column1 = new DataGridViewTextBoxColumn();
             Item_ID = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
@@ -44,6 +41,9 @@
             Column5 = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewImageColumn();
             Delete = new DataGridViewImageColumn();
+            panel1 = new Panel();
+            btn_Add_Item = new Button();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)data_Grid_Item).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -51,7 +51,6 @@
             // data_Grid_Item
             // 
             data_Grid_Item.AllowUserToAddRows = false;
-            data_Grid_Item.AllowUserToOrderColumns = true;
             data_Grid_Item.AllowUserToResizeColumns = false;
             data_Grid_Item.AllowUserToResizeRows = false;
             data_Grid_Item.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -92,47 +91,6 @@
             data_Grid_Item.TabIndex = 4;
             data_Grid_Item.CellContentClick += data_Grid_Item_CellContentClick;
             data_Grid_Item.SelectionChanged += data_Grid_Item_SelectionChanged;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(btn_Add_Item);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(5, 20);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1088, 68);
-            panel1.TabIndex = 3;
-            // 
-            // btn_Add_Item
-            // 
-            btn_Add_Item.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btn_Add_Item.BackColor = Color.FromArgb(14, 159, 104);
-            btn_Add_Item.Cursor = Cursors.Hand;
-            btn_Add_Item.FlatAppearance.BorderSize = 0;
-            btn_Add_Item.FlatStyle = FlatStyle.Flat;
-            btn_Add_Item.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_Add_Item.ForeColor = Color.White;
-            btn_Add_Item.Image = (Image)resources.GetObject("btn_Add_Item.Image");
-            btn_Add_Item.Location = new Point(902, 9);
-            btn_Add_Item.Name = "btn_Add_Item";
-            btn_Add_Item.Size = new Size(185, 38);
-            btn_Add_Item.TabIndex = 15;
-            btn_Add_Item.Text = "Add new item";
-            btn_Add_Item.TextAlign = ContentAlignment.MiddleRight;
-            btn_Add_Item.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btn_Add_Item.UseVisualStyleBackColor = false;
-            btn_Add_Item.Click += btn_Add_Item_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(14, 159, 104);
-            label1.Location = new Point(3, 12);
-            label1.Name = "label1";
-            label1.Size = new Size(153, 33);
-            label1.TabIndex = 1;
-            label1.Text = "List of Item";
             // 
             // Column1
             // 
@@ -207,6 +165,47 @@
             Delete.Name = "Delete";
             Delete.ReadOnly = true;
             Delete.Width = 50;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(btn_Add_Item);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(5, 20);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1088, 68);
+            panel1.TabIndex = 3;
+            // 
+            // btn_Add_Item
+            // 
+            btn_Add_Item.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btn_Add_Item.BackColor = Color.FromArgb(14, 159, 104);
+            btn_Add_Item.Cursor = Cursors.Hand;
+            btn_Add_Item.FlatAppearance.BorderSize = 0;
+            btn_Add_Item.FlatStyle = FlatStyle.Flat;
+            btn_Add_Item.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Add_Item.ForeColor = Color.White;
+            btn_Add_Item.Image = (Image)resources.GetObject("btn_Add_Item.Image");
+            btn_Add_Item.Location = new Point(902, 9);
+            btn_Add_Item.Name = "btn_Add_Item";
+            btn_Add_Item.Size = new Size(185, 38);
+            btn_Add_Item.TabIndex = 15;
+            btn_Add_Item.Text = "Add new item";
+            btn_Add_Item.TextAlign = ContentAlignment.MiddleRight;
+            btn_Add_Item.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btn_Add_Item.UseVisualStyleBackColor = false;
+            btn_Add_Item.Click += btn_Add_Item_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(14, 159, 104);
+            label1.Location = new Point(3, 12);
+            label1.Name = "label1";
+            label1.Size = new Size(153, 33);
+            label1.TabIndex = 1;
+            label1.Text = "List of Item";
             // 
             // Item_List_Form
             // 

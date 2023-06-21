@@ -95,7 +95,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         string stock_itemName = reader.GetString(1);
                         cmd_item_purchase.Items.Add(stock_itemName);
                     }
-                      
+
                 }
 
                 reader.Close();
@@ -341,7 +341,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void data_Grid_Purchase_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            string column_purchase= data_Grid_Purchase.Columns[e.ColumnIndex].Name;
+            string column_purchase = data_Grid_Purchase.Columns[e.ColumnIndex].Name;
             if (column_purchase == "Cancel")
             {
                 DataGridViewRow selectedRow = data_Grid_Purchase.Rows[e.RowIndex];

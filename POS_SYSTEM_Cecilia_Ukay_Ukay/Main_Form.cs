@@ -528,6 +528,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             if (selectedCategory == "All")
             {
                 view_product();
+                txt_mainsearch.Clear();
             }
             else
             {
@@ -560,26 +561,26 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
         private void txt_discount_KeyPress(object sender, KeyPressEventArgs e)
         {
-           
+
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b' && e.KeyChar != '\u007F')
             {
                 e.Handled = true;
             }
-            else if (e.KeyChar == '\b') 
+            else if (e.KeyChar == '\b')
             {
-                
+
             }
             else
             {
                 string currentText = txt_discount.Text;
-              
+
                 if (currentText == "0")
                 {
                     e.Handled = true;
                 }
                 else
                 {
-                   
+
                     if (currentText.Length >= 2 || (currentText.Length == 1 && currentText[0] != '0'))
                     {
                         int value;
@@ -666,7 +667,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
             {
 
             }
-          
+
         }
     }
 }

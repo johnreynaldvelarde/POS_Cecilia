@@ -21,7 +21,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
 
             InitializeComponent();
             view_today_sales();
-            
+
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 {
                     i += 1;
                     data_Grid_Today.Rows.Add(i, reader["Product_Name"].ToString(), reader["Order_Quantity"].ToString(), reader["Amount"].ToString());
-                                                  
+
                 }
                 reader.Close();
                 connect.Close();

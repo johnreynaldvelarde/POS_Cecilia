@@ -185,7 +185,6 @@
             // data_Grid_Product
             // 
             data_Grid_Product.AllowUserToAddRows = false;
-            data_Grid_Product.AllowUserToOrderColumns = true;
             data_Grid_Product.AllowUserToResizeColumns = false;
             data_Grid_Product.AllowUserToResizeRows = false;
             data_Grid_Product.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

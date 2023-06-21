@@ -49,7 +49,6 @@
             // data_Grid_Order_Transaction
             // 
             data_Grid_Order_Transaction.AllowUserToAddRows = false;
-            data_Grid_Order_Transaction.AllowUserToOrderColumns = true;
             data_Grid_Order_Transaction.AllowUserToResizeColumns = false;
             data_Grid_Order_Transaction.AllowUserToResizeRows = false;
             data_Grid_Order_Transaction.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

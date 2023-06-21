@@ -31,11 +31,11 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             data_Purchase_Item = new DataGridView();
-            Column2 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            Column1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
             panel4 = new Panel();
             title_product = new Label();
             panel1 = new Panel();
@@ -50,7 +50,6 @@
             // data_Purchase_Item
             // 
             data_Purchase_Item.AllowUserToAddRows = false;
-            data_Purchase_Item.AllowUserToOrderColumns = true;
             data_Purchase_Item.AllowUserToResizeColumns = false;
             data_Purchase_Item.AllowUserToResizeRows = false;
             data_Purchase_Item.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -90,20 +89,20 @@
             data_Purchase_Item.Size = new Size(880, 462);
             data_Purchase_Item.TabIndex = 6;
             // 
-            // Column2
+            // dataGridViewTextBoxColumn2
             // 
-            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column2.HeaderText = "Amount";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn2.FillWeight = 46.70051F;
+            dataGridViewTextBoxColumn2.HeaderText = "#";
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // Column1
             // 
-            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn5.FillWeight = 92.09565F;
-            dataGridViewTextBoxColumn5.HeaderText = "Quantity";
-            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            dataGridViewTextBoxColumn5.ReadOnly = true;
+            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column1.HeaderText = "Item Code";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -113,20 +112,20 @@
             dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // Column1
+            // dataGridViewTextBoxColumn5
             // 
-            Column1.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Column1.HeaderText = "Item Code";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
+            dataGridViewTextBoxColumn5.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewTextBoxColumn5.FillWeight = 92.09565F;
+            dataGridViewTextBoxColumn5.HeaderText = "Quantity";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // Column2
             // 
-            dataGridViewTextBoxColumn2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewTextBoxColumn2.FillWeight = 46.70051F;
-            dataGridViewTextBoxColumn2.HeaderText = "#";
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
+            Column2.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            Column2.HeaderText = "Amount";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // panel4
             // 

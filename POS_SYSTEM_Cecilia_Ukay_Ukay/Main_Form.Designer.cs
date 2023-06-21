@@ -356,7 +356,6 @@
             // data_Grid_Available
             // 
             data_Grid_Available.AllowUserToAddRows = false;
-            data_Grid_Available.AllowUserToOrderColumns = true;
             data_Grid_Available.AllowUserToResizeColumns = false;
             data_Grid_Available.AllowUserToResizeRows = false;
             data_Grid_Available.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -387,6 +386,7 @@
             data_Grid_Available.EnableHeadersVisualStyles = false;
             data_Grid_Available.Location = new Point(10, 78);
             data_Grid_Available.Name = "data_Grid_Available";
+            data_Grid_Available.ReadOnly = true;
             data_Grid_Available.RowHeadersVisible = false;
             data_Grid_Available.RowHeadersWidth = 50;
             data_Grid_Available.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
@@ -402,23 +402,27 @@
             dataGridViewTextBoxColumn1.FillWeight = 70.62577F;
             dataGridViewTextBoxColumn1.HeaderText = "#";
             dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // ProductStock_ID
             // 
             ProductStock_ID.HeaderText = "ProductStock_ID";
             ProductStock_ID.Name = "ProductStock_ID";
+            ProductStock_ID.ReadOnly = true;
             ProductStock_ID.Visible = false;
             // 
             // Product_ID
             // 
             Product_ID.HeaderText = "Product_ID";
             Product_ID.Name = "Product_ID";
+            Product_ID.ReadOnly = true;
             Product_ID.Visible = false;
             // 
             // Product_Code
             // 
             Product_Code.HeaderText = "Product_Code";
             Product_Code.Name = "Product_Code";
+            Product_Code.ReadOnly = true;
             Product_Code.Visible = false;
             // 
             // Product_Name
@@ -427,6 +431,7 @@
             Product_Name.FillWeight = 153.369919F;
             Product_Name.HeaderText = "Name";
             Product_Name.Name = "Product_Name";
+            Product_Name.ReadOnly = true;
             // 
             // Category
             // 
@@ -434,6 +439,7 @@
             Category.FillWeight = 111.979416F;
             Category.HeaderText = "Category";
             Category.Name = "Category";
+            Category.ReadOnly = true;
             Category.Visible = false;
             // 
             // Price
@@ -442,6 +448,7 @@
             Price.FillWeight = 120.537521F;
             Price.HeaderText = "Price";
             Price.Name = "Price";
+            Price.ReadOnly = true;
             // 
             // Size
             // 
@@ -449,11 +456,13 @@
             Size.FillWeight = 129.478317F;
             Size.HeaderText = "Size";
             Size.Name = "Size";
+            Size.ReadOnly = true;
             // 
             // Discount
             // 
             Discount.HeaderText = "Discount";
             Discount.Name = "Discount";
+            Discount.ReadOnly = true;
             Discount.Visible = false;
             // 
             // Minus
@@ -463,6 +472,7 @@
             Minus.HeaderText = "";
             Minus.Image = (Image)resources.GetObject("Minus.Image");
             Minus.Name = "Minus";
+            Minus.ReadOnly = true;
             // 
             // Quantity
             // 
@@ -470,6 +480,7 @@
             Quantity.FillWeight = 90.62495F;
             Quantity.HeaderText = "Quantity";
             Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
             // 
             // Add
             // 
@@ -478,6 +489,7 @@
             Add.HeaderText = "";
             Add.Image = (Image)resources.GetObject("Add.Image");
             Add.Name = "Add";
+            Add.ReadOnly = true;
             // 
             // Sell
             // 
@@ -486,6 +498,7 @@
             Sell.Image = (Image)resources.GetObject("Sell.Image");
             Sell.MinimumWidth = 50;
             Sell.Name = "Sell";
+            Sell.ReadOnly = true;
             Sell.Width = 50;
             // 
             // upper_panel
@@ -550,7 +563,6 @@
             // data_Grid_Transaction
             // 
             data_Grid_Transaction.AllowUserToAddRows = false;
-            data_Grid_Transaction.AllowUserToOrderColumns = true;
             data_Grid_Transaction.AllowUserToResizeColumns = false;
             data_Grid_Transaction.AllowUserToResizeRows = false;
             data_Grid_Transaction.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

@@ -298,7 +298,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
         private void SortDataGrid(string columnName, ListSortDirection direction)
         {
             data_Grid_Product.Sort(data_Grid_Product.Columns[3], ListSortDirection.Ascending);
-            
+
             DataGridViewColumn column = data_Grid_Product.Columns[3];
             data_Grid_Product.Sort(column, direction);
 
@@ -307,7 +307,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 DataGridViewRow row = data_Grid_Product.Rows[i];
                 row.Cells[0].Value = (i + 1).ToString();
             }
-            
+
         }
     }
 }

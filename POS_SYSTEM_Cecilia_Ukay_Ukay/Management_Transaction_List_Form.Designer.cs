@@ -48,7 +48,6 @@
             // data_Grid_Management
             // 
             data_Grid_Management.AllowUserToAddRows = false;
-            data_Grid_Management.AllowUserToOrderColumns = true;
             data_Grid_Management.AllowUserToResizeColumns = false;
             data_Grid_Management.AllowUserToResizeRows = false;
             data_Grid_Management.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

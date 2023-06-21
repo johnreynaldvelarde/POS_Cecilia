@@ -111,7 +111,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                 }
                 else
                 {
-                    u_profile = null; 
+                    u_profile = null;
                 }
 
                 staffaccount_ID = data_Grid_Staff[1, i].Value.ToString();

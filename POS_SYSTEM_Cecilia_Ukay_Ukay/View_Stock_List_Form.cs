@@ -82,7 +82,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
                         data_Stock_Item.Rows.Add(i, reader["ItemStock_ID"].ToString(), reader["Item_Code"].ToString(), reader["Item_Name"].ToString(),
                                                     reader["ItemStock_Qyt"].ToString());
                     }
-                   
+
                 }
                 reader.Close();
                 connect.Close();
