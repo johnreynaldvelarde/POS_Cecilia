@@ -65,7 +65,6 @@
             // data_Delete_Product
             // 
             data_Delete_Product.AllowUserToAddRows = false;
-            data_Delete_Product.AllowUserToOrderColumns = true;
             data_Delete_Product.AllowUserToResizeColumns = false;
             data_Delete_Product.AllowUserToResizeRows = false;
             data_Delete_Product.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

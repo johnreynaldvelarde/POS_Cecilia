@@ -15,7 +15,7 @@ namespace POS_SYSTEM_Cecilia_Ukay_Ukay
     {
         DB_Connection database = new DB_Connection();
 
-    
+
         public Delete_Product_List_Form()
         {
             InitializeComponent();

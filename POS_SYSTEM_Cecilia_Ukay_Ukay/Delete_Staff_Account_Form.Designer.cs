@@ -66,7 +66,6 @@
             // data_Delete_Staff
             // 
             data_Delete_Staff.AllowUserToAddRows = false;
-            data_Delete_Staff.AllowUserToOrderColumns = true;
             data_Delete_Staff.AllowUserToResizeColumns = false;
             data_Delete_Staff.AllowUserToResizeRows = false;
             data_Delete_Staff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
